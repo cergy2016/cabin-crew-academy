@@ -119,7 +119,6 @@ const createLesson = (unitNum: number, lessonNum: number, title: string): Lesson
       durationSeconds: 10
     }
   ],
-  vocabulary: standardVocab,
   grammar: [
     {
       rule: 'Imperative Mood',
