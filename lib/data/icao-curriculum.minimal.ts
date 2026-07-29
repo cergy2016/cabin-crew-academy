@@ -99,8 +99,8 @@ const LESSON_TEMPLATE = (unitNum: number, lessonNum: number, title: string) => (
     type: 'multiple-choice' as const,
     question: 'Test your knowledge',
     options: [
-      { text: 'Option A', correct: true, explanation: 'Correct' },
-      { text: 'Option B', correct: false, explanation: 'Incorrect' }
+      { id: 'opt-a', text: 'Option A', isCorrect: true, explanation: 'Correct' },
+      { id: 'opt-b', text: 'Option B', isCorrect: false, explanation: 'Incorrect' }
     ],
     points: 10
   }],
