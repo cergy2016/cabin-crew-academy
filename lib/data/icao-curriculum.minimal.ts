@@ -1,15 +1,37 @@
 import type { Unit, Lesson } from '../types';
 
 // Minimal quiz template
-const STANDARD_QUIZ = {
-  questions: [
-    { id: 'q-1', question: 'What is the primary focus of this lesson?', options: ['Communication', 'Procedures', 'Safety', 'All of the above'], correctAnswer: 3, explanation: 'All aspects are important' },
-    { id: 'q-2', question: 'What does "Roger" mean?', options: ['Understood', 'Turn right', 'Speed up', 'Descend'], correctAnswer: 0, explanation: 'Roger = message received and understood' },
-    { id: 'q-3', question: 'When should you confirm?', options: ['Sometimes', 'Never', 'Always critical items', 'Only emergencies'], correctAnswer: 2, explanation: 'Always confirm critical clearances' },
-    { id: 'q-4', question: 'What is flight level?', options: ['Ground elevation', 'Altitude/100ft', 'Speed', 'Fuel'], correctAnswer: 1, explanation: 'Flight level = altitude in hundreds of feet' },
-    { id: 'q-5', question: 'Most important in aviation?', options: ['Speed', 'Clarity', 'Power', 'Fuel'], correctAnswer: 1, explanation: 'Clear communication is critical for safety' }
+const createQuiz = (unitNum: number, lessonNum: number) => ({
+  id: `quiz-${unitNum}-${lessonNum}`,
+  title: `Quiz ${unitNum}-${lessonNum}`,
+  passingScore: 70,
+  exercises: [
+    {
+      id: 'q-1',
+      type: 'multiple-choice' as const,
+      question: 'What is the primary focus of this lesson?',
+      options: [
+        { id: 'opt-1', text: 'Communication', isCorrect: false },
+        { id: 'opt-2', text: 'Procedures', isCorrect: false },
+        { id: 'opt-3', text: 'Safety', isCorrect: false },
+        { id: 'opt-4', text: 'All of the above', isCorrect: true, explanation: 'All aspects are important' }
+      ],
+      points: 10
+    },
+    {
+      id: 'q-2',
+      type: 'multiple-choice' as const,
+      question: 'What does "Roger" mean?',
+      options: [
+        { id: 'opt-1', text: 'Understood', isCorrect: true, explanation: 'Message received and understood' },
+        { id: 'opt-2', text: 'Turn right', isCorrect: false },
+        { id: 'opt-3', text: 'Speed up', isCorrect: false },
+        { id: 'opt-4', text: 'Descend', isCorrect: false }
+      ],
+      points: 10
+    }
   ]
-};
+});
 
 const STANDARD_VOCABULARY = [
   { word: 'Altimeter', pronunciation: 'al-TIM-uh-ter', definition: 'Altitude instrument', example: 'Check altimeter' },
@@ -28,7 +50,7 @@ const STANDARD_PHRASEOLOGY = {
 };
 
 // Use only first 2 lessons as template, rest are minimal
-const LESSON_TEMPLATE = (unitNum: number, lessonNum: number, title: string) => ({
+const LESSON_TEMPLATE = (unitNum: number, lessonNum: number, title: string): any => ({
   id: `lesson-${unitNum}-${lessonNum}`,
   unitId: `unit-${unitNum}`,
   title,
@@ -104,7 +126,7 @@ const LESSON_TEMPLATE = (unitNum: number, lessonNum: number, title: string) => (
     ],
     points: 10
   }],
-  quiz: STANDARD_QUIZ,
+  quiz: createQuiz(unitNum, lessonNum),
   flashcards: [
     { id: 'fc-1', front: 'Term', back: 'Definition', audioFront: `/audio/unit-${unitNum}/lesson-${lessonNum}/term.wav`, audioBack: `/audio/unit-${unitNum}/lesson-${lessonNum}/definition.wav` }
   ],
