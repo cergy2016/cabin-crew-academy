@@ -101,7 +101,8 @@ const LESSON_TEMPLATE = (unitNum: number, lessonNum: number, title: string) => (
     options: [
       { text: 'Option A', correct: true, explanation: 'Correct' },
       { text: 'Option B', correct: false, explanation: 'Incorrect' }
-    ]
+    ],
+    points: 10
   }],
   quiz: STANDARD_QUIZ,
   flashcards: [
