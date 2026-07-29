@@ -169,7 +169,9 @@ const createLesson = (unitNum: number, lessonNum: number, title: string): Lesson
       'Being too informal',
       'Not listening carefully'
     ]
-  }
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString()
 });
 
 // Create all 24 lessons (8 units × 3 lessons)

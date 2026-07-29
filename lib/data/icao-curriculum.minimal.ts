@@ -107,7 +107,9 @@ const LESSON_TEMPLATE = (unitNum: number, lessonNum: number, title: string) => (
   review: {
     keyPoints: ['Point 1', 'Point 2', 'Point 3'],
     commonMistakes: ['Mistake 1', 'Mistake 2']
-  }
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString()
 });
 
 export const iCAOUnits: Unit[] = [
