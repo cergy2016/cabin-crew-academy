@@ -122,12 +122,11 @@ const createLesson = (unitNum: number, lessonNum: number, title: string): Lesson
   vocabulary: standardVocab,
   grammar: [
     {
-      title: 'Imperative Mood',
-      explanation: 'Aviation uses imperative (command) form for critical instructions',
+      rule: 'Imperative Mood',
       examples: [
-        'Descend and maintain 3000 feet',
-        'Turn left heading 270',
-        'Reduce speed to 150 knots'
+        { sentence: 'Descend and maintain 3000 feet' },
+        { sentence: 'Turn left heading 270' },
+        { sentence: 'Reduce speed to 150 knots' }
       ]
     }
   ],
