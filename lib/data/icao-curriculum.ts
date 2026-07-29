@@ -163,11 +163,11 @@ const createLesson = (unitNum: number, lessonNum: number, title: string): Lesson
       'Brevity is important but never sacrifice clarity'
     ],
     commonMistakes: [
-      'Speaking too quickly',
-      'Using non-standard phraseology',
-      'Forgetting to confirm clearances',
-      'Being too informal',
-      'Not listening carefully'
+      { mistake: 'Speaking too quickly', correction: 'Speak clearly and slowly', explanation: 'ATC needs to understand every word' },
+      { mistake: 'Using non-standard phraseology', correction: 'Always use ICAO phraseology', explanation: 'Standardization prevents confusion' },
+      { mistake: 'Forgetting to confirm clearances', correction: 'Always confirm critical items', explanation: 'Safety critical' },
+      { mistake: 'Being too informal', correction: 'Maintain professional tone', explanation: 'Professional communication is required' },
+      { mistake: 'Not listening carefully', correction: 'Listen attentively', explanation: 'Understanding is essential' }
     ]
   },
   createdAt: new Date().toISOString(),
