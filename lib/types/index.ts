@@ -241,6 +241,10 @@ export interface InterviewQuestion {
 export interface InterviewBank {
   id: string;
   airline: string;
+  description?: string;
+  country?: string;
+  website?: string;
+  difficulty?: number;
   questions: InterviewQuestion[];
 }
 
