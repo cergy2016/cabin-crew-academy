@@ -190,12 +190,12 @@ export default function InterviewPractice({
                 {/* Answer Text */}
                 <div className="p-6">
                   <p className="text-slate-800 dark:text-slate-200 leading-relaxed mb-4">
-                    {answer.answer}
+                    {answer.text || answer.answer || 'Answer not available'}
                   </p>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => handleListenToAnswer(answer.answer)}
+                    onClick={() => handleListenToAnswer(answer.text || answer.answer || '')}
                     className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg transition-colors"
                   >
                     <Volume2 className="w-4 h-4" />
