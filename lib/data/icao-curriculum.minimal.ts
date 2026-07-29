@@ -104,8 +104,8 @@ export const iCAOUnits: Unit[] = [
     progress: 0,
     locked: false,
     order: unitIdx + 1,
-    lessons: [...Array(3).fill(0).map((_, lessonIdx) => 
+    lessons: Array.from({ length: 3 }, (_, lessonIdx) =>
       LESSON_TEMPLATE(unitIdx + 1, lessonIdx + 1, `Lesson ${lessonIdx + 1}`)
-    )] as Lesson[]
+    )
   })) as Unit[]
 ];

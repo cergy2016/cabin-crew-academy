@@ -222,7 +222,8 @@ export interface InterviewQuestion {
   audioUrl?: string;
   difficulty: number;
   modelAnswers: {
-    answer: string;
+    text?: string;
+    answer?: string;
     audioUrl?: string;
     scoreBreakdown: {
       pronunciation: number;
@@ -232,8 +233,9 @@ export interface InterviewQuestion {
       confidence: number;
       professionalism: number;
     };
+    tips?: string[];
   }[];
-  mistakesToAvoid: string[];
+  mistakesToAvoid?: string[];
 }
 
 export interface InterviewBank {
