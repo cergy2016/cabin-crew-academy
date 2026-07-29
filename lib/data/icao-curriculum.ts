@@ -96,7 +96,7 @@ Radio Telephony Rules:
           audioExplanation: {
             id: 'theory-audio-1',
             text: 'Aviation radio communication is highly standardized to ensure safety and prevent misunderstandings. Every pilot and controller in the world follows the same phraseology, using English as the standard language. This prevents dangerous miscommunication that could lead to accidents.',
-            audioUrl: '/audio/unit-1/lesson-1/theory.wav',
+            audioUrl: '/audio/unit-1/lesson-1/theory-explanation.wav',
             durationSeconds: 20,
             speaker: 'instructor',
           },
@@ -180,8 +180,8 @@ Radio Telephony Rules:
             id: 'fc-1',
             front: 'Callsign',
             back: 'Aircraft identification used in radio communication',
-            audioFront: '/audio/unit-1/lesson-1/callsign.wav',
-            audioBack: '/audio/unit-1/lesson-1/callsign-def.wav',
+            audioFront: '/audio/unit-1/lesson-1/pronunciation-callsign.wav',
+            audioBack: '/audio/unit-1/lesson-1/pronunciation-callsign.wav',
           },
         ],
         review: {
@@ -226,14 +226,14 @@ Radio Telephony Rules:
             {
               id: 'audio-1',
               text: 'Tower, aircraft November Alpha Two Three Four Seven',
-              audioUrl: '/audio/unit-1/lesson-2/callsign-spelling.wav',
+              audioUrl: '/audio/unit-1/lesson-2/phonetic-callsign.wav',
               durationSeconds: 6,
               speaker: 'pilot',
             },
             {
               id: 'audio-2',
               text: 'Roger, November Alpha Two Three Four Seven',
-              audioUrl: '/audio/unit-1/lesson-2/confirmation.wav',
+              audioUrl: '/audio/unit-1/lesson-2/phonetic-confirmation.wav',
               durationSeconds: 4,
               speaker: 'atc',
             },
@@ -292,7 +292,7 @@ Note: Numbers can be pronounced "Zero" or "Oh" and "Fife" instead of "Five"
           audioExplanation: {
             id: 'theory-audio-1',
             text: 'The ICAO phonetic alphabet eliminates confusion between similar-sounding letters. Every letter has a distinct word that sounds nothing like any other phonetic letter, ensuring accurate communication even in poor conditions.',
-            audioUrl: '/audio/unit-1/lesson-2/theory.wav',
+            audioUrl: '/audio/unit-1/lesson-2/phonetic-theory.wav',
             durationSeconds: 18,
             speaker: 'instructor',
           },
@@ -339,8 +339,8 @@ Note: Numbers can be pronounced "Zero" or "Oh" and "Fife" instead of "Five"
             id: 'fc-1',
             front: 'A',
             back: 'Alfa',
-            audioFront: '/audio/unit-1/lesson-2/letter-a.wav',
-            audioBack: '/audio/unit-1/lesson-2/alfa.wav',
+            audioFront: '/audio/unit-1/lesson-2/phonetic-a.wav',
+            audioBack: '/audio/unit-1/lesson-2/phonetic-a.wav',
           },
         ],
         review: {
@@ -391,7 +391,7 @@ Note: Numbers can be pronounced "Zero" or "Oh" and "Fife" instead of "Five"
             {
               id: 'audio-2',
               text: 'Roger, November Four Seven Three. Continue your approach. We have emergency equipment standing by.',
-              audioUrl: '/audio/unit-1/lesson-3/atc-response.wav',
+              audioUrl: '/audio/unit-1/lesson-3/emergency-response.wav',
               durationSeconds: 8,
               speaker: 'atc',
             },
@@ -441,7 +441,7 @@ Examples:
           audioExplanation: {
             id: 'theory-audio-1',
             text: 'Non-routine situations require clear, calm communication. ATC needs to understand exactly what is happening so they can provide appropriate assistance. Always report immediately and be specific about the problem.',
-            audioUrl: '/audio/unit-1/lesson-3/theory.wav',
+            audioUrl: '/audio/unit-1/lesson-3/emergency-theory.wav',
             durationSeconds: 22,
             speaker: 'instructor',
           },
@@ -561,7 +561,7 @@ Examples:
             {
               id: 'audio-2',
               text: 'Understood captain. Cabin crew briefing: three hundred forty passengers, normal service procedures, two infants on board.',
-              audioUrl: '/audio/unit-2/lesson-1/crew-response.wav',
+              audioUrl: '/audio/unit-2/lesson-1/crew-briefing-response.wav',
               durationSeconds: 8,
               speaker: 'crew',
             },
@@ -615,7 +615,7 @@ Communication is Essential:
           audioExplanation: {
             id: 'theory-audio-1',
             text: 'Pre-flight briefings ensure everyone on the flight crew understands the mission, potential challenges, and special circumstances. This shared information is crucial for coordinating a safe and efficient flight.',
-            audioUrl: '/audio/unit-2/lesson-1/theory.wav',
+            audioUrl: '/audio/unit-2/lesson-1/preflight-theory.wav',
             durationSeconds: 20,
             speaker: 'instructor',
           },
@@ -778,7 +778,7 @@ export function expandICaoCurriculum(): Unit[] {
                 {
                   id: 'audio-2',
                   text: 'November Four Seven Three, taxi to runway one eight left via taxiway alpha, bravo. Hold short of crossing runway',
-                  audioUrl: '/audio/unit-3/lesson-1/ground-taxi.wav',
+                  audioUrl: '/audio/unit-3/lesson-1/taxi-request.wav',
                   durationSeconds: 9,
                   speaker: 'atc',
                 },
@@ -811,7 +811,7 @@ Key Communication Points:
               audioExplanation: {
                 id: 'theory-audio-1',
                 text: 'Ground control manages all aircraft movement on the airport surface. Pilots must follow their assigned taxi route precisely, read back all clearances, and report their position when requested.',
-                audioUrl: '/audio/unit-3/lesson-1/theory.wav',
+                audioUrl: '/audio/unit-3/lesson-1/taxi-theory.wav',
                 durationSeconds: 20,
                 speaker: 'instructor',
               },
