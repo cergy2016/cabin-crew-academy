@@ -136,11 +136,12 @@ const createLesson = (unitNum: number, lessonNum: number, title: string): Lesson
       type: 'multiple-choice',
       question: 'What is correct phraseology?',
       options: [
-        { text: 'Hey buddy can you help?', correct: false, explanation: 'Too informal' },
-        { text: 'Request climb to FL350', correct: true, explanation: 'Proper aviation phraseology' },
-        { text: 'I need to go up', correct: false, explanation: 'Not professional' },
-        { text: 'Going up now', correct: false, explanation: 'Needs proper request' }
-      ]
+        { id: 'opt-1', text: 'Hey buddy can you help?', isCorrect: false, explanation: 'Too informal' },
+        { id: 'opt-2', text: 'Request climb to FL350', isCorrect: true, explanation: 'Proper aviation phraseology' },
+        { id: 'opt-3', text: 'I need to go up', isCorrect: false, explanation: 'Not professional' },
+        { id: 'opt-4', text: 'Going up now', isCorrect: false, explanation: 'Needs proper request' }
+      ],
+      points: 10
     }
   ],
   quiz: standardQuiz,
