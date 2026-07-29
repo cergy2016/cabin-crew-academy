@@ -75,7 +75,7 @@ const createLesson = (unitNum: number, lessonNum: number, title: string): Lesson
         text: 'Response transmission',
         audioUrl: `/audio/unit-${unitNum}/lesson-${lessonNum}/example-2.wav`,
         durationSeconds: 5,
-        speaker: 'atc'
+        speaker: 'instructor'
       }
     ],
     vocabulary: standardVocab

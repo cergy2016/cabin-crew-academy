@@ -75,7 +75,7 @@ const LESSON_TEMPLATE = (unitNum: number, lessonNum: number, title: string): any
     context: 'Operational environment',
     audioSegments: [
       { id: 'audio-1', text: 'Radio transmission', audioUrl: `/audio/unit-${unitNum}/lesson-${lessonNum}/example-1.wav`, durationSeconds: 5, speaker: 'pilot' },
-      { id: 'audio-2', text: 'Response', audioUrl: `/audio/unit-${unitNum}/lesson-${lessonNum}/example-2.wav`, durationSeconds: 4, speaker: 'atc' }
+      { id: 'audio-2', text: 'Response', audioUrl: `/audio/unit-${unitNum}/lesson-${lessonNum}/example-2.wav`, durationSeconds: 4, speaker: 'instructor' }
     ],
     vocabulary: STANDARD_VOCABULARY
   },
