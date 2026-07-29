@@ -1,15 +1,15 @@
 import type { Unit, Lesson } from '../types';
 
-// Quiz standard pour toutes les leçons
-const standardQuiz = {
-  questions: [
-    { id: 'q-1', question: 'What is the main objective?', options: ['A', 'B', 'C', 'D'], correctAnswer: 0, explanation: 'Learning aviation communication' },
-    { id: 'q-2', question: 'What does Roger mean?', options: ['Understood', 'Right', 'Wait', 'Copy'], correctAnswer: 0, explanation: 'Roger = message received and understood' },
-    { id: 'q-3', question: 'When confirm?', options: ['Never', 'Sometimes', 'Always critical', 'Only emergencies'], correctAnswer: 2, explanation: 'Always confirm critical clearances' },
-    { id: 'q-4', question: 'Flight level is?', options: ['Ground level', 'Altitude/100ft', 'Speed', 'Direction'], correctAnswer: 1, explanation: 'Flight level = altitude in hundreds of feet' },
-    { id: 'q-5', question: 'Most important?', options: ['Speed', 'Clarity', 'Altitude', 'Direction'], correctAnswer: 1, explanation: 'Clear communication prevents accidents' }
+// Quiz factory for all lessons
+const createQuiz = (unitNum: number, lessonNum: number) => ({
+  id: `quiz-${unitNum}-${lessonNum}`,
+  title: `Quiz ${unitNum}-${lessonNum}`,
+  passingScore: 70,
+  exercises: [
+    { id: 'q-1', type: 'multiple-choice' as const, question: 'What is the main objective?', options: [{ id: 'o1', text: 'A', isCorrect: false }, { id: 'o2', text: 'B', isCorrect: false }, { id: 'o3', text: 'C', isCorrect: false }, { id: 'o4', text: 'D', isCorrect: true }], points: 10 },
+    { id: 'q-2', type: 'multiple-choice' as const, question: 'What does Roger mean?', options: [{ id: 'o1', text: 'Understood', isCorrect: true }, { id: 'o2', text: 'Right', isCorrect: false }, { id: 'o3', text: 'Wait', isCorrect: false }, { id: 'o4', text: 'Copy', isCorrect: false }], points: 10 }
   ]
-};
+});
 
 // Vocabulary standard
 const standardVocab = [
@@ -144,7 +144,7 @@ const createLesson = (unitNum: number, lessonNum: number, title: string): Lesson
       points: 10
     }
   ],
-  quiz: standardQuiz,
+  quiz: createQuiz(unitNum, lessonNum),
   flashcards: [
     {
       id: 'fc-1',
