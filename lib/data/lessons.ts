@@ -51,14 +51,14 @@ export const lessonData: Unit[] = [
             {
               id: 'audio-1',
               text: 'Good morning! Welcome aboard Emirates Flight EK301 to London. May I see your boarding pass, please?',
-              audioUrl: '/audio/lesson-1-1/welcome-01.m4a',
+              audioUrl: '/audio/lesson-1-1/welcome-01.wav',
               durationSeconds: 8,
               speaker: 'crew',
             },
             {
               id: 'audio-2',
               text: 'Thank you. Your seat is 12B on the right side. Enjoy your flight!',
-              audioUrl: '/audio/lesson-1-1/welcome-02.m4a',
+              audioUrl: '/audio/lesson-1-1/welcome-02.wav',
               durationSeconds: 6,
               speaker: 'crew',
             },
@@ -106,7 +106,7 @@ Key principles:
           audioExplanation: {
             id: 'theory-audio-1',
             text: 'In professional cabin crew communication, clarity is paramount. Always speak at a moderate pace, enunciate your words carefully, and maintain a pleasant tone throughout all passenger interactions.',
-            audioUrl: '/audio/lesson-1-1/theory-explanation.m4a',
+            audioUrl: '/audio/lesson-1-1/theory-explanation.wav',
             durationSeconds: 15,
             speaker: 'instructor',
           },
@@ -263,21 +263,21 @@ Key principles:
           {
             id: 'pron-1',
             text: 'Welcome',
-            audioUrl: '/audio/lesson-1-1/pronunciation-welcome.m4a',
+            audioUrl: '/audio/lesson-1-1/pronunciation-welcome.wav',
             durationSeconds: 2,
             speaker: 'native',
           },
           {
             id: 'pron-2',
             text: 'Boarding pass',
-            audioUrl: '/audio/lesson-1-1/pronunciation-boarding.m4a',
+            audioUrl: '/audio/lesson-1-1/pronunciation-boarding.wav',
             durationSeconds: 2,
             speaker: 'native',
           },
           {
             id: 'pron-3',
             text: 'Appreciate',
-            audioUrl: '/audio/lesson-1-1/pronunciation-appreciate.m4a',
+            audioUrl: '/audio/lesson-1-1/pronunciation-appreciate.wav',
             durationSeconds: 2,
             speaker: 'native',
           },
@@ -289,11 +289,11 @@ Key principles:
             examples: [
               {
                 sentence: 'We serve complimentary beverages on all flights.',
-                audioUrl: '/audio/lesson-1-1/grammar-1.m4a',
+                audioUrl: '/audio/lesson-1-1/grammar-1.wav',
               },
               {
                 sentence: 'Passengers fasten their seatbelts during takeoff and landing.',
-                audioUrl: '/audio/lesson-1-1/grammar-2.m4a',
+                audioUrl: '/audio/lesson-1-1/grammar-2.wav',
               },
             ],
           },
@@ -357,7 +357,7 @@ Key principles:
             audio: {
               id: 'listen-1',
               text: 'Good morning. Welcome aboard Flight EK301.',
-              audioUrl: '/audio/lesson-1-1/welcome-01.m4a',
+              audioUrl: '/audio/lesson-1-1/welcome-01.wav',
               durationSeconds: 5,
               speaker: 'crew',
             },
@@ -551,14 +551,14 @@ Key principles:
             {
               id: 'audio-1',
               text: 'Ladies and gentlemen, on behalf of the flight crew, welcome aboard.',
-              audioUrl: '/audio/lesson-1-2/safety-welcome.m4a',
+              audioUrl: '/audio/lesson-1-2/safety-welcome.wav',
               durationSeconds: 5,
               speaker: 'crew',
             },
             {
               id: 'audio-2',
               text: 'For your safety and comfort, please pay close attention to the following safety information.',
-              audioUrl: '/audio/lesson-1-2/safety-attention.m4a',
+              audioUrl: '/audio/lesson-1-2/safety-attention.wav',
               durationSeconds: 6,
               speaker: 'crew',
             },
@@ -694,14 +694,14 @@ Key components:
           {
             id: 'pron-1',
             text: 'Emergency',
-            audioUrl: '/audio/lesson-1-2/pronunciation-emergency.m4a',
+            audioUrl: '/audio/lesson-1-2/pronunciation-emergency.wav',
             durationSeconds: 2,
             speaker: 'native',
           },
           {
             id: 'pron-2',
             text: 'Evacuation',
-            audioUrl: '/audio/lesson-1-2/pronunciation-evacuation.m4a',
+            audioUrl: '/audio/lesson-1-2/pronunciation-evacuation.wav',
             durationSeconds: 2,
             speaker: 'native',
           },
@@ -735,7 +735,7 @@ Key components:
             audio: {
               id: 'listen-1',
               text: 'Please ensure your seatbelt is securely fastened.',
-              audioUrl: '/audio/lesson-1-2/dictation-seatbelt.m4a',
+              audioUrl: '/audio/lesson-1-2/dictation-seatbelt.wav',
               durationSeconds: 4,
               speaker: 'crew',
             },
