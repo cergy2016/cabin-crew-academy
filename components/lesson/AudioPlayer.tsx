@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Pause, RotateCcw, Volume2, Volume1, VolumeX } from 'lucide-react';
 import { useAppStore } from '@/lib/store';
+import { getAudioUrl } from '@/lib/config/audioUrls';
 
 interface AudioPlayerProps {
   audioUrl: string;
@@ -137,9 +138,12 @@ export default function AudioPlayer({
     return <Volume2 className="w-4 h-4" />;
   };
 
+  // Get the actual audio URL (supports both local and Supabase Storage)
+  const actualAudioUrl = getAudioUrl(audioUrl);
+
   return (
     <div className="space-y-4">
-      <audio ref={audioRef} src={audioUrl} crossOrigin="anonymous" />
+      <audio ref={audioRef} src={actualAudioUrl} crossOrigin="anonymous" />
 
       {/* Waveform Visualization */}
       {showWaveform && (
