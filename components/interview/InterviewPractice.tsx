@@ -206,13 +206,13 @@ export default function InterviewPractice({
             ))}
 
             {/* Tips to Avoid */}
-            {question.mistakesToAvoid.length > 0 && (
+            {question.mistakesToAvoid && question.mistakesToAvoid.length > 0 && (
               <div className="bg-yellow-50 dark:bg-yellow-900/20 border-2 border-yellow-300 dark:border-yellow-700 rounded-xl p-6">
                 <h3 className="font-bold text-yellow-900 dark:text-yellow-100 mb-3">
                   ⚠️ Mistakes to Avoid
                 </h3>
                 <ul className="space-y-2">
-                  {question.mistakesToAvoid.map((mistake, idx) => (
+                  {question.mistakesToAvoid?.map((mistake, idx) => (
                     <li
                       key={idx}
                       className="text-sm text-yellow-800 dark:text-yellow-200 flex items-start gap-2"
