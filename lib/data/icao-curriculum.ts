@@ -46,7 +46,7 @@ const createLesson = (unitNum: number, lessonNum: number, title: string): Lesson
   description: `Master ${title.toLowerCase()}`,
   icon: '📚',
   icaoLevel: 4,
-  category: 'aviation-comms',
+  category: 'cabin-crew',
   difficulty: 'intermediate',
   xpReward: 100,
   estimatedDurationMinutes: 25,
