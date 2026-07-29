@@ -5,6 +5,7 @@ import type { Unit, Lesson } from '../types';
  * Based on ICAO Doc 9835 - Manual on Air Navigation Services
  *
  * Complete curriculum with 8 units covering all aviation communication scenarios
+ * Version 2.0: Audio files deployed to production
  */
 
 export const iCAOUnits: Unit[] = [
