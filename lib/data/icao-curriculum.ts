@@ -92,6 +92,33 @@ const createLesson = (unitNum: number, lessonNum: number, title: string): Lesson
     }
   },
   icaoPhraseoology: standardPhraseology,
+  cabinCrewPhraseoology: standardPhraseology,
+  airlineVocabulary: [
+    {
+      category: 'Cabin Crew Terms',
+      terms: standardVocab.map(v => ({
+        term: v.word,
+        definition: v.definition,
+        pronunciation: v.pronunciation,
+        example: v.example
+      }))
+    }
+  ],
+  professionalExpressions: [
+    {
+      situation: 'Customer Service',
+      expression: 'Good morning/afternoon',
+      alternativeExpressions: ['Hello', 'Welcome aboard']
+    }
+  ],
+  pronunciation: [
+    {
+      id: 'pron-1',
+      text: 'Example pronunciation guide',
+      audioUrl: `/audio/unit-${unitNum}/lesson-${lessonNum}/pronunciation.wav`,
+      durationSeconds: 10
+    }
+  ],
   vocabulary: standardVocab,
   grammar: [
     {
