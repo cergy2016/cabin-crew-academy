@@ -87,9 +87,12 @@ const LESSON_TEMPLATE = (unitNum: number, lessonNum: number, title: string) => (
   ],
   vocabulary: STANDARD_VOCABULARY,
   grammar: [{
-    title: 'Key Patterns',
-    explanation: 'Standard aviation patterns',
-    examples: ['Example 1', 'Example 2', 'Example 3']
+    rule: 'Standard aviation patterns',
+    examples: [
+      { sentence: 'Example 1', audioUrl: `/audio/unit-${unitNum}/lesson-${lessonNum}/grammar-1.wav` },
+      { sentence: 'Example 2', audioUrl: `/audio/unit-${unitNum}/lesson-${lessonNum}/grammar-2.wav` },
+      { sentence: 'Example 3', audioUrl: `/audio/unit-${unitNum}/lesson-${lessonNum}/grammar-3.wav` }
+    ]
   }],
   exercises: [{
     id: 'ex-1',
