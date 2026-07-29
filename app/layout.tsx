@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Cabin Crew Academy - Master Aviation English",
-  description: "The world's best platform to master aviation English, prepare for cabin crew interviews, and get hired by top airlines like Emirates, Qatar Airways, Etihad, and more.",
+  description: "The world's best platform to master aviation English with 24 complete ICAO lessons, prepare for cabin crew interviews, and get hired by top airlines like Emirates, Qatar Airways, Etihad, and more.",
   keywords: "cabin crew training, aviation English, ICAO English, airline interview preparation",
   authors: [{ name: "Cabin Crew Academy" }],
   openGraph: {
