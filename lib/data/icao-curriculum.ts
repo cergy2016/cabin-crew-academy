@@ -143,12 +143,12 @@ const LESSON_TEMPLATE = (unitNum: number, lessonNum: number, title: string): any
 // Characters: Paola, Tom, Jenny (crew), Katrin (crew), Leila (crew),
 // Jutta (crew), Marcus (purser)
 // ============================================================
-const A2 = '/audio/unit-2/lesson-1';
+const A1 = '/audio/unit-1/lesson-1';
 
-const PREFLIGHT_BRIEFING_LESSON: any = {
-  id: 'lesson-2-1',
-  unitId: 'unit-2',
-  title: 'Pre-Flight Briefing',
+const MEETING_COLLEAGUES_LESSON: any = {
+  id: 'lesson-1-1',
+  unitId: 'unit-1',
+  title: 'Meeting Colleagues',
   description: 'Crew introductions and the formal pre-flight briefing with the purser',
   icon: '🧳',
   icaoLevel: 4,
@@ -169,39 +169,39 @@ const PREFLIGHT_BRIEFING_LESSON: any = {
     description: 'Paola, Tom and Jenny meet before the pre-flight briefing, greet Katrin on the shuttle, then attend the formal briefing led by purser Marcus.',
     context: 'Crew room and shuttle bus, before a flight to New York',
     audioSegments: [
-      { id: 'seg-01', text: 'Paola: Hi, I\'m Paola. Nice to meet you.', audioUrl: `${A2}/ex1-01-paola.wav`, durationSeconds: 3, speaker: 'crew' },
-      { id: 'seg-02', text: 'Tom: Hi Paola, I\'m Tom. Nice to meet you too. Is this your first flight to New York?', audioUrl: `${A2}/ex1-02-tom.wav`, durationSeconds: 5, speaker: 'crew' },
-      { id: 'seg-03', text: 'Paola: No, I\'ve done this route a few times before. Have you flown to New York before?', audioUrl: `${A2}/ex1-03-paola.wav`, durationSeconds: 5, speaker: 'crew' },
-      { id: 'seg-04', text: 'Tom: No, this is actually my first time on this route. I\'m a bit nervous!', audioUrl: `${A2}/ex1-04-tom.wav`, durationSeconds: 4, speaker: 'crew' },
-      { id: 'seg-05', text: 'Jenny: Hi everyone! Paola, great to see you again!', audioUrl: `${A2}/ex1-05-jenny.wav`, durationSeconds: 3, speaker: 'crew' },
-      { id: 'seg-06', text: 'Paola: Jenny! Hi! How are you? This is Tom, he\'s new to the New York route.', audioUrl: `${A2}/ex1-06-paola.wav`, durationSeconds: 5, speaker: 'crew' },
-      { id: 'seg-07', text: 'Jenny: Hi Tom, nice to meet you. Sorry, I didn\'t catch your name properly. Was it Tom?', audioUrl: `${A2}/ex1-07-jenny.wav`, durationSeconds: 5, speaker: 'crew' },
-      { id: 'seg-08', text: 'Tom: Yes, that\'s right, Tom.', audioUrl: `${A2}/ex1-08-tom.wav`, durationSeconds: 2, speaker: 'crew' },
-      { id: 'seg-09', text: 'Jenny: Great. Paola and I flew together to Madrid last month, it was a really fun flight.', audioUrl: `${A2}/ex1-09-jenny.wav`, durationSeconds: 5, speaker: 'crew' },
-      { id: 'seg-10', text: 'Paola: Yes, it was! Anyway, the briefing starts in ten minutes, we should head over.', audioUrl: `${A2}/ex1-10-paola.wav`, durationSeconds: 5, speaker: 'crew' },
-      { id: 'seg-11', text: 'Katrin: Hi everyone, I\'m Katrin!', audioUrl: `${A2}/ex2-01-katrin.wav`, durationSeconds: 3, speaker: 'crew' },
-      { id: 'seg-12', text: 'Paola: Katrin! Great to see you, how have you been? We flew together to Rome last year, remember?', audioUrl: `${A2}/ex2-02-paola.wav`, durationSeconds: 6, speaker: 'crew' },
-      { id: 'seg-13', text: 'Katrin: Of course, I remember! How could I forget that turbulence!', audioUrl: `${A2}/ex2-03-katrin.wav`, durationSeconds: 4, speaker: 'crew' },
-      { id: 'seg-14', text: 'Tom: Hi Katrin, I\'m Tom, nice to meet you. This is my first time meeting you.', audioUrl: `${A2}/ex2-04-tom.wav`, durationSeconds: 5, speaker: 'crew' },
-      { id: 'seg-15', text: 'Katrin: Nice to meet you too, Tom!', audioUrl: `${A2}/ex2-05-katrin.wav`, durationSeconds: 2, speaker: 'crew' },
-      { id: 'seg-16', text: 'Jenny: Hi Katrin, I don\'t think we\'ve met before. I\'m Jenny.', audioUrl: `${A2}/ex2-06-jenny.wav`, durationSeconds: 4, speaker: 'crew' },
-      { id: 'seg-17', text: 'Katrin: Hi Jenny, nice to meet you.', audioUrl: `${A2}/ex2-07-katrin.wav`, durationSeconds: 2, speaker: 'crew' },
-      { id: 'seg-18', text: 'Tom: So Katrin, are you looking forward to the flight to New York?', audioUrl: `${A2}/ex2-08-tom.wav`, durationSeconds: 4, speaker: 'crew' },
-      { id: 'seg-19', text: 'Katrin: Definitely, I love going to the US, the layover is always fun.', audioUrl: `${A2}/ex2-09-katrin.wav`, durationSeconds: 4, speaker: 'crew' },
-      { id: 'seg-20', text: 'Paola: Speaking of layovers, remember when I spilled a drink on a passenger during the Madrid flight, Jenny?', audioUrl: `${A2}/ex2-10-paola.wav`, durationSeconds: 6, speaker: 'crew' },
-      { id: 'seg-21', text: 'Jenny: Oh no, I forgot about that! That was so embarrassing for you.', audioUrl: `${A2}/ex2-11-jenny.wav`, durationSeconds: 4, speaker: 'crew' },
-      { id: 'seg-22', text: 'Katrin: By the way, are we all on the same team for this flight?', audioUrl: `${A2}/ex2-12-katrin.wav`, durationSeconds: 4, speaker: 'crew' },
-      { id: 'seg-23', text: 'Tom: No, actually I heard Katrin and Leila are working together in business class, while the rest of us are in economy.', audioUrl: `${A2}/ex2-13-tom.wav`, durationSeconds: 7, speaker: 'crew' },
-      { id: 'seg-24', text: 'Marcus: Good afternoon everyone, my name is Marcus and I\'ll be your purser today for the flight to New York. Let\'s go through the crew positions.', audioUrl: `${A2}/ex3-01-marcus.wav`, durationSeconds: 8, speaker: 'instructor' },
-      { id: 'seg-25', text: 'Marcus: Katrin, you\'ll be working in economy class today, specifically at door four.', audioUrl: `${A2}/ex3-02-marcus.wav`, durationSeconds: 5, speaker: 'instructor' },
-      { id: 'seg-26', text: 'Katrin: Got it, door four, economy.', audioUrl: `${A2}/ex3-03-katrin.wav`, durationSeconds: 2, speaker: 'crew' },
-      { id: 'seg-27', text: 'Marcus: Leila, you\'re in charge of business class today, and you\'ll be positioned at door two left.', audioUrl: `${A2}/ex3-04-marcus.wav`, durationSeconds: 6, speaker: 'instructor' },
-      { id: 'seg-28', text: 'Leila: Perfect, business class, door two left.', audioUrl: `${A2}/ex3-05-leila.wav`, durationSeconds: 3, speaker: 'crew' },
-      { id: 'seg-29', text: 'Marcus: And Jutta, this is actually a very special flight for you, isn\'t it?', audioUrl: `${A2}/ex3-06-marcus.wav`, durationSeconds: 4, speaker: 'instructor' },
-      { id: 'seg-30', text: 'Jutta: Yes, that\'s right! This is my last flight before retirement, after thirty-two years with the airline.', audioUrl: `${A2}/ex3-07-jutta.wav`, durationSeconds: 6, speaker: 'crew' },
-      { id: 'seg-31', text: 'Marcus: Congratulations Jutta! You\'ll be working in economy with Katrin today.', audioUrl: `${A2}/ex3-08-marcus.wav`, durationSeconds: 5, speaker: 'instructor' },
-      { id: 'seg-32', text: 'Jutta: Thank you so much, I\'m looking forward to it.', audioUrl: `${A2}/ex3-09-jutta.wav`, durationSeconds: 3, speaker: 'crew' },
-      { id: 'seg-33', text: 'Marcus: Alright everyone, let\'s have a great flight!', audioUrl: `${A2}/ex3-10-marcus.wav`, durationSeconds: 3, speaker: 'instructor' },
+      { id: 'seg-01', text: 'Paola: Hi, I\'m Paola. Nice to meet you.', audioUrl: `${A1}/ex1-01-paola.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'seg-02', text: 'Tom: Hi Paola, I\'m Tom. Nice to meet you too. Is this your first flight to New York?', audioUrl: `${A1}/ex1-02-tom.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 'seg-03', text: 'Paola: No, I\'ve done this route a few times before. Have you flown to New York before?', audioUrl: `${A1}/ex1-03-paola.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 'seg-04', text: 'Tom: No, this is actually my first time on this route. I\'m a bit nervous!', audioUrl: `${A1}/ex1-04-tom.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'seg-05', text: 'Jenny: Hi everyone! Paola, great to see you again!', audioUrl: `${A1}/ex1-05-jenny.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'seg-06', text: 'Paola: Jenny! Hi! How are you? This is Tom, he\'s new to the New York route.', audioUrl: `${A1}/ex1-06-paola.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 'seg-07', text: 'Jenny: Hi Tom, nice to meet you. Sorry, I didn\'t catch your name properly. Was it Tom?', audioUrl: `${A1}/ex1-07-jenny.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 'seg-08', text: 'Tom: Yes, that\'s right, Tom.', audioUrl: `${A1}/ex1-08-tom.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'seg-09', text: 'Jenny: Great. Paola and I flew together to Madrid last month, it was a really fun flight.', audioUrl: `${A1}/ex1-09-jenny.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 'seg-10', text: 'Paola: Yes, it was! Anyway, the briefing starts in ten minutes, we should head over.', audioUrl: `${A1}/ex1-10-paola.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 'seg-11', text: 'Katrin: Hi everyone, I\'m Katrin!', audioUrl: `${A1}/ex2-01-katrin.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'seg-12', text: 'Paola: Katrin! Great to see you, how have you been? We flew together to Rome last year, remember?', audioUrl: `${A1}/ex2-02-paola.wav`, durationSeconds: 6, speaker: 'crew' },
+      { id: 'seg-13', text: 'Katrin: Of course, I remember! How could I forget that turbulence!', audioUrl: `${A1}/ex2-03-katrin.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'seg-14', text: 'Tom: Hi Katrin, I\'m Tom, nice to meet you. This is my first time meeting you.', audioUrl: `${A1}/ex2-04-tom.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 'seg-15', text: 'Katrin: Nice to meet you too, Tom!', audioUrl: `${A1}/ex2-05-katrin.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'seg-16', text: 'Jenny: Hi Katrin, I don\'t think we\'ve met before. I\'m Jenny.', audioUrl: `${A1}/ex2-06-jenny.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'seg-17', text: 'Katrin: Hi Jenny, nice to meet you.', audioUrl: `${A1}/ex2-07-katrin.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'seg-18', text: 'Tom: So Katrin, are you looking forward to the flight to New York?', audioUrl: `${A1}/ex2-08-tom.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'seg-19', text: 'Katrin: Definitely, I love going to the US, the layover is always fun.', audioUrl: `${A1}/ex2-09-katrin.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'seg-20', text: 'Paola: Speaking of layovers, remember when I spilled a drink on a passenger during the Madrid flight, Jenny?', audioUrl: `${A1}/ex2-10-paola.wav`, durationSeconds: 6, speaker: 'crew' },
+      { id: 'seg-21', text: 'Jenny: Oh no, I forgot about that! That was so embarrassing for you.', audioUrl: `${A1}/ex2-11-jenny.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'seg-22', text: 'Katrin: By the way, are we all on the same team for this flight?', audioUrl: `${A1}/ex2-12-katrin.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'seg-23', text: 'Tom: No, actually I heard Katrin and Leila are working together in business class, while the rest of us are in economy.', audioUrl: `${A1}/ex2-13-tom.wav`, durationSeconds: 7, speaker: 'crew' },
+      { id: 'seg-24', text: 'Marcus: Good afternoon everyone, my name is Marcus and I\'ll be your purser today for the flight to New York. Let\'s go through the crew positions.', audioUrl: `${A1}/ex3-01-marcus.wav`, durationSeconds: 8, speaker: 'instructor' },
+      { id: 'seg-25', text: 'Marcus: Katrin, you\'ll be working in economy class today, specifically at door four.', audioUrl: `${A1}/ex3-02-marcus.wav`, durationSeconds: 5, speaker: 'instructor' },
+      { id: 'seg-26', text: 'Katrin: Got it, door four, economy.', audioUrl: `${A1}/ex3-03-katrin.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'seg-27', text: 'Marcus: Leila, you\'re in charge of business class today, and you\'ll be positioned at door two left.', audioUrl: `${A1}/ex3-04-marcus.wav`, durationSeconds: 6, speaker: 'instructor' },
+      { id: 'seg-28', text: 'Leila: Perfect, business class, door two left.', audioUrl: `${A1}/ex3-05-leila.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'seg-29', text: 'Marcus: And Jutta, this is actually a very special flight for you, isn\'t it?', audioUrl: `${A1}/ex3-06-marcus.wav`, durationSeconds: 4, speaker: 'instructor' },
+      { id: 'seg-30', text: 'Jutta: Yes, that\'s right! This is my last flight before retirement, after thirty-two years with the airline.', audioUrl: `${A1}/ex3-07-jutta.wav`, durationSeconds: 6, speaker: 'crew' },
+      { id: 'seg-31', text: 'Marcus: Congratulations Jutta! You\'ll be working in economy with Katrin today.', audioUrl: `${A1}/ex3-08-marcus.wav`, durationSeconds: 5, speaker: 'instructor' },
+      { id: 'seg-32', text: 'Jutta: Thank you so much, I\'m looking forward to it.', audioUrl: `${A1}/ex3-09-jutta.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'seg-33', text: 'Marcus: Alright everyone, let\'s have a great flight!', audioUrl: `${A1}/ex3-10-marcus.wav`, durationSeconds: 3, speaker: 'instructor' },
     ],
     vocabulary: [
       { word: 'Purser', pronunciation: 'PUR-ser', definition: 'The senior cabin crew member in charge of the flight' },
@@ -216,7 +216,7 @@ const PREFLIGHT_BRIEFING_LESSON: any = {
     audioExplanation: {
       id: 'theory-audio',
       text: 'Explanation of the pre-flight briefing process',
-      audioUrl: `${A2}/theory-explanation.wav`,
+      audioUrl: `${A1}/theory-explanation.wav`,
       durationSeconds: 25,
       speaker: 'instructor',
     },
@@ -247,7 +247,7 @@ const PREFLIGHT_BRIEFING_LESSON: any = {
     { situation: 'Congratulating a colleague', expression: 'Congratulations!', alternativeExpressions: ['Well done!', 'That\'s wonderful news!'] },
   ],
   pronunciation: [
-    { id: 'pron-1', text: 'Purser', audioUrl: `${A2}/theory-explanation.wav`, durationSeconds: 2 },
+    { id: 'pron-1', text: 'Purser', audioUrl: `${A1}/theory-explanation.wav`, durationSeconds: 2 },
   ],
   grammar: [
     {
@@ -495,9 +495,9 @@ const PREFLIGHT_BRIEFING_LESSON: any = {
     ],
   },
   flashcards: [
-    { id: 'fc-1', front: 'Purser', back: 'The senior cabin crew member in charge of the flight', audioFront: `${A2}/theory-explanation.wav`, audioBack: `${A2}/theory-explanation.wav` },
-    { id: 'fc-2', front: 'Layover', back: 'A rest period between flights, often overnight in another city', audioFront: `${A2}/ex2-09-katrin.wav`, audioBack: `${A2}/ex2-09-katrin.wav` },
-    { id: 'fc-3', front: "Sorry, I didn't catch your name. Was it...?", back: "Polite way to confirm a colleague's name", audioFront: `${A2}/ex1-07-jenny.wav`, audioBack: `${A2}/ex1-07-jenny.wav` },
+    { id: 'fc-1', front: 'Purser', back: 'The senior cabin crew member in charge of the flight', audioFront: `${A1}/theory-explanation.wav`, audioBack: `${A1}/theory-explanation.wav` },
+    { id: 'fc-2', front: 'Layover', back: 'A rest period between flights, often overnight in another city', audioFront: `${A1}/ex2-09-katrin.wav`, audioBack: `${A1}/ex2-09-katrin.wav` },
+    { id: 'fc-3', front: "Sorry, I didn't catch your name. Was it...?", back: "Polite way to confirm a colleague's name", audioFront: `${A1}/ex1-07-jenny.wav`, audioBack: `${A1}/ex1-07-jenny.wav` },
   ],
   review: {
     keyPoints: [
@@ -517,14 +517,346 @@ const PREFLIGHT_BRIEFING_LESSON: any = {
 };
 
 // ============================================================
-// Unit 2, Lesson 2: Case Study - A Day in the Life
+// Unit 1, Lesson 2: Finding Out About the Flight
+// The captain's pre-departure briefing: weather, cockpit procedures,
+// checking and clarifying language
+// ============================================================
+const A1B = '/audio/unit-1/lesson-2';
+
+const FINDING_OUT_LESSON: any = {
+  id: 'lesson-1-2',
+  unitId: 'unit-1',
+  title: 'Finding Out About the Flight',
+  description: "The captain's pre-departure briefing: weather, cockpit procedures, and checking information",
+  icon: '🌩️',
+  icaoLevel: 4,
+  category: 'cabin-crew',
+  difficulty: 'intermediate',
+  xpReward: 150,
+  estimatedDurationMinutes: 40,
+  locked: false,
+  order: 2,
+  objectives: [
+    { id: 'obj-1', description: "Understand a captain's pre-departure briefing", type: 'listening' },
+    { id: 'obj-2', description: 'Use checking and clarifying language with colleagues', type: 'speaking' },
+    { id: 'obj-3', description: 'Discuss how weather can affect flights and cabin service', type: 'speaking' },
+    { id: 'obj-4', description: 'Learn vocabulary related to flight conditions and duties', type: 'vocabulary' },
+  ],
+  scenario: {
+    id: 'scenario-finding-out-flight',
+    title: "The Captain's Briefing",
+    description: 'The captain introduces first officer Rick Schultz and briefs the crew on cockpit procedures and expected weather.',
+    context: 'Briefing room, before departure',
+    audioSegments: [
+      { id: 'l2-01', text: "Captain: Good morning everyone, thanks for coming. Before we get started, I'd like to introduce our first officer today, Rick Schultz. Some of you may already know him.", audioUrl: `${A1B}/l2-01-captain.wav`, durationSeconds: 8, speaker: 'pilot' },
+      { id: 'l2-02', text: 'Rick: Good morning, nice to see some familiar faces.', audioUrl: `${A1B}/l2-02-rick.wav`, durationSeconds: 3, speaker: 'pilot' },
+      { id: 'l2-03', text: "Captain: I'm pleased to tell you that we have a full crew today and everyone is on time, which is always a good start.", audioUrl: `${A1B}/l2-03-captain.wav`, durationSeconds: 6, speaker: 'pilot' },
+      { id: 'l2-04', text: 'Captain: Rick, could you talk the team through the cockpit entry procedures for today?', audioUrl: `${A1B}/l2-04-captain.wav`, durationSeconds: 4, speaker: 'pilot' },
+      { id: 'l2-05', text: 'Rick: Sure. As usual, please knock twice before entering the cockpit and confirm your name over the interphone first.', audioUrl: `${A1B}/l2-05-rick.wav`, durationSeconds: 6, speaker: 'pilot' },
+      { id: 'l2-06', text: "Captain: Now, I want to make sure everyone is aware of a possible weather problem today. We're expecting storms over the Atlantic, with strong winds and moderate turbulence about two hours into the flight.", audioUrl: `${A1B}/l2-06-captain.wav`, durationSeconds: 10, speaker: 'pilot' },
+      { id: 'l2-07', text: 'Captain: The meal service should be finished by the time we reach that area, so please plan accordingly.', audioUrl: `${A1B}/l2-07-captain.wav`, durationSeconds: 5, speaker: 'pilot' },
+      { id: 'l2-08', text: 'Captain: Because of this, the cabin crew will try to complete the service a little earlier than usual.', audioUrl: `${A1B}/l2-08-captain.wav`, durationSeconds: 5, speaker: 'pilot' },
+      { id: 'l2-09', text: 'Captain: During the turbulence, please make sure all passengers are seated and strapped in, and that the cabin is secure.', audioUrl: `${A1B}/l2-09-captain.wav`, durationSeconds: 6, speaker: 'pilot' },
+      { id: 'l2-10', text: "Captain: Finally, I want to make sure everyone is familiar with today's cockpit entry procedures. Any questions?", audioUrl: `${A1B}/l2-10-captain.wav`, durationSeconds: 5, speaker: 'pilot' },
+    ],
+    vocabulary: [
+      { word: 'Moderate turbulence', definition: 'A little bumpy and very unpleasant, but not dangerous' },
+      { word: 'Seat configuration', definition: 'The layout and number of seats in the cabin' },
+      { word: 'Passenger load', definition: 'The number of passengers on a particular flight' },
+      { word: 'All clear', definition: 'A signal that a situation is safe and normal' },
+    ],
+  },
+  theory: {
+    title: "Understanding the Captain's Briefing",
+    content: "The captain's pre-departure briefing complements the cabin crew briefing. The captain introduces the flight deck crew, shares good news like a full and punctual crew, and covers cockpit entry procedures. Most importantly, the captain warns the cabin crew about any expected weather problems - like storms or turbulence - so the team can plan the meal service and passenger safety checks around it. Checking and clarifying language ('Can I just check...?', 'Can you confirm...?') helps crew make sure they have understood key details correctly.",
+    audioExplanation: {
+      id: 'theory-audio',
+      text: "Explanation of the captain's pre-departure briefing",
+      audioUrl: `${A1B}/theory-explanation.wav`,
+      durationSeconds: 25,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Checking and Clarifying',
+    phrases: [
+      { situation: 'Checking a fact', phrase: 'Can I just check what the flight time is?', meaning: 'Politely confirming a piece of information', example: 'Can I just check what the flight time is?' },
+      { situation: 'Confirming with a colleague', phrase: 'Can you confirm that your crew is familiar with the cockpit procedures?', meaning: 'Asking someone to verify something is true', example: 'Can you confirm that your crew is familiar with the cockpit procedures?' },
+      { situation: 'Asking to clarify', phrase: 'Can I clarify something?', meaning: 'Signalling you want to ask a follow-up question', example: 'Can I clarify something?' },
+      { situation: 'Clarifying a detail', phrase: 'Can I clarify the time of the meals service?', meaning: 'Asking for a specific detail to be made clearer', example: 'Can I clarify the time of the meals service?' },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Flight Conditions & Duties',
+    terms: [
+      { term: 'Turbulence', definition: 'Irregular movement of the aircraft caused by air currents', example: 'We expect moderate turbulence over the Atlantic.' },
+      { term: 'Seat configuration', definition: 'The layout and number of seats in the cabin', example: "Today's seat configuration has 180 economy seats." },
+      { term: 'Special requirements', definition: 'Specific needs of a passenger, such as mobility assistance', example: 'Check the passenger list for any special requirements.' },
+      { term: 'Emergency procedures', definition: 'The set of actions crew take in an emergency', example: 'All crew must know the emergency procedures.' },
+      { term: 'Passenger load', definition: 'The number of passengers on a particular flight', example: "Today's passenger load is close to full capacity." },
+      { term: 'All clear', definition: 'A signal that a situation is safe and normal', example: 'The captain gave the all clear after the turbulence.' },
+      { term: 'Duties', definition: 'The tasks assigned to a crew member', example: 'Please review your duties before boarding.' },
+      { term: 'Schedule', definition: 'The planned timing of the flight and its services', example: 'The weather may affect our schedule today.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Introducing a colleague', expression: "I'd like to introduce our first officer today.", alternativeExpressions: ['This is our first officer, Rick.', 'Let me introduce you to Rick.'] },
+    { situation: 'Sharing good news', expression: "I'm pleased to tell you that...", alternativeExpressions: ["I'm happy to say...", 'Good news - ...'] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'Can I just check what the flight time is?', audioUrl: `${A1B}/pronunciation.wav`, durationSeconds: 3 },
+  ],
+  vocabulary: [
+    { word: 'Turbulence', definition: 'Irregular movement of the aircraft caused by air currents' },
+    { word: 'Seat configuration', definition: 'The layout and number of seats in the cabin' },
+    { word: 'Special requirements', definition: 'Specific needs of a passenger' },
+    { word: 'Emergency procedures', definition: 'The set of actions crew take in an emergency' },
+    { word: 'Passenger load', definition: 'The number of passengers on a flight' },
+    { word: 'All clear', definition: 'A signal that a situation is safe and normal' },
+  ],
+  grammar: [
+    {
+      rule: 'Checking and clarifying with "Can I...?" and "Can you...?" - polite questions to confirm information before acting on it',
+      examples: [
+        { sentence: 'Can I just check what the flight time is?', audioUrl: `${A1B}/grammar-1.wav` },
+        { sentence: 'Can you confirm that your crew is familiar with the cockpit procedures?', audioUrl: `${A1B}/grammar-2.wav` },
+        { sentence: 'Can I clarify the time of the meals service?', audioUrl: `${A1B}/grammar-3.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'multiple-choice', points: 10,
+      question: 'Who does the captain introduce first?',
+      options: [
+        { id: 'o1', text: 'Rick Schultz, the first officer', isCorrect: true },
+        { id: 'o2', text: 'The purser', isCorrect: false },
+        { id: 'o3', text: 'A new flight attendant', isCorrect: false },
+        { id: 'o4', text: 'The ground staff', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-2', type: 'multiple-choice', points: 10,
+      question: 'What is the captain pleased to tell the crew?',
+      options: [
+        { id: 'o1', text: 'They have a full crew today and everyone is on time', isCorrect: true },
+        { id: 'o2', text: 'The flight has been upgraded', isCorrect: false },
+        { id: 'o3', text: 'The flight is delayed', isCorrect: false },
+        { id: 'o4', text: 'There will be extra pay today', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 10,
+      question: 'What does the captain ask Rick Schultz to talk about?',
+      options: [
+        { id: 'o1', text: 'Cockpit entry procedures', isCorrect: true },
+        { id: 'o2', text: 'The meal service', isCorrect: false },
+        { id: 'o3', text: 'The passenger list', isCorrect: false },
+        { id: 'o4', text: 'Duty-free sales', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-4', type: 'multiple-choice', points: 10,
+      question: 'What is the possible weather problem on the flight?',
+      options: [
+        { id: 'o1', text: 'Storms over the Atlantic with strong winds and moderate turbulence', isCorrect: true },
+        { id: 'o2', text: 'Heavy snow at the destination', isCorrect: false },
+        { id: 'o3', text: 'Fog at departure', isCorrect: false },
+        { id: 'o4', text: 'Extreme heat', isCorrect: false },
+      ],
+      hint: 'Listen for the ocean the captain mentions.',
+    },
+    {
+      id: 'ex-5', type: 'multiple-choice', points: 10,
+      question: 'What should be finished by the time of the weather problem?',
+      options: [
+        { id: 'o1', text: 'The meal service', isCorrect: true },
+        { id: 'o2', text: 'The safety demonstration', isCorrect: false },
+        { id: 'o3', text: 'Boarding', isCorrect: false },
+        { id: 'o4', text: 'Duty-free sales', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-6', type: 'multiple-choice', points: 10,
+      question: 'Because of the weather problem, what will the cabin crew try to do?',
+      options: [
+        { id: 'o1', text: 'Complete the service a little earlier than usual', isCorrect: true },
+        { id: 'o2', text: 'Cancel the meal service completely', isCorrect: false },
+        { id: 'o3', text: 'Serve meals after the turbulence', isCorrect: false },
+        { id: 'o4', text: 'Ask passengers to serve themselves', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-7', type: 'multiple-choice', points: 10,
+      question: 'What does the captain want to make sure of?',
+      options: [
+        { id: 'o1', text: 'Everyone is familiar with the cockpit entry procedures', isCorrect: true },
+        { id: 'o2', text: 'Everyone has eaten breakfast', isCorrect: false },
+        { id: 'o3', text: 'Everyone has their passport', isCorrect: false },
+        { id: 'o4', text: 'Everyone knows the destination', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-8', type: 'fill-blank', points: 10,
+      question: 'We expect m_________ turbulence about two hours into the flight.',
+      correctAnswer: 'moderate',
+      hint: 'Not mild, not severe - somewhere in between.',
+    },
+    {
+      id: 'ex-9', type: 'fill-blank', points: 10,
+      question: 'We expect s_________ winds over the Atlantic.',
+      correctAnswer: 'strong',
+      hint: 'The opposite of weak.',
+    },
+    {
+      id: 'ex-10', type: 'fill-blank', points: 10,
+      question: "We're expecting storms o_________ the Atlantic.",
+      correctAnswer: 'over',
+      hint: 'A preposition meaning "above" a place.',
+    },
+    {
+      id: 'ex-11', type: 'fill-blank', points: 10,
+      question: 'Please make sure all passengers are seated and s_________ in.',
+      correctAnswer: 'strapped',
+      hint: 'What you do with a seatbelt.',
+    },
+    {
+      id: 'ex-12', type: 'fill-blank', points: 10,
+      question: "Rick talks the team through the c_________ entry procedures.",
+      correctAnswer: 'cockpit',
+      hint: 'Where the pilots sit.',
+    },
+    {
+      id: 'ex-13', type: 'speaking', points: 15,
+      question: 'The pre-departure crew meeting happens for several reasons: getting to know each other, coordinating duties, finding out the order of service, checking safety and emergency procedures, hearing about anything special, and hearing about the weather. Put these in order of importance and explain your reasoning out loud.',
+    },
+    {
+      id: 'ex-14', type: 'multiple-choice', points: 10,
+      question: 'What does "moderate turbulence" mean?',
+      options: [
+        { id: 'o1', text: 'A little bumpy and very unpleasant', isCorrect: true },
+        { id: 'o2', text: 'Completely smooth flying', isCorrect: false },
+        { id: 'o3', text: 'Extremely dangerous shaking', isCorrect: false },
+        { id: 'o4', text: 'A change in cabin pressure', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-15', type: 'multiple-choice', points: 10,
+      question: 'What does "passenger load" mean?',
+      options: [
+        { id: 'o1', text: 'The number of passengers on a flight', isCorrect: true },
+        { id: 'o2', text: 'The weight of the luggage', isCorrect: false },
+        { id: 'o3', text: 'The amount of fuel needed', isCorrect: false },
+        { id: 'o4', text: 'The number of crew on board', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-16', type: 'speaking', points: 15,
+      question: 'Besides storms, what other kinds of severe weather conditions can affect flights and flight schedules? Discuss with examples.',
+    },
+    {
+      id: 'ex-17', type: 'speaking', points: 15,
+      question: 'What happens when there are long delays before take-off because of severe weather? Have you ever served a meal on the ground? Discuss.',
+    },
+    {
+      id: 'ex-18', type: 'speaking', points: 15,
+      question: 'If you have to remain strapped in your seat for long periods because of severe turbulence, what do you do - read a magazine, chat with passengers nearby, plan for when you can continue your duties, or something else? Explain your choice.',
+    },
+    {
+      id: 'ex-19', type: 'speaking', points: 15,
+      question: 'After the briefing, flight attendants board the aircraft. Discuss what they have to do on board before passengers start to arrive.',
+    },
+  ],
+  quiz: {
+    id: 'quiz-1-2',
+    title: 'Finding Out About the Flight Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: "Who is the first officer introduced in the captain's briefing?",
+        options: [
+          { id: 'o1', text: 'Rick Schultz', isCorrect: true },
+          { id: 'o2', text: 'Marcus', isCorrect: false },
+          { id: 'o3', text: 'Tom', isCorrect: false },
+          { id: 'o4', text: 'Daniel', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'What weather problem does the captain warn the crew about?',
+        options: [
+          { id: 'o1', text: 'Storms over the Atlantic with strong winds and turbulence', isCorrect: true },
+          { id: 'o2', text: 'A sandstorm at the destination', isCorrect: false },
+          { id: 'o3', text: 'Freezing temperatures', isCorrect: false },
+          { id: 'o4', text: 'A hurricane at departure', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'What should be finished before the turbulence begins?',
+        options: [
+          { id: 'o1', text: 'The meal service', isCorrect: true },
+          { id: 'o2', text: 'The safety demo', isCorrect: false },
+          { id: 'o3', text: 'Duty-free sales', isCorrect: false },
+          { id: 'o4', text: 'Boarding', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'Which phrase is used to politely confirm information?',
+        options: [
+          { id: 'o1', text: 'Can I just check what the flight time is?', isCorrect: true },
+          { id: 'o2', text: 'Tell me the flight time now.', isCorrect: false },
+          { id: 'o3', text: 'What time, exactly?', isCorrect: false },
+          { id: 'o4', text: 'I need the flight time.', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'What must crew do before entering the cockpit?',
+        options: [
+          { id: 'o1', text: 'Knock twice and confirm their name over the interphone', isCorrect: true },
+          { id: 'o2', text: 'Wait for a green light', isCorrect: false },
+          { id: 'o3', text: 'Radio the tower', isCorrect: false },
+          { id: 'o4', text: 'Nothing special is required', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Turbulence', back: 'Irregular movement of the aircraft caused by air currents' },
+    { id: 'fc-2', front: 'Seat configuration', back: 'The layout and number of seats in the cabin' },
+    { id: 'fc-3', front: 'Passenger load', back: 'The number of passengers on a flight' },
+    { id: 'fc-4', front: 'All clear', back: 'A signal that a situation is safe and normal' },
+  ],
+  review: {
+    keyPoints: [
+      "The captain's briefing complements the cabin crew briefing with flight-deck information",
+      'Crew are warned about weather problems in advance so they can plan the service',
+      "Use 'Can I just check...?' / 'Can you confirm...?' / 'Can I clarify...?' to verify information politely",
+      'Cockpit entry always requires a knock and a name confirmation over the interphone',
+      'During turbulence, passenger safety (seated and strapped in) is the top priority',
+    ],
+    commonMistakes: [
+      { mistake: 'Assuming information without checking', correction: "Use checking language like 'Can I just check...?' instead of guessing", explanation: 'Miscommunication about weather or timing can affect safety and service' },
+      { mistake: 'Entering the cockpit without following procedure', correction: 'Always knock and confirm your name over the interphone first', explanation: 'This is a critical security procedure' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
+// ============================================================
+// Unit 1, Lesson 3: Case Study - A Day in the Life
 // A flight attendant's early-morning routine and the pre-flight briefing
 // ============================================================
-const A2B = '/audio/unit-2/lesson-2';
+const A1C = '/audio/unit-1/lesson-3';
 
 const CASE_STUDY_LESSON: any = {
-  id: 'lesson-2-2',
-  unitId: 'unit-2',
+  id: 'lesson-1-3',
+  unitId: 'unit-1',
   title: 'Case Study: A Day in the Life',
   description: "A flight attendant's early-morning routine, from waking up to the pre-flight briefing",
   icon: '⏰',
@@ -534,7 +866,7 @@ const CASE_STUDY_LESSON: any = {
   xpReward: 150,
   estimatedDurationMinutes: 45,
   locked: false,
-  order: 2,
+  order: 3,
   objectives: [
     { id: 'obj-1', description: 'Understand the daily routine of a flight attendant', type: 'reading' },
     { id: 'obj-2', description: 'Identify the purpose of pre-flight briefings', type: 'reading' },
@@ -547,10 +879,10 @@ const CASE_STUDY_LESSON: any = {
     description: "Follow a flight attendant's morning, from waking up before dawn to the final preparations before passengers board a flight to Tenerife.",
     context: 'Home, commute, and briefing room, early morning before a flight to Tenerife',
     audioSegments: [
-      { id: 'reading-1', text: '03:30 - Good Morning! The flight attendant wakes up, prepares her uniform, checks travel documents, and travels to work early for a flight to Tenerife.', audioUrl: `${A2B}/reading-1.wav`, durationSeconds: 12, speaker: 'native' },
-      { id: 'reading-2', text: '05:15 - Fifteen Minutes to the Pre-flight Briefing. She reviews the cabin crew manual, emergency procedures, and the location of safety equipment on the Boeing 757.', audioUrl: `${A2B}/reading-2.wav`, durationSeconds: 13, speaker: 'native' },
-      { id: 'reading-3', text: '05:30 - The Pre-flight Briefing. The senior crew member reviews flight details, responsibilities, passenger information, security, and emergency procedures. Crew members may be asked safety questions.', audioUrl: `${A2B}/reading-3.wav`, durationSeconds: 14, speaker: 'native' },
-      { id: 'reading-4', text: '06:00 - Pre-flight Preparations for Boarding. The crew checks emergency equipment, safety cards, meals, drinks, duty-free items, lavatory supplies, and prepares to welcome passengers.', audioUrl: `${A2B}/reading-4.wav`, durationSeconds: 14, speaker: 'native' },
+      { id: 'reading-1', text: '03:30 - Good Morning! The flight attendant wakes up, prepares her uniform, checks travel documents, and travels to work early for a flight to Tenerife.', audioUrl: `${A1C}/reading-1.wav`, durationSeconds: 12, speaker: 'native' },
+      { id: 'reading-2', text: '05:15 - Fifteen Minutes to the Pre-flight Briefing. She reviews the cabin crew manual, emergency procedures, and the location of safety equipment on the Boeing 757.', audioUrl: `${A1C}/reading-2.wav`, durationSeconds: 13, speaker: 'native' },
+      { id: 'reading-3', text: '05:30 - The Pre-flight Briefing. The senior crew member reviews flight details, responsibilities, passenger information, security, and emergency procedures. Crew members may be asked safety questions.', audioUrl: `${A1C}/reading-3.wav`, durationSeconds: 14, speaker: 'native' },
+      { id: 'reading-4', text: '06:00 - Pre-flight Preparations for Boarding. The crew checks emergency equipment, safety cards, meals, drinks, duty-free items, lavatory supplies, and prepares to welcome passengers.', audioUrl: `${A1C}/reading-4.wav`, durationSeconds: 14, speaker: 'native' },
     ],
     vocabulary: [
       { word: 'tucked away', definition: 'carefully put away' },
@@ -567,7 +899,7 @@ const CASE_STUDY_LESSON: any = {
     audioExplanation: {
       id: 'theory-audio',
       text: "Explanation of a flight attendant's pre-flight routine",
-      audioUrl: `${A2B}/theory-explanation.wav`,
+      audioUrl: `${A1C}/theory-explanation.wav`,
       durationSeconds: 20,
       speaker: 'instructor',
     },
@@ -588,7 +920,7 @@ const CASE_STUDY_LESSON: any = {
     { situation: 'Starting the day', expression: 'Good morning!', alternativeExpressions: ['Morning!', 'Rise and shine!'] },
   ],
   pronunciation: [
-    { id: 'pron-1', text: 'Pre-flight briefing', audioUrl: `${A2B}/pronunciation.wav`, durationSeconds: 3 },
+    { id: 'pron-1', text: 'Pre-flight briefing', audioUrl: `${A1C}/pronunciation.wav`, durationSeconds: 3 },
   ],
   vocabulary: [
     { word: 'tucked away', definition: 'carefully put away' },
@@ -602,9 +934,9 @@ const CASE_STUDY_LESSON: any = {
     {
       rule: 'Present Simple for describing routines - used to sequence the steps of a daily work routine',
       examples: [
-        { sentence: 'She wakes up early and prepares her uniform.', audioUrl: `${A2B}/grammar-1.wav` },
-        { sentence: 'She checks her travel documents before she travels to work.', audioUrl: `${A2B}/grammar-2.wav` },
-        { sentence: 'The crew reviews safety procedures during the pre-flight briefing.', audioUrl: `${A2B}/grammar-3.wav` },
+        { sentence: 'She wakes up early and prepares her uniform.', audioUrl: `${A1C}/grammar-1.wav` },
+        { sentence: 'She checks her travel documents before she travels to work.', audioUrl: `${A1C}/grammar-2.wav` },
+        { sentence: 'The crew reviews safety procedures during the pre-flight briefing.', audioUrl: `${A1C}/grammar-3.wav` },
       ],
     },
   ],
@@ -741,12 +1073,12 @@ const CASE_STUDY_LESSON: any = {
     ],
   },
   flashcards: [
-    { id: 'fc-1', front: 'Tucked away', back: 'Carefully put away', audioFront: `${A2B}/fc1-front.wav`, audioBack: `${A2B}/fc1-back.wav` },
-    { id: 'fc-2', front: 'Traffic', back: 'Cars, buses and other vehicles on the road', audioFront: `${A2B}/fc2-front.wav`, audioBack: `${A2B}/fc2-back.wav` },
-    { id: 'fc-3', front: 'Shuttle bus', back: 'A bus that travels regularly between two places', audioFront: `${A2B}/fc3-front.wav`, audioBack: `${A2B}/fc3-back.wav` },
-    { id: 'fc-4', front: 'Refresh', back: 'Review or remind yourself of something', audioFront: `${A2B}/fc4-front.wav`, audioBack: `${A2B}/fc4-back.wav` },
-    { id: 'fc-5', front: 'Stock', back: 'Fill with supplies', audioFront: `${A2B}/fc5-front.wav`, audioBack: `${A2B}/fc5-back.wav` },
-    { id: 'fc-6', front: 'Freshen up', back: 'Make yourself clean and tidy', audioFront: `${A2B}/fc6-front.wav`, audioBack: `${A2B}/fc6-back.wav` },
+    { id: 'fc-1', front: 'Tucked away', back: 'Carefully put away', audioFront: `${A1C}/fc1-front.wav`, audioBack: `${A1C}/fc1-back.wav` },
+    { id: 'fc-2', front: 'Traffic', back: 'Cars, buses and other vehicles on the road', audioFront: `${A1C}/fc2-front.wav`, audioBack: `${A1C}/fc2-back.wav` },
+    { id: 'fc-3', front: 'Shuttle bus', back: 'A bus that travels regularly between two places', audioFront: `${A1C}/fc3-front.wav`, audioBack: `${A1C}/fc3-back.wav` },
+    { id: 'fc-4', front: 'Refresh', back: 'Review or remind yourself of something', audioFront: `${A1C}/fc4-front.wav`, audioBack: `${A1C}/fc4-back.wav` },
+    { id: 'fc-5', front: 'Stock', back: 'Fill with supplies', audioFront: `${A1C}/fc5-front.wav`, audioBack: `${A1C}/fc5-back.wav` },
+    { id: 'fc-6', front: 'Freshen up', back: 'Make yourself clean and tidy', audioFront: `${A1C}/fc6-front.wav`, audioBack: `${A1C}/fc6-back.wav` },
   ],
   review: {
     keyPoints: [
@@ -772,7 +1104,7 @@ const CASE_STUDY_LESSON: any = {
 const A2C = '/audio/unit-2/lesson-3';
 
 const WELCOME_ON_BOARD_LESSON: any = {
-  id: 'lesson-2-3',
+  id: 'lesson-2-1',
   unitId: 'unit-2',
   title: 'Welcome on Board',
   description: 'Welcoming passengers, handling seat problems, and boarding pass vocabulary',
@@ -783,7 +1115,7 @@ const WELCOME_ON_BOARD_LESSON: any = {
   xpReward: 150,
   estimatedDurationMinutes: 45,
   locked: false,
-  order: 3,
+  order: 1,
   objectives: [
     { id: 'obj-1', description: 'Welcome passengers on board using polite, professional language', type: 'speaking' },
     { id: 'obj-2', description: 'Understand a real boarding exchange between crew and passenger', type: 'listening' },
@@ -1185,7 +1517,7 @@ const WELCOME_ON_BOARD_LESSON: any = {
     },
   ],
   quiz: {
-    id: 'quiz-2-3',
+    id: 'quiz-2-1',
     title: 'Welcome on Board Quiz',
     passingScore: 70,
     exercises: [
@@ -1265,22 +1597,42 @@ const WELCOME_ON_BOARD_LESSON: any = {
   updatedAt: new Date().toISOString(),
 };
 
+const UNIT_TITLES: Record<number, string> = {
+  0: 'Unit 1: The Pre-Flight Briefing',
+  1: 'Unit 2: Welcome on Board',
+  2: 'Unit 3: After Take-Off and Into the Flight',
+  3: 'Unit 4: Food and Drinks',
+  4: 'Unit 5: Minor Passenger Problems',
+  5: 'Unit 6: Is There a Doctor on Board?',
+  6: 'Unit 7: In-Flight Emergencies',
+  7: 'Unit 8: Complaints and Disruptive Passengers',
+  8: 'Unit 9: Preparing for Landing',
+  9: 'Unit 10: Saying Goodbye',
+};
+
+const UNIT_ICONS: Record<number, string> = {
+  0: '🧳', 1: '👋', 2: '✈️', 3: '🍽️', 4: '🤔',
+  5: '🩺', 6: '🚨', 7: '😤', 8: '🛬', 9: '👋',
+};
+
 export const iCAOUnits: Unit[] = [
-  ...Array(8).fill(0).map((_, unitIdx) => ({
+  ...Array(10).fill(0).map((_, unitIdx) => ({
     id: `unit-${unitIdx + 1}`,
-    title: unitIdx === 1 ? 'Unit 2: Pre-Flight Procedures' : `Unit ${unitIdx + 1}: Topic`,
-    description: unitIdx === 1 ? 'Aircraft preparation and crew briefing' : 'Complete lesson unit',
-    icon: unitIdx === 1 ? '🧳' : '📚',
+    title: UNIT_TITLES[unitIdx] ?? `Unit ${unitIdx + 1}: Topic`,
+    description: 'Complete lesson unit',
+    icon: UNIT_ICONS[unitIdx] ?? '📚',
     color: 'from-blue-500 to-cyan-500' as const,
     progress: 0,
     locked: false,
     order: unitIdx + 1,
     lessons: Array.from({ length: 3 }, (_, lessonIdx) =>
-      unitIdx === 1 && lessonIdx === 0
-        ? PREFLIGHT_BRIEFING_LESSON
-        : unitIdx === 1 && lessonIdx === 1
+      unitIdx === 0 && lessonIdx === 0
+        ? MEETING_COLLEAGUES_LESSON
+        : unitIdx === 0 && lessonIdx === 1
+        ? FINDING_OUT_LESSON
+        : unitIdx === 0 && lessonIdx === 2
         ? CASE_STUDY_LESSON
-        : unitIdx === 1 && lessonIdx === 2
+        : unitIdx === 1 && lessonIdx === 0
         ? WELCOME_ON_BOARD_LESSON
         : LESSON_TEMPLATE(unitIdx + 1, lessonIdx + 1, `Lesson ${lessonIdx + 1}`)
     )
