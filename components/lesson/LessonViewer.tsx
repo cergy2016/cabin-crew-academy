@@ -217,6 +217,140 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
             </motion.div>
           )}
 
+          {/* Phraseology Section */}
+          {activeSection === 'phraseology' && (
+            <motion.div
+              key="phraseology"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="space-y-6"
+            >
+              <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-8">
+                <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">
+                  ✈️ {lesson.icaoPhraseoology.category}
+                </h2>
+                <div className="space-y-4">
+                  {lesson.icaoPhraseoology.phrases.map((phrase, idx) => (
+                    <div
+                      key={idx}
+                      className="p-4 bg-sky-50 dark:bg-sky-900/20 border border-sky-200 dark:border-sky-800 rounded-lg"
+                    >
+                      <div className="flex justify-between items-start mb-2">
+                        <div>
+                          <p className="font-bold text-sky-900 dark:text-sky-100">
+                            {phrase.phrase}
+                          </p>
+                          {phrase.pronunciation && (
+                            <p className="text-sm text-sky-700 dark:text-sky-300 italic">
+                              /{phrase.pronunciation}/
+                            </p>
+                          )}
+                        </div>
+                        <span className="text-xs bg-sky-200 dark:bg-sky-800 text-sky-900 dark:text-sky-100 px-2 py-1 rounded">
+                          {phrase.situation}
+                        </span>
+                      </div>
+                      <p className="text-sm text-sky-800 dark:text-sky-200 mb-2">
+                        <strong>Meaning:</strong> {phrase.meaning}
+                      </p>
+                      {phrase.example && (
+                        <p className="text-sm text-sky-800 dark:text-sky-200 italic">
+                          Example: {phrase.example}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Vocabulary Section */}
+          {activeSection === 'vocabulary' && (
+            <motion.div
+              key="vocabulary"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="space-y-6"
+            >
+              <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-8">
+                <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">
+                  📖 Vocabulary
+                </h2>
+                <div className="space-y-6">
+                  {lesson.airlineVocabulary.map((vocab, vIdx) => (
+                    <div key={vIdx}>
+                      <h3 className="text-lg font-bold mb-3 text-slate-900 dark:text-white">
+                        {vocab.category}
+                      </h3>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        {vocab.terms.map((term, idx) => (
+                          <div
+                            key={idx}
+                            className="p-4 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 rounded-lg"
+                          >
+                            <p className="font-bold text-emerald-900 dark:text-emerald-100">
+                              {term.term}
+                            </p>
+                            {term.pronunciation && (
+                              <p className="text-sm text-emerald-700 dark:text-emerald-300 italic">
+                                /{term.pronunciation}/
+                              </p>
+                            )}
+                            <p className="text-sm text-emerald-800 dark:text-emerald-200 mt-1">
+                              {term.definition}
+                            </p>
+                            {term.example && (
+                              <p className="text-xs text-emerald-700 dark:text-emerald-300 mt-2">
+                                Example: {term.example}
+                              </p>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Quiz Section */}
+          {activeSection === 'quiz' && (
+            <motion.div
+              key="quiz"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="space-y-6"
+            >
+              <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-8">
+                <h2 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">
+                  ✅ {lesson.quiz.title}
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 mb-6">
+                  Passing Score: <span className="font-bold">{lesson.quiz.passingScore}%</span>
+                </p>
+                <div className="space-y-6">
+                  {lesson.quiz.exercises.map((exercise, idx) => (
+                    <ExerciseCard
+                      key={exercise.id}
+                      exercise={exercise}
+                      number={idx + 1}
+                      onComplete={(id) =>
+                        setCompletedExercises(
+                          (prev) => new Set([...prev, id])
+                        )
+                      }
+                    />
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
           {/* Exercises Section */}
           {activeSection === 'exercises' && (
             <motion.div
