@@ -144,8 +144,7 @@ Radio Telephony Rules:
         ],
         grammar: [
           {
-            title: 'Imperative Mood in Aviation',
-            explanation: 'Aviation phraseology heavily uses imperative (command) form',
+            rule: 'Imperative Mood in Aviation - Aviation phraseology heavily uses imperative (command) form',
             examples: [
               { sentence: 'Reduce speed to one hundred fifty knots' },
               { sentence: 'Turn left heading two four zero' },
