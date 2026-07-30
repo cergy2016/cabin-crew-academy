@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import LessonViewer from '@/components/lesson/LessonViewer';
 import { iCAOUnits } from '@/lib/data/icao-curriculum';
 
+export const dynamic = 'force-dynamic';
+
 interface LessonPageProps {
   params: Promise<{
     id: string;
