@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Zap, Flame, Trophy, BookOpen, TrendingUp, Target } from 'lucide-react';
 import { useAppStore } from '@/lib/store';
 import ProgressRing from '@/components/ProgressRing';
+import AchievementsPanel from '@/components/AchievementsPanel';
 import { iCAOUnits } from '@/lib/data/icao-curriculum';
 
 export default function DashboardPage() {
@@ -175,6 +176,8 @@ export default function DashboardPage() {
             ))}
           </div>
         </motion.div>
+
+        <AchievementsPanel />
 
         {/* Lessons Grid */}
         <motion.div

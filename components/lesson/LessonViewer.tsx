@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Zap, Clock, CheckCircle2, Lock } from 'lucide-react';
+import { ChevronDown, Zap, Clock, CheckCircle2, Lock, Trophy } from 'lucide-react';
 import type { Lesson } from '@/lib/types';
+import { useAppStore } from '@/lib/store';
 import AudioPlayer from './AudioPlayer';
 import ExerciseCard from './ExerciseCard';
 import VoiceRecorder from './VoiceRecorder';
@@ -18,6 +19,40 @@ type LessonSection = 'objectives' | 'scenario' | 'theory' | 'phraseology' | 'voc
 export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) {
   const [activeSection, setActiveSection] = useState<LessonSection>('objectives');
   const [completedExercises, setCompletedExercises] = useState<Set<string>>(new Set());
+  const [quizFirstTry, setQuizFirstTry] = useState<Map<string, boolean>>(new Map());
+
+  const addXp = useAppStore((s) => s.addXp);
+  const completeLesson = useAppStore((s) => s.completeLesson);
+  const newlyUnlocked = useAppStore((s) => s.newlyUnlocked);
+  const clearNewlyUnlocked = useAppStore((s) => s.clearNewlyUnlocked);
+  const hasFinalizedRef = useRef(false);
+
+  const allExercisesDone = lesson.exercises.every((e) => completedExercises.has(e.id));
+  const allQuizDone = lesson.quiz.exercises.every((e) => completedExercises.has(e.id));
+  const lessonFullyComplete = allExercisesDone && allQuizDone;
+
+  const handleExerciseComplete = (exerciseId: string, firstTry: boolean, points: number, isQuiz: boolean) => {
+    setCompletedExercises((prev) => {
+      if (prev.has(exerciseId)) return prev;
+      addXp(points);
+      const next = new Set(prev);
+      next.add(exerciseId);
+      return next;
+    });
+    if (isQuiz) {
+      setQuizFirstTry((prev) => new Map(prev).set(exerciseId, firstTry));
+    }
+  };
+
+  useEffect(() => {
+    if (lessonFullyComplete && !hasFinalizedRef.current) {
+      hasFinalizedRef.current = true;
+      const correctFirstTry = lesson.quiz.exercises.filter((e) => quizFirstTry.get(e.id)).length;
+      const quizScorePercent = Math.round((correctFirstTry / lesson.quiz.exercises.length) * 100);
+      completeLesson(lesson, quizScorePercent);
+      onComplete?.();
+    }
+  }, [lessonFullyComplete, lesson, quizFirstTry, completeLesson, onComplete]);
 
   const sectionTabs: { id: LessonSection; label: string; icon: string }[] = [
     { id: 'objectives', label: 'Objectives', icon: '🎯' },
@@ -339,10 +374,8 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                       key={exercise.id}
                       exercise={exercise}
                       number={idx + 1}
-                      onComplete={(id) =>
-                        setCompletedExercises(
-                          (prev) => new Set([...prev, id])
-                        )
+                      onComplete={(id, firstTry) =>
+                        handleExerciseComplete(id, firstTry, exercise.points, true)
                       }
                     />
                   ))}
@@ -370,10 +403,8 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                       key={exercise.id}
                       exercise={exercise}
                       number={idx + 1}
-                      onComplete={(id) =>
-                        setCompletedExercises(
-                          (prev) => new Set([...prev, id])
-                        )
+                      onComplete={(id, firstTry) =>
+                        handleExerciseComplete(id, firstTry, exercise.points, false)
                       }
                     />
                   ))}
@@ -382,6 +413,67 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Lesson Completion Summary */}
+        {lessonFullyComplete && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-8 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl shadow-lg p-8 text-white"
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <Trophy className="w-8 h-8" />
+              <h3 className="text-2xl font-bold">Lesson Complete!</h3>
+            </div>
+            {(() => {
+              const correctFirstTry = lesson.quiz.exercises.filter((e) => quizFirstTry.get(e.id)).length;
+              const quizScorePercent = Math.round((correctFirstTry / lesson.quiz.exercises.length) * 100);
+              const message =
+                quizScorePercent >= 90
+                  ? "Outstanding work! You've mastered this lesson."
+                  : quizScorePercent >= 70
+                  ? 'Good progress! A quick review of the trickier exercises will help it stick.'
+                  : 'You made it through - consider revisiting the Theory and Vocabulary tabs before moving on.';
+              return (
+                <>
+                  <p className="opacity-90 mb-1">
+                    Quiz score (first attempt): <span className="font-bold">{quizScorePercent}%</span>
+                  </p>
+                  <p className="opacity-90 mb-4">+{lesson.xpReward} XP earned</p>
+                  <p className="opacity-90">{message}</p>
+                </>
+              );
+            })()}
+          </motion.div>
+        )}
+
+        {/* Newly Unlocked Achievements Toast */}
+        {newlyUnlocked.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="fixed bottom-6 right-6 z-50 bg-white dark:bg-slate-900 border-2 border-amber-400 rounded-xl shadow-xl p-4 max-w-sm"
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <p className="font-bold text-amber-600 dark:text-amber-400 mb-1">
+                  🏆 Achievement Unlocked!
+                </p>
+                {newlyUnlocked.map((a) => (
+                  <p key={a.id} className="text-sm text-slate-700 dark:text-slate-300">
+                    {a.icon} <span className="font-semibold">{a.name}</span> (+{a.xpReward} XP)
+                  </p>
+                ))}
+              </div>
+              <button
+                onClick={clearNewlyUnlocked}
+                className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+              >
+                ✕
+              </button>
+            </div>
+          </motion.div>
+        )}
       </div>
     </div>
   );

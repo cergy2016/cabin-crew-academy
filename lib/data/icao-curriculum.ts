@@ -1021,24 +1021,28 @@ const WELCOME_ON_BOARD_LESSON: any = {
       question: '_________ morning, madam. Welcome on board.',
       audio: { id: 'l3-01-audio', text: 'Jenny greeting', audioUrl: `${A2C}/l3-01-jenny.wav`, durationSeconds: 3, speaker: 'crew' },
       correctAnswer: 'Good',
+      hint: 'A common greeting - the same word you use in "___ afternoon" or "___ evening".',
     },
     {
       id: 'ex-16', type: 'fill-blank', points: 10,
       question: '_________ I see your boarding pass, please?',
       audio: { id: 'l3-03-audio', text: 'Jenny asking for boarding pass', audioUrl: `${A2C}/l3-03-jenny.wav`, durationSeconds: 3, speaker: 'crew' },
       correctAnswer: 'Could',
+      hint: 'A polite modal verb - more formal than "Can".',
     },
     {
       id: 'ex-17', type: 'fill-blank', points: 10,
       question: 'Thank you. Your seat is _________.',
       audio: { id: 'l3-05-audio', text: 'Jenny giving the seat number', audioUrl: `${A2C}/l3-05-jenny.wav`, durationSeconds: 3, speaker: 'crew' },
       correctAnswer: '16C',
+      hint: 'A row number followed by a letter.',
     },
     {
       id: 'ex-18', type: 'fill-blank', points: 10,
       question: '_________ ahead and turn left.',
       audio: { id: 'l3-06-audio', text: 'Jenny giving directions', audioUrl: `${A2C}/l3-06-jenny.wav`, durationSeconds: 4, speaker: 'crew' },
       correctAnswer: 'Straight',
+      hint: 'Means "directly forward, without turning".',
     },
     // Listening-5: passenger problem (dialogue2.mp3)
     {
@@ -1076,11 +1080,13 @@ const WELCOME_ON_BOARD_LESSON: any = {
       id: 'ex-22', type: 'fill-blank', points: 10,
       question: 'Excuse me, I asked for a _________.',
       correctAnswer: 'window seat',
+      hint: 'A type of seat next to the window.',
     },
     {
       id: 'ex-23', type: 'fill-blank', points: 10,
       question: 'Let me check the _________.',
       correctAnswer: 'seating arrangements',
+      hint: 'Two words - the plan of who sits where.',
     },
     // Vocabulary-7: boarding pass fields
     {
@@ -1128,41 +1134,49 @@ const WELCOME_ON_BOARD_LESSON: any = {
       id: 'ex-30', type: 'fill-blank', points: 10,
       question: 'After _________, passengers proceed to the aircraft with their hand-baggage only.',
       correctAnswer: 'check-in',
+      hint: 'The process of confirming your flight and getting a boarding pass.',
     },
     {
       id: 'ex-31', type: 'fill-blank', points: 10,
       question: 'Passengers proceed to the aircraft with their _________ only.',
       correctAnswer: 'hand-baggage',
+      hint: 'Luggage small enough to carry yourself.',
     },
     {
       id: 'ex-32', type: 'fill-blank', points: 10,
       question: 'On arrival, passengers present their _________ to the flight attendant.',
       correctAnswer: 'boarding pass',
+      hint: 'The document with your flight and seat number on it.',
     },
     {
       id: 'ex-33', type: 'fill-blank', points: 10,
       question: 'The boarding pass has the _________ on it.',
       correctAnswer: 'seat number',
+      hint: "Tells you where you'll be sitting.",
     },
     {
       id: 'ex-34', type: 'fill-blank', points: 10,
       question: '_________ are made at check-in.',
       correctAnswer: 'Seating arrangements',
+      hint: 'Two words - the plan of which passenger sits where.',
     },
     {
       id: 'ex-35', type: 'fill-blank', points: 10,
       question: 'Many passengers prefer _________ to aisle seats.',
       correctAnswer: 'window seats',
+      hint: 'Seats next to the window.',
     },
     {
       id: 'ex-36', type: 'fill-blank', points: 10,
       question: 'Passengers often insist on booking window seats _________.',
       correctAnswer: 'in advance',
+      hint: 'Means "ahead of time", before the day of travel.',
     },
     {
       id: 'ex-37', type: 'fill-blank', points: 10,
       question: 'Passengers can ask for help to put their hand-baggage into the _________.',
       correctAnswer: 'overhead lockers',
+      hint: 'Storage compartments above the seats.',
     },
     // Speaking-10: role play
     {

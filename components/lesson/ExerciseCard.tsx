@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, XCircle, HelpCircle } from 'lucide-react';
+import { CheckCircle2, XCircle, HelpCircle, Lightbulb } from 'lucide-react';
 import type { Exercise } from '@/lib/types';
 import AudioPlayer from './AudioPlayer';
 import VoiceRecorder from './VoiceRecorder';
@@ -10,7 +10,7 @@ import VoiceRecorder from './VoiceRecorder';
 interface ExerciseCardProps {
   exercise: Exercise;
   number: number;
-  onComplete?: (exerciseId: string) => void;
+  onComplete?: (exerciseId: string, firstTry: boolean) => void;
 }
 
 export default function ExerciseCard({
@@ -21,12 +21,8 @@ export default function ExerciseCard({
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [showExplanation, setShowExplanation] = useState(false);
-
-  const handleSubmit = () => {
-    if (!selectedAnswer) return;
-    setSubmitted(true);
-    onComplete?.(exercise.id);
-  };
+  const [showHint, setShowHint] = useState(false);
+  const [attempts, setAttempts] = useState(0);
 
   const isCorrect =
     submitted &&
@@ -35,6 +31,32 @@ export default function ExerciseCard({
       : exercise.correctAnswer
       ? selectedAnswer?.trim().toLowerCase() === exercise.correctAnswer.trim().toLowerCase()
       : undefined);
+
+  const handleSubmit = () => {
+    if (!selectedAnswer) return;
+    setSubmitted(true);
+    setAttempts((n) => n + 1);
+    const correct = exercise.options
+      ? exercise.options.find((opt) => opt.id === selectedAnswer)?.isCorrect
+      : exercise.correctAnswer
+      ? selectedAnswer.trim().toLowerCase() === exercise.correctAnswer.trim().toLowerCase()
+      : undefined;
+    if (!correct && exercise.hint) setShowHint(true);
+    if (correct) onComplete?.(exercise.id, attempts === 0);
+  };
+
+  const handleRetry = () => {
+    setSelectedAnswer(null);
+    setSubmitted(false);
+  };
+
+  const adaptiveMessage = isCorrect
+    ? attempts > 1
+      ? 'Correct! Nice recovery. 💪'
+      : 'Correct! Well done! 🎉'
+    : attempts >= 2
+    ? "Still not quite - check the hint and give it one more try."
+    : 'Not quite right. Try again!';
 
   const getExerciseContent = () => {
     switch (exercise.type) {
@@ -139,7 +161,7 @@ export default function ExerciseCard({
               expectedText={exercise.question}
               onRecordingComplete={() => {
                 setSubmitted(true);
-                onComplete?.(exercise.id);
+                onComplete?.(exercise.id, true);
               }}
             />
           </div>
@@ -189,6 +211,28 @@ export default function ExerciseCard({
 
         {getExerciseContent()}
 
+        {/* Hint */}
+        {!submitted && exercise.hint && (
+          <button
+            onClick={() => setShowHint(!showHint)}
+            className="flex items-center gap-2 text-amber-600 dark:text-amber-400 font-medium text-sm"
+          >
+            <Lightbulb className="w-4 h-4" />
+            {showHint ? 'Hide Hint' : 'Show Hint'}
+          </button>
+        )}
+        {showHint && exercise.hint && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            className="p-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg"
+          >
+            <p className="text-sm text-amber-900 dark:text-amber-100">
+              <strong>Hint:</strong> {exercise.hint}
+            </p>
+          </motion.div>
+        )}
+
         {/* Submit/Feedback */}
         <div className="space-y-4">
           {!submitted ? (
@@ -211,21 +255,30 @@ export default function ExerciseCard({
                   : 'bg-red-50 dark:bg-red-900/20 border-red-500'
               }`}
             >
-              <div className="flex items-center gap-2">
-                {isCorrect ? (
-                  <>
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  {isCorrect ? (
                     <CheckCircle2 className="w-5 h-5 text-emerald-600" />
-                    <span className="font-bold text-emerald-900 dark:text-emerald-100">
-                      Correct! Well done! 🎉
-                    </span>
-                  </>
-                ) : (
-                  <>
+                  ) : (
                     <XCircle className="w-5 h-5 text-red-600" />
-                    <span className="font-bold text-red-900 dark:text-red-100">
-                      Not quite right. Try again!
-                    </span>
-                  </>
+                  )}
+                  <span
+                    className={`font-bold ${
+                      isCorrect
+                        ? 'text-emerald-900 dark:text-emerald-100'
+                        : 'text-red-900 dark:text-red-100'
+                    }`}
+                  >
+                    {adaptiveMessage}
+                  </span>
+                </div>
+                {!isCorrect && (
+                  <button
+                    onClick={handleRetry}
+                    className="text-sm font-semibold text-red-700 dark:text-red-300 underline"
+                  >
+                    Try Again
+                  </button>
                 )}
               </div>
             </motion.div>

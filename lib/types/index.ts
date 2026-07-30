@@ -56,6 +56,7 @@ export interface Exercise {
   options?: ExerciseOption[];
   correctAnswer?: string;
   explanation?: string;
+  hint?: string;
   points: number;
 }
 

@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { UserProfile, UserStats, LessonProgress, Achievement, DailyChallenge } from './types';
+import type { UserProfile, UserStats, LessonProgress, Achievement, Badge, DailyChallenge, Lesson } from './types';
+import { achievements as achievementDefs, badges as badgeDefs } from './data/achievements';
 
 interface AppState {
   // User
@@ -22,6 +23,14 @@ interface AppState {
   // Achievements
   achievements: Achievement[];
   unlockAchievement: (achievementId: string) => void;
+  newlyUnlocked: Achievement[];
+  clearNewlyUnlocked: () => void;
+
+  // Badges
+  badges: Badge[];
+
+  // Lesson completion (XP, progress, achievement checks all in one place)
+  completeLesson: (lesson: Lesson, quizScorePercent: number) => void;
 
   // Daily Challenge
   dailyChallenge: DailyChallenge | null;
@@ -108,13 +117,71 @@ export const useAppStore = create<AppState>()(
         return progress;
       },
 
-      achievements: [],
+      achievements: achievementDefs,
       unlockAchievement: (achievementId) =>
-        set((state) => ({
-          achievements: state.achievements.map((a) =>
-            a.id === achievementId ? { ...a, unlockedAt: new Date().toISOString() } : a
-          ),
-        })),
+        set((state) => {
+          const target = state.achievements.find((a) => a.id === achievementId);
+          if (!target || target.unlockedAt) return state;
+          const unlocked = { ...target, unlockedAt: new Date().toISOString() };
+          return {
+            achievements: state.achievements.map((a) =>
+              a.id === achievementId ? unlocked : a
+            ),
+            newlyUnlocked: [...state.newlyUnlocked, unlocked],
+          };
+        }),
+      newlyUnlocked: [],
+      clearNewlyUnlocked: () => set({ newlyUnlocked: [] }),
+
+      badges: badgeDefs,
+
+      completeLesson: (lesson, quizScorePercent) =>
+        set((state) => {
+          const newTotalXp = state.stats.totalXp + lesson.xpReward;
+          const newLevel = Math.floor(newTotalXp / 1000) + 1;
+          const newLessonsCompleted = state.stats.lessonsCompleted + 1;
+
+          const newLessonProgress = new Map(state.lessonProgress);
+          newLessonProgress.set(lesson.id, {
+            lessonId: lesson.id,
+            unitId: lesson.unitId,
+            completedAt: new Date().toISOString(),
+            progress: 100,
+            xpEarned: lesson.xpReward,
+            exercisesCompleted: lesson.exercises.length,
+            exercisesTotal: lesson.exercises.length,
+            quizScore: quizScorePercent,
+            quizPassed: quizScorePercent >= lesson.quiz.passingScore,
+          });
+
+          const toUnlock: string[] = [];
+          if (newLessonsCompleted === 1) toUnlock.push('first-lesson');
+          if (quizScorePercent === 100) toUnlock.push('perfect-score');
+          if (newLevel >= 10) toUnlock.push('level-10');
+          if (state.stats.streak >= 7) toUnlock.push('seven-day-streak');
+
+          const newlyUnlockedNow: Achievement[] = [];
+          const updatedAchievements = state.achievements.map((a) => {
+            if (toUnlock.includes(a.id) && !a.unlockedAt) {
+              const unlocked = { ...a, unlockedAt: new Date().toISOString() };
+              newlyUnlockedNow.push(unlocked);
+              return unlocked;
+            }
+            return a;
+          });
+
+          return {
+            stats: {
+              ...state.stats,
+              totalXp: newTotalXp,
+              level: newLevel,
+              lessonsCompleted: newLessonsCompleted,
+            },
+            lessonProgress: newLessonProgress,
+            achievements: updatedAchievements,
+            newlyUnlocked: [...state.newlyUnlocked, ...newlyUnlockedNow],
+          };
+        }),
 
       dailyChallenge: null,
       setDailyChallenge: (challenge) => set({ dailyChallenge: challenge }),
