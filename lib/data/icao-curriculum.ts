@@ -166,7 +166,7 @@ Radio Telephony Rules:
           },
         ],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'What is the primary language for international aviation communication?',
@@ -325,7 +325,7 @@ Note: Numbers can be pronounced "Zero" or "Oh" and "Fife" instead of "Five"
           },
         ],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'What is the phonetic letter for M?',
@@ -488,7 +488,7 @@ Examples:
           },
         ],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'How many times should you say "Mayday" in an emergency?',
@@ -816,7 +816,7 @@ Communication is Essential:
           },
         ],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'What does "armed" mean in the context of emergency equipment?',
@@ -1163,7 +1163,7 @@ Crew Responsibilities During Delays:
           },
         ],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'What is the primary goal when communicating a flight delay?',
@@ -1517,7 +1517,7 @@ Pre-Flight Coordination:
           },
         ],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'When communicating with a deaf passenger, what should you provide?',
@@ -1886,7 +1886,7 @@ Taxiway Terminology:
           },
         ],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'What is the correct response to "Hold short of runway zero nine"?',
@@ -2248,7 +2248,7 @@ Safety Considerations:
           },
         ],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'What does "cleared for takeoff" mean?',
@@ -2607,7 +2607,7 @@ Safety Principles:
           },
         ],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'What is a runway incursion?',
@@ -2971,7 +2971,7 @@ Communication Timing:
         ],
         exercises: [],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'What is the correct response to "Climb maintain three thousand"?',
@@ -3303,7 +3303,7 @@ Safety Checks During Cruise:
         grammar: [],
         exercises: [],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'What is the purpose of a cruise check?',
@@ -3639,7 +3639,7 @@ Safety During Turbulence:
         grammar: [],
         exercises: [],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'How should moderate turbulence be described?',
@@ -3984,7 +3984,7 @@ Communication During Failure:
         grammar: [],
         exercises: [],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'How should non-emergency system failure be reported?',
@@ -4325,7 +4325,7 @@ Ground Support:
         grammar: [],
         exercises: [],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'What should crew do first when passenger has medical emergency?',
@@ -4668,7 +4668,7 @@ Documentation:
         grammar: [],
         exercises: [],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'What should crew do first with unruly passenger?',
@@ -5022,7 +5022,7 @@ Approach Briefing Topics:
         grammar: [],
         exercises: [],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'When should descent planning begin?',
@@ -5360,7 +5360,7 @@ Handoff to Tower:
         grammar: [],
         exercises: [],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'What is a radar vector?',
@@ -5700,7 +5700,7 @@ Alternative Options:
         grammar: [],
         exercises: [],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'When should pilot request weather update during approach?',
@@ -6061,7 +6061,7 @@ Crew Coordination:
         grammar: [],
         exercises: [],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'What is "cleared to land"?',
@@ -6407,7 +6407,7 @@ Post-Landing Safety:
         grammar: [],
         exercises: [],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'What should pilot report after landing?',
@@ -6758,7 +6758,7 @@ Communication Priority:
         grammar: [],
         exercises: [],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'What does "Mayday" indicate?',
@@ -7118,7 +7118,7 @@ Safety Considerations:
         grammar: [],
         exercises: [],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'Who directs aircraft during gate positioning?',
@@ -7468,7 +7468,7 @@ Farewell and Thanks:
         grammar: [],
         exercises: [],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'What should cabin crew do first after parking?',
@@ -7825,7 +7825,7 @@ Final Preparations:
         grammar: [],
         exercises: [],
         quiz: {
-          questions: [
+          exercises: [
             {
               id: 'q-1',
               question: 'What is primary purpose of post-flight checklist?',
