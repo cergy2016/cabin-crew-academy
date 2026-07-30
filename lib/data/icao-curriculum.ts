@@ -162,6 +162,7 @@ Radio Telephony Rules:
               { id: 'opt-2', text: 'Wait for clearance', isCorrect: false, explanation: 'That would be different phrasing' },
               { id: 'opt-3', text: 'Wireless communication', isCorrect: false, explanation: 'Not the meaning in this context' },
             ],
+            points: 10,
           },
         ],
         quiz: {
