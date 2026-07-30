@@ -13,8 +13,9 @@ export function getAudioUrl(path: string): string {
 
   if (supabaseAudioUrl && path.startsWith('/audio/unit-')) {
     // New ICAO curriculum audio - use Supabase Storage
+    // Files are stored in: audio/unit-1/lesson-1/example-1.wav
     const cleanPath = path.replace(/^\/audio\//, '');
-    return `${supabaseAudioUrl}/${cleanPath}`;
+    return `${supabaseAudioUrl}/audio/${cleanPath}`;
   }
 
   // Old lesson audio or no Supabase configured - use local path
