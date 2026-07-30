@@ -158,9 +158,9 @@ Radio Telephony Rules:
             type: 'multiple-choice',
             question: 'What does "Wilco" mean in aviation?',
             options: [
-              { text: 'Will comply', isCorrect: true, explanation: 'Wilco stands for "will comply" - acknowledging orders' },
-              { text: 'Wait for clearance', isCorrect: false, explanation: 'That would be different phrasing' },
-              { text: 'Wireless communication', isCorrect: false, explanation: 'Not the meaning in this context' },
+              { id: 'opt-1', text: 'Will comply', isCorrect: true, explanation: 'Wilco stands for "will comply" - acknowledging orders' },
+              { id: 'opt-2', text: 'Wait for clearance', isCorrect: false, explanation: 'That would be different phrasing' },
+              { id: 'opt-3', text: 'Wireless communication', isCorrect: false, explanation: 'Not the meaning in this context' },
             ],
           },
         ],
