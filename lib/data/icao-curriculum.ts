@@ -438,7 +438,7 @@ const MEETING_COLLEAGUES_LESSON: any = {
     },
   ],
   quiz: {
-    id: 'quiz-2-1',
+    id: 'quiz-1-1',
     title: 'Pre-Flight Briefing Quiz',
     passingScore: 70,
     exercises: [
@@ -1016,7 +1016,7 @@ const CASE_STUDY_LESSON: any = {
     },
   ],
   quiz: {
-    id: 'quiz-2-2',
+    id: 'quiz-1-3',
     title: 'A Day in the Life Quiz',
     passingScore: 70,
     exercises: [
@@ -1597,6 +1597,717 @@ const WELCOME_ON_BOARD_LESSON: any = {
   updatedAt: new Date().toISOString(),
 };
 
+// ============================================================
+// Unit 2, Lesson 2: Settling Passengers in Their Seats
+// Moving a passenger, a family with a baby, welcoming a late
+// passenger, and door checks before the safety demo
+// ============================================================
+const A2D = '/audio/unit-2/lesson-2';
+
+const SETTLING_PASSENGERS_LESSON: any = {
+  id: 'lesson-2-2',
+  unitId: 'unit-2',
+  title: 'Settling Passengers in Their Seats',
+  description: 'Moving passengers to free seats, helping families with a baby, and door checks before the safety demo',
+  icon: '💺',
+  icaoLevel: 4,
+  category: 'cabin-crew',
+  difficulty: 'intermediate',
+  xpReward: 150,
+  estimatedDurationMinutes: 45,
+  locked: false,
+  order: 2,
+  objectives: [
+    { id: 'obj-1', description: 'Learn the names of cabin objects around a passenger seat', type: 'vocabulary' },
+    { id: 'obj-2', description: 'Help a passenger move to a different seat', type: 'listening' },
+    { id: 'obj-3', description: 'Assist a family travelling with a baby', type: 'listening' },
+    { id: 'obj-4', description: 'Explain how cabin equipment works, step by step', type: 'speaking' },
+  ],
+  scenario: {
+    id: 'scenario-settling-passengers',
+    title: 'Settling Passengers In',
+    description: 'Jenny moves a passenger to a free window seat, helps a mother travelling with a baby, and Sylvie welcomes the last, late passenger before door checks.',
+    context: 'Aircraft cabin, during boarding',
+    audioSegments: [
+      { id: 's1-01', text: 'Jenny: Sylvie, do you have a free window seat in your section? A passenger has asked to move.', audioUrl: `${A2D}/s1-01-jenny.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 's1-02', text: 'Sylvie: Let me check... yes, seat 22A is free.', audioUrl: `${A2D}/s1-02-sylvie.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 's1-03', text: 'Jenny: Perfect, would you mind if I move her there?', audioUrl: `${A2D}/s1-03-jenny.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 's1-04', text: 'Sylvie: Not at all, go ahead.', audioUrl: `${A2D}/s1-04-sylvie.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 's1-05', text: "Jenny: Good news, I've found you a window seat, 22A. Would you like me to help you with your bag?", audioUrl: `${A2D}/s1-05-jenny.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 's1-06', text: 'Passenger: Oh, thank you so much!', audioUrl: `${A2D}/s1-06-passenger.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 's1-07', text: "Jenny: No problem at all. By the way, my name's Jenny, I'll be looking after you for this flight. If you need anything, just let me know.", audioUrl: `${A2D}/s1-07-jenny.wav`, durationSeconds: 6, speaker: 'crew' },
+      { id: 's1-08', text: 'Passenger: Thank you, Jenny.', audioUrl: `${A2D}/s1-08-passenger.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 's2-01', text: 'Jenny: Hello, welcome on board. Is this your first time flying with a baby?', audioUrl: `${A2D}/s2-01-jenny.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 's2-02', text: "Mother: Yes, I'm a bit nervous, to be honest.", audioUrl: `${A2D}/s2-02-mother.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 's2-03', text: "Jenny: Don't worry, we'll take good care of you both. How old is your baby?", audioUrl: `${A2D}/s2-03-jenny.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 's2-04', text: "Mother: She's four months old.", audioUrl: `${A2D}/s2-04-mother.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 's2-05', text: 'Jenny: Lovely. Does she need anything special, like a bottle warmed during the flight?', audioUrl: `${A2D}/s2-05-jenny.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 's2-06', text: 'Mother: Maybe later, thank you.', audioUrl: `${A2D}/s2-06-mother.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 's2-07', text: "Jenny: Of course. For take-off, she'll need to sit on your lap, and I'll fasten this infant loop belt around her, attached to your seatbelt, like this.", audioUrl: `${A2D}/s2-07-jenny.wav`, durationSeconds: 7, speaker: 'crew' },
+      { id: 's2-08', text: 'Mother: Okay, thank you.', audioUrl: `${A2D}/s2-08-mother.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 's2-09', text: "Jenny: Once we've reached cruising altitude, we can set up the bassinet for her if you'd like her to sleep.", audioUrl: `${A2D}/s2-09-jenny.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 's2-10', text: 'Mother: That would be wonderful.', audioUrl: `${A2D}/s2-10-mother.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 's3-01', text: 'Sylvie: Hello, sir. Welcome on board. May I see your boarding pass, please?', audioUrl: `${A2D}/s3-01-sylvie.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 's3-02', text: "Passenger: Yes... sorry I'm late. I was delayed in traffic on the way from the city.", audioUrl: `${A2D}/s3-02-passenger.wav`, durationSeconds: 5, speaker: 'passenger' },
+      { id: 's3-03', text: "Sylvie: No problem, we've been expecting you. You're in seat 4F. Straight across the cabin, to the other side, and turn left.", audioUrl: `${A2D}/s3-03-sylvie.wav`, durationSeconds: 6, speaker: 'crew' },
+      { id: 's3-04', text: 'Passenger: Many thanks.', audioUrl: `${A2D}/s3-04-passenger.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 's3-05', text: 'Sylvie: Jenny, at last, everyone is on board. Can you check the doors?', audioUrl: `${A2D}/s3-05-sylvie.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 's3-06', text: 'Jenny: Tom, doors check, please.', audioUrl: `${A2D}/s3-06-jenny.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 's3-07', text: 'Tom: OK. Zone C cabin secure.', audioUrl: `${A2D}/s3-07-tom.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 's3-08', text: 'Jenny: OK. Zone D and E cabin secure. Prepare for the safety demo.', audioUrl: `${A2D}/s3-08-jenny.wav`, durationSeconds: 4, speaker: 'crew' },
+    ],
+    vocabulary: [
+      { word: 'Arm-rest', definition: 'The part of the seat where you rest your arm' },
+      { word: 'Call button', definition: 'A button passengers press to call a flight attendant' },
+      { word: 'Head-rest', definition: 'The part of the seat that supports your head' },
+      { word: 'Bassinet', definition: 'A small bed for a baby that attaches to the bulkhead' },
+    ],
+  },
+  theory: {
+    title: 'Settling Passengers In',
+    content: "This lesson covers settling passengers into their seats: helping with special requests like moving to a free seat, assisting families travelling with a baby, welcoming a late passenger, and confirming the cabin is secure before the safety demonstration. Clear, step-by-step explanations ('First of all... then... is that OK?') help passengers understand how cabin equipment works.",
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of settling passengers into their seats',
+      audioUrl: `${A2D}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Showing How Something Works',
+    phrases: [
+      { situation: 'Passenger asks for help', phrase: 'Can you show me how it works?', meaning: 'Passenger question when unsure how to use equipment', example: 'Can you show me how the bassinet works?' },
+      { situation: 'Responding helpfully', phrase: 'Of course. / Certainly.', meaning: 'Polite agreement to help', example: 'Of course, let me show you.' },
+      { situation: 'Giving step-by-step instructions', phrase: 'First of all, you... Then you...', meaning: 'Structuring an explanation in clear steps', example: 'First of all, you attach the bassinet to these two clips. Then you put the baby in.' },
+      { situation: 'Checking understanding', phrase: 'Is that OK / all right with you?', meaning: 'Confirming the passenger has understood', example: 'Is that OK?' },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Cabin Objects',
+    terms: [
+      { term: 'Arm-rest', definition: 'The part of the seat where you rest your arm', example: 'The call button is on the arm-rest.' },
+      { term: 'Call button', definition: 'A button passengers press to call a flight attendant', example: 'Press the call button if you need anything.' },
+      { term: 'Head-rest', definition: 'The part of the seat that supports your head', example: 'You can adjust the head-rest height.' },
+      { term: 'Overhead locker', definition: 'Storage compartment above the seats', example: 'Please put your bag in the overhead locker.' },
+      { term: 'Light button', definition: 'A button that turns the individual reading light on or off', example: 'The light button is above your seat.' },
+      { term: 'Pull-out table', definition: 'A small table that folds out from the seat in front', example: 'Please fold away your pull-out table for landing.' },
+      { term: 'Safety instruction card', definition: 'A card explaining emergency procedures for the aircraft', example: 'The safety instruction card is in the seat pocket.' },
+      { term: 'TV handset control', definition: 'The remote control for the in-seat entertainment screen', example: 'Use the TV handset control to choose a film.' },
+      { term: 'Seatbelt', definition: 'The belt that secures a passenger in their seat', example: 'Please fasten your seatbelt.' },
+      { term: 'Bassinet', definition: 'A small bed for a baby that attaches to the bulkhead', example: "We'll set up the bassinet once we reach cruising altitude." },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Offering to help with luggage', expression: 'Would you like me to help you with your bag?', alternativeExpressions: ['Can I help with your bag?', 'Let me help you with that.'] },
+    { situation: 'Reassuring a nervous passenger', expression: "Don't worry, we'll take good care of you.", alternativeExpressions: ["There's nothing to worry about.", "We're here to help."] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'Can you show me how it works?', audioUrl: `${A2D}/pronunciation.wav`, durationSeconds: 3 },
+  ],
+  vocabulary: [
+    { word: 'Arm-rest', definition: 'The part of the seat where you rest your arm' },
+    { word: 'Call button', definition: 'A button passengers press to call a flight attendant' },
+    { word: 'Head-rest', definition: 'The part of the seat that supports your head' },
+    { word: 'Overhead locker', definition: 'Storage compartment above the seats' },
+    { word: 'Pull-out table', definition: 'A small table that folds out from the seat in front' },
+    { word: 'Bassinet', definition: 'A small bed for a baby that attaches to the bulkhead' },
+  ],
+  grammar: [
+    {
+      rule: 'Step-by-step instructions with sequencing words (First of all, Then) - used when explaining how equipment works',
+      examples: [
+        { sentence: 'First of all, you attach the bassinet to these two clips.', audioUrl: `${A2D}/grammar-1.wav` },
+        { sentence: 'Then you put the baby in and attach the cover.', audioUrl: `${A2D}/grammar-2.wav` },
+        { sentence: 'Is that OK?', audioUrl: `${A2D}/grammar-3.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'multiple-choice', points: 10,
+      question: 'What part of the seat do you press to call a flight attendant?',
+      options: [
+        { id: 'o1', text: 'The call button', isCorrect: true },
+        { id: 'o2', text: 'The arm-rest', isCorrect: false },
+        { id: 'o3', text: 'The head-rest', isCorrect: false },
+        { id: 'o4', text: 'The light button', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-2', type: 'multiple-choice', points: 10,
+      question: 'Where do you store your hand-baggage during the flight?',
+      options: [
+        { id: 'o1', text: 'The overhead locker', isCorrect: true },
+        { id: 'o2', text: 'The pull-out table', isCorrect: false },
+        { id: 'o3', text: 'The head-rest', isCorrect: false },
+        { id: 'o4', text: 'The call button', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 10,
+      question: 'What do you use to choose a film on the entertainment screen?',
+      options: [
+        { id: 'o1', text: 'The TV handset control', isCorrect: true },
+        { id: 'o2', text: 'The safety instruction card', isCorrect: false },
+        { id: 'o3', text: 'The seatbelt', isCorrect: false },
+        { id: 'o4', text: 'The bassinet', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-4', type: 'multiple-choice', points: 10,
+      question: 'Where would you find emergency procedures for the aircraft?',
+      options: [
+        { id: 'o1', text: 'The safety instruction card', isCorrect: true },
+        { id: 'o2', text: 'The pull-out table', isCorrect: false },
+        { id: 'o3', text: 'The overhead locker', isCorrect: false },
+        { id: 'o4', text: 'The light button', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-5', type: 'multiple-choice', points: 15,
+      question: 'What does Jenny ask her colleague, Sylvie, for?',
+      options: [
+        { id: 'o1', text: 'A free window seat in her section', isCorrect: true },
+        { id: 'o2', text: 'A spare blanket', isCorrect: false },
+        { id: 'o3', text: 'Help serving drinks', isCorrect: false },
+        { id: 'o4', text: 'A wheelchair', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-6', type: 'multiple-choice', points: 15,
+      question: "What does Jenny ask Sylvie's permission to do?",
+      options: [
+        { id: 'o1', text: 'Move the passenger to seat 22A', isCorrect: true },
+        { id: 'o2', text: 'Give the passenger a free drink', isCorrect: false },
+        { id: 'o3', text: 'Upgrade the passenger', isCorrect: false },
+        { id: 'o4', text: "Swap Sylvie's section", isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-7', type: 'multiple-choice', points: 15,
+      question: 'What does Jenny offer to do for the passenger?',
+      options: [
+        { id: 'o1', text: 'Help her with her bag', isCorrect: true },
+        { id: 'o2', text: 'Bring her a meal', isCorrect: false },
+        { id: 'o3', text: 'Call her family', isCorrect: false },
+        { id: 'o4', text: 'Give her a blanket', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-8', type: 'multiple-choice', points: 15,
+      question: 'What information does Jenny give the passenger about herself?',
+      options: [
+        { id: 'o1', text: "Her name, and that she'll be looking after her", isCorrect: true },
+        { id: 'o2', text: 'How long she has worked for the airline', isCorrect: false },
+        { id: 'o3', text: 'Where she lives', isCorrect: false },
+        { id: 'o4', text: 'Her flight schedule', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-9', type: 'speaking', points: 15,
+      question: 'How well do you think Jenny dealt with the seat-move situation? Would you have done the same?',
+    },
+    {
+      id: 'ex-10', type: 'multiple-choice', points: 15,
+      question: 'When will Jenny and the mother set up the bassinet?',
+      options: [
+        { id: 'o1', text: 'Once the aircraft has reached cruising altitude', isCorrect: true },
+        { id: 'o2', text: 'Immediately, before take-off', isCorrect: false },
+        { id: 'o3', text: 'Only if the baby cries', isCorrect: false },
+        { id: 'o4', text: 'During the safety demonstration', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-11', type: 'multiple-choice', points: 15,
+      question: 'What two questions does Jenny ask the mother about the baby?',
+      options: [
+        { id: 'o1', text: 'How old the baby is, and if she needs a bottle warmed', isCorrect: true },
+        { id: 'o2', text: "The baby's name, and her weight", isCorrect: false },
+        { id: 'o3', text: 'If the baby has a passport, and her seat number', isCorrect: false },
+        { id: 'o4', text: 'If the baby is hungry, and if she is asleep', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-12', type: 'multiple-choice', points: 15,
+      question: 'Where will the baby be seated for take-off?',
+      options: [
+        { id: 'o1', text: "On the mother's lap", isCorrect: true },
+        { id: 'o2', text: 'In the bassinet', isCorrect: false },
+        { id: 'o3', text: 'In her own seat', isCorrect: false },
+        { id: 'o4', text: 'On the floor in a car seat', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-13', type: 'multiple-choice', points: 15,
+      question: 'How will the baby be fastened during take-off?',
+      options: [
+        { id: 'o1', text: 'With an infant loop belt attached to the seatbelt', isCorrect: true },
+        { id: 'o2', text: 'With a regular adult seatbelt', isCorrect: false },
+        { id: 'o3', text: 'She will not be fastened at all', isCorrect: false },
+        { id: 'o4', text: 'In a separate infant seat', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-14', type: 'speaking', points: 15,
+      question: 'What other special situations do you have to deal with when passengers come on board? Discuss with examples.',
+    },
+    {
+      id: 'ex-15', type: 'speaking', points: 15,
+      question: 'Practise explaining how these cabin objects work, step by step: a reclining seat, a pull-out table, the TV handset control, the overhead light.',
+      hint: 'Use "First of all, you... Then you... Is that OK?"',
+    },
+    {
+      id: 'ex-16', type: 'multiple-choice', points: 10,
+      question: 'True or False: The late passenger apologizes for being late.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-17', type: 'multiple-choice', points: 10,
+      question: 'True or False: The passenger does not give a reason for being late.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: false },
+        { id: 'o2', text: 'False', isCorrect: true, explanation: 'He says he was delayed in traffic.' },
+      ],
+    },
+    {
+      id: 'ex-18', type: 'multiple-choice', points: 10,
+      question: 'True or False: Sylvie criticizes the passenger for being late.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: false },
+        { id: 'o2', text: 'False', isCorrect: true, explanation: "Sylvie says 'No problem, we've been expecting you.'" },
+      ],
+    },
+    {
+      id: 'ex-19', type: 'fill-blank', points: 10,
+      question: 'May I _________ your boarding pass, please?',
+      correctAnswer: 'see',
+      hint: 'A verb meaning "look at".',
+    },
+    {
+      id: 'ex-20', type: 'fill-blank', points: 10,
+      question: "You're in seat 4F. _________ across the cabin, to the other side, and turn left.",
+      correctAnswer: 'Straight',
+      hint: 'Means "directly forward".',
+    },
+  ],
+  quiz: {
+    id: 'quiz-2-2',
+    title: 'Settling Passengers Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'What seat does Jenny move the passenger to?',
+        options: [
+          { id: 'o1', text: '22A', isCorrect: true },
+          { id: 'o2', text: '4F', isCorrect: false },
+          { id: 'o3', text: '16C', isCorrect: false },
+          { id: 'o4', text: '12B', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'How old is the baby in the bassinet scene?',
+        options: [
+          { id: 'o1', text: 'Four months old', isCorrect: true },
+          { id: 'o2', text: 'One year old', isCorrect: false },
+          { id: 'o3', text: 'Two weeks old', isCorrect: false },
+          { id: 'o4', text: 'Six months old', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'What seat is the late passenger given?',
+        options: [
+          { id: 'o1', text: '4F', isCorrect: true },
+          { id: 'o2', text: '22A', isCorrect: false },
+          { id: 'o3', text: '16C', isCorrect: false },
+          { id: 'o4', text: '36B', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'Who does Jenny ask to do the doors check?',
+        options: [
+          { id: 'o1', text: 'Tom', isCorrect: true },
+          { id: 'o2', text: 'Sylvie', isCorrect: false },
+          { id: 'o3', text: 'Marcus', isCorrect: false },
+          { id: 'o4', text: 'Katrin', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'What phrase checks a passenger has understood an explanation?',
+        options: [
+          { id: 'o1', text: 'Is that OK?', isCorrect: true },
+          { id: 'o2', text: 'Do you get it?', isCorrect: false },
+          { id: 'o3', text: 'Right?', isCorrect: false },
+          { id: 'o4', text: 'Yes or no?', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Arm-rest', back: 'The part of the seat where you rest your arm' },
+    { id: 'fc-2', front: 'Call button', back: 'A button passengers press to call a flight attendant' },
+    { id: 'fc-3', front: 'Bassinet', back: 'A small bed for a baby that attaches to the bulkhead' },
+    { id: 'fc-4', front: 'TV handset control', back: 'The remote control for the in-seat entertainment screen' },
+    { id: 'fc-5', front: 'Pull-out table', back: 'A small table that folds out from the seat in front' },
+  ],
+  review: {
+    keyPoints: [
+      'Always ask a colleague before moving a passenger into their section',
+      'Reassure nervous passengers, especially families travelling with a baby',
+      'Explain equipment step by step: "First of all... Then... Is that OK?"',
+      'Confirm doors and zones are secure before starting the safety demo',
+      'A polite, unhurried welcome matters even for the last, late passenger',
+    ],
+    commonMistakes: [
+      { mistake: 'Moving a passenger without checking with the colleague responsible for that section', correction: 'Always ask permission first, e.g. "Would you mind if I move her there?"', explanation: 'Avoids confusion about seating and workload' },
+      { mistake: 'Rushing the explanation of safety equipment', correction: 'Break it into clear steps and check understanding at the end', explanation: 'Passengers, especially with a baby, need reassurance and clarity' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
+// ============================================================
+// Unit 2, Lesson 3: Demonstrating Safety Procedures
+// The full safety demonstration + Case Study: Bags in Bins
+// ============================================================
+const A2E = '/audio/unit-2/lesson-3-safety';
+
+const SAFETY_DEMO_LESSON: any = {
+  id: 'lesson-2-3',
+  unitId: 'unit-2',
+  title: 'Demonstrating Safety Procedures',
+  description: 'The full pre-take-off safety demonstration, final checks, and the case study: Bags in Bins',
+  icon: '🦺',
+  icaoLevel: 4,
+  category: 'cabin-crew',
+  difficulty: 'intermediate',
+  xpReward: 180,
+  estimatedDurationMinutes: 50,
+  locked: false,
+  order: 3,
+  objectives: [
+    { id: 'obj-1', description: 'Read the full safety demonstration clearly and confidently', type: 'speaking' },
+    { id: 'obj-2', description: 'Understand life vest, oxygen mask, and brace position procedures', type: 'listening' },
+    { id: 'obj-3', description: 'Make polite requests during final checks before take-off', type: 'speaking' },
+    { id: 'obj-4', description: 'Discuss the hand-baggage problem during boarding', type: 'reading' },
+  ],
+  scenario: {
+    id: 'scenario-safety-demo',
+    title: 'The Safety Demonstration',
+    description: 'The captain announces the safety demonstration, and the full safety instructions are read to passengers before take-off.',
+    context: 'Aircraft cabin, just before take-off',
+    audioSegments: [
+      { id: 'safety-intro', text: 'Captain: This is your captain speaking. Welcome on board. We are almost ready for take-off. Now we request your full attention as we demonstrate the safety features of this aircraft.', audioUrl: `${A2E}/captain-intro.wav`, durationSeconds: 8, speaker: 'pilot' },
+      { id: 'safety-a', text: 'A. Ladies and gentlemen, even if you are a frequent traveller, it is important that you listen carefully to the following safety instructions.', audioUrl: `${A2E}/safety-a.wav`, durationSeconds: 6, speaker: 'crew' },
+      { id: 'safety-j', text: 'J. You will find a safety instruction card in the pocket in front of you. Please read this carefully before take-off and familiarize yourself with the emergency exits and procedures on board this Boeing 777S.', audioUrl: `${A2E}/safety-j.wav`, durationSeconds: 9, speaker: 'crew' },
+      { id: 'safety-h', text: 'H. All electronic devices must now be switched off for take-off.', audioUrl: `${A2E}/safety-h.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'safety-l', text: 'L. When the seatbelt sign is on, you must fasten your seatbelt. To do this, insert the metal fitting into the buckle - like this - and tighten by pulling the strap - like this. To undo the seatbelt, lift the buckle - like this.', audioUrl: `${A2E}/safety-l.wav`, durationSeconds: 10, speaker: 'crew' },
+      { id: 'safety-g', text: 'G. Finally, make sure your seat backs are upright, your tables are folded away and your hand-baggage is either in the overhead locker or under the seat in front of you.', audioUrl: `${A2E}/safety-g.wav`, durationSeconds: 8, speaker: 'crew' },
+      { id: 'safety-d', text: 'D. There are several emergency exits on this aircraft. They are being pointed out to you now. Please take a few moments now to locate your nearest exit. It may be behind you. If you are sitting in an emergency exit, you must know how to open the door in an emergency and when instructed to do so by the crew.', audioUrl: `${A2E}/safety-d.wav`, durationSeconds: 12, speaker: 'crew' },
+      { id: 'safety-f', text: 'F. If we need to evacuate the aircraft, floor-level lighting will guide you to the exits.', audioUrl: `${A2E}/safety-f.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 'safety-i', text: 'I. If the pressure drops, an oxygen mask will automatically drop from the compartment above your head. To start the flow of oxygen, pull the mask towards you, put it firmly over your mouth and nose and secure the elastic band behind your head, and breathe normally. If you are travelling with a child or a person who needs assistance, put your mask on first and then assist the other person.', audioUrl: `${A2E}/safety-i.wav`, durationSeconds: 15, speaker: 'crew' },
+      { id: 'safety-c', text: 'C. Your life vest is under your seat. This is how you put it on.', audioUrl: `${A2E}/safety-c.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'safety-e', text: 'E. First, take it out of the pouch and put it over your head. Then pass the straps around your waist and tie them in front. Do not inflate the vest until you leave the aircraft. To inflate the vest, pull on this red cord. Use the whistle and light to attract attention.', audioUrl: `${A2E}/safety-e.wav`, durationSeconds: 13, speaker: 'crew' },
+      { id: 'safety-k', text: "K. In the event of an emergency landing, you will hear 'Brace, brace' and you must adopt this position. Look at the card for the brace position.", audioUrl: `${A2E}/safety-k.wav`, durationSeconds: 7, speaker: 'crew' },
+      { id: 'safety-b', text: 'B. We suggest you keep the seatbelt fastened throughout the flight.', audioUrl: `${A2E}/safety-b.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'safety-m', text: 'M. We wish you all an enjoyable flight.', audioUrl: `${A2E}/safety-m.wav`, durationSeconds: 3, speaker: 'crew' },
+    ],
+    vocabulary: [
+      { word: 'Brace position', definition: 'The protective position passengers adopt before an emergency landing' },
+      { word: 'Life vest', definition: 'An inflatable vest worn for safety over water' },
+      { word: 'To evacuate', definition: 'To leave a place quickly in an emergency' },
+      { word: 'To inflate', definition: 'To fill something with air' },
+    ],
+  },
+  theory: {
+    title: 'The Safety Demonstration',
+    content: 'This lesson covers the full safety demonstration that cabin crew must be able to read confidently and clearly, from the opening address to the closing wishes for an enjoyable flight. It also covers the final checks crew make before take-off, such as seatbelts, tray tables, and window blinds.',
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of the safety demonstration and final checks',
+      audioUrl: `${A2E}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Final Checks Before Take-Off',
+    phrases: [
+      { situation: 'Asking to switch off a phone', phrase: 'Excuse me, can you switch off your mobile phone now?', meaning: 'Polite request during final checks', example: 'Excuse me, can you switch off your mobile phone now?' },
+      { situation: 'Asking to upright a seat', phrase: 'Could you put your seat back upright, please?', meaning: 'Polite request during final checks', example: 'Could you put your seat back upright, please?' },
+      { situation: 'Asking to fold a table', phrase: 'Please could you fold away your table?', meaning: 'Polite request during final checks', example: 'Please could you fold away your table?' },
+      { situation: 'Asking to open a window blind', phrase: 'Could you open your window blind, please?', meaning: 'Polite request during final checks', example: 'Could you open your window blind, please?' },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Bags in Bins - Glossary',
+    terms: [
+      { term: 'Bins', definition: 'Overhead lockers', example: 'The fight for the overheads is on when the plane is full.' },
+      { term: 'Bulky', definition: 'Large, very full', example: 'Some hand-baggage is too big, too bulky or too heavy.' },
+      { term: 'Belongings', definition: 'Things that belong to someone', example: 'Passengers are left with nowhere to put their belongings.' },
+      { term: 'Hold', definition: 'The part of the aircraft where goods are stored', example: 'Extra bags will have to be off-loaded and put in the hold.' },
+      { term: 'To stow', definition: 'To put away', example: 'Crew ask passengers to stow small items under the seats.' },
+      { term: 'Crucial', definition: 'Extremely important', example: 'This is a crucial moment before taxiing and take-off.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Opening the safety demo', expression: 'We request your full attention.', alternativeExpressions: ['Please pay close attention.', 'We ask for your attention now.'] },
+    { situation: 'Closing the safety demo', expression: 'We wish you all an enjoyable flight.', alternativeExpressions: ['Thank you for your attention.', 'Enjoy your flight.'] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'We request your full attention.', audioUrl: `${A2E}/captain-intro.wav`, durationSeconds: 3 },
+  ],
+  vocabulary: [
+    { word: 'Bins', definition: 'Overhead lockers' },
+    { word: 'Bulky', definition: 'Large, very full' },
+    { word: 'Belongings', definition: 'Things that belong to someone' },
+    { word: 'Hold', definition: 'The part of the aircraft where goods are stored' },
+    { word: 'To stow', definition: 'To put away' },
+    { word: 'Crucial', definition: 'Extremely important' },
+  ],
+  grammar: [
+    {
+      rule: 'Sequencing safety instructions (First, Then, Finally) - used to give clear step-by-step safety procedures',
+      examples: [
+        { sentence: 'First, take it out of the pouch and put it over your head.' },
+        { sentence: 'Then pass the straps around your waist and tie them in front.' },
+        { sentence: 'Finally, make sure your seat backs are upright.' },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'multiple-choice', points: 10,
+      question: 'Where is the safety instruction card?',
+      options: [
+        { id: 'o1', text: 'In the pocket in front of you', isCorrect: true },
+        { id: 'o2', text: 'Under your seat', isCorrect: false },
+        { id: 'o3', text: 'In the overhead locker', isCorrect: false },
+        { id: 'o4', text: 'With the flight attendant', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-2', type: 'multiple-choice', points: 10,
+      question: 'Where is the life vest located?',
+      options: [
+        { id: 'o1', text: 'Under your seat', isCorrect: true },
+        { id: 'o2', text: 'In the overhead locker', isCorrect: false },
+        { id: 'o3', text: 'In the seat pocket', isCorrect: false },
+        { id: 'o4', text: 'At the emergency exit', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 10,
+      question: 'When should you inflate the life vest?',
+      options: [
+        { id: 'o1', text: 'Only after leaving the aircraft', isCorrect: true },
+        { id: 'o2', text: 'As soon as you put it on', isCorrect: false },
+        { id: 'o3', text: 'Before boarding', isCorrect: false },
+        { id: 'o4', text: 'Never - it inflates automatically', isCorrect: false },
+      ],
+      hint: 'Inflating it too early could trap you inside the aircraft.',
+    },
+    {
+      id: 'ex-4', type: 'multiple-choice', points: 10,
+      question: 'If travelling with a child, whose oxygen mask should you put on first?',
+      options: [
+        { id: 'o1', text: 'Your own mask first, then assist the child', isCorrect: true },
+        { id: 'o2', text: "The child's mask first", isCorrect: false },
+        { id: 'o3', text: "It doesn't matter", isCorrect: false },
+        { id: 'o4', text: 'Wait for crew assistance', isCorrect: false },
+      ],
+      hint: 'You need to be able to help others, so help yourself first.',
+    },
+    {
+      id: 'ex-5', type: 'multiple-choice', points: 10,
+      question: 'What guides passengers to the exits during an evacuation?',
+      options: [
+        { id: 'o1', text: 'Floor-level lighting', isCorrect: true },
+        { id: 'o2', text: 'Overhead announcements only', isCorrect: false },
+        { id: 'o3', text: 'The safety instruction card', isCorrect: false },
+        { id: 'o4', text: 'Cabin crew carrying torches', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-6', type: 'multiple-choice', points: 10,
+      question: "What must you do when you hear 'Brace, brace'?",
+      options: [
+        { id: 'o1', text: 'Adopt the brace position shown on the safety card', isCorrect: true },
+        { id: 'o2', text: 'Stand up immediately', isCorrect: false },
+        { id: 'o3', text: 'Put on your life vest', isCorrect: false },
+        { id: 'o4', text: 'Move to the nearest exit', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-7', type: 'fill-blank', points: 10,
+      question: 'To undo the seatbelt, ______ the buckle.',
+      correctAnswer: 'lift',
+      hint: 'The opposite motion to pressing down.',
+    },
+    {
+      id: 'ex-8', type: 'speaking', points: 20,
+      question: 'Read the full safety demonstration aloud, clearly and confidently, as if to a cabin full of passengers.',
+    },
+    {
+      id: 'ex-9', type: 'speaking', points: 15,
+      question: 'Practise making these final-check requests to a partner: switching off phones, upright seat backs, folding tables, opening window blinds, fastening seatbelts, stowing bags. Start with a polite phrase like "Excuse me..." or "Could you...?"',
+    },
+    {
+      id: 'ex-10', type: 'multiple-choice', points: 10,
+      question: 'What is the "Bags in Bins" text mainly about?',
+      options: [
+        { id: 'o1', text: 'The struggle to fit hand-baggage in the overhead lockers when a flight is full', isCorrect: true },
+        { id: 'o2', text: 'How to pack a suitcase efficiently', isCorrect: false },
+        { id: 'o3', text: 'Airline baggage fees', isCorrect: false },
+        { id: 'o4', text: 'Lost luggage procedures', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-11', type: 'multiple-choice', points: 10,
+      question: 'What happens to the last passengers to board if there is no more room in the bins?',
+      options: [
+        { id: 'o1', text: 'Their hand-baggage is off-loaded and put in the hold', isCorrect: true },
+        { id: 'o2', text: 'They are not allowed to board', isCorrect: false },
+        { id: 'o3', text: 'They must pay an extra fee', isCorrect: false },
+        { id: 'o4', text: 'The flight is delayed until it fits', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-12', type: 'multiple-choice', points: 10,
+      question: 'According to the text, why can boarding be a difficult experience for everyone?',
+      options: [
+        { id: 'o1', text: 'Passengers arrive with baggage that is too big, bulky, or heavy, and sometimes with two bags', isCorrect: true },
+        { id: 'o2', text: 'The aircraft doors are too narrow', isCorrect: false },
+        { id: 'o3', text: 'There are not enough flight attendants', isCorrect: false },
+        { id: 'o4', text: 'Passengers do not have boarding passes', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-13', type: 'multiple-choice', points: 10,
+      question: 'What do flight attendants ask passengers to do to help with the hand-baggage problem?',
+      options: [
+        { id: 'o1', text: 'Store small items under the seats to free up space and the aisle', isCorrect: true },
+        { id: 'o2', text: 'Leave all bags at the gate', isCorrect: false },
+        { id: 'o3', text: 'Check in extra bags for free', isCorrect: false },
+        { id: 'o4', text: 'Wait outside until boarding is finished', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-14', type: 'multiple-choice', points: 10,
+      question: 'Why is the hand-baggage problem also a safety concern, according to the text?',
+      options: [
+        { id: 'o1', text: 'While stowing bags, crew are not concentrating on safety duties and passenger needs', isCorrect: true },
+        { id: 'o2', text: 'Overhead lockers can fall open during turbulence', isCorrect: false },
+        { id: 'o3', text: 'Heavy bags change the balance of the aircraft', isCorrect: false },
+        { id: 'o4', text: 'It is not a safety concern, only a comfort issue', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-15', type: 'speaking', points: 15,
+      question: 'Discuss: Why does the "fight for the overheads" seem worse than it used to be? Do flight attendants have any control over the situation? Is it better to offer help, or let passengers manage by themselves?',
+    },
+    {
+      id: 'ex-16', type: 'speaking', points: 15,
+      question: 'Discuss common problems flight attendants encounter when welcoming passengers on board, and share tips you would give to a new flight attendant.',
+    },
+    {
+      id: 'ex-17', type: 'speaking', points: 15,
+      question: 'Which of these possible solutions to the hand-baggage problem do you prefer, and why? The ground crew should solve it before boarding / carry-on size and weight should be strictly controlled / airlines should be tougher / check-in should be stricter / oversized bags should be checked in / passengers should pay more for carry-on / overhead lockers should be bigger. Do you have any other ideas?',
+    },
+  ],
+  quiz: {
+    id: 'quiz-2-3',
+    title: 'Demonstrating Safety Procedures Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'What must you do before inflating the life vest?',
+        options: [
+          { id: 'o1', text: 'Leave the aircraft', isCorrect: true },
+          { id: 'o2', text: 'Fasten your seatbelt', isCorrect: false },
+          { id: 'o3', text: 'Put on your oxygen mask', isCorrect: false },
+          { id: 'o4', text: 'Nothing, inflate it immediately', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'What phrase is used to close the safety demonstration?',
+        options: [
+          { id: 'o1', text: 'We wish you all an enjoyable flight.', isCorrect: true },
+          { id: 'o2', text: 'Thank you for flying with us.', isCorrect: false },
+          { id: 'o3', text: 'Please remain seated.', isCorrect: false },
+          { id: 'o4', text: 'The demonstration is now over.', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'According to "Bags in Bins", how many hand-baggage items is each passenger permitted?',
+        options: [
+          { id: 'o1', text: 'One', isCorrect: true },
+          { id: 'o2', text: 'Two', isCorrect: false },
+          { id: 'o3', text: 'Three', isCorrect: false },
+          { id: 'o4', text: 'As many as they can carry', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'What happens to hand-baggage that does not fit in the bins?',
+        options: [
+          { id: 'o1', text: "It's off-loaded and put in the hold", isCorrect: true },
+          { id: 'o2', text: 'It stays with the passenger in the aisle', isCorrect: false },
+          { id: 'o3', text: 'The passenger is removed from the flight', isCorrect: false },
+          { id: 'o4', text: 'It is thrown away', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'What does "to stow" mean?',
+        options: [
+          { id: 'o1', text: 'To put away', isCorrect: true },
+          { id: 'o2', text: 'To lose', isCorrect: false },
+          { id: 'o3', text: 'To carry', isCorrect: false },
+          { id: 'o4', text: 'To weigh', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Bins', back: 'Overhead lockers' },
+    { id: 'fc-2', front: 'Bulky', back: 'Large, very full' },
+    { id: 'fc-3', front: 'Hold', back: 'The part of the aircraft where goods are stored' },
+    { id: 'fc-4', front: 'To stow', back: 'To put away' },
+    { id: 'fc-5', front: 'Crucial', back: 'Extremely important' },
+    { id: 'fc-6', front: 'Brace position', back: 'The protective position passengers adopt before an emergency landing' },
+  ],
+  review: {
+    keyPoints: [
+      'The safety demo always opens with a request for attention and closes with a wish for an enjoyable flight',
+      'Life vests are inflated only after leaving the aircraft, never inside it',
+      'Put your own oxygen mask on first before helping a child or someone who needs assistance',
+      'Final checks (seatbelts, tables, seat backs, blinds, phones) must be completed before take-off',
+      'The hand-baggage rush during boarding is a real safety concern, not just an inconvenience',
+    ],
+    commonMistakes: [
+      { mistake: 'Reading the safety demo too quickly or without confidence', correction: 'Practise reading it aloud clearly - passengers rely on this information', explanation: 'A rushed or unclear safety demo reduces passenger safety awareness' },
+      { mistake: 'Focusing only on stowing bags during boarding', correction: 'Balance helping with baggage against ongoing safety observation duties', explanation: 'Crew must stay alert to passenger behaviour and needs throughout boarding' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
 const UNIT_TITLES: Record<number, string> = {
   0: 'Unit 1: The Pre-Flight Briefing',
   1: 'Unit 2: Welcome on Board',
@@ -1634,6 +2345,10 @@ export const iCAOUnits: Unit[] = [
         ? CASE_STUDY_LESSON
         : unitIdx === 1 && lessonIdx === 0
         ? WELCOME_ON_BOARD_LESSON
+        : unitIdx === 1 && lessonIdx === 1
+        ? SETTLING_PASSENGERS_LESSON
+        : unitIdx === 1 && lessonIdx === 2
+        ? SAFETY_DEMO_LESSON
         : LESSON_TEMPLATE(unitIdx + 1, lessonIdx + 1, `Lesson ${lessonIdx + 1}`)
     )
   })) as Unit[]
