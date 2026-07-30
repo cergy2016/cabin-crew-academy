@@ -1,10 +1,12 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Zap, Clock, CheckCircle2, Lock, Trophy } from 'lucide-react';
+import { ChevronDown, Zap, Clock, CheckCircle2, Lock, Trophy, ArrowLeft, PlayCircle, StopCircle } from 'lucide-react';
 import type { Lesson } from '@/lib/types';
 import { useAppStore } from '@/lib/store';
+import { getAudioUrl } from '@/lib/config/audioUrls';
 import AudioPlayer from './AudioPlayer';
 import ExerciseCard from './ExerciseCard';
 import VoiceRecorder from './VoiceRecorder';
@@ -26,6 +28,35 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
   const newlyUnlocked = useAppStore((s) => s.newlyUnlocked);
   const clearNewlyUnlocked = useAppStore((s) => s.clearNewlyUnlocked);
   const hasFinalizedRef = useRef(false);
+
+  // "Listen to full conversation" - plays all scenario audio segments in order
+  const [playAllIndex, setPlayAllIndex] = useState<number | null>(null);
+  const playAllAudioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    const audio = playAllAudioRef.current;
+    if (!audio || playAllIndex === null) return;
+    const segment = lesson.scenario.audioSegments[playAllIndex];
+    if (!segment) {
+      setPlayAllIndex(null);
+      return;
+    }
+    audio.src = getAudioUrl(segment.audioUrl);
+    audio.play();
+    const handleEnded = () => {
+      setPlayAllIndex((idx) =>
+        idx !== null && idx + 1 < lesson.scenario.audioSegments.length ? idx + 1 : null
+      );
+    };
+    audio.addEventListener('ended', handleEnded);
+    return () => audio.removeEventListener('ended', handleEnded);
+  }, [playAllIndex, lesson.scenario.audioSegments]);
+
+  const handlePlayAll = () => setPlayAllIndex(0);
+  const handleStopAll = () => {
+    playAllAudioRef.current?.pause();
+    setPlayAllIndex(null);
+  };
 
   const allExercisesDone = lesson.exercises.every((e) => completedExercises.has(e.id));
   const allQuizDone = lesson.quiz.exercises.every((e) => completedExercises.has(e.id));
@@ -69,6 +100,13 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
       {/* Header */}
       <div className="sticky top-0 z-40 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-6 py-6">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors mb-4"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Dashboard
+          </Link>
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
               <span className="text-4xl">{lesson.icon}</span>
@@ -176,12 +214,38 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                   </p>
                 </div>
 
-                <h3 className="text-lg font-bold mb-4 text-slate-900 dark:text-white">
-                  Dialogue Audio
-                </h3>
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                    Dialogue Audio
+                  </h3>
+                  <motion.button
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    onClick={playAllIndex === null ? handlePlayAll : handleStopAll}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold transition-colors"
+                  >
+                    {playAllIndex === null ? (
+                      <>
+                        <PlayCircle className="w-4 h-4" /> Listen to Full Conversation
+                      </>
+                    ) : (
+                      <>
+                        <StopCircle className="w-4 h-4" /> Stop
+                      </>
+                    )}
+                  </motion.button>
+                </div>
+                <audio ref={playAllAudioRef} className="hidden" />
                 <div className="space-y-4">
-                  {lesson.scenario.audioSegments.map((segment) => (
-                    <div key={segment.id} className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
+                  {lesson.scenario.audioSegments.map((segment, segIdx) => (
+                    <div
+                      key={segment.id}
+                      className={`p-4 rounded-lg transition-colors ${
+                        playAllIndex === segIdx
+                          ? 'bg-indigo-50 dark:bg-indigo-900/30 ring-2 ring-indigo-500'
+                          : 'bg-slate-50 dark:bg-slate-800'
+                      }`}
+                    >
                       <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">
                         <span className="font-semibold capitalize">{segment.speaker}</span>:
                       </p>
