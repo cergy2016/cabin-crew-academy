@@ -56,7 +56,7 @@ export const iCAOUnits: Unit[] = [
               text: 'November Four Seven Three, Ground. Taxi to runway one eight left via taxiway alpha.',
               audioUrl: '/audio/unit-1/lesson-1/ground-response.wav',
               durationSeconds: 7,
-              speaker: 'atc',
+              speaker: 'instructor',
             },
           ],
           vocabulary: [
@@ -236,7 +236,7 @@ Radio Telephony Rules:
               text: 'Roger, November Alpha Two Three Four Seven',
               audioUrl: '/audio/unit-1/lesson-2/phonetic-confirmation.wav',
               durationSeconds: 4,
-              speaker: 'atc',
+              speaker: 'instructor',
             },
           ],
           vocabulary: [
@@ -394,7 +394,7 @@ Note: Numbers can be pronounced "Zero" or "Oh" and "Fife" instead of "Five"
               text: 'Roger, November Four Seven Three. Continue your approach. We have emergency equipment standing by.',
               audioUrl: '/audio/unit-1/lesson-3/emergency-response.wav',
               durationSeconds: 8,
-              speaker: 'atc',
+              speaker: 'instructor',
             },
           ],
           vocabulary: [
@@ -1635,7 +1635,7 @@ Pre-Flight Coordination:
               text: 'November Four Seven Three, taxi to runway one eight left via taxiway alpha, bravo. Hold short of crossing runway',
               audioUrl: '/audio/unit-3/lesson-1/taxi-clearance.wav',
               durationSeconds: 9,
-              speaker: 'atc',
+              speaker: 'instructor',
             },
           ],
           vocabulary: [
@@ -1989,7 +1989,7 @@ Taxiway Terminology:
               text: 'November Four Seven Three, cleared for takeoff runway one eight left, wind two seven zero at eight knots',
               audioUrl: '/audio/unit-3/lesson-2/takeoff-clear.wav',
               durationSeconds: 8,
-              speaker: 'atc',
+              speaker: 'instructor',
             },
           ],
           vocabulary: [
@@ -2344,7 +2344,7 @@ Safety Considerations:
               text: 'November Four Seven Three, go around, traffic on the runway',
               audioUrl: '/audio/unit-3/lesson-3/goaround.wav',
               durationSeconds: 6,
-              speaker: 'atc',
+              speaker: 'instructor',
             },
             {
               id: 'audio-2',
@@ -2724,7 +2724,7 @@ Safety Principles:
               text: 'November Four Seven Three, departure, ident. Climb maintain three thousand feet',
               audioUrl: '/audio/unit-4/lesson-1/depart-response.wav',
               durationSeconds: 6,
-              speaker: 'atc',
+              speaker: 'instructor',
             },
           ],
           vocabulary: [
@@ -3064,7 +3064,7 @@ Communication Timing:
               text: 'November Four Seven Three, center, roger. Continue flight level two-five-zero',
               audioUrl: '/audio/unit-4/lesson-2/center-response.wav',
               durationSeconds: 5,
-              speaker: 'atc',
+              speaker: 'instructor',
             },
           ],
           vocabulary: [
@@ -3396,7 +3396,7 @@ Safety Checks During Cruise:
               text: 'November Four Seven Three, roger. Climb to flight level two-seven-zero for smoother ride',
               audioUrl: '/audio/unit-4/lesson-3/center-weather.wav',
               durationSeconds: 6,
-              speaker: 'atc',
+              speaker: 'instructor',
             },
           ],
           vocabulary: [
@@ -3746,7 +3746,7 @@ Safety During Turbulence:
               text: 'November Four Seven Three, roger. Descend to flight level two-zero-zero for cooling',
               audioUrl: '/audio/unit-5/lesson-1/center-response.wav',
               durationSeconds: 6,
-              speaker: 'atc',
+              speaker: 'instructor',
             },
           ],
           vocabulary: [
@@ -4775,7 +4775,7 @@ Documentation:
               text: 'November Four Seven Three, descend to flight level one zero zero, expect approach in fifteen minutes',
               audioUrl: '/audio/unit-6/lesson-1/descent-clear.wav',
               durationSeconds: 7,
-              speaker: 'atc',
+              speaker: 'instructor',
             },
           ],
           vocabulary: [
@@ -5115,7 +5115,7 @@ Approach Briefing Topics:
               text: 'November Four Seven Three, approach, vectors available. Turn right heading zero nine zero, maintain three thousand',
               audioUrl: '/audio/unit-6/lesson-2/approach-vector.wav',
               durationSeconds: 8,
-              speaker: 'atc',
+              speaker: 'instructor',
             },
           ],
           vocabulary: [
@@ -5453,7 +5453,7 @@ Handoff to Tower:
               text: 'November Four Seven Three, visibility one mile, expect another update in five minutes',
               audioUrl: '/audio/unit-6/lesson-3/approach-weather.wav',
               durationSeconds: 6,
-              speaker: 'atc',
+              speaker: 'instructor',
             },
           ],
           vocabulary: [
@@ -5807,7 +5807,7 @@ Alternative Options:
               text: 'November Four Seven Three, cleared to land runway two eight left, wind two seven zero at five knots',
               audioUrl: '/audio/unit-7/lesson-1/landing-clear.wav',
               durationSeconds: 8,
-              speaker: 'atc',
+              speaker: 'instructor',
             },
           ],
           vocabulary: [
@@ -6154,7 +6154,7 @@ Crew Coordination:
               text: 'November Four Seven Three, taxi to gate alpha two, follow the blue lights',
               audioUrl: '/audio/unit-7/lesson-2/ground-taxi.wav',
               durationSeconds: 7,
-              speaker: 'atc',
+              speaker: 'instructor',
             },
           ],
           vocabulary: [
@@ -6500,7 +6500,7 @@ Post-Landing Safety:
               text: 'Understood. Descend immediately to two thousand feet, emergency services standing by',
               audioUrl: '/audio/unit-7/lesson-3/emergency-response.wav',
               durationSeconds: 7,
-              speaker: 'atc',
+              speaker: 'instructor',
             },
           ],
           vocabulary: [
