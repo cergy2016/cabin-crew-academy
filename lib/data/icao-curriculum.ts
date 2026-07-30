@@ -1040,76 +1040,47 @@ const WELCOME_ON_BOARD_LESSON: any = {
       audio: { id: 'l3-06-audio', text: 'Jenny giving directions', audioUrl: `${A2C}/l3-06-jenny.wav`, durationSeconds: 4, speaker: 'crew' },
       correctAnswer: 'Straight',
     },
-    // Listening-5: passenger problem
+    // Listening-5: passenger problem (dialogue2.mp3)
     {
       id: 'ex-19', type: 'multiple-choice', points: 15,
-      question: 'Listen to the passenger problem. What is the problem?',
-      audio: { id: 'l5-audio', text: 'A passenger seating problem', audioUrl: `${A2C}/l5-full-scene.wav`, durationSeconds: 48, speaker: 'passenger' },
+      question: 'Listen to the passenger problem. What does the passenger ask for?',
+      audio: { id: 'l5-audio', text: 'A passenger seating problem', audioUrl: `${A2C}/l5-full-scene.wav`, durationSeconds: 11, speaker: 'passenger' },
       options: [
-        { id: 'o1', text: 'She was given a seat other than the window seat she requested', isCorrect: true },
-        { id: 'o2', text: 'She lost her boarding pass', isCorrect: false },
-        { id: 'o3', text: 'She missed her flight', isCorrect: false },
-        { id: 'o4', text: 'She has no ID', isCorrect: false },
+        { id: 'o1', text: 'A window seat', isCorrect: true },
+        { id: 'o2', text: 'An aisle seat', isCorrect: false },
+        { id: 'o3', text: 'A different meal', isCorrect: false },
+        { id: 'o4', text: 'A blanket', isCorrect: false },
       ],
     },
-    // Listening-6: comprehension quiz
     {
       id: 'ex-20', type: 'multiple-choice', points: 10,
-      question: 'True or False: The plane is full.',
+      question: 'What does Jenny say she will do?',
       options: [
-        { id: 'o1', text: 'True', isCorrect: true },
-        { id: 'o2', text: 'False', isCorrect: false },
+        { id: 'o1', text: 'Check the seating arrangements', isCorrect: true },
+        { id: 'o2', text: 'Give the passenger a refund', isCorrect: false },
+        { id: 'o3', text: 'Move her to business class', isCorrect: false },
+        { id: 'o4', text: 'Call the captain', isCorrect: false },
       ],
     },
     {
       id: 'ex-21', type: 'multiple-choice', points: 10,
-      question: 'What seat number has the woman been given?',
+      question: 'What time of day does this exchange take place?',
       options: [
-        { id: 'o1', text: '24E', isCorrect: true },
-        { id: 'o2', text: '12A', isCorrect: false },
-        { id: 'o3', text: '30C', isCorrect: false },
-        { id: 'o4', text: '8D', isCorrect: false },
+        { id: 'o1', text: 'Afternoon', isCorrect: true, explanation: "Jenny says 'Good afternoon, madam.'" },
+        { id: 'o2', text: 'Morning', isCorrect: false },
+        { id: 'o3', text: 'Evening', isCorrect: false },
+        { id: 'o4', text: 'Night', isCorrect: false },
       ],
     },
     {
-      id: 'ex-22', type: 'multiple-choice', points: 10,
-      question: 'Why is she upset?',
-      options: [
-        { id: 'o1', text: 'She wanted a window seat but was given seat 24E', isCorrect: true },
-        { id: 'o2', text: 'She wanted more legroom', isCorrect: false },
-        { id: 'o3', text: 'She missed lunch', isCorrect: false },
-        { id: 'o4', text: 'She lost her passport', isCorrect: false },
-      ],
+      id: 'ex-22', type: 'fill-blank', points: 10,
+      question: 'Excuse me, I asked for a _________.',
+      correctAnswer: 'window seat',
     },
     {
-      id: 'ex-23', type: 'multiple-choice', points: 10,
-      question: 'When did she request a window seat?',
-      options: [
-        { id: 'o1', text: 'Three weeks ago, when she checked in online', isCorrect: true },
-        { id: 'o2', text: 'This morning, at the gate', isCorrect: false },
-        { id: 'o3', text: 'Last year', isCorrect: false },
-        { id: 'o4', text: 'She never requested one', isCorrect: false },
-      ],
-    },
-    {
-      id: 'ex-24', type: 'multiple-choice', points: 10,
-      question: 'What will the flight attendant do?',
-      options: [
-        { id: 'o1', text: 'Check the passenger list for a window seat becoming available', isCorrect: true },
-        { id: 'o2', text: 'Upgrade her to business class', isCorrect: false },
-        { id: 'o3', text: 'Give her a refund', isCorrect: false },
-        { id: 'o4', text: 'Ask her to leave the aircraft', isCorrect: false },
-      ],
-    },
-    {
-      id: 'ex-25', type: 'multiple-choice', points: 10,
-      question: 'What does the flight attendant ask the passenger to do?',
-      options: [
-        { id: 'o1', text: 'Take the seat she was given for now and wait', isCorrect: true },
-        { id: 'o2', text: 'Go to another gate', isCorrect: false },
-        { id: 'o3', text: 'Speak to the captain', isCorrect: false },
-        { id: 'o4', text: 'Complete a form', isCorrect: false },
-      ],
+      id: 'ex-23', type: 'fill-blank', points: 10,
+      question: 'Let me check the _________.',
+      correctAnswer: 'seating arrangements',
     },
     // Vocabulary-7: boarding pass fields
     {
@@ -1216,10 +1187,12 @@ const WELCOME_ON_BOARD_LESSON: any = {
       },
       {
         id: 'q-2', type: 'multiple-choice', points: 20,
-        question: 'True or False: The flight in the passenger problem scene is full.',
+        question: 'What does Jenny say she will do about the passenger\'s seat?',
         options: [
-          { id: 'o1', text: 'True', isCorrect: true },
-          { id: 'o2', text: 'False', isCorrect: false },
+          { id: 'o1', text: 'Check the seating arrangements', isCorrect: true },
+          { id: 'o2', text: 'Give her a refund', isCorrect: false },
+          { id: 'o3', text: 'Move her to business class', isCorrect: false },
+          { id: 'o4', text: 'Ask her to leave', isCorrect: false },
         ],
       },
       {
