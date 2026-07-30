@@ -30,7 +30,11 @@ export default function ExerciseCard({
 
   const isCorrect =
     submitted &&
-    exercise.options?.find((opt) => opt.id === selectedAnswer)?.isCorrect;
+    (exercise.options
+      ? exercise.options.find((opt) => opt.id === selectedAnswer)?.isCorrect
+      : exercise.correctAnswer
+      ? selectedAnswer?.trim().toLowerCase() === exercise.correctAnswer.trim().toLowerCase()
+      : undefined);
 
   const getExerciseContent = () => {
     switch (exercise.type) {
@@ -113,19 +117,14 @@ export default function ExerciseCard({
       case 'listening-dictation':
         return (
           <div className="space-y-4">
-            {exercise.audio && (
-              <>
-                <AudioPlayer audioUrl={exercise.audio.audioUrl} />
-                <textarea
-                  value={selectedAnswer || ''}
-                  onChange={(e) => setSelectedAnswer(e.target.value)}
-                  disabled={submitted}
-                  placeholder="Type what you hear..."
-                  className="w-full p-4 rounded-lg border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white disabled:opacity-60 resize-none"
-                  rows={3}
-                />
-              </>
-            )}
+            <textarea
+              value={selectedAnswer || ''}
+              onChange={(e) => setSelectedAnswer(e.target.value)}
+              disabled={submitted}
+              placeholder="Type your answer..."
+              className="w-full p-4 rounded-lg border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white disabled:opacity-60 resize-none"
+              rows={3}
+            />
           </div>
         );
 
@@ -185,6 +184,8 @@ export default function ExerciseCard({
         <p className="text-slate-700 dark:text-slate-300 text-lg font-medium">
           {exercise.question}
         </p>
+
+        {exercise.audio && <AudioPlayer audioUrl={exercise.audio.audioUrl} />}
 
         {getExerciseContent()}
 
