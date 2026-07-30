@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Zap, Flame, Trophy, BookOpen, TrendingUp, Target } from 'lucide-react';
 import { useAppStore } from '@/lib/store';
 import ProgressRing from '@/components/ProgressRing';
-import { lessonData } from '@/lib/data/lessons';
+import { iCAOUnits } from '@/lib/data/icao-curriculum';
 
 export default function DashboardPage() {
   const { stats, user } = useAppStore();
@@ -187,7 +187,7 @@ export default function DashboardPage() {
           </h2>
 
           <div className="space-y-8">
-            {lessonData.map((unit, unitIdx) => (
+            {iCAOUnits.map((unit, unitIdx) => (
               <motion.div
                 key={unit.id}
                 initial={{ opacity: 0, y: 20 }}
