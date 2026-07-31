@@ -4132,6 +4132,851 @@ const DUTY_FREE_LESSON: any = {
   updatedAt: new Date().toISOString(),
 };
 
+// ============================================================
+// Unit 5, Lesson 1: Identifying Passenger Problems
+// Finding out the problem, and the flight attendant's many roles
+// ============================================================
+const A5A = '/audio/unit-5/lesson-1';
+
+const IDENTIFYING_PROBLEMS_LESSON: any = {
+  id: 'lesson-5-1',
+  unitId: 'unit-5',
+  title: 'Identifying Passenger Problems',
+  description: "Finding out what's wrong when a passenger has a problem, and the many roles a flight attendant plays",
+  icon: '🔍',
+  icaoLevel: 4,
+  category: 'cabin-crew',
+  difficulty: 'intermediate',
+  xpReward: 150,
+  estimatedDurationMinutes: 40,
+  locked: false,
+  order: 1,
+  objectives: [
+    { id: 'obj-1', description: 'Ask clear questions to identify a passenger problem', type: 'speaking' },
+    { id: 'obj-2', description: 'Recognize different intonation for yes/no and open questions', type: 'listening' },
+    { id: 'obj-3', description: "Understand the flight attendant's many roles", type: 'vocabulary' },
+  ],
+  scenario: {
+    id: 'scenario-identifying-problems',
+    title: 'Two Handset Problems',
+    description: 'A flight attendant deals with two passengers who have problems with their in-flight entertainment.',
+    context: 'Cabin, in-flight entertainment issues',
+    audioSegments: [
+      { id: 'd1-01', text: 'Flight attendant: Did you call, sir?', audioUrl: `${A5A}/d1-01-fa.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'd1-02', text: "Passenger 1: Yes, my handset isn't working, I can't turn on the entertainment screen.", audioUrl: `${A5A}/d1-02-p1.wav`, durationSeconds: 4, speaker: 'passenger' },
+      { id: 'd1-03', text: "Flight attendant: Let's see... ah, I think it's just not plugged in properly. Let me fix that for you... there, try it now.", audioUrl: `${A5A}/d1-03-fa.wav`, durationSeconds: 6, speaker: 'crew' },
+      { id: 'd1-04', text: "Passenger 1: Oh brilliant, it's working now, thank you!", audioUrl: `${A5A}/d1-04-p1.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'd1-05', text: 'Flight attendant: Did you call, madam?', audioUrl: `${A5A}/d1-05-fa.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'd1-06', text: "Passenger 2: Yes, I wanted to watch a film but I can't find it on the menu.", audioUrl: `${A5A}/d1-06-p2.wav`, durationSeconds: 4, speaker: 'passenger' },
+      { id: 'd1-07', text: "Flight attendant: Let me check... I'm sorry, I'm afraid that film isn't available on this system, it might be on our next aircraft. Could I suggest one of these other films instead?", audioUrl: `${A5A}/d1-07-fa.wav`, durationSeconds: 8, speaker: 'crew' },
+      { id: 'd1-08', text: "Passenger 2: Oh, that's a shame, but okay, I'll pick something else.", audioUrl: `${A5A}/d1-08-p2.wav`, durationSeconds: 3, speaker: 'passenger' },
+    ],
+    vocabulary: [
+      { word: 'Handset', definition: 'The remote control for the in-flight entertainment screen' },
+      { word: 'Plugged in', definition: 'Connected to a power or connection point' },
+      { word: 'Available', definition: 'Able to be used or obtained' },
+    ],
+  },
+  theory: {
+    title: 'Finding Out the Problem',
+    content: "Identifying a passenger's problem quickly and clearly is the first step to solving it. Flight attendants ask short, direct questions and listen carefully before deciding how to help.",
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of finding out the problem',
+      audioUrl: `${A5A}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Finding Out the Problem',
+    phrases: [
+      { situation: 'Responding to a call button', phrase: 'Did you call, sir? / Did you call, madam?', meaning: 'Yes/no question - rising intonation', example: 'Did you call, sir?' },
+      { situation: 'Open question about a problem', phrase: "What's the problem? / What's the matter?", meaning: 'Open question - falling intonation', example: "What's the problem?" },
+      { situation: 'Offering assistance', phrase: 'How can I help?', meaning: 'Open question - falling intonation', example: 'How can I help?' },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Passenger Problems',
+    terms: [
+      { term: 'Handset', definition: 'The remote control for the in-flight entertainment screen', example: "My handset isn't working." },
+      { term: 'Call button', definition: 'A button passengers press to call a flight attendant', example: 'All the passengers pushed the call button.' },
+      { term: 'Troublesome neighbour', definition: 'A nearby passenger who is causing a problem for someone', example: 'A troublesome neighbour can ruin a flight for others.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Checking a fix worked', expression: 'There, try it now.', alternativeExpressions: ['Try that now, does it work?', 'See if that helps now.'] },
+    { situation: 'Suggesting an alternative', expression: "Could I suggest one of these instead?", alternativeExpressions: ['Would you like to try something else?', 'Can I offer you an alternative?'] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: "What's the matter?", audioUrl: `${A5A}/pronunciation.wav`, durationSeconds: 2 },
+  ],
+  vocabulary: [
+    { word: 'Handset', definition: 'The remote control for the in-flight entertainment screen' },
+    { word: 'Plugged in', definition: 'Connected to a power or connection point' },
+    { word: 'Available', definition: 'Able to be used or obtained' },
+    { word: 'Call button', definition: 'A button passengers press to call a flight attendant' },
+  ],
+  grammar: [
+    {
+      rule: 'Question intonation - yes/no questions rise at the end; open (wh-) questions fall at the end',
+      examples: [
+        { sentence: 'Did you call, sir? (rising)', audioUrl: `${A5A}/lf-1.wav` },
+        { sentence: "What's the problem? (falling)", audioUrl: `${A5A}/lf-4.wav` },
+        { sentence: 'How can I help? (falling)', audioUrl: `${A5A}/lf-6.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'speaking', points: 15,
+      question: 'As a flight attendant, you deal with all sorts of minor problems, like a broken entertainment handset. With a partner, make a list of other regular, minor passenger problems you can have on flights.',
+    },
+    {
+      id: 'ex-2', type: 'multiple-choice', points: 10,
+      question: "What can't the first passenger do?",
+      options: [
+        { id: 'o1', text: 'Turn on the entertainment screen', isCorrect: true },
+        { id: 'o2', text: 'Find the toilet', isCorrect: false },
+        { id: 'o3', text: 'Fasten his seatbelt', isCorrect: false },
+        { id: 'o4', text: 'Recline his seat', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 10,
+      question: 'Is his handset broken?',
+      options: [
+        { id: 'o1', text: 'No, it was just not plugged in properly', isCorrect: true },
+        { id: 'o2', text: 'Yes, it needs replacing', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-4', type: 'multiple-choice', points: 10,
+      question: 'Does the flight attendant fix the first problem?',
+      options: [
+        { id: 'o1', text: 'Yes', isCorrect: true },
+        { id: 'o2', text: 'No', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-5', type: 'multiple-choice', points: 10,
+      question: 'Does the second passenger want to watch a TV programme or a film?',
+      options: [
+        { id: 'o1', text: 'A film', isCorrect: true },
+        { id: 'o2', text: 'A TV programme', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-6', type: 'multiple-choice', points: 10,
+      question: 'Does the flight attendant fix the second problem?',
+      options: [
+        { id: 'o1', text: "No, the film isn't available, but she suggests alternatives", isCorrect: true },
+        { id: 'o2', text: 'Yes, completely', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-7', type: 'speaking', points: 15,
+      question: 'Practise saying the flight attendant questions with the correct intonation: rising for yes/no questions (Did you call, sir?), falling for open questions (What\'s the problem? What\'s the matter? How can I help?).',
+    },
+    {
+      id: 'ex-8', type: 'speaking', points: 15,
+      question: 'Listen to four exchanges where passengers press the call button for: a worried traveller, a hungry passenger, a cold passenger, and a sick child. Number the problems in the order you imagine hearing them, and describe what each passenger might say.',
+    },
+    {
+      id: 'ex-9', type: 'multiple-choice', points: 15,
+      question: 'Which role best describes a flight attendant helping a nervous or frightened passenger?',
+      options: [
+        { id: 'o1', text: 'Friend / nurse', isCorrect: true },
+        { id: 'o2', text: 'Referee', isCorrect: false },
+        { id: 'o3', text: 'Bank clerk', isCorrect: false },
+        { id: 'o4', text: 'Police officer', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-10', type: 'multiple-choice', points: 15,
+      question: 'Which role best describes a flight attendant settling a dispute between two passengers?',
+      options: [
+        { id: 'o1', text: 'Referee / diplomat', isCorrect: true },
+        { id: 'o2', text: 'Waiter', isCorrect: false },
+        { id: 'o3', text: 'Receptionist', isCorrect: false },
+        { id: 'o4', text: 'Lifesaver', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-11', type: 'speaking', points: 20,
+      question: 'Discuss with a partner: which two roles (diplomat, firefighter, referee, bank clerk, nurse, waiter/waitress, nanny, lifesaver, police officer, receptionist, friend, information officer) are the most important? Which are the least important? Which do you most commonly take, and what other roles do you sometimes take?',
+    },
+  ],
+  quiz: {
+    id: 'quiz-5-1',
+    title: 'Identifying Passenger Problems Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: "Why couldn't the first passenger use his entertainment screen?",
+        options: [
+          { id: 'o1', text: 'The handset was not plugged in properly', isCorrect: true },
+          { id: 'o2', text: 'The screen was broken', isCorrect: false },
+          { id: 'o3', text: 'The system was down for the whole aircraft', isCorrect: false },
+          { id: 'o4', text: 'He did not know how to use it', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'What did the second passenger want to watch?',
+        options: [
+          { id: 'o1', text: 'A film that was not available on this system', isCorrect: true },
+          { id: 'o2', text: 'The news', isCorrect: false },
+          { id: 'o3', text: 'A sports programme', isCorrect: false },
+          { id: 'o4', text: 'A documentary', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: "Which question type has rising intonation: 'Did you call, sir?' or 'What's the problem?'",
+        options: [
+          { id: 'o1', text: 'Did you call, sir?', isCorrect: true },
+          { id: 'o2', text: "What's the problem?", isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'Which of these is an "open" question?',
+        options: [
+          { id: 'o1', text: 'How can I help?', isCorrect: true },
+          { id: 'o2', text: 'Did you call, madam?', isCorrect: false },
+          { id: 'o3', text: 'Is it OK now?', isCorrect: false },
+          { id: 'o4', text: 'Was that your handset?', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'Which role is NOT typically listed among a flight attendant\'s roles in this lesson?',
+        options: [
+          { id: 'o1', text: 'Pilot', isCorrect: true },
+          { id: 'o2', text: 'Nurse', isCorrect: false },
+          { id: 'o3', text: 'Diplomat', isCorrect: false },
+          { id: 'o4', text: 'Waiter/waitress', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Handset', back: 'The remote control for the in-flight entertainment screen' },
+    { id: 'fc-2', front: 'Call button', back: 'A button passengers press to call a flight attendant' },
+    { id: 'fc-3', front: 'Available', back: 'Able to be used or obtained' },
+  ],
+  review: {
+    keyPoints: [
+      "Ask short, direct questions to quickly identify a passenger's problem",
+      'Yes/no questions rise in intonation; open questions fall',
+      'Not every problem can be fixed - offering an alternative is often the best solution',
+      'A flight attendant plays many roles: diplomat, nurse, waiter, referee, and more',
+      "Recognizing which role fits a situation helps you respond appropriately",
+    ],
+    commonMistakes: [
+      { mistake: 'Assuming you know the problem before asking', correction: 'Always ask a clarifying question first', explanation: 'This avoids wasting time on the wrong solution' },
+      { mistake: 'Sounding flat or bored when asking questions', correction: 'Use natural rising/falling intonation', explanation: 'This shows genuine attentiveness to the passenger' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
+// ============================================================
+// Unit 5, Lesson 2: Dealing with Problems
+// Offering to help (1) - immediate offers with "I'll..."
+// ============================================================
+const A5B = '/audio/unit-5/lesson-2';
+
+const DEALING_PROBLEMS_LESSON: any = {
+  id: 'lesson-5-2',
+  unitId: 'unit-5',
+  title: 'Dealing with Problems',
+  description: 'Making immediate offers of help using "I\'ll..." for four common passenger problems',
+  icon: '🛠️',
+  icaoLevel: 4,
+  category: 'cabin-crew',
+  difficulty: 'intermediate',
+  xpReward: 150,
+  estimatedDurationMinutes: 40,
+  locked: false,
+  order: 2,
+  objectives: [
+    { id: 'obj-1', description: "Make an immediate offer to help using 'I'll...'", type: 'speaking' },
+    { id: 'obj-2', description: 'Understand how different passenger problems are solved', type: 'listening' },
+  ],
+  scenario: {
+    id: 'scenario-dealing-problems',
+    title: 'Solving Four Problems',
+    description: 'A flight attendant responds to a worried traveller, a hungry passenger, a cold passenger, and a passenger with a sick child.',
+    context: 'Cabin, various passenger problems',
+    audioSegments: [
+      { id: 'p1-01', text: "Passenger: Excuse me, I'm worried I might miss my connecting flight.", audioUrl: `${A5B}/p1-01.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'p1-02', text: "Flight attendant: I'll check on our arrival time and get back to you.", audioUrl: `${A5B}/p1-02.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'p2-01', text: "Passenger: Is there any food? I'm starving.", audioUrl: `${A5B}/p2-01.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'p2-02', text: "Flight attendant: I'll get it for you. A sandwich or pot noodles?", audioUrl: `${A5B}/p2-02.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'p3-01', text: "Passenger: I'm quite cold, could I have something warm?", audioUrl: `${A5B}/p3-01.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'p3-02', text: "Flight attendant: I'll get you a blanket in a moment if you'd like.", audioUrl: `${A5B}/p3-02.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'p4-01', text: "Passenger: My daughter isn't feeling well, do you have any paracetamol?", audioUrl: `${A5B}/p4-01.wav`, durationSeconds: 4, speaker: 'passenger' },
+      { id: 'p4-02', text: "Flight attendant: I'm afraid we can't give medication, but I'll ask if there's a doctor or nurse on board. I'll do what I can to help.", audioUrl: `${A5B}/p4-02.wav`, durationSeconds: 6, speaker: 'crew' },
+    ],
+    vocabulary: [
+      { word: 'Connecting flight', definition: 'A second flight that continues a journey after the first' },
+      { word: 'Starving', definition: 'Very hungry' },
+      { word: 'Paracetamol', definition: 'A common pain-relief and fever-reducing medicine' },
+    ],
+  },
+  theory: {
+    title: "Offering to Help with 'I'll...'",
+    content: "Once a problem is identified, cabin crew make an immediate offer to help using 'I'll...'. This reassures the passenger that action is being taken right away, even when the crew cannot fully solve the problem themselves.",
+    audioExplanation: {
+      id: 'theory-audio',
+      text: "Explanation of offering to help with I'll",
+      audioUrl: `${A5B}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Offering to Help (1)',
+    phrases: [
+      { situation: 'Promising to follow up', phrase: "I'll check on our arrival time and get back to you.", meaning: 'Immediate offer with a promise to return', example: "I'll check on our arrival time and get back to you." },
+      { situation: 'Getting something for a passenger', phrase: "I'll get you a blanket. / I'll get it for you.", meaning: 'Immediate offer to bring something', example: "I'll get you a blanket." },
+      { situation: 'Explaining how to help', phrase: "I'll show you how it works.", meaning: 'Offering a demonstration', example: "I'll show you how it works." },
+      { situation: 'Replacing an item', phrase: "I'll get you another one.", meaning: 'Offering a replacement', example: "I'll get you another one." },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Problem-Solving Vocabulary',
+    terms: [
+      { term: 'Connecting flight', definition: 'A second flight that continues a journey after the first', example: "I'm worried I might miss my connecting flight." },
+      { term: 'Blanket', definition: 'A warm cover given to a cold passenger', example: "I'll get you a blanket in a moment." },
+      { term: 'Paracetamol', definition: 'A common pain-relief and fever-reducing medicine', example: 'Do you have any paracetamol?' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: "Making an immediate offer", expression: "I'll... (do something) right away.", alternativeExpressions: ['Let me sort that out for you.', "I'll take care of that."] },
+    { situation: 'Admitting a limit but still helping', expression: "I'm afraid I can't do X, but I'll do Y.", alternativeExpressions: ["I can't help with that directly, but I can...", "That's not something I can do, but I will..."] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: "I'll check on our arrival time and get back to you.", audioUrl: `${A5B}/pronunciation.wav`, durationSeconds: 3 },
+  ],
+  vocabulary: [
+    { word: 'Connecting flight', definition: 'A second flight that continues a journey after the first' },
+    { word: 'Starving', definition: 'Very hungry' },
+    { word: 'Paracetamol', definition: 'A common pain-relief and fever-reducing medicine' },
+    { word: 'Blanket', definition: 'A warm cover given to a cold passenger' },
+  ],
+  grammar: [
+    {
+      rule: "'Will' (short form I'll) for immediate offers - a spontaneous decision to help, made at the moment of speaking",
+      examples: [
+        { sentence: "I'll get you a blanket.", audioUrl: `${A5B}/lf-3.wav` },
+        { sentence: "I'll ask if there is a doctor or nurse on board.", audioUrl: `${A5B}/lf-2.wav` },
+        { sentence: "I'll show you how it works.", audioUrl: `${A5B}/lf-6.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'multiple-choice', points: 15,
+      question: 'What does the flight attendant offer to do for the worried traveller?',
+      options: [
+        { id: 'o1', text: 'Check the arrival time and get back to them', isCorrect: true },
+        { id: 'o2', text: 'Rebook their connecting flight', isCorrect: false },
+        { id: 'o3', text: 'Speak to the captain immediately', isCorrect: false },
+        { id: 'o4', text: 'Give them a refund', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-2', type: 'multiple-choice', points: 15,
+      question: 'What does the flight attendant agree to get the hungry passenger?',
+      options: [
+        { id: 'o1', text: 'A sandwich or pot noodles', isCorrect: true },
+        { id: 'o2', text: 'A full hot meal', isCorrect: false },
+        { id: 'o3', text: 'Only a snack bar', isCorrect: false },
+        { id: 'o4', text: 'Nothing, food service has ended', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 15,
+      question: 'What does the flight attendant offer to get the cold passenger?',
+      options: [
+        { id: 'o1', text: 'A blanket', isCorrect: true },
+        { id: 'o2', text: 'A hot drink', isCorrect: false },
+        { id: 'o3', text: 'A jacket', isCorrect: false },
+        { id: 'o4', text: 'To turn up the cabin heating', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-4', type: 'multiple-choice', points: 15,
+      question: 'Can the flight attendant get the sick child some paracetamol?',
+      options: [
+        { id: 'o1', text: 'No, crew cannot give medication', isCorrect: true },
+        { id: 'o2', text: 'Yes, immediately', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-5', type: 'multiple-choice', points: 15,
+      question: 'What does the flight attendant offer to do for the passenger with the sick child?',
+      options: [
+        { id: 'o1', text: 'Ask if there is a doctor or nurse on board', isCorrect: true },
+        { id: 'o2', text: 'Land the plane early', isCorrect: false },
+        { id: 'o3', text: 'Call the child\'s own doctor', isCorrect: false },
+        { id: 'o4', text: 'Nothing, it is not her responsibility', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-6', type: 'fill-blank', points: 10,
+      question: "I'll check on our arrival time and _________ to you.",
+      audio: { id: 'p1-audio', text: 'Worried traveller response', audioUrl: `${A5B}/p1-02.wav`, durationSeconds: 3, speaker: 'crew' },
+      correctAnswer: 'get back',
+    },
+    {
+      id: 'ex-7', type: 'fill-blank', points: 10,
+      question: "I'll _________ it for you. A sandwich or pot noodles?",
+      correctAnswer: 'get',
+    },
+    {
+      id: 'ex-8', type: 'fill-blank', points: 10,
+      question: "I'll get you a blanket in a _________ if you'd like.",
+      correctAnswer: 'moment',
+    },
+    {
+      id: 'ex-9', type: 'fill-blank', points: 10,
+      question: "I'll _________ what I can do. I'll _________ if there is a doctor or nurse on board.",
+      correctAnswer: 'do',
+      hint: 'Both blanks use the same short verb.',
+    },
+    {
+      id: 'ex-10', type: 'speaking', points: 15,
+      question: "Practise saying the 'I'll...' sentences, paying attention to the short form instead of saying 'I will' in full.",
+    },
+    {
+      id: 'ex-11', type: 'speaking', points: 20,
+      question: "Role-play with a partner using these problems: the video screen doesn't work, a baby is crying, the reading light goes on and off, a neighbour's music is too loud, a noisy group nearby, you can't open the overhead locker, the toilet is dirty, the seat cushion is wet, the headset is broken. Passenger: say the problem. Flight attendant: ask for information, then deal with it using 'I'll...'.",
+    },
+  ],
+  quiz: {
+    id: 'quiz-5-2',
+    title: 'Dealing with Problems Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: "What tense/form is used for an immediate offer to help?",
+        options: [
+          { id: 'o1', text: "I'll... (will)", isCorrect: true },
+          { id: 'o2', text: 'I am going to...', isCorrect: false },
+          { id: 'o3', text: 'I was going to...', isCorrect: false },
+          { id: 'o4', text: 'I have...', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'What two food options does the flight attendant offer the hungry passenger?',
+        options: [
+          { id: 'o1', text: 'A sandwich or pot noodles', isCorrect: true },
+          { id: 'o2', text: 'Pizza or pasta', isCorrect: false },
+          { id: 'o3', text: 'Soup or salad', isCorrect: false },
+          { id: 'o4', text: 'Crisps or nuts', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'Why can\'t the flight attendant give medication to the sick child?',
+        options: [
+          { id: 'o1', text: 'Crew are not permitted to give medication', isCorrect: true },
+          { id: 'o2', text: 'There is none on board', isCorrect: false },
+          { id: 'o3', text: 'The child refuses to take it', isCorrect: false },
+          { id: 'o4', text: 'It is against the parent\'s wishes', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: "Complete: I'll get you a blanket in a _____.",
+        options: [
+          { id: 'o1', text: 'Moment', isCorrect: true },
+          { id: 'o2', text: 'Hour', isCorrect: false },
+          { id: 'o3', text: 'While', isCorrect: false },
+          { id: 'o4', text: 'Second class', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'What is the worried traveller worried about?',
+        options: [
+          { id: 'o1', text: 'Missing their connecting flight', isCorrect: true },
+          { id: 'o2', text: 'Turbulence', isCorrect: false },
+          { id: 'o3', text: 'Lost luggage', isCorrect: false },
+          { id: 'o4', text: 'A delayed departure', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Connecting flight', back: 'A second flight that continues a journey after the first' },
+    { id: 'fc-2', front: 'Paracetamol', back: 'A common pain-relief and fever-reducing medicine' },
+    { id: 'fc-3', front: 'Starving', back: 'Very hungry' },
+  ],
+  review: {
+    keyPoints: [
+      "Use 'I'll...' to make an immediate, reassuring offer of help",
+      'Even when you cannot fully solve a problem, offer what you can do',
+      'Practise the natural short form "I\'ll" rather than "I will"',
+      'Common problems include worry about connections, hunger, cold, and a sick child',
+      'Crew cannot give medication, but can ask if a doctor or nurse is on board',
+    ],
+    commonMistakes: [
+      { mistake: 'Promising something you cannot deliver', correction: 'Only offer what you can realistically do', explanation: 'Broken promises damage passenger trust' },
+      { mistake: 'Saying "I will" in full during casual speech', correction: 'Use the natural contracted form "I\'ll"', explanation: 'This sounds more natural and fluent' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
+// ============================================================
+// Unit 5, Lesson 3: Saying Sorry
+// Apologizing + Case Study: Pickpocket Strikes on Flight from
+// Tokyo to Paris
+// ============================================================
+const A5C = '/audio/unit-5/lesson-3';
+
+const SAYING_SORRY_LESSON: any = {
+  id: 'lesson-5-3',
+  unitId: 'unit-5',
+  title: 'Saying Sorry',
+  description: 'Apologizing sincerely to passengers, merged with the case study: Pickpocket Strikes on Flight from Tokyo to Paris',
+  icon: '🙏',
+  icaoLevel: 4,
+  category: 'cabin-crew',
+  difficulty: 'intermediate',
+  xpReward: 180,
+  estimatedDurationMinutes: 55,
+  locked: false,
+  order: 3,
+  objectives: [
+    { id: 'obj-1', description: 'Apologize sincerely and give a reason when appropriate', type: 'speaking' },
+    { id: 'obj-2', description: 'Recognize apologetic intonation', type: 'listening' },
+    { id: 'obj-3', description: 'Discuss a serious theft incident and airline responsibility', type: 'reading' },
+  ],
+  scenario: {
+    id: 'scenario-saying-sorry',
+    title: 'Running Out of Items',
+    description: 'A flight attendant serves drinks and snacks to four passengers, and has to apologize when some items are unavailable.',
+    context: 'Cabin, drinks and snacks service',
+    audioSegments: [
+      { id: 'd1-01', text: 'Flight attendant: What can I get you, sir?', audioUrl: `${A5C}/d1-01-fa.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'd1-02', text: 'Passenger 1: Two cheese sandwiches and two diet Cokes, please.', audioUrl: `${A5C}/d1-02-p1.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'd1-03', text: "Flight attendant: Oh dear, I am sorry, but we've run out of cheese. They've been very popular today. But I can offer you chicken sandwiches.", audioUrl: `${A5C}/d1-03-fa.wav`, durationSeconds: 6, speaker: 'crew' },
+      { id: 'd1-04', text: "Passenger 1: I don't believe it - it's the old story. You always seem to run out.", audioUrl: `${A5C}/d1-04-p1.wav`, durationSeconds: 4, speaker: 'passenger' },
+      { id: 'd1-05', text: 'Flight attendant: Once again, I can only apologize, sir. Would you like the chicken?', audioUrl: `${A5C}/d1-05-fa.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'd1-06', text: 'Passenger 1: No thanks, no thank you.', audioUrl: `${A5C}/d1-06-p1.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'd1-07', text: 'Flight attendant: Sorry about that.', audioUrl: `${A5C}/d1-07-fa.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'd2-01', text: 'Passenger 2: Could I have a peppermint tea, please?', audioUrl: `${A5C}/d2-01-p2.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'd2-02', text: "Flight attendant: Sorry, we don't have any peppermint - my mistake. Would English Breakfast be OK?", audioUrl: `${A5C}/d2-02-fa.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 'd2-03', text: "Passenger 2: Sure, that's fine.", audioUrl: `${A5C}/d2-03-p2.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'd3-01', text: 'Passenger 3: Do you have the beef option left?', audioUrl: `${A5C}/d3-01-p3.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'd3-02', text: "Flight attendant: I'm afraid we've only got the chicken and vegetarian pasta left today.", audioUrl: `${A5C}/d3-02-fa.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'd3-03', text: "Passenger 3: Oh, chicken's fine then.", audioUrl: `${A5C}/d3-03-p3.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'd4-01', text: 'Passenger 4: Just a coffee, please.', audioUrl: `${A5C}/d4-01-p4.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'd4-02', text: 'Flight attendant: Of course, here you are.', audioUrl: `${A5C}/d4-02-fa.wav`, durationSeconds: 2, speaker: 'crew' },
+    ],
+    vocabulary: [
+      { word: 'Run out', definition: 'To have no more of something left' },
+      { word: 'Popular', definition: 'Liked and chosen by many people' },
+      { word: 'Mistake', definition: 'An error' },
+    ],
+  },
+  theory: {
+    title: 'Pickpocket Strikes on Flight from Tokyo to Paris',
+    content: "A pickpocket stole thousands of pounds' worth of cash from Business class passengers as they slept on a flight from Tokyo to Paris. Cabin crew did not spot the thief at work as he went through wallets and handbags during the 12-hour overnight flight.\n\nPassengers woke to find large sums of cash missing. The captain alerted police, who met the Boeing 777 jet as it landed at Paris Charles de Gaulle airport on Tuesday morning, but they were unable to identify the thief.\n\nOne passenger told police that about £3,000 in mixed currencies had vanished from her handbag. Five others, who had paid up to £5,000 each for their tickets, said they had also lost thousands in cash.\n\nOne told the French news website Le Post: 'Most long haul travellers sleep on overnight flights like this. But at the prices we pay for tickets, you would expect the cabin crew to be watching over us and making sure our belongings are safe.'\n\nA spokesperson for the airline said it could not comment on this particular incident, but added: 'As a general rule, passengers' belongings in the cabin are their responsibility, while luggage in the hold is the airline's responsibility.'",
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Saying sorry explanation',
+      audioUrl: `${A5C}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Apologizing',
+    phrases: [
+      { situation: 'Apologizing for a mistake', phrase: "Sorry, we don't have any peppermint - my mistake.", meaning: 'Sincere apology owning the error', example: "Sorry, we don't have any peppermint - my mistake." },
+      { situation: 'Apologizing with a limitation', phrase: "I'm afraid we've only got apple juice and orange juice today.", meaning: 'Apologizing while stating what is available', example: "I'm afraid we've only got apple juice and orange juice today." },
+      { situation: 'Formal apology', phrase: 'I do apologize.', meaning: 'A more formal way to say sorry', example: 'I do apologize.' },
+      { situation: 'Apologizing with a reason', phrase: "I am sorry, but we've run out of cheese.", meaning: 'Sorry followed by a brief reason', example: "I am sorry, but we've run out of cheese." },
+      { situation: 'Repeated apology', phrase: 'I can only apologize, sir.', meaning: 'Used when there is nothing more that can be done', example: 'I can only apologize, sir.' },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Apologizing Vocabulary',
+    terms: [
+      { term: 'Run out', definition: 'To have no more of something left', example: "We've run out of cheese." },
+      { term: 'Mistake', definition: 'An error', example: 'Sorry, my mistake.' },
+      { term: 'Pickpocket', definition: "Someone who steals from people's bags and pockets", example: 'A pickpocket stole cash from Business class passengers.' },
+      { term: 'To vanish', definition: 'To disappear', example: 'The cash had vanished from her handbag.' },
+      { term: 'The hold', definition: 'The place where large suitcases are stored in a plane', example: 'Luggage in the hold is the airline\'s responsibility.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Apologizing sincerely', expression: 'Sorry about that.', alternativeExpressions: ["I'm really sorry.", 'My apologies.'] },
+    { situation: 'Addressing a passenger politely while apologizing', expression: "I'm sorry, madam. / Sorry, sir.", alternativeExpressions: ['My apologies, madam.', "I do apologize, sir."] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: "Sorry, we don't have any peppermint - my mistake.", audioUrl: `${A5C}/pronunciation.wav`, durationSeconds: 3 },
+  ],
+  vocabulary: [
+    { word: 'Run out', definition: 'To have no more of something left' },
+    { word: 'Popular', definition: 'Liked and chosen by many people' },
+    { word: 'Pickpocket', definition: "Someone who steals from people's bags and pockets" },
+    { word: 'To vanish', definition: 'To disappear' },
+    { word: 'To alert', definition: 'To warn someone, to make someone aware' },
+    { word: 'The hold', definition: 'The place where large suitcases are stored in a plane' },
+  ],
+  grammar: [
+    {
+      rule: 'Apologetic stress and intonation - key words are stressed to sound genuinely sorry, not flat or robotic',
+      examples: [
+        { sentence: "I am **sorry**, but we've run out of cheese.", audioUrl: `${A5C}/lf-4.wav` },
+        { sentence: "I can only **apologize**, sir.", audioUrl: `${A5C}/lf-5.wav` },
+        { sentence: "I'm **really** sorry, we haven't got any left.", audioUrl: `${A5C}/lf-7.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'speaking', points: 15,
+      question: 'How often do you have to apologize to passengers on a flight? What are some things you have to apologize for? What makes passengers angry, and how do you make them less angry?',
+    },
+    {
+      id: 'ex-2', type: 'speaking', points: 15,
+      question: 'Listen to the flight attendant serving drinks and snacks to four passengers. Make a note of three things the flight attendant has not got today.',
+      hint: 'Cheese (sandwiches), peppermint (tea), and beef.',
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 10,
+      question: 'Which passenger is the most angry about the situation?',
+      options: [
+        { id: 'o1', text: 'Passenger 1 (the cheese sandwich passenger)', isCorrect: true },
+        { id: 'o2', text: 'Passenger 2 (the tea passenger)', isCorrect: false },
+        { id: 'o3', text: 'Passenger 3 (the beef passenger)', isCorrect: false },
+        { id: 'o4', text: 'Passenger 4 (the coffee passenger)', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-4', type: 'multiple-choice', points: 10,
+      question: 'To which passenger does the flight attendant give a reason or excuse for the problem?',
+      options: [
+        { id: 'o1', text: 'Passenger 1 - "they\'ve been very popular today"', isCorrect: true },
+        { id: 'o2', text: 'Passenger 2', isCorrect: false },
+        { id: 'o3', text: 'Passenger 3', isCorrect: false },
+        { id: 'o4', text: 'Passenger 4', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-5', type: 'multiple-choice', points: 10,
+      question: 'How many times does the flight attendant use the word "sorry"?',
+      options: [
+        { id: 'o1', text: 'Three times', isCorrect: true },
+        { id: 'o2', text: 'Once', isCorrect: false },
+        { id: 'o3', text: 'Five times', isCorrect: false },
+        { id: 'o4', text: 'Never', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-6', type: 'multiple-choice', points: 10,
+      question: 'How many times does the flight attendant apologize in total (using "sorry" or "apologize")?',
+      options: [
+        { id: 'o1', text: 'Four times', isCorrect: true },
+        { id: 'o2', text: 'Two times', isCorrect: false },
+        { id: 'o3', text: 'Six times', isCorrect: false },
+        { id: 'o4', text: 'Once', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-7', type: 'fill-blank', points: 10,
+      question: 'What can I _________ you, sir?',
+      audio: { id: 'd1-audio', text: 'Opening the order', audioUrl: `${A5C}/d1-01-fa.wav`, durationSeconds: 2, speaker: 'crew' },
+      correctAnswer: 'get',
+    },
+    {
+      id: 'ex-8', type: 'fill-blank', points: 10,
+      question: 'Two cheese _________ and two diet Cokes, please.',
+      correctAnswer: 'sandwiches',
+    },
+    {
+      id: 'ex-9', type: 'fill-blank', points: 10,
+      question: "Oh dear, I am sorry, but we've _________ out of cheese.",
+      correctAnswer: 'run',
+    },
+    {
+      id: 'ex-10', type: 'fill-blank', points: 10,
+      question: "They've been very _________ today.",
+      correctAnswer: 'popular',
+    },
+    {
+      id: 'ex-11', type: 'fill-blank', points: 10,
+      question: 'You always _________ run out.',
+      correctAnswer: 'seem to',
+    },
+    {
+      id: 'ex-12', type: 'fill-blank', points: 10,
+      question: 'Once again, I can only _________, sir.',
+      correctAnswer: 'apologize',
+    },
+    {
+      id: 'ex-13', type: 'fill-blank', points: 10,
+      question: 'No _________, no thank you.',
+      correctAnswer: 'thanks',
+    },
+    {
+      id: 'ex-14', type: 'fill-blank', points: 10,
+      question: 'Sorry _________ that.',
+      correctAnswer: 'about',
+    },
+    {
+      id: 'ex-15', type: 'speaking', points: 15,
+      question: 'Practise saying the apology sentences aloud, stressing the important words, to sound genuinely apologetic: "Sorry, we don\'t have any peppermint - my mistake." / "I do apologize." / "I am sorry, but we\'ve run out of cheese."',
+    },
+    {
+      id: 'ex-16', type: 'speaking', points: 20,
+      question: 'Role-play with a partner using these problems: the cabin is too hot, there isn\'t a vegetarian option, the choice of in-flight movies is poor, the seats are uncomfortable. Passenger: state the problem. Flight attendant: apologize fully, give a reason, and apologize again if needed.',
+    },
+    {
+      id: 'ex-17', type: 'multiple-choice', points: 15,
+      question: 'What exactly happened on the flight from Tokyo to Paris?',
+      options: [
+        { id: 'o1', text: 'A pickpocket stole cash from sleeping Business class passengers', isCorrect: true },
+        { id: 'o2', text: 'A passenger\'s luggage was lost', isCorrect: false },
+        { id: 'o3', text: 'A fight broke out between two passengers', isCorrect: false },
+        { id: 'o4', text: 'A passenger became seriously ill', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-18', type: 'multiple-choice', points: 15,
+      question: 'How many passengers were affected, and in which part of the aircraft?',
+      options: [
+        { id: 'o1', text: 'At least six, in Business class', isCorrect: true },
+        { id: 'o2', text: 'Two, in Economy class', isCorrect: false },
+        { id: 'o3', text: 'The whole aircraft', isCorrect: false },
+        { id: 'o4', text: 'Just one, in First class', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-19', type: 'multiple-choice', points: 15,
+      question: 'Did the airline spokesperson admit any responsibility for what happened?',
+      options: [
+        { id: 'o1', text: 'No - they said cabin belongings are the passenger\'s own responsibility', isCorrect: true },
+        { id: 'o2', text: 'Yes, they admitted full responsibility', isCorrect: false },
+        { id: 'o3', text: 'They offered a full refund to all passengers', isCorrect: false },
+        { id: 'o4', text: 'They fired the cabin crew involved', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-20', type: 'speaking', points: 15,
+      question: 'How could such a serious theft happen in a secure environment? Could the cabin crew have done anything to prevent it? Is it the airline\'s responsibility to find stolen cash and belongings, or the thief? What is your airline\'s policy?',
+    },
+    {
+      id: 'ex-21', type: 'speaking', points: 15,
+      question: 'Make a list of five common problems you can usually solve, and two problems you were not able to solve. Why not? What is the most unusual problem you have experienced on a flight?',
+    },
+    {
+      id: 'ex-22', type: 'speaking', points: 15,
+      question: 'In general, are passengers difficult to please? What is the most common minor complaint? Is the passenger always right? Discuss based on your own experience or expectations.',
+    },
+    {
+      id: 'ex-23', type: 'speaking', points: 15,
+      question: 'Is it always the flight attendant\'s job to make sure passenger problems are solved? How do you feel boarding a flight knowing you are likely to have passenger problems - tense and nervous, or do you look forward to the challenge?',
+    },
+  ],
+  quiz: {
+    id: 'quiz-5-3',
+    title: 'Saying Sorry Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'What food item has run out in the dialogue?',
+        options: [
+          { id: 'o1', text: 'Cheese sandwiches', isCorrect: true },
+          { id: 'o2', text: 'Chicken sandwiches', isCorrect: false },
+          { id: 'o3', text: 'Vegetarian pasta', isCorrect: false },
+          { id: 'o4', text: 'Coffee', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'What does the flight attendant offer passenger 2 instead of peppermint tea?',
+        options: [
+          { id: 'o1', text: 'English Breakfast tea', isCorrect: true },
+          { id: 'o2', text: 'Coffee', isCorrect: false },
+          { id: 'o3', text: 'Green tea', isCorrect: false },
+          { id: 'o4', text: 'Nothing', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'Where did the pickpocket incident take place?',
+        options: [
+          { id: 'o1', text: 'On a flight from Tokyo to Paris', isCorrect: true },
+          { id: 'o2', text: 'On a flight from Paris to Tokyo', isCorrect: false },
+          { id: 'o3', text: 'At Charles de Gaulle airport, before boarding', isCorrect: false },
+          { id: 'o4', text: 'On a train', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'According to the airline, whose responsibility are cabin belongings?',
+        options: [
+          { id: 'o1', text: 'The passenger\'s', isCorrect: true },
+          { id: 'o2', text: 'The airline\'s', isCorrect: false },
+          { id: 'o3', text: 'The airport\'s', isCorrect: false },
+          { id: 'o4', text: 'The captain\'s', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'What does "to vanish" mean?',
+        options: [
+          { id: 'o1', text: 'To disappear', isCorrect: true },
+          { id: 'o2', text: 'To appear suddenly', isCorrect: false },
+          { id: 'o3', text: 'To break', isCorrect: false },
+          { id: 'o4', text: 'To multiply', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Run out', back: 'To have no more of something left' },
+    { id: 'fc-2', front: 'Pickpocket', back: "Someone who steals from people's bags and pockets" },
+    { id: 'fc-3', front: 'To vanish', back: 'To disappear' },
+    { id: 'fc-4', front: 'To alert', back: 'To warn someone, to make someone aware' },
+    { id: 'fc-5', front: 'The hold', back: 'The place where large suitcases are stored in a plane' },
+  ],
+  review: {
+    keyPoints: [
+      'A genuine apology stresses key words and avoids sounding flat',
+      'Giving a brief reason can reduce a passenger\'s frustration, but is not always possible',
+      'Repeated apologies ("I can only apologize") are used when nothing more can be done',
+      'Cabin security has limits - valuables in the cabin remain the passenger\'s responsibility',
+      'Serious incidents like theft require calm reporting to the captain and authorities',
+    ],
+    commonMistakes: [
+      { mistake: 'Apologizing without any stress or warmth in the voice', correction: 'Stress key words like "sorry" and "apologize" naturally', explanation: 'A flat apology can seem insincere and increase frustration' },
+      { mistake: 'Making excuses instead of apologizing', correction: 'Apologize first, then offer a brief reason if helpful', explanation: 'Passengers want to feel heard before they hear explanations' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
 const UNIT_TITLES: Record<number, string> = {
   0: 'Unit 1: The Pre-Flight Briefing',
   1: 'Unit 2: Welcome on Board',
@@ -4185,6 +5030,12 @@ export const iCAOUnits: Unit[] = [
         ? SERVING_DRINKS_LESSON
         : unitIdx === 3 && lessonIdx === 2
         ? DUTY_FREE_LESSON
+        : unitIdx === 4 && lessonIdx === 0
+        ? IDENTIFYING_PROBLEMS_LESSON
+        : unitIdx === 4 && lessonIdx === 1
+        ? DEALING_PROBLEMS_LESSON
+        : unitIdx === 4 && lessonIdx === 2
+        ? SAYING_SORRY_LESSON
         : LESSON_TEMPLATE(unitIdx + 1, lessonIdx + 1, `Lesson ${lessonIdx + 1}`)
     )
   })) as Unit[]
