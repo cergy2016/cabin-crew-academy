@@ -7767,6 +7767,140 @@ const TAKING_CHARGE_LESSON: any = {
       id: 'ex-11', type: 'speaking', points: 20,
       question: 'What would you say to these people during an emergency: a worried passenger whose wife has just fainted; a pregnant woman experiencing contractions; a young boy running in the aisle; a panicky hyperventilating passenger; a loud noisy group ignoring instructions; a mother whose child is sick and vomiting; a woman with headphones listening to music? Choose appropriate phrases and explain your choices.',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'fill-blank', points: 10,
+      question: 'Complete the safety announcement: "Please take a few moments now to _________ your nearest exit."',
+      correctAnswer: 'locate',
+    },
+    {
+      id: 'self-2', type: 'fill-blank', points: 10,
+      question: 'Complete: "If you are sitting in an emergency exit row, you must know when to open the door, following instructions given by the _________."',
+      correctAnswer: 'crew',
+    },
+    {
+      id: 'self-3', type: 'fill-blank', points: 10,
+      question: 'Complete: "If we need to evacuate the aircraft, floor-level _________ will guide you to the exits."',
+      correctAnswer: 'lighting',
+    },
+    {
+      id: 'self-4', type: 'fill-blank', points: 10,
+      question: 'Complete: "In the event of an emergency landing, you will hear the words \'Brace, brace\' and you must _________ this position."',
+      correctAnswer: 'adopt',
+    },
+    {
+      id: 'self-5', type: 'fill-blank', points: 10,
+      question: 'Complete: "Your life _________ is under your seat."',
+      correctAnswer: 'jacket',
+    },
+    {
+      id: 'self-6', type: 'fill-blank', points: 10,
+      question: 'Complete: "If cabin pressure drops, an oxygen mask will automatically drop from the _________ above your head."',
+      correctAnswer: 'panel',
+    },
+    {
+      id: 'self-7', type: 'fill-blank', points: 10,
+      question: 'Complete: "Secure the elastic band behind your head and breathe _________."',
+      correctAnswer: 'normally',
+    },
+    {
+      id: 'self-8', type: 'fill-blank', points: 10,
+      question: 'Complete: "If you are travelling with a child, put your mask on _________ and then assist the other person."',
+      correctAnswer: 'first',
+    },
+    {
+      id: 'self-9', type: 'multiple-choice', points: 10,
+      question: "Which phrase completes the instruction: 'Pull down...'?",
+      options: [
+        { id: 'o1', text: 'the oxygen mask', isCorrect: true },
+        { id: 'o2', text: 'your seats', isCorrect: false },
+        { id: 'o3', text: 'the exit door', isCorrect: false },
+        { id: 'o4', text: 'this red cord', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-10', type: 'multiple-choice', points: 10,
+      question: "Which phrase completes the instruction: 'Place it...'?",
+      options: [
+        { id: 'o1', text: 'over your mouth and nose', isCorrect: true },
+        { id: 'o2', text: 'the brace position', isCorrect: false },
+        { id: 'o3', text: 'your nearest exit', isCorrect: false },
+        { id: 'o4', text: 'normally', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-11', type: 'multiple-choice', points: 10,
+      question: "Which phrase completes the instruction: 'Stay in...'?",
+      options: [
+        { id: 'o1', text: 'your seats', isCorrect: true },
+        { id: 'o2', text: 'the exit door', isCorrect: false },
+        { id: 'o3', text: 'this red cord', isCorrect: false },
+        { id: 'o4', text: 'the oxygen mask', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-12', type: 'multiple-choice', points: 10,
+      question: "Which phrase completes the instruction: 'Secure...'?",
+      options: [
+        { id: 'o1', text: 'the elastic band behind your head', isCorrect: true },
+        { id: 'o2', text: 'your nearest exit', isCorrect: false },
+        { id: 'o3', text: 'the brace position', isCorrect: false },
+        { id: 'o4', text: 'normally', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-13', type: 'multiple-choice', points: 10,
+      question: "Which phrase completes the instruction: 'Locate...'?",
+      options: [
+        { id: 'o1', text: 'your nearest exit', isCorrect: true },
+        { id: 'o2', text: 'the exit door', isCorrect: false },
+        { id: 'o3', text: 'the oxygen mask', isCorrect: false },
+        { id: 'o4', text: 'this red cord', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-14', type: 'multiple-choice', points: 10,
+      question: "Which phrase completes the instruction: 'Open...'?",
+      options: [
+        { id: 'o1', text: 'the exit door', isCorrect: true },
+        { id: 'o2', text: 'the brace position', isCorrect: false },
+        { id: 'o3', text: 'your seats', isCorrect: false },
+        { id: 'o4', text: 'normally', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-15', type: 'multiple-choice', points: 10,
+      question: "Which phrase completes the instruction: 'Adopt...'?",
+      options: [
+        { id: 'o1', text: 'the brace position', isCorrect: true },
+        { id: 'o2', text: 'the exit door', isCorrect: false },
+        { id: 'o3', text: 'your nearest exit', isCorrect: false },
+        { id: 'o4', text: 'this red cord', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-16', type: 'multiple-choice', points: 10,
+      question: "Which phrase completes the instruction: 'Pull on...'?",
+      options: [
+        { id: 'o1', text: 'this red cord', isCorrect: true },
+        { id: 'o2', text: 'the oxygen mask', isCorrect: false },
+        { id: 'o3', text: 'the brace position', isCorrect: false },
+        { id: 'o4', text: 'normally', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-17', type: 'multiple-choice', points: 10,
+      question: "Which phrase completes the instruction: 'Breathe...'?",
+      options: [
+        { id: 'o1', text: 'normally', isCorrect: true },
+        { id: 'o2', text: 'the exit door', isCorrect: false },
+        { id: 'o3', text: 'your seats', isCorrect: false },
+        { id: 'o4', text: 'the elastic band behind your head', isCorrect: false },
+      ],
+    },
+  ],
+  logBookPrompts: [
+    'Think about your training for emergencies. Is saving lives in emergencies the most important part of all your training? Do you think you need more training, or are you ready for any emergency? Do you learn from reported incidents and discuss them with your colleagues?',
   ],
   quiz: {
     id: 'quiz-7-1',
@@ -8031,6 +8165,124 @@ const EMERGENCY_EVACUATION_LESSON: any = {
       id: 'ex-16', type: 'speaking', points: 20,
       question: 'In groups of three, practise speaking the three parts of the purser\'s announcement. Then say them again from memory or short notes.',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'multiple-choice', points: 10,
+      question: 'The captain has decided to make an emergency landing in 20 minutes\' time. True or False: Passengers can go to the toilets for the last time.',
+      options: [
+        { id: 'o1', text: 'False', isCorrect: true },
+        { id: 'o2', text: 'True', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-2', type: 'multiple-choice', points: 10,
+      question: 'True or False: Passengers must return to their seats immediately.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-3', type: 'multiple-choice', points: 10,
+      question: 'True or False: Passengers must put all their bags in the lockers.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-4', type: 'multiple-choice', points: 10,
+      question: 'True or False: Passengers must take their shoes off.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-5', type: 'multiple-choice', points: 10,
+      question: 'True or False: Passengers must take up the brace position straight away, 20 minutes before landing.',
+      options: [
+        { id: 'o1', text: 'False', isCorrect: true },
+        { id: 'o2', text: 'True', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-6', type: 'multiple-choice', points: 10,
+      question: 'True or False: Passengers must wait for instructions.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-7', type: 'multiple-choice', points: 10,
+      question: 'True or False: Cabin crew will quickly collect any debris.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-8', type: 'multiple-choice', points: 10,
+      question: 'True or False: Cabin crew will check that all seatbelts are fastened.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-9', type: 'multiple-choice', points: 10,
+      question: 'True or False: Cabin crew will answer questions about the evacuation.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-10', type: 'multiple-choice', points: 10,
+      question: 'True or False: Cabin crew will distribute disembarkation cards.',
+      options: [
+        { id: 'o1', text: 'False', isCorrect: true },
+        { id: 'o2', text: 'True', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-11', type: 'multiple-choice', points: 10,
+      question: 'True or False: Cabin crew will check the toilets.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-12', type: 'multiple-choice', points: 10,
+      question: 'True or False: Cabin crew will sit down, strap in and wait for instructions.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-13', type: 'multiple-choice', points: 10,
+      question: 'As the plane prepares to land, which instruction would most likely be given FIRST?',
+      options: [
+        { id: 'o1', text: 'Please remain seated and follow instructions given to you by your crew.', isCorrect: true },
+        { id: 'o2', text: 'When the seatbelt signs are switched off, make your way to your nearest exit.', isCorrect: false },
+        { id: 'o3', text: 'Ladies, remove high-heeled shoes as they may tear the slide.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-14', type: 'multiple-choice', points: 10,
+      question: 'Once the aircraft has stopped, which instruction would most likely be given LAST?',
+      options: [
+        { id: 'o1', text: 'When the seatbelt signs are switched off, make your way to your nearest exit.', isCorrect: true },
+        { id: 'o2', text: 'Please remain seated and follow instructions given to you by your crew.', isCorrect: false },
+        { id: 'o3', text: 'Do not leave your seats until instructed to do so by your crew.', isCorrect: false },
+      ],
+    },
+  ],
+  logBookPrompts: [
+    'Think about a real or simulated emergency you were involved in. What happened? How did you and your colleagues react? What would you do differently the next time you had a similar experience?',
   ],
   quiz: {
     id: 'quiz-7-2',
@@ -8354,6 +8606,44 @@ const REPORTING_EVACUATION_LESSON: any = {
       id: 'ex-20', type: 'speaking', points: 15,
       question: 'In emergencies, do you wait for orders or follow your training and act quickly? Do you think training prepares crew well for real emergency incidents? What was your worst experience of an emergency, either as a flight attendant or as a passenger?',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'fill-blank', points: 10,
+      question: "Report this instruction into reported speech: \"Remain seated!\" -> The purser told the passengers to _________.",
+      correctAnswer: 'remain seated',
+    },
+    {
+      id: 'self-2', type: 'fill-blank', points: 10,
+      question: '"Follow the instructions given to you by your crew." -> He told them to _________ the instructions given by the crew.',
+      correctAnswer: 'follow',
+    },
+    {
+      id: 'self-3', type: 'fill-blank', points: 10,
+      question: '"Do not leave your seats until instructed." -> He told them _________ leave their seats until instructed.',
+      correctAnswer: 'not to',
+    },
+    {
+      id: 'self-4', type: 'fill-blank', points: 10,
+      question: '"Make your way to the nearest exit." -> He told them to make their way to the _________ exit.',
+      correctAnswer: 'nearest',
+    },
+    {
+      id: 'self-5', type: 'fill-blank', points: 10,
+      question: '"Ladies, take off your high-heeled shoes!" -> He told the ladies to take off their _________ shoes.',
+      correctAnswer: 'high-heeled',
+    },
+    {
+      id: 'self-6', type: 'fill-blank', points: 10,
+      question: '"Leave all personal belongings behind!" -> He told them to leave all personal _________ behind.',
+      correctAnswer: 'belongings',
+    },
+    {
+      id: 'self-7', type: 'writing', points: 20,
+      question: "Using these prompts, write a paragraph reporting what a passenger said about an emergency evacuation. Combine the ideas using linking words such as 'and', 'but', 'when', or 'as soon as'. Prompts: all the lights went off and the oxygen masks came down; there was a lot of smoke in the cabin and everyone was in a panic; the cabin crew were very calm and told everyone to sit down; they shouted 'Go!' and we all rushed to the slides; I didn't have time to think about it or even take off my high-heeled shoes; everyone was safe, but some people were injured at the bottom of the slide.",
+    },
+  ],
+  logBookPrompts: [
+    "What do you think about the safety instructions, especially for an evacuation? Do passengers really know what to do, or do they just panic? How do you prepare and train for such panic situations? Describe what happened in an incident you or your colleagues experienced. What did you say, or shout, to the passengers?",
   ],
   quiz: {
     id: 'quiz-7-3',
