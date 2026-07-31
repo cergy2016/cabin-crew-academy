@@ -7770,6 +7770,863 @@ const DISRUPTIVE_PASSENGERS_LESSON: any = {
   updatedAt: new Date().toISOString(),
 };
 
+// ============================================================
+// Unit 9, Lesson 1: Making Final Announcements and Checks
+// Word order in multi-word verbs
+// ============================================================
+const A9A = '/audio/unit-9/lesson-1';
+
+const FINAL_ANNOUNCEMENTS_LESSON: any = {
+  id: 'lesson-9-1',
+  unitId: 'unit-9',
+  title: 'Making Final Announcements and Checks',
+  description: 'Making the final pre-landing announcement and completing last checks with passengers',
+  icon: '🛬',
+  icaoLevel: 5,
+  category: 'cabin-crew',
+  difficulty: 'upper-intermediate',
+  xpReward: 180,
+  estimatedDurationMinutes: 45,
+  locked: false,
+  order: 1,
+  objectives: [
+    { id: 'obj-1', description: 'Understand a full pre-landing cabin announcement', type: 'listening' },
+    { id: 'obj-2', description: 'Ask passengers to prepare the cabin for landing', type: 'speaking' },
+    { id: 'obj-3', description: 'Use correct word order in multi-word (phrasal) verbs', type: 'grammar' },
+  ],
+  scenario: {
+    id: 'scenario-final-announcements',
+    title: 'The Pre-Landing Announcement',
+    description: 'The purser makes the final cabin announcement before landing, and a flight attendant checks with individual passengers.',
+    context: 'Cabin, final preparation for landing at Montreal Trudeau Airport',
+    audioSegments: [
+      { id: 'announcement', text: "Purser: Ladies and gentlemen, we'll be landing at Montreal Trudeau Airport. The 'Fasten seatbelts' signs have been switched on. Please return to your seat and ensure your hand-baggage is safely secured in the overhead lockers or under the seat in front of you. Please also make sure your table is folded away, your seat back is upright, with the arm-rest down, and your seatbelt is fastened. Passengers seated in our First and Business class cabins, please make sure that your foot-rest and video screens are back in their original position. If you have been using the in-seat power, we will shortly be switching it off, so please now unplug your laptop and store it in a safe place. Once again, may we remind you that cell phones must not be switched on until the seatbelt signs have been switched off after landing. We hope that you've enjoyed the in-flight entertainment during the flight. In preparation for landing we'll be switching the system off. It would greatly help the flight attendants if you could have your used headsets ready for collection as they pass through the cabin.", audioUrl: `${A9A}/announcement.wav`, durationSeconds: 55, speaker: 'crew' },
+      { id: 'd1-01', text: 'Flight attendant: Can you open the window blind, please?', audioUrl: `${A9A}/d1-01.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'd1-02', text: "Passenger: I can't find my customs form.", audioUrl: `${A9A}/d1-02.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'd1-03', text: "Flight attendant: I'll bring you one in a few minutes.", audioUrl: `${A9A}/d1-03.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'd1-04', text: 'Flight attendant: Put your bags under the seat in front, please.', audioUrl: `${A9A}/d1-04.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'd1-05', text: 'Flight attendant: Ah, this seat is an emergency exit row, so your bag has to go in the overhead lockers, please.', audioUrl: `${A9A}/d1-05.wav`, durationSeconds: 6, speaker: 'crew' },
+      { id: 'd1-06', text: 'Flight attendant: Sorry to disturb you.', audioUrl: `${A9A}/d1-06.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'd1-07', text: 'Passenger: Do you know how long it takes to get from the airport to the city?', audioUrl: `${A9A}/d1-07.wav`, durationSeconds: 4, speaker: 'passenger' },
+      { id: 'd1-08', text: 'Flight attendant: We recommend the company bus. Someone says the train is the fastest.', audioUrl: `${A9A}/d1-08.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'd1-09', text: 'Flight attendant: And, sorry, could you take your jacket off the empty seat and put it in the locker, please?', audioUrl: `${A9A}/d1-09.wav`, durationSeconds: 5, speaker: 'crew' },
+    ],
+    vocabulary: [
+      { word: 'Foot-rest', definition: 'A support for the feet on a reclining seat' },
+      { word: 'Window blind', definition: 'The shade that covers an aircraft window' },
+      { word: 'Customs form', definition: 'A form declaring items brought into a country' },
+    ],
+  },
+  theory: {
+    title: 'Final Announcements and Checks',
+    content: 'The final pre-landing announcement confirms that the cabin, seats, and passengers are ready for landing. Flight attendants then move through the cabin checking individual passengers and answering last-minute questions.',
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of final announcements and checks',
+      audioUrl: `${A9A}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Final Cabin Checks',
+    phrases: [
+      { situation: 'Checking hand-baggage', phrase: 'Please ensure your hand-baggage is safely secured in the overhead lockers or under the seat in front of you.', meaning: 'Standard pre-landing baggage instruction', example: 'Please ensure your hand-baggage is safely secured.' },
+      { situation: 'Checking Business/First class equipment', phrase: 'Please make sure that your foot-rest and video screens are back in their original position.', meaning: 'Cabin-specific check for premium seats', example: 'Please make sure your foot-rest is back in its original position.' },
+      { situation: 'Checking electronic devices', phrase: 'Please now unplug your laptop and store it in a safe place.', meaning: 'Instruction for in-seat power devices', example: 'Please unplug your laptop and store it in a safe place.' },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Final Checks',
+    terms: [
+      { term: 'Foot-rest', definition: 'A support for the feet on a reclining seat', example: 'Please return your foot-rest to its original position.' },
+      { term: 'Window blind', definition: 'The shade that covers an aircraft window', example: 'Can you open the window blind, please?' },
+      { term: 'Customs form', definition: 'A form declaring items brought into a country', example: "I can't find my customs form." },
+      { term: 'In-seat power', definition: 'An electrical socket built into the seat for charging devices', example: 'We will shortly be switching off the in-seat power.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Interrupting a passenger politely', expression: 'Sorry to disturb you.', alternativeExpressions: ["Excuse me for interrupting.", "Sorry to bother you."] },
+    { situation: 'Recommending onward transport', expression: 'We recommend the company bus.', alternativeExpressions: ["The bus is a good option.", "Most passengers take the bus or train."] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'Please make sure your table is folded away.', audioUrl: `${A9A}/pronunciation.wav`, durationSeconds: 3 },
+  ],
+  vocabulary: [
+    { word: 'Foot-rest', definition: 'A support for the feet on a reclining seat' },
+    { word: 'Window blind', definition: 'The shade that covers an aircraft window' },
+    { word: 'Customs form', definition: 'A form declaring items brought into a country' },
+    { word: 'In-seat power', definition: 'An electrical socket built into the seat for charging devices' },
+  ],
+  grammar: [
+    {
+      rule: "Word order in multi-word (phrasal) verbs - with a noun, the particle can go before or after ('put away the case' / 'put the case away'); with a pronoun, the particle MUST go after ('put it away', not 'put away it')",
+      examples: [
+        { sentence: "Put away the case. / Put it away.", audioUrl: `${A9A}/verb-1.wav` },
+        { sentence: "Turn off your electronic devices. / Turn them off.", audioUrl: `${A9A}/verb-2.wav` },
+        { sentence: "Fold away your table. / Fold it away.", audioUrl: `${A9A}/verb-3.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'speaking', points: 15,
+      question: 'What do you usually do 20 minutes before landing, 10 minutes before landing, and 2 minutes before landing? What are the difficulties for cabin crew at the end of the flight? How do you usually feel then?',
+    },
+    {
+      id: 'ex-2', type: 'multiple-choice', points: 15,
+      question: 'What three things do flight attendants have to check according to the announcement?',
+      options: [
+        { id: 'o1', text: 'Hand-baggage, tables/seat backs, and electronic devices', isCorrect: true },
+        { id: 'o2', text: 'Passports, meals, and duty-free purchases', isCorrect: false },
+        { id: 'o3', text: 'Boarding passes, seat numbers, and names', isCorrect: false },
+        { id: 'o4', text: 'Weather, fuel, and altitude', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-3', type: 'fill-blank', points: 10,
+      question: "The 'Fasten seatbelts' signs have been _________ on.",
+      audio: { id: 'announcement-audio', text: 'Pre-landing announcement', audioUrl: `${A9A}/announcement.wav`, durationSeconds: 55, speaker: 'crew' },
+      correctAnswer: 'switched',
+    },
+    {
+      id: 'ex-4', type: 'fill-blank', points: 10,
+      question: 'Please return to your seat and _________ your hand-baggage is safely secured.',
+      correctAnswer: 'ensure',
+    },
+    {
+      id: 'ex-5', type: 'fill-blank', points: 10,
+      question: 'Please make sure your hand-baggage is in the overhead lockers or _________ the seat in front of you.',
+      correctAnswer: 'under',
+    },
+    {
+      id: 'ex-6', type: 'fill-blank', points: 10,
+      question: 'Please make sure that your foot-rest and video screens are back in their original _________.',
+      correctAnswer: 'position',
+    },
+    {
+      id: 'ex-7', type: 'fill-blank', points: 10,
+      question: 'If you have been using the in-seat _________, we will shortly be switching it off.',
+      correctAnswer: 'power',
+    },
+    {
+      id: 'ex-8', type: 'fill-blank', points: 10,
+      question: 'Cell phones _________ not be switched on until the seatbelt signs have been switched off.',
+      correctAnswer: 'must',
+    },
+    {
+      id: 'ex-9', type: 'fill-blank', points: 10,
+      question: 'It would greatly _________ the flight attendants if you could have your used headsets ready for collection.',
+      correctAnswer: 'help',
+    },
+    {
+      id: 'ex-10', type: 'speaking', points: 20,
+      question: 'Practise making the purser\'s pre-landing announcement. First, read it aloud. Then say it again from memory or notes.',
+    },
+    {
+      id: 'ex-11', type: 'multiple-choice', points: 10,
+      question: 'Which sentence uses correct word order with a pronoun?',
+      options: [
+        { id: 'o1', text: 'Put it away.', isCorrect: true },
+        { id: 'o2', text: 'Put away it.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-12', type: 'multiple-choice', points: 10,
+      question: 'Which sentence uses correct word order with a noun?',
+      options: [
+        { id: 'o1', text: 'Put away the case. (or "Put the case away.")', isCorrect: true },
+        { id: 'o2', text: 'Put the away case.', isCorrect: false },
+        { id: 'o3', text: 'Away put the case.', isCorrect: false },
+        { id: 'o4', text: 'Case put away the.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-13', type: 'multiple-choice', points: 10,
+      question: 'Rewrite with a pronoun: "Turn off your electronic devices."',
+      options: [
+        { id: 'o1', text: 'Turn them off.', isCorrect: true },
+        { id: 'o2', text: 'Turn off them.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-14', type: 'speaking', points: 15,
+      question: 'With a partner, practise asking passengers to do things in preparation for landing: put away devices, fold away the table, put the seat back upright, put bags in the locker, turn off electronics.',
+    },
+  ],
+  quiz: {
+    id: 'quiz-9-1',
+    title: 'Making Final Announcements and Checks Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'Where is the flight landing in the announcement?',
+        options: [
+          { id: 'o1', text: 'Montreal Trudeau Airport', isCorrect: true },
+          { id: 'o2', text: 'Paris Charles de Gaulle', isCorrect: false },
+          { id: 'o3', text: 'Mumbai', isCorrect: false },
+          { id: 'o4', text: 'Bordeaux', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'What must passengers do with laptops before landing?',
+        options: [
+          { id: 'o1', text: 'Unplug them and store them safely', isCorrect: true },
+          { id: 'o2', text: 'Keep them plugged in until landing', isCorrect: false },
+          { id: 'o3', text: 'Give them to the crew', isCorrect: false },
+          { id: 'o4', text: 'Nothing special is required', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'When can cell phones be switched on?',
+        options: [
+          { id: 'o1', text: 'Only after the seatbelt signs are switched off after landing', isCorrect: true },
+          { id: 'o2', text: 'As soon as the plane touches the ground', isCorrect: false },
+          { id: 'o3', text: 'Any time during the descent', isCorrect: false },
+          { id: 'o4', text: 'They are never allowed on this flight', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'What should passengers do with used headsets?',
+        options: [
+          { id: 'o1', text: 'Have them ready for collection', isCorrect: true },
+          { id: 'o2', text: 'Keep them as a souvenir', isCorrect: false },
+          { id: 'o3', text: 'Throw them away themselves', isCorrect: false },
+          { id: 'o4', text: 'Nothing is mentioned about headsets', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'Which is correct: "Turn off it" or "Turn it off"?',
+        options: [
+          { id: 'o1', text: 'Turn it off', isCorrect: true },
+          { id: 'o2', text: 'Turn off it', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Foot-rest', back: 'A support for the feet on a reclining seat' },
+    { id: 'fc-2', front: 'Window blind', back: 'The shade that covers an aircraft window' },
+    { id: 'fc-3', front: 'In-seat power', back: 'An electrical socket built into the seat for charging devices' },
+    { id: 'fc-4', front: 'Customs form', back: 'A form declaring items brought into a country' },
+  ],
+  review: {
+    keyPoints: [
+      'The final announcement covers seatbelts, hand-baggage, seat backs, tables, and electronics',
+      'Business/First class cabins need extra checks (foot-rests, video screens)',
+      'With a pronoun, the particle of a phrasal verb must go after it: "put it away", not "put away it"',
+      'With a noun, word order is flexible: "put away the case" or "put the case away"',
+      'Individual passenger checks continue after the main announcement',
+    ],
+    commonMistakes: [
+      { mistake: 'Using incorrect word order with pronouns in phrasal verbs', correction: 'Always place the pronoun before the particle: "turn it off"', explanation: 'This is a common grammar mistake for learners of English' },
+      { mistake: 'Rushing through the announcement without clear pacing', correction: 'Speak clearly and allow time for passengers to comply', explanation: 'Clarity matters more than speed for safety announcements' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
+// ============================================================
+// Unit 9, Lesson 2: Giving Information About Delayed Landings
+// Talking about time
+// ============================================================
+const A9B = '/audio/unit-9/lesson-2';
+
+const DELAYED_LANDINGS_LESSON: any = {
+  id: 'lesson-9-2',
+  unitId: 'unit-9',
+  title: 'Giving Information About Delayed Landings',
+  description: 'Explaining delayed landings to worried passengers, and talking about time',
+  icon: '⏱️',
+  icaoLevel: 5,
+  category: 'cabin-crew',
+  difficulty: 'upper-intermediate',
+  xpReward: 180,
+  estimatedDurationMinutes: 45,
+  locked: false,
+  order: 2,
+  objectives: [
+    { id: 'obj-1', description: 'Explain reasons for a delayed landing', type: 'speaking' },
+    { id: 'obj-2', description: 'Help a passenger worried about a connecting flight', type: 'speaking' },
+    { id: 'obj-3', description: 'Talk about time using natural question forms', type: 'grammar' },
+  ],
+  scenario: {
+    id: 'scenario-delayed-landing',
+    title: 'A Delayed Landing',
+    description: 'A flight attendant reassures a passenger worried about a connecting flight during a landing delay, which is then extended, and finally the flight is diverted.',
+    context: 'Cabin, delayed landing due to ground congestion',
+    audioSegments: [
+      { id: 'd1-01', text: 'Passenger: Excuse me, why are we circling? Is something wrong?', audioUrl: `${A9B}/d1-01-passenger.wav`, durationSeconds: 4, speaker: 'passenger' },
+      { id: 'd1-02', text: "Flight attendant: There's a slight delay, don't worry. It might be due to traffic at the airport.", audioUrl: `${A9B}/d1-02-fa.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 'd1-03', text: "Passenger: I have a connecting flight in forty-five minutes, I'm really worried I'll miss it.", audioUrl: `${A9B}/d1-03-passenger.wav`, durationSeconds: 5, speaker: 'passenger' },
+      { id: 'd1-04', text: 'Flight attendant: I understand your concern. As soon as we land, our ground staff can help direct you to your connecting gate quickly. Let me get an update on the delay for you.', audioUrl: `${A9B}/d1-04-fa.wav`, durationSeconds: 8, speaker: 'crew' },
+      { id: 'fo-1', text: "First officer: Ladies and gentlemen, this is your first officer. We're now expecting a further delay of about twenty minutes due to congestion on the ground.", audioUrl: `${A9B}/fo-announcement.wav`, durationSeconds: 8, speaker: 'pilot' },
+      { id: 'd2-01', text: "Flight attendant: I've just heard we're expecting to land at around 14:20.", audioUrl: `${A9B}/d2-01-fa.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'd2-02', text: "Passenger: My connecting flight to Paris leaves at 14:45! What should I do?", audioUrl: `${A9B}/d2-02-passenger.wav`, durationSeconds: 4, speaker: 'passenger' },
+      { id: 'd2-03', text: "Flight attendant: Don't worry, you won't need to collect your bags since they're checked through to Paris. You'll just need to go through security again before your gate.", audioUrl: `${A9B}/d2-03-fa.wav`, durationSeconds: 7, speaker: 'crew' },
+      { id: 'd2-04', text: "Passenger: OK, thank you, that's a relief.", audioUrl: `${A9B}/d2-04-passenger.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'fo-2', text: 'First officer: Ladies and gentlemen, your first officer again with more news of our delay. The reason for the delay is that there is only one runway in operation due to an earlier incident on the ground. Air Traffic Control have warned us of a possible longer delay. Please remain seated with your seatbelts on in case we are given the all clear to land. I will get back to you as soon as we have more news.', audioUrl: `${A9B}/fo-runway.wav`, durationSeconds: 18, speaker: 'pilot' },
+      { id: 'captain-1', text: 'Captain: Ladies and gentlemen, this is your captain speaking. Matters are not improving on the ground and we shall be diverting to Bordeaux. We expect to land there in 35 minutes. I understand that this may cause inconvenience, but it is the quickest and safest option. Our ground staff will meet you on arrival and help you with your onward journey. If you have a serious problem, kindly advise the cabin crew, who will be going through the cabin shortly. Again, my apologies for this inconvenience and thank you for your cooperation.', audioUrl: `${A9B}/captain-divert.wav`, durationSeconds: 22, speaker: 'pilot' },
+    ],
+    vocabulary: [
+      { word: 'Congestion', definition: 'Too much traffic in one place, causing delays' },
+      { word: 'ETA', definition: 'Estimated Time of Arrival' },
+      { word: 'Onward journey', definition: 'The continuation of a trip after the current flight' },
+    ],
+  },
+  theory: {
+    title: 'Giving Information About Delays',
+    content: 'When a landing is delayed, cabin crew must give clear, honest information about time and reasons, and help passengers with connecting flights understand their options.',
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of giving information about delays',
+      audioUrl: `${A9B}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Talking About Time',
+    phrases: [
+      { situation: 'Asking about landing time', phrase: 'What time / When does the flight land? It lands at 10:15.', meaning: 'Simple present for scheduled events', example: 'What time does the flight land?' },
+      { situation: 'Asking about a flight time', phrase: 'What time / When is the flight? At 10:15.', meaning: 'Short answer form for scheduled times', example: 'What time is the flight?' },
+      { situation: 'Asking about duration', phrase: 'How long does it take to get to the domestic terminal? It takes about five minutes.', meaning: 'Asking and answering about journey duration', example: 'How long does it take to get to the domestic terminal?' },
+      { situation: 'Asking about flight duration', phrase: 'How long is the flight? About two hours.', meaning: 'Asking and answering about total flight time', example: 'How long is the flight?' },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Delays and Diversions',
+    terms: [
+      { term: 'Congestion', definition: 'Too much traffic in one place, causing delays', example: 'The delay is due to congestion on the ground.' },
+      { term: 'ETA', definition: 'Estimated Time of Arrival', example: 'What is the ETA now?' },
+      { term: 'Divert', definition: "To change a flight's destination due to a problem", example: 'We shall be diverting to Bordeaux.' },
+      { term: 'Onward journey', definition: 'The continuation of a trip after the current flight', example: 'Ground staff will help with your onward journey.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Reassuring a worried passenger', expression: "There's a slight delay, don't worry.", alternativeExpressions: ['It\'s just a short delay, nothing to worry about.', 'We\'re experiencing a small delay.'] },
+    { situation: 'Apologizing for inconvenience', expression: 'I understand that this may cause inconvenience, but it is the quickest and safest option.', alternativeExpressions: ['I know this is frustrating, but safety comes first.', 'We apologize, but this is the best course of action.'] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'What time does the flight land?', audioUrl: `${A9B}/pronunciation.wav`, durationSeconds: 3 },
+  ],
+  vocabulary: [
+    { word: 'Congestion', definition: 'Too much traffic in one place, causing delays' },
+    { word: 'ETA', definition: 'Estimated Time of Arrival' },
+    { word: 'Divert', definition: "To change a flight's destination due to a problem" },
+    { word: 'Onward journey', definition: 'The continuation of a trip after the current flight' },
+  ],
+  grammar: [
+    {
+      rule: "Talking about time - present simple for scheduled events (the flight lands at...) and 'How long...?' for durations",
+      examples: [
+        { sentence: 'It lands at 10:15.', audioUrl: `${A9B}/time-1.wav` },
+        { sentence: 'How long does it take to get to the domestic terminal? It takes about five minutes.', audioUrl: `${A9B}/time-3.wav` },
+        { sentence: 'How long is the flight? About two hours.', audioUrl: `${A9B}/time-4.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'speaking', points: 15,
+      question: 'Look at these reasons for delayed landings: bad weather, ice on the ground, only one operational runway, traffic causing a 30-minute delay, a possible diversion. Can you think of any more? Practise explaining them to passengers.',
+    },
+    {
+      id: 'ex-2', type: 'multiple-choice', points: 10,
+      question: 'What has the passenger noticed?',
+      options: [
+        { id: 'o1', text: 'The plane seems to be circling / delayed', isCorrect: true },
+        { id: 'o2', text: 'The engine sounds strange', isCorrect: false },
+        { id: 'o3', text: 'The cabin lights are off', isCorrect: false },
+        { id: 'o4', text: 'Nothing unusual', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 10,
+      question: 'What is the passenger worried about?',
+      options: [
+        { id: 'o1', text: 'Missing their connecting flight', isCorrect: true },
+        { id: 'o2', text: 'The safety of the landing', isCorrect: false },
+        { id: 'o3', text: 'Lost luggage', isCorrect: false },
+        { id: 'o4', text: 'Being charged extra', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-4', type: 'multiple-choice', points: 10,
+      question: 'What possible reason does the flight attendant first give for the delay?',
+      options: [
+        { id: 'o1', text: 'Traffic at the airport', isCorrect: true },
+        { id: 'o2', text: 'A technical fault', isCorrect: false },
+        { id: 'o3', text: 'A medical emergency', isCorrect: false },
+        { id: 'o4', text: 'Bad weather', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-5', type: 'multiple-choice', points: 10,
+      question: 'What does the flight attendant suggest?',
+      options: [
+        { id: 'o1', text: 'She will get an update and ground staff will help with the connection', isCorrect: true },
+        { id: 'o2', text: 'The passenger should complain to the captain', isCorrect: false },
+        { id: 'o3', text: 'The passenger should rebook their own flight', isCorrect: false },
+        { id: 'o4', text: 'Nothing can be done', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-6', type: 'multiple-choice', points: 10,
+      question: 'How long is the further delay announced by the first officer?',
+      options: [
+        { id: 'o1', text: 'About twenty minutes', isCorrect: true },
+        { id: 'o2', text: 'About five minutes', isCorrect: false },
+        { id: 'o3', text: 'About two hours', isCorrect: false },
+        { id: 'o4', text: 'No further delay', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-7', type: 'multiple-choice', points: 10,
+      question: 'What is the reason given for this further delay?',
+      options: [
+        { id: 'o1', text: 'Congestion on the ground', isCorrect: true },
+        { id: 'o2', text: 'A passenger medical emergency', isCorrect: false },
+        { id: 'o3', text: 'A mechanical fault', isCorrect: false },
+        { id: 'o4', text: 'Fuel shortage', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-8', type: 'multiple-choice', points: 10,
+      question: 'What time does the flight attendant expect the flight to land?',
+      options: [
+        { id: 'o1', text: 'Around 14:20', isCorrect: true },
+        { id: 'o2', text: 'Around 14:45', isCorrect: false },
+        { id: 'o3', text: 'Around 12:00', isCorrect: false },
+        { id: 'o4', text: 'It is unknown', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-9', type: 'multiple-choice', points: 10,
+      question: "What time is the passenger's connecting flight?",
+      options: [
+        { id: 'o1', text: '14:45', isCorrect: true },
+        { id: 'o2', text: '14:20', isCorrect: false },
+        { id: 'o3', text: '15:00', isCorrect: false },
+        { id: 'o4', text: '13:30', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-10', type: 'multiple-choice', points: 10,
+      question: 'What does the passenger have to do in Paris?',
+      options: [
+        { id: 'o1', text: 'Go through security again before the gate', isCorrect: true },
+        { id: 'o2', text: 'Collect their checked bags', isCorrect: false },
+        { id: 'o3', text: 'Go through customs and immigration', isCorrect: false },
+        { id: 'o4', text: 'Nothing at all', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-11', type: 'multiple-choice', points: 10,
+      question: 'What is it not necessary for the passenger to do in Paris?',
+      options: [
+        { id: 'o1', text: 'Collect their bags - they are checked through', isCorrect: true },
+        { id: 'o2', text: 'Go through security', isCorrect: false },
+        { id: 'o3', text: 'Find the connecting gate', isCorrect: false },
+        { id: 'o4', text: 'Show their boarding pass', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-12', type: 'speaking', points: 15,
+      question: 'How well do you think the flight attendant deals with the situation? Would you do anything differently? What do you say when you have to deal with a situation where you have no control?',
+    },
+    {
+      id: 'ex-13', type: 'multiple-choice', points: 15,
+      question: 'In the two flight-deck announcements, what is the specific reason for the delay, and what happens in the end?',
+      options: [
+        { id: 'o1', text: 'Only one runway is operational; the flight eventually diverts to Bordeaux', isCorrect: true },
+        { id: 'o2', text: 'Bad weather; the flight returns to its origin', isCorrect: false },
+        { id: 'o3', text: 'A technical fault; the flight lands as scheduled', isCorrect: false },
+        { id: 'o4', text: 'A medical emergency; the flight makes an emergency landing', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-14', type: 'speaking', points: 20,
+      question: 'With a partner, take turns dealing with a passenger who has to make a connection when the landing is delayed. Passenger: state your problem, then demand a solution. Flight attendant: sympathize and ask for more information, then do your best to find a solution.',
+    },
+  ],
+  quiz: {
+    id: 'quiz-9-2',
+    title: 'Giving Information About Delayed Landings Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'Where does the flight eventually divert to?',
+        options: [
+          { id: 'o1', text: 'Bordeaux', isCorrect: true },
+          { id: 'o2', text: 'Paris', isCorrect: false },
+          { id: 'o3', text: 'Montreal', isCorrect: false },
+          { id: 'o4', text: 'Mumbai', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'Why is there only one runway in operation?',
+        options: [
+          { id: 'o1', text: 'Due to an earlier incident on the ground', isCorrect: true },
+          { id: 'o2', text: 'Due to a storm', isCorrect: false },
+          { id: 'o3', text: 'Due to maintenance work', isCorrect: false },
+          { id: 'o4', text: 'No reason is given', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'How long does the captain expect it to take to reach Bordeaux?',
+        options: [
+          { id: 'o1', text: '35 minutes', isCorrect: true },
+          { id: 'o2', text: '10 minutes', isCorrect: false },
+          { id: 'o3', text: '2 hours', isCorrect: false },
+          { id: 'o4', text: 'It is not specified', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'What does "ETA" stand for?',
+        options: [
+          { id: 'o1', text: 'Estimated Time of Arrival', isCorrect: true },
+          { id: 'o2', text: 'Emergency Travel Alert', isCorrect: false },
+          { id: 'o3', text: 'Extended Terminal Access', isCorrect: false },
+          { id: 'o4', text: 'Expected Take-off Adjustment', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'Who will meet passengers on arrival to help with their onward journey?',
+        options: [
+          { id: 'o1', text: 'Ground staff', isCorrect: true },
+          { id: 'o2', text: 'The police', isCorrect: false },
+          { id: 'o3', text: 'No one, passengers are on their own', isCorrect: false },
+          { id: 'o4', text: 'Another flight crew', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Congestion', back: 'Too much traffic in one place, causing delays' },
+    { id: 'fc-2', front: 'ETA', back: 'Estimated Time of Arrival' },
+    { id: 'fc-3', front: 'Divert', back: "To change a flight's destination due to a problem" },
+    { id: 'fc-4', front: 'Onward journey', back: 'The continuation of a trip after the current flight' },
+  ],
+  review: {
+    keyPoints: [
+      'Give honest, specific information about delays rather than vague reassurance alone',
+      'Help passengers understand what they will and will not need to do at their next stop',
+      'Use "What time...?" for scheduled events and "How long...?" for durations',
+      'Safety and practicality come before convenience when deciding whether to divert',
+      'A calm, informative tone reduces passenger anxiety during delays',
+    ],
+    commonMistakes: [
+      { mistake: 'Giving no information at all during a delay', correction: 'Share whatever accurate information is available, even if incomplete', explanation: 'Silence increases passenger anxiety more than an honest "we don\'t know yet"' },
+      { mistake: 'Promising a passenger will make their connection when this is uncertain', correction: 'Explain what ground staff can do, without guaranteeing outcomes', explanation: 'Overpromising can lead to disappointment and complaints' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
+// ============================================================
+// Unit 9, Lesson 3: Getting Through the Final Ten Minutes
+// Checking things have been done
+// + Case Study: Toilet Troubles for Cathay
+// ============================================================
+const A9C = '/audio/unit-9/lesson-3';
+
+const FINAL_TEN_MINUTES_LESSON: any = {
+  id: 'lesson-9-3',
+  unitId: 'unit-9',
+  title: 'Getting Through the Final Ten Minutes',
+  description: "Completing last checks before landing, and the case study: Toilet Troubles for Cathay",
+  icon: '⏳',
+  icaoLevel: 5,
+  category: 'cabin-crew',
+  difficulty: 'upper-intermediate',
+  xpReward: 200,
+  estimatedDurationMinutes: 60,
+  locked: false,
+  order: 3,
+  objectives: [
+    { id: 'obj-1', description: 'Coordinate final checks with colleagues before landing', type: 'speaking' },
+    { id: 'obj-2', description: 'Ask and answer "Have you...?" questions about completed tasks', type: 'grammar' },
+    { id: 'obj-3', description: 'Discuss a real in-flight equipment failure case study', type: 'reading' },
+  ],
+  scenario: {
+    id: 'scenario-final-ten-minutes',
+    title: 'Ten Minutes to Landing',
+    description: 'Leila coordinates last-minute checks with Tom, Jutta, and Hemal in the final minutes before landing.',
+    context: 'Cabin, final ten minutes before landing',
+    audioSegments: [
+      { id: 'd1-01', text: 'Leila: Tom, have you cleared your side of the cabin?', audioUrl: `${A9C}/d1-01-leila.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'd1-02', text: "Tom: Not quite, there's still a passenger in the toilet.", audioUrl: `${A9C}/d1-02-tom.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'd1-03', text: 'Leila: OK, go and knock on the door and get him back to his seat fast.', audioUrl: `${A9C}/d1-03-leila.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'd1-04', text: 'Tom: Will do.', audioUrl: `${A9C}/d1-04-tom.wav`, durationSeconds: 1, speaker: 'crew' },
+      { id: 'd1-05', text: 'Leila: Jutta, have you finished the bar paperwork?', audioUrl: `${A9C}/d1-05-leila.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'd1-06', text: 'Jutta: Almost, just a couple more lines.', audioUrl: `${A9C}/d1-06-jutta.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'd1-07', text: 'Leila: Hemal, can you help me clear the cabin for landing?', audioUrl: `${A9C}/d1-07-leila.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'd1-08', text: 'Hemal: Sure.', audioUrl: `${A9C}/d1-08-hemal.wav`, durationSeconds: 1, speaker: 'crew' },
+      { id: 'd1-09', text: 'Leila: Jutta, all done?', audioUrl: `${A9C}/d1-09-leila.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'd1-10', text: 'Jutta: Yes, just finished!', audioUrl: `${A9C}/d1-10-jutta.wav`, durationSeconds: 2, speaker: 'crew' },
+    ],
+    vocabulary: [
+      { word: 'Bar paperwork', definition: 'Records of drinks and duty-free sales made during the flight' },
+      { word: 'Clear the cabin', definition: 'To check the whole cabin is ready for landing' },
+      { word: 'Secure', definition: 'Safely fastened or stowed' },
+    ],
+  },
+  theory: {
+    title: 'Checking Things Have Been Done',
+    content: 'In the final ten minutes before landing, cabin crew rapidly check that every task is complete - paperwork, the cabin, the galley, and every passenger secured in their seat.',
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of checking things have been done',
+      audioUrl: `${A9C}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Checking Things Have Been Done',
+    phrases: [
+      { situation: 'Asking if a task is complete', phrase: 'Have you done all the checks? Yes, I\'ve completed all the checks. / Yes, I have.', meaning: 'Present perfect question and short answer', example: 'Have you done all the checks?' },
+      { situation: 'Reporting incomplete work', phrase: "Have you done all the clearing in? No, I haven't cleared in all the rows (yet).", meaning: 'Negative present perfect with "yet"', example: "Have you done all the clearing in?" },
+      { situation: 'Asking about a colleague\'s task', phrase: "Has she finished the bar paperwork? Yes, she has. / No, she hasn't.", meaning: 'Third-person present perfect question and answer', example: "Has she finished the bar paperwork?" },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Final Cabin Duties',
+    terms: [
+      { term: 'Bar paperwork', definition: 'Records of drinks and duty-free sales made during the flight', example: 'Has she finished the bar paperwork?' },
+      { term: 'Disembarkation card', definition: 'A form completed before landing in some countries', example: 'Have you filled in your disembarkation card, sir?' },
+      { term: 'Galley trolley', definition: 'The trolley used to serve food and drinks, stowed for landing', example: 'Have you secured the trolley in the galley?' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Giving a quick, urgent instruction', expression: 'Go and knock on the door and get him back to his seat fast.', alternativeExpressions: ['Please hurry him back to his seat.', 'Get him seated quickly, please.'] },
+    { situation: 'Confirming completion', expression: 'Yes, just finished!', alternativeExpressions: ['All done!', 'Just in time!'] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'Have you done all the checks?', audioUrl: `${A9C}/pronunciation.wav`, durationSeconds: 3 },
+  ],
+  vocabulary: [
+    { word: 'Bar paperwork', definition: 'Records of drinks and duty-free sales made during the flight' },
+    { word: 'Clear the cabin', definition: 'To check the whole cabin is ready for landing' },
+    { word: 'Secure', definition: 'Safely fastened or stowed' },
+    { word: 'Disembarkation card', definition: 'A form completed before landing in some countries' },
+  ],
+  grammar: [
+    {
+      rule: 'Present perfect for checking completed tasks (Have you...? / Has she...?) - intonation rises in the question and falls in the short answer',
+      examples: [
+        { sentence: "Has she done the final checks? No, she hasn't.", audioUrl: `${A9C}/qa-1.wav` },
+        { sentence: 'Have you secured the trolley in the galley? Yes, I have.', audioUrl: `${A9C}/qa-2.wav` },
+        { sentence: "Have they checked the tables are upright? No, they haven't.", audioUrl: `${A9C}/qa-3.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'speaking', points: 15,
+      question: '"Cabin crew, ten minutes to landing, ten minutes to landing." What does this call from the flight deck mean for the cabin crew? What does it mean for passengers? What happens next?',
+    },
+    {
+      id: 'ex-2', type: 'multiple-choice', points: 10,
+      question: 'Has Tom checked his side of the cabin?',
+      options: [
+        { id: 'o1', text: 'Not yet - there\'s still a passenger in the toilet', isCorrect: true },
+        { id: 'o2', text: 'Yes, completely', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 10,
+      question: 'What does Leila ask Tom to do?',
+      options: [
+        { id: 'o1', text: 'Knock on the toilet door and get the passenger back to his seat fast', isCorrect: true },
+        { id: 'o2', text: 'Finish the bar paperwork', isCorrect: false },
+        { id: 'o3', text: 'Check the galley', isCorrect: false },
+        { id: 'o4', text: 'Sit down himself', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-4', type: 'multiple-choice', points: 10,
+      question: "What hasn't Jutta done yet?",
+      options: [
+        { id: 'o1', text: 'The bar paperwork', isCorrect: true },
+        { id: 'o2', text: 'Checking the toilets', isCorrect: false },
+        { id: 'o3', text: 'Securing the galley', isCorrect: false },
+        { id: 'o4', text: 'Her own seatbelt', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-5', type: 'multiple-choice', points: 10,
+      question: "Why isn't Tom's side of the cabin secure yet?",
+      options: [
+        { id: 'o1', text: 'A passenger is still in the toilet', isCorrect: true },
+        { id: 'o2', text: 'He hasn\'t started checking', isCorrect: false },
+        { id: 'o3', text: 'The overhead lockers are jammed', isCorrect: false },
+        { id: 'o4', text: 'A passenger refuses to sit down', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-6', type: 'multiple-choice', points: 10,
+      question: 'What does Leila tell Tom to do about the passenger in the toilet?',
+      options: [
+        { id: 'o1', text: 'Knock and get him back to his seat quickly', isCorrect: true },
+        { id: 'o2', text: 'Wait for him to come out on his own', isCorrect: false },
+        { id: 'o3', text: 'Report it to the captain', isCorrect: false },
+        { id: 'o4', text: 'Ignore it', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-7', type: 'multiple-choice', points: 10,
+      question: 'Does Jutta manage to complete her paperwork in time before landing?',
+      options: [
+        { id: 'o1', text: 'Yes, just in time', isCorrect: true },
+        { id: 'o2', text: 'No, she runs out of time', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-8', type: 'speaking', points: 15,
+      question: 'Practise these questions and short answers with rising intonation in the question, falling in the answer: "Has she done the final checks? No, she hasn\'t." "Have you secured the trolley in the galley? Yes, I have."',
+    },
+    {
+      id: 'ex-9', type: 'speaking', points: 20,
+      question: 'Which of these would crew say in the last 20 minutes, and which in the last 10 minutes: "Have you filled in your disembarkation card, sir?", "Any rubbish?", "Could you put your seat upright, please?", "I\'m afraid the toilet is now locked for landing, madam.", "This is the emergency exit door, sir. You\'ll have to put your bag in the overhead locker.", "Please, I\'ve asked you before, you must switch off your laptop immediately."? Discuss with a partner.',
+    },
+    {
+      id: 'ex-10', type: 'speaking', points: 20,
+      question: 'In pairs, with less than five minutes to landing, practise asking and answering questions about final checks. One of you is a senior flight attendant, the other a junior flight attendant. Then reverse roles.',
+    },
+    {
+      id: 'ex-11', type: 'multiple-choice', points: 15,
+      question: 'What was the special problem on the Hong Kong flight in "Toilet Troubles for Cathay"?',
+      options: [
+        { id: 'o1', text: 'All ten toilets became blocked and unusable', isCorrect: true },
+        { id: 'o2', text: 'The toilets ran out of water', isCorrect: false },
+        { id: 'o3', text: 'One toilet caught fire', isCorrect: false },
+        { id: 'o4', text: 'The toilet doors would not lock', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-12', type: 'multiple-choice', points: 15,
+      question: 'What were the consequences for everyone involved?',
+      options: [
+        { id: 'o1', text: 'The captain made an unscheduled landing in Mumbai', isCorrect: true },
+        { id: 'o2', text: 'The flight continued as normal with no changes', isCorrect: false },
+        { id: 'o3', text: 'All passengers were given refunds immediately', isCorrect: false },
+        { id: 'o4', text: 'The flight turned back to Riyadh', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-13', type: 'speaking', points: 15,
+      question: 'What do you think the cabin crew had to do during the Cathay toilet incident? Have you experienced similar problems with toilets on flights? If so, what did you tell the passengers?',
+    },
+    {
+      id: 'ex-14', type: 'speaking', points: 15,
+      question: 'What guidelines for toilet management during flights are you given? Are they adequate? Write an announcement about a blocked toilet using these phrases: out of order, experiencing a problem, to the front/middle/rear of the aircraft, until further notice, toilet facilities, apologize for any inconvenience. Practise giving it to passengers.',
+    },
+    {
+      id: 'ex-15', type: 'speaking', points: 15,
+      question: 'Before landing, what has to be collected, checked, handed out, secured and stowed by the flight attendants? Discuss communication between the pilot/co-pilot and passengers, passengers and cabin crew, and flight crew and cabin crew during the final phase of descent.',
+    },
+    {
+      id: 'ex-16', type: 'speaking', points: 15,
+      question: 'Do you agree that preparing for landing is the most stressful part of the flight? Why or why not? Is 20 minutes enough time for cabin crew to perform all their duties on a short-haul flight? Can you suggest improvements to communication between flight crew and cabin crew during the last ten minutes?',
+    },
+  ],
+  quiz: {
+    id: 'quiz-9-3',
+    title: 'Getting Through the Final Ten Minutes Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'Why does Tom need to hurry to the toilet?',
+        options: [
+          { id: 'o1', text: 'A passenger needs to be seated before landing', isCorrect: true },
+          { id: 'o2', text: 'The toilet is out of order', isCorrect: false },
+          { id: 'o3', text: 'A passenger is unwell', isCorrect: false },
+          { id: 'o4', text: 'There is a fire', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'How many toilets were blocked on the Cathay Pacific flight from Riyadh to Hong Kong?',
+        options: [
+          { id: 'o1', text: 'All ten', isCorrect: true },
+          { id: 'o2', text: 'Just one', isCorrect: false },
+          { id: 'o3', text: 'Half of them', isCorrect: false },
+          { id: 'o4', text: 'None, it was a rumour', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'Where did the affected Cathay Pacific flight eventually land?',
+        options: [
+          { id: 'o1', text: 'Mumbai', isCorrect: true },
+          { id: 'o2', text: 'Hong Kong as planned', isCorrect: false },
+          { id: 'o3', text: 'Riyadh', isCorrect: false },
+          { id: 'o4', text: 'Bordeaux', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'What did engineers do to try to solve the toilet blockage problem?',
+        options: [
+          { id: 'o1', text: 'Fitted new pipes and carried out deep cleaning', isCorrect: true },
+          { id: 'o2', text: 'Removed several toilets from each aircraft', isCorrect: false },
+          { id: 'o3', text: 'Grounded the entire fleet permanently', isCorrect: false },
+          { id: 'o4', text: 'Nothing was done', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'What does the Cathay spokeswoman suggest may have partly caused the blockages?',
+        options: [
+          { id: 'o1', text: 'Passengers putting unusual items down the toilets', isCorrect: true },
+          { id: 'o2', text: 'A manufacturing fault present since the aircraft was new', isCorrect: false },
+          { id: 'o3', text: 'Extreme weather', isCorrect: false },
+          { id: 'o4', text: 'Overuse by crew', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Bar paperwork', back: 'Records of drinks and duty-free sales made during the flight' },
+    { id: 'fc-2', front: 'Disembarkation card', back: 'A form completed before landing in some countries' },
+    { id: 'fc-3', front: 'A blockage', back: 'Something which gets stuck; an obstruction' },
+    { id: 'fc-4', front: 'A fleet', back: 'All the planes belonging to an airline' },
+  ],
+  review: {
+    keyPoints: [
+      'The "ten minutes to landing" call triggers a rapid sequence of final checks',
+      'Use present perfect ("Have you...?") to check whether tasks are complete',
+      'Prioritize the most urgent tasks (e.g. getting a passenger out of the toilet) first',
+      'Even a rare equipment failure, like blocked toilets, requires calm crew management',
+      'Engineering and operational fixes (like the Cathay case) often follow serious incidents',
+    ],
+    commonMistakes: [
+      { mistake: 'Leaving toilet checks until too late in the final approach', correction: 'Check toilets are empty well before the final minutes', explanation: 'This avoids last-minute scrambles like in the dialogue' },
+      { mistake: 'Panicking when facing an unusual equipment failure', correction: 'Follow calm, methodical problem-solving, as Cathay Pacific did', explanation: 'A calm, organized response reduces passenger distress' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
 const UNIT_TITLES: Record<number, string> = {
   0: 'Unit 1: The Pre-Flight Briefing',
   1: 'Unit 2: Welcome on Board',
@@ -7847,6 +8704,12 @@ export const iCAOUnits: Unit[] = [
         ? COMPLAINTS_OTHERS_LESSON
         : unitIdx === 7 && lessonIdx === 2
         ? DISRUPTIVE_PASSENGERS_LESSON
+        : unitIdx === 8 && lessonIdx === 0
+        ? FINAL_ANNOUNCEMENTS_LESSON
+        : unitIdx === 8 && lessonIdx === 1
+        ? DELAYED_LANDINGS_LESSON
+        : unitIdx === 8 && lessonIdx === 2
+        ? FINAL_TEN_MINUTES_LESSON
         : LESSON_TEMPLATE(unitIdx + 1, lessonIdx + 1, `Lesson ${lessonIdx + 1}`)
     )
   })) as Unit[]
