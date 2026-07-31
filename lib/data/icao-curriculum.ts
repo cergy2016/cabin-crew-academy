@@ -3202,6 +3202,936 @@ const SETTLE_PASSENGERS_LESSON: any = {
   updatedAt: new Date().toISOString(),
 };
 
+// ============================================================
+// Unit 4, Lesson 1: Giving a Choice
+// Reading a long-haul menu, offering choices at meal time
+// ============================================================
+const A4A = '/audio/unit-4/lesson-1';
+
+const GIVING_CHOICE_LESSON: any = {
+  id: 'lesson-4-1',
+  unitId: 'unit-4',
+  title: 'Giving a Choice',
+  description: 'Reading a long-haul menu and offering passengers a choice of food and drink',
+  icon: '🍽️',
+  icaoLevel: 4,
+  category: 'cabin-crew',
+  difficulty: 'intermediate',
+  xpReward: 150,
+  estimatedDurationMinutes: 40,
+  locked: false,
+  order: 1,
+  objectives: [
+    { id: 'obj-1', description: 'Read and understand a long-haul flight menu', type: 'reading' },
+    { id: 'obj-2', description: 'Offer passengers a choice of meals politely', type: 'speaking' },
+    { id: 'obj-3', description: 'Handle a meal-choice problem gracefully', type: 'listening' },
+  ],
+  scenario: {
+    id: 'scenario-giving-choice',
+    title: 'Serving the Meal',
+    description: 'A flight attendant serves the meal to a man and a woman travelling with children, offering choices and handling a small problem.',
+    context: 'Cabin, long-haul flight, lunch service',
+    audioSegments: [
+      { id: 'd1-01', text: 'Flight attendant: Good afternoon, sir. What would you like for your main course? We have chicken, beef, or vegetable lasagne.', audioUrl: `${A4A}/d1-01-fa.wav`, durationSeconds: 6, speaker: 'crew' },
+      { id: 'd1-02', text: "Man: I'll have the beef, please.", audioUrl: `${A4A}/d1-02-man.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'd1-03', text: 'Flight attendant: Excellent choice. Would you like red or white wine with that?', audioUrl: `${A4A}/d1-03-fa.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'd1-04', text: 'Man: Red, please.', audioUrl: `${A4A}/d1-04-man.wav`, durationSeconds: 1, speaker: 'passenger' },
+      { id: 'd1-05', text: 'Flight attendant: Here we are - this is a French Bordeaux.', audioUrl: `${A4A}/d1-05-fa.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'd1-06', text: 'Man: Lovely, thank you.', audioUrl: `${A4A}/d1-06-man.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'd1-07', text: 'Flight attendant: And for you, madam?', audioUrl: `${A4A}/d1-07-fa.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'd1-08', text: "Woman: What's in the chicken dish?", audioUrl: `${A4A}/d1-08-woman.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'd1-09', text: "Flight attendant: It's marinated with Arabic spices, quite fragrant but not too spicy.", audioUrl: `${A4A}/d1-09-fa.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'd1-10', text: "Woman: Oh good, I don't like anything too spicy. I'll have the chicken then.", audioUrl: `${A4A}/d1-10-woman.wav`, durationSeconds: 4, speaker: 'passenger' },
+      { id: 'd1-11', text: 'Flight attendant: And for your children?', audioUrl: `${A4A}/d1-11-fa.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'd1-12', text: 'Woman: Could they have the vegetable lasagne, please?', audioUrl: `${A4A}/d1-12-woman.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'd1-13', text: "Flight attendant: I'm so sorry, madam, I'm afraid we've run out of the children's lasagne portions - we only have the adult-sized ones left. Would that be all right, or would you prefer something else for them?", audioUrl: `${A4A}/d1-13-fa.wav`, durationSeconds: 8, speaker: 'crew' },
+      { id: 'd1-14', text: 'Woman: The adult portion should be fine, just less of it maybe.', audioUrl: `${A4A}/d1-14-woman.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'd1-15', text: "Flight attendant: Of course, I'll make sure it's a smaller portion. And to drink?", audioUrl: `${A4A}/d1-15-fa.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'd1-16', text: 'Woman: Sparkling water for me, please, and Coke for the children.', audioUrl: `${A4A}/d1-16-woman.wav`, durationSeconds: 4, speaker: 'passenger' },
+      { id: 'd1-17', text: "Flight attendant: Certainly. And just a tip - for your return flight, it's a good idea to pre-order children's meals in advance, that way we can guarantee availability.", audioUrl: `${A4A}/d1-17-fa.wav`, durationSeconds: 7, speaker: 'crew' },
+      { id: 'd1-18', text: "Woman: Oh, that's good to know, thank you.", audioUrl: `${A4A}/d1-18-woman.wav`, durationSeconds: 2, speaker: 'passenger' },
+    ],
+    vocabulary: [
+      { word: 'Marinated', definition: 'Soaked in a seasoned liquid before cooking' },
+      { word: 'Garnished', definition: 'Decorated or finished with a small extra ingredient' },
+      { word: 'Vinaigrette', definition: 'A sauce made of oil, vinegar and seasoning' },
+      { word: 'Tenderloin', definition: 'A tender cut of meat' },
+    ],
+  },
+  theory: {
+    title: 'Reading a Long-Haul Menu',
+    content: "Continental breakfast and lunch. Breakfast: orange juice, yoghurt, fresh fruit appetizer of seasonal fruit, croissant served with butter and jam, muffin, tea or coffee. Lunch starter: seasonal salad with assorted seafood and crunchy garlic bread topped with shredded parmesan, accompanied by vinaigrette dressing. Main course options: tender pieces of chicken marinated with Arabic spices, cooked with rice, tomatoes, cauliflower and garnished with fried onions, accompanied by French beans and peas; or charcoal-grilled beef tenderloin, served with a creamy forest mushroom sauce topped with chopped chives, accompanied by roasted potatoes and red pepper; or vegetable lasagne with a light cheese sauce, accompanied by a fresh green salad. Dessert: a rich dark chocolate mousse, topped with fresh orange and strawberries, accompanied by fresh cream. Roll and butter. Tea or coffee with chocolates.",
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Menu reading',
+      audioUrl: `${A4A}/menu-reading.wav`,
+      durationSeconds: 45,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Offering a Choice',
+    phrases: [
+      { situation: 'Service with a smile', phrase: 'What would you like, sir?', meaning: 'Friendly opener when taking an order', example: 'What would you like, sir?' },
+      { situation: 'Offering a drink', phrase: 'What would you like to drink?', meaning: 'Asking specifically about drinks', example: 'What would you like to drink?' },
+      { situation: 'Service with a smile', phrase: 'What can I get you, madam?', meaning: 'Friendly opener when taking an order', example: 'What can I get you, madam?' },
+      { situation: 'Handing over the tray', phrase: 'Here we are, sir. / There you are, madam.', meaning: 'Giving the meal tray or serving a drink', example: 'Here we are, sir.' },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Meal Tray Items',
+    terms: [
+      { term: 'Meal tray', definition: 'The tray holding the passenger\'s meal', example: 'Here we are, sir - your meal tray.' },
+      { term: 'Cutlery', definition: 'Knife, fork and spoon', example: 'The cutlery is wrapped in the napkin.' },
+      { term: 'Napkin', definition: 'A cloth or paper used to keep clean while eating', example: 'Please find your napkin under the cutlery.' },
+      { term: 'Bread roll', definition: 'A small individual loaf of bread', example: 'Would you like your bread roll now?' },
+      { term: 'Salt and pepper sachets', definition: 'Small individual packets of salt and pepper', example: 'The salt and pepper sachets are on the tray.' },
+      { term: 'Main dish container', definition: 'The covered container holding the hot main course', example: 'Please be careful, the main dish container is hot.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Describing a dish', expression: "It's marinated with Arabic spices, quite fragrant but not too spicy.", alternativeExpressions: ['It has a mild, aromatic flavour.', "It's seasoned but not hot."] },
+    { situation: 'Apologizing for an unavailable item', expression: "I'm so sorry, I'm afraid we've run out of that.", alternativeExpressions: ["Unfortunately that's no longer available.", "I'm afraid that's finished, could I offer you something else?"] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'What would you like, sir?', audioUrl: `${A4A}/pronunciation.wav`, durationSeconds: 2 },
+  ],
+  vocabulary: [
+    { word: 'Marinated', definition: 'Soaked in a seasoned liquid before cooking' },
+    { word: 'Garnished', definition: 'Decorated or finished with a small extra ingredient' },
+    { word: 'Vinaigrette', definition: 'A sauce made of oil, vinegar and seasoning' },
+    { word: 'Tenderloin', definition: 'A tender cut of meat' },
+    { word: 'Appetizer', definition: 'A small dish served before the main course' },
+    { word: 'Mousse', definition: 'A light, airy dessert, often chocolate-flavoured' },
+  ],
+  grammar: [
+    {
+      rule: "Offering a choice with 'or' - a short question form lists two or more options",
+      examples: [
+        { sentence: 'Coffee or tea?', audioUrl: `${A4A}/list-1.wav` },
+        { sentence: 'Red or white wine?', audioUrl: `${A4A}/list-2.wav` },
+        { sentence: 'Beef or chicken?', audioUrl: `${A4A}/list-4.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'multiple-choice', points: 10,
+      question: 'Which meals are served on this flight?',
+      options: [
+        { id: 'o1', text: 'Breakfast and lunch', isCorrect: true },
+        { id: 'o2', text: 'Lunch and dinner', isCorrect: false },
+        { id: 'o3', text: 'Only breakfast', isCorrect: false },
+        { id: 'o4', text: 'Only a snack', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-2', type: 'multiple-choice', points: 10,
+      question: 'How many courses are there for lunch?',
+      options: [
+        { id: 'o1', text: 'Three (starter, main, dessert)', isCorrect: true },
+        { id: 'o2', text: 'Two', isCorrect: false },
+        { id: 'o3', text: 'Four', isCorrect: false },
+        { id: 'o4', text: 'One', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 10,
+      question: 'How many choices are there for the main course at lunch?',
+      options: [
+        { id: 'o1', text: 'Three (chicken, beef, or vegetable lasagne)', isCorrect: true },
+        { id: 'o2', text: 'Two', isCorrect: false },
+        { id: 'o3', text: 'Five', isCorrect: false },
+        { id: 'o4', text: 'One, no choice', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-4', type: 'speaking', points: 15,
+      question: 'Do you think this flight departed in the morning, afternoon or evening? Explain why, based on the menu.',
+      hint: 'Think about which meals are served and in what order.',
+    },
+    {
+      id: 'ex-5', type: 'speaking', points: 15,
+      question: 'With a partner, put items from the menu into these categories: Fruit, Meat and fish, Vegetables and herbs, Dairy food.',
+    },
+    {
+      id: 'ex-6', type: 'multiple-choice', points: 10,
+      question: 'True or False: The man chooses beef.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-7', type: 'multiple-choice', points: 10,
+      question: 'True or False: The man chooses white wine to drink.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: false },
+        { id: 'o2', text: 'False', isCorrect: true, explanation: 'He chooses red wine.' },
+      ],
+    },
+    {
+      id: 'ex-8', type: 'multiple-choice', points: 10,
+      question: 'True or False: The wine is French.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true, explanation: "It's a French Bordeaux." },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-9', type: 'multiple-choice', points: 10,
+      question: 'True or False: The woman wants fish for her main course.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: false },
+        { id: 'o2', text: 'False', isCorrect: true, explanation: 'She chooses the chicken.' },
+      ],
+    },
+    {
+      id: 'ex-10', type: 'multiple-choice', points: 10,
+      question: 'True or False: The woman does not like food which is too spicy.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-11', type: 'multiple-choice', points: 10,
+      question: 'True or False: The woman asks for the lasagne for her children.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-12', type: 'multiple-choice', points: 10,
+      question: "True or False: There is a problem with the woman's choice for her children.",
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true, explanation: "The children's portions of lasagne have run out." },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-13', type: 'multiple-choice', points: 10,
+      question: 'True or False: The woman chooses sparkling water for herself and Coke for her children.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-14', type: 'multiple-choice', points: 10,
+      question: "True or False: The flight attendant advises her to pre-order the children's meals for the flight home.",
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-15', type: 'speaking', points: 15,
+      question: 'With a partner, take turns ordering and taking orders from the menu. Ask and answer questions like "Is the chicken very spicy?" and "What are chives?"',
+    },
+  ],
+  quiz: {
+    id: 'quiz-4-1',
+    title: 'Giving a Choice Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'What main course does the man choose?',
+        options: [
+          { id: 'o1', text: 'Beef', isCorrect: true },
+          { id: 'o2', text: 'Chicken', isCorrect: false },
+          { id: 'o3', text: 'Vegetable lasagne', isCorrect: false },
+          { id: 'o4', text: 'Fish', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'Why does the woman choose the chicken?',
+        options: [
+          { id: 'o1', text: "It's not too spicy", isCorrect: true },
+          { id: 'o2', text: "It's the cheapest option", isCorrect: false },
+          { id: 'o3', text: "It's the only option left", isCorrect: false },
+          { id: 'o4', text: 'Her children want it too', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: "What problem occurs with the children's meal?",
+        options: [
+          { id: 'o1', text: "The children's lasagne portions have run out", isCorrect: true },
+          { id: 'o2', text: 'There is no lasagne at all', isCorrect: false },
+          { id: 'o3', text: 'The children refuse to eat', isCorrect: false },
+          { id: 'o4', text: 'The lasagne is too spicy', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'What drinks does the woman choose for herself and her children?',
+        options: [
+          { id: 'o1', text: 'Sparkling water for herself, Coke for the children', isCorrect: true },
+          { id: 'o2', text: 'Wine for herself, juice for the children', isCorrect: false },
+          { id: 'o3', text: 'Still water for everyone', isCorrect: false },
+          { id: 'o4', text: 'Tea for herself, milk for the children', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'What tip does the flight attendant give the woman for her return flight?',
+        options: [
+          { id: 'o1', text: "Pre-order children's meals in advance", isCorrect: true },
+          { id: 'o2', text: 'Bring her own food', isCorrect: false },
+          { id: 'o3', text: 'Book an earlier flight', isCorrect: false },
+          { id: 'o4', text: 'Avoid the lasagne', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Marinated', back: 'Soaked in a seasoned liquid before cooking' },
+    { id: 'fc-2', front: 'Vinaigrette', back: 'A sauce made of oil, vinegar and seasoning' },
+    { id: 'fc-3', front: 'Tenderloin', back: 'A tender cut of meat' },
+    { id: 'fc-4', front: 'Appetizer', back: 'A small dish served before the main course' },
+  ],
+  review: {
+    keyPoints: [
+      'Describe dishes clearly, including spice level and ingredients',
+      'Offer choices with short "or" questions: "Beef or chicken?"',
+      'Apologize sincerely and offer alternatives when an item runs out',
+      'Give useful tips to passengers, like pre-ordering meals for future flights',
+      'Handing over a tray or drink: "Here we are" / "There you are"',
+    ],
+    commonMistakes: [
+      { mistake: 'Not explaining what a dish contains when asked', correction: 'Describe ingredients and spice level clearly', explanation: 'Passengers with allergies or preferences need this information' },
+      { mistake: 'Apologizing without offering a solution', correction: 'Always suggest an alternative when something is unavailable', explanation: 'This keeps the passenger informed and reduces frustration' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
+// ============================================================
+// Unit 4, Lesson 2: Serving Drinks
+// Naming drinks, listing choices, and intonation in lists
+// ============================================================
+const A4B = '/audio/unit-4/lesson-2';
+
+const SERVING_DRINKS_LESSON: any = {
+  id: 'lesson-4-2',
+  unitId: 'unit-4',
+  title: 'Serving Drinks',
+  description: 'Naming a wide range of drinks and using natural intonation when listing choices',
+  icon: '🥂',
+  icaoLevel: 4,
+  category: 'cabin-crew',
+  difficulty: 'intermediate',
+  xpReward: 150,
+  estimatedDurationMinutes: 40,
+  locked: false,
+  order: 2,
+  objectives: [
+    { id: 'obj-1', description: 'Recognize a wide range of drink names', type: 'vocabulary' },
+    { id: 'obj-2', description: 'List drink options with natural intonation', type: 'speaking' },
+    { id: 'obj-3', description: 'Politely decline to serve more alcohol when needed', type: 'speaking' },
+  ],
+  scenario: {
+    id: 'scenario-serving-drinks',
+    title: 'Serving Seven Passengers',
+    description: 'A flight attendant serves drinks to seven passengers, offering choices and handling a delicate situation with the last passenger.',
+    context: 'Cabin, drinks service',
+    audioSegments: [
+      { id: 'p1-01', text: 'Passenger 1: Could I have a large glass of water, please?', audioUrl: `${A4B}/p1-01.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'p1-02', text: 'Flight attendant: Certainly, with or without ice?', audioUrl: `${A4B}/p1-02.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'p1-03', text: 'Passenger 1: No ice, thank you.', audioUrl: `${A4B}/p1-03.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'p2-01', text: 'Passenger 2: Do you have any juice?', audioUrl: `${A4B}/p2-01.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'p2-02', text: 'Flight attendant: Yes, we have apple, orange, pineapple, or tomato juice.', audioUrl: `${A4B}/p2-02.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'p2-03', text: "Passenger 2: I'll have a pineapple juice, please.", audioUrl: `${A4B}/p2-03.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'p3-01', text: 'Passenger 3: Could I have a gin and tonic?', audioUrl: `${A4B}/p3-01.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'p3-02', text: "Flight attendant: I'm so sorry, we don't have any gin left, but I could offer you a vodka tonic instead?", audioUrl: `${A4B}/p3-02.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 'p3-03', text: 'Passenger 3: Oh, alright then, a vodka, please.', audioUrl: `${A4B}/p3-03.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'p4-01', text: 'Passenger 4: Can I get a cold beer?', audioUrl: `${A4B}/p4-01.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'p4-02', text: 'Flight attendant: Of course, we have Carlsberg or Kronenberg.', audioUrl: `${A4B}/p4-02.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'p4-03', text: 'Passenger 4: Carlsberg, please.', audioUrl: `${A4B}/p4-03.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'p5-01', text: 'Passenger 5: Two large glasses of Coke with ice for my children, please.', audioUrl: `${A4B}/p5-01.wav`, durationSeconds: 4, speaker: 'passenger' },
+      { id: 'p5-02', text: 'Flight attendant: Here you are, enjoy!', audioUrl: `${A4B}/p5-02.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'p6-01', text: 'Passenger 6: Could I have a glass of white wine, please?', audioUrl: `${A4B}/p6-01.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'p6-02', text: 'Flight attendant: Of course. And did you enjoy your meal?', audioUrl: `${A4B}/p6-02.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'p6-03', text: 'Passenger 6: Yes, it was lovely, thank you.', audioUrl: `${A4B}/p6-03.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'p7-01', text: 'Passenger 7: Could I have a whisky, please?', audioUrl: `${A4B}/p7-01.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'p7-02', text: "Flight attendant: I'm sorry sir, I'm afraid I can't serve you any more alcohol - I've noticed you've already had a few drinks this flight. Could I offer you a coffee or tea instead?", audioUrl: `${A4B}/p7-02.wav`, durationSeconds: 8, speaker: 'crew' },
+    ],
+    vocabulary: [
+      { word: 'Sauvignon Blanc', definition: 'A type of white wine' },
+      { word: 'Tonic water', definition: 'A carbonated soft drink, often mixed with gin' },
+      { word: 'Cognac', definition: 'A type of French brandy' },
+      { word: 'Espresso', definition: 'A strong, small coffee' },
+    ],
+  },
+  theory: {
+    title: 'Naming Drinks Confidently',
+    content: 'Serving drinks means knowing a wide range of names for wines, spirits, soft drinks and hot drinks, listing options clearly, and sometimes tactfully declining to serve more alcohol to a passenger.',
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of naming drinks confidently',
+      audioUrl: `${A4B}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Listing Drink Choices',
+    phrases: [
+      { situation: 'Listing juices', phrase: 'Apple, orange, pineapple or tomato.', meaning: 'A natural list with rising intonation until the last item', example: 'Apple, orange, pineapple or tomato.' },
+      { situation: 'Listing sodas', phrase: 'Coke, Fanta, Sprite, 7up or Lilt.', meaning: 'A natural list of soft drinks', example: 'Coke, Fanta, Sprite, 7up or Lilt.' },
+      { situation: 'Listing wines', phrase: 'Red wine, white wine, sherry or champagne.', meaning: 'A natural list of wines', example: 'Red wine, white wine, sherry or champagne.' },
+      { situation: 'Declining to serve alcohol', phrase: "I'm afraid I can't serve you any more alcohol.", meaning: 'A polite but firm refusal', example: "I'm afraid I can't serve you any more alcohol." },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Drinks Menu',
+    terms: [
+      { term: 'Soft drinks', definition: 'Non-alcoholic fizzy or still drinks', example: 'Soda, lemonade, tonic water, ginger ale.' },
+      { term: 'Wines and beers', definition: 'Alcoholic drinks made from grapes or grain', example: 'Sauvignon Blanc, Merlot, Bordeaux, Carlsberg, Kronenberg.' },
+      { term: 'Spirits', definition: 'Strong distilled alcoholic drinks', example: 'Johnny Walker, vodka, Bacardi rum, bourbon, cognac.' },
+      { term: 'Hot drinks', definition: 'Drinks served hot', example: 'Fruit tea, Earl Grey tea, English Breakfast tea, cappuccino, espresso.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Apologizing for a drink being unavailable', expression: "I'm so sorry, we don't have any left, but I could offer you...", alternativeExpressions: ["Unfortunately that's finished, would you like to try...", "I'm afraid we're out of that, can I suggest..."] },
+    { situation: 'Refusing more alcohol tactfully', expression: "I've noticed you've already had a few drinks - could I offer you a coffee or tea instead?", alternativeExpressions: ['I think it might be best to switch to a soft drink.', "I'm not able to serve more alcohol right now, but I can get you something else."] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'Coke, Fanta, Sprite, 7up or Lilt.', audioUrl: `${A4B}/pronunciation.wav`, durationSeconds: 3 },
+  ],
+  vocabulary: [
+    { word: 'Sauvignon Blanc', definition: 'A type of white wine' },
+    { word: 'Tonic water', definition: 'A carbonated soft drink, often mixed with gin' },
+    { word: 'Cognac', definition: 'A type of French brandy' },
+    { word: 'Espresso', definition: 'A strong, small coffee' },
+    { word: 'Decaffeinated', definition: 'Coffee or tea with the caffeine removed' },
+    { word: 'Sherry', definition: 'A type of fortified wine' },
+  ],
+  grammar: [
+    {
+      rule: "Listing intonation - voice rises on each item except the last, which falls, e.g. 'Apple, orange, pineapple or tomato.'",
+      examples: [
+        { sentence: 'Apple, orange, pineapple or tomato.', audioUrl: `${A4B}/list-1.wav` },
+        { sentence: 'Red wine, white wine, sherry or champagne.', audioUrl: `${A4B}/list-3.wav` },
+        { sentence: 'Still water, sparkling water, soda water or tonic water.', audioUrl: `${A4B}/list-5.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'multiple-choice', points: 10,
+      question: 'Does the first passenger want ice with her water?',
+      options: [
+        { id: 'o1', text: 'No', isCorrect: true },
+        { id: 'o2', text: 'Yes', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-2', type: 'multiple-choice', points: 10,
+      question: 'How many different kinds of juice does the flight attendant offer the second passenger?',
+      options: [
+        { id: 'o1', text: 'Four (apple, orange, pineapple, tomato)', isCorrect: true },
+        { id: 'o2', text: 'Two', isCorrect: false },
+        { id: 'o3', text: 'Three', isCorrect: false },
+        { id: 'o4', text: 'Five', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 10,
+      question: "What is the problem with the third passenger's order?",
+      options: [
+        { id: 'o1', text: 'There is no gin left', isCorrect: true },
+        { id: 'o2', text: 'There is no tonic left', isCorrect: false },
+        { id: 'o3', text: 'There is no ice left', isCorrect: false },
+        { id: 'o4', text: 'There is no vodka left', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-4', type: 'multiple-choice', points: 10,
+      question: 'How many types of beer does the flight attendant offer the fourth passenger?',
+      options: [
+        { id: 'o1', text: 'Two (Carlsberg, Kronenberg)', isCorrect: true },
+        { id: 'o2', text: 'One', isCorrect: false },
+        { id: 'o3', text: 'Three', isCorrect: false },
+        { id: 'o4', text: 'None, they are out of beer', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-5', type: 'fill-blank', points: 10,
+      question: 'What does the flight attendant say when she gives the young passenger the Cokes? "Here you are, _________!"',
+      audio: { id: 'p5-audio', text: 'Giving the Cokes', audioUrl: `${A4B}/p5-02.wav`, durationSeconds: 2, speaker: 'crew' },
+      correctAnswer: 'enjoy',
+    },
+    {
+      id: 'ex-6', type: 'multiple-choice', points: 10,
+      question: 'Does the sixth passenger like the food?',
+      options: [
+        { id: 'o1', text: 'Yes, she says it was lovely', isCorrect: true },
+        { id: 'o2', text: 'No, she complains about it', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-7', type: 'multiple-choice', points: 10,
+      question: "Why can't the flight attendant serve the last passenger an alcoholic drink?",
+      options: [
+        { id: 'o1', text: "He's already had a few drinks this flight", isCorrect: true },
+        { id: 'o2', text: 'The airline does not serve whisky', isCorrect: false },
+        { id: 'o3', text: 'They have run out of all alcohol', isCorrect: false },
+        { id: 'o4', text: 'He has not paid', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-8', type: 'multiple-choice', points: 10,
+      question: 'What does the flight attendant offer instead?',
+      options: [
+        { id: 'o1', text: 'Coffee or tea', isCorrect: true },
+        { id: 'o2', text: 'Water only', isCorrect: false },
+        { id: 'o3', text: 'A soft drink of his choice', isCorrect: false },
+        { id: 'o4', text: 'Nothing', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-9', type: 'speaking', points: 15,
+      question: 'Practise saying these lists with natural intonation: Juices - Apple, orange, pineapple or tomato. Wines - Red wine, white wine, sherry or champagne. Waters - Still water, sparkling water, soda water or tonic water.',
+    },
+    {
+      id: 'ex-10', type: 'speaking', points: 15,
+      question: 'With a partner, take turns taking drink orders from a drinks menu you create together, sorting wines and beers, spirits, soft drinks, and hot drinks.',
+    },
+    {
+      id: 'ex-11', type: 'speaking', points: 15,
+      question: 'What problems can flight attendants have when serving food and drinks? Consider: the meal isn\'t hot enough, the meal is not what the passenger ordered, the passenger has already drunk too much but wants more, unexpected turbulence. Add your own ideas and discuss which are the worst.',
+    },
+  ],
+  quiz: {
+    id: 'quiz-4-2',
+    title: 'Serving Drinks Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'What does the third passenger end up ordering?',
+        options: [
+          { id: 'o1', text: 'A vodka tonic', isCorrect: true },
+          { id: 'o2', text: 'A gin and tonic', isCorrect: false },
+          { id: 'o3', text: 'A beer', isCorrect: false },
+          { id: 'o4', text: 'Nothing', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'Which two beers does the flight attendant offer?',
+        options: [
+          { id: 'o1', text: 'Carlsberg and Kronenberg', isCorrect: true },
+          { id: 'o2', text: 'Heineken and Corona', isCorrect: false },
+          { id: 'o3', text: 'Guinness and Budweiser', isCorrect: false },
+          { id: 'o4', text: 'Stella and Peroni', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'Why is the seventh passenger refused an alcoholic drink?',
+        options: [
+          { id: 'o1', text: "He's already had several drinks", isCorrect: true },
+          { id: 'o2', text: "It's against airline policy for everyone", isCorrect: false },
+          { id: 'o3', text: 'He is under 18', isCorrect: false },
+          { id: 'o4', text: 'The bar is closed', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'What does passenger 1 want with her water?',
+        options: [
+          { id: 'o1', text: 'No ice', isCorrect: true },
+          { id: 'o2', text: 'Ice', isCorrect: false },
+          { id: 'o3', text: 'A slice of lemon', isCorrect: false },
+          { id: 'o4', text: 'Sparkling, not still', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'On which channel intonation pattern do lists usually end?',
+        options: [
+          { id: 'o1', text: 'Falling intonation on the last item', isCorrect: true },
+          { id: 'o2', text: 'Rising intonation on every item', isCorrect: false },
+          { id: 'o3', text: 'The same flat tone throughout', isCorrect: false },
+          { id: 'o4', text: 'Falling on the first item only', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Cognac', back: 'A type of French brandy' },
+    { id: 'fc-2', front: 'Tonic water', back: 'A carbonated soft drink, often mixed with gin' },
+    { id: 'fc-3', front: 'Espresso', back: 'A strong, small coffee' },
+    { id: 'fc-4', front: 'Sherry', back: 'A type of fortified wine' },
+  ],
+  review: {
+    keyPoints: [
+      'Know a wide vocabulary of wines, spirits, soft drinks and hot drinks',
+      'List choices with natural intonation, falling on the last item',
+      'Apologize and offer an alternative when a drink is unavailable',
+      'Tactfully decline to serve more alcohol when a passenger has had enough',
+      'A friendly comment (e.g. asking about the meal) builds rapport during service',
+    ],
+    commonMistakes: [
+      { mistake: 'Listing drink options in a flat, unnatural tone', correction: 'Practise the rising-then-falling intonation pattern for lists', explanation: 'Natural intonation makes announcements easier to understand' },
+      { mistake: 'Being blunt when refusing to serve more alcohol', correction: 'Explain kindly and offer an alternative drink', explanation: 'This keeps the interaction professional and avoids conflict' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
+// ============================================================
+// Unit 4, Lesson 3: Duty-Free Sales
+// Money transactions + Case Study: Airline Food... Your Thoughts
+// ============================================================
+const A4C = '/audio/unit-4/lesson-3';
+
+const DUTY_FREE_LESSON: any = {
+  id: 'lesson-4-3',
+  unitId: 'unit-4',
+  title: 'Duty-Free Sales',
+  description: 'Announcing and handling duty-free sales, money transactions, and the case study: Airline Food, Your Thoughts',
+  icon: '💳',
+  icaoLevel: 4,
+  category: 'cabin-crew',
+  difficulty: 'intermediate',
+  xpReward: 180,
+  estimatedDurationMinutes: 55,
+  locked: false,
+  order: 3,
+  objectives: [
+    { id: 'obj-1', description: 'Understand a duty-free sales announcement', type: 'listening' },
+    { id: 'obj-2', description: 'Handle money transactions confidently in English', type: 'speaking' },
+    { id: 'obj-3', description: 'Discuss opinions about airline food from passengers and crew', type: 'reading' },
+  ],
+  scenario: {
+    id: 'scenario-duty-free',
+    title: 'Duty-Free Sales',
+    description: 'The duty-free sales announcement is made, and a flight attendant helps a passenger buy gifts and pay by card.',
+    context: 'Cabin, duty-free sales service',
+    audioSegments: [
+      { id: 'announcement', text: 'Ladies and gentlemen, the duty-free sales will begin shortly. Please prepare your list of purchases. Check the Shopping on Board magazine in your seat pocket. All prices are in local currency and in US dollars, and you can pay by cash or by using a credit card. We accept most major credit cards. Frequent flyers earn points on all sales on board. There are some bargains and there are several items specially designed for our airline.', audioUrl: `${A4C}/announcement.wav`, durationSeconds: 25, speaker: 'crew' },
+      { id: 'd3-01', text: "Passenger: I'd like to buy a present for my daughter - do you have any bracelets?", audioUrl: `${A4C}/d3-01-man.wav`, durationSeconds: 4, speaker: 'passenger' },
+      { id: 'd3-02', text: "Flight attendant: Yes, we have a lovely crystal pendant bracelet, it's 45 dollars.", audioUrl: `${A4C}/d3-02-fa.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'd3-03', text: 'Passenger: Perfect, I\'ll take that. And could I also get a bottle of whisky for myself?', audioUrl: `${A4C}/d3-03-man.wav`, durationSeconds: 4, speaker: 'passenger' },
+      { id: 'd3-04', text: "Flight attendant: Of course, that's 38 dollars, so 83 dollars in total.", audioUrl: `${A4C}/d3-04-fa.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'd3-05', text: 'Passenger: How should I pay?', audioUrl: `${A4C}/d3-05-man.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'd3-06', text: 'Flight attendant: By card or cash, whichever you prefer.', audioUrl: `${A4C}/d3-06-fa.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'd3-07', text: "Passenger: Here's my credit card, and here's my frequent flyer card too, if that helps with points.", audioUrl: `${A4C}/d3-07-man.wav`, durationSeconds: 5, speaker: 'passenger' },
+      { id: 'd3-08', text: "Flight attendant: Perfect, that'll earn you extra points. Here's your receipt, your card and your gifts - do you need a bag for these?", audioUrl: `${A4C}/d3-08-fa.wav`, durationSeconds: 6, speaker: 'crew' },
+      { id: 'd3-09', text: "Passenger: Yes please, that'd be great.", audioUrl: `${A4C}/d3-09-man.wav`, durationSeconds: 2, speaker: 'passenger' },
+    ],
+    vocabulary: [
+      { word: 'Bargain', definition: 'An item sold at a good, discounted price' },
+      { word: 'Frequent flyer', definition: 'A passenger who is a member of an airline loyalty programme' },
+      { word: 'Receipt', definition: 'A printed proof of purchase' },
+      { word: 'Duty-free', definition: 'Goods sold without local tax, typically on board or at airports' },
+    ],
+  },
+  theory: {
+    title: 'Airline Food: Your Thoughts',
+    content: "The in-flight meal was fine. We were offered a choice and a selection of drinks. There was no rush. The flight attendants even found time to chat a little and make the whole experience enjoyable. I'll definitely travel on this airline again.\n\nThat was the worst meal I've ever had. It was served in a box with a plastic fork and put on my tray table without a word or a smile. Even now, I'm not sure what it was.\n\nIf you're in Business class, you're fine. The meals are well prepared, look great and taste even better. In Economy, it's the opposite. The meal is bland, not very hot, badly presented and tasteless. It's better to take your own food on board. At least you can eat it.\n\nThe airlines long ago realized that their job - their product, and what people pay them for - is transportation, not food service. Some day the flying public will realize that, too.\n\nAn aircraft is not a flying restaurant.\n\nI am a flight attendant for a major international airline. I've been flying for nearly thirty years, and in that time people have always complained about airline food. I honestly think passengers are being unrealistic. This is a ride in an aircraft, not a trip to a top-class restaurant. It is what it is. It's not going to get any better either, with internet fares and the present state of the airline industry.\n\nYes, yes, yes, it's been said a million times before: the food on planes, even in the front of planes, is dreadful.\n\nI want to point out that of all the dreadful food in the world, perhaps no dreadful food is presented with more ridiculous fanfare than the dreadful food in the sky.\n\nOn a recent trip I had the misfortune to buy a snackbox. It was not fit for human consumption unless you were alone in the Arctic or lost in the jungle.\n\nI fly quite a bit, and to be honest I've never had a bad meal. I am much more irritated when there is no complimentary food at all.",
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Duty-free sales explanation',
+      audioUrl: `${A4C}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Money Transactions',
+    phrases: [
+      { situation: 'Stating a price', phrase: 'The perfume costs 41 dollars.', meaning: 'Simple price statement', example: 'The perfume costs 41 dollars.' },
+      { situation: 'Adding a total', phrase: 'Forty-one plus 72 makes 113 dollars.', meaning: 'Adding two prices together', example: 'Forty-one plus 72 makes 113 dollars.' },
+      { situation: 'Multiplying a price', phrase: 'Four times eight equals 32 dollars.', meaning: 'Multiplying quantity by price', example: 'Four times eight equals 32 dollars.' },
+      { situation: 'Giving change', phrase: 'A hundred dollars minus 85 - that\'s 15 dollars change.', meaning: 'Calculating change owed', example: 'A hundred dollars minus 85 - that\'s 15 dollars change.' },
+      { situation: 'Asking how someone will pay', phrase: 'How will you be paying? By card or with cash?', meaning: 'Asking for the payment method', example: 'How will you be paying? By card or with cash?' },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Duty-Free Goods',
+    terms: [
+      { term: 'Perfumes and jewellery', definition: 'Category including perfume spray, a brooch, earrings, a bracelet, a crystal pendant', example: 'Perfume, jewellery and watches are popular duty-free gifts.' },
+      { term: 'Electric and electronic items', definition: 'Category including a USB key, headphones, a travel plug adaptor', example: 'A USB key is a useful electronic item.' },
+      { term: 'Alcohol and tobacco', definition: 'Category including whisky, cognac, vodka, champagne, cigars, cigarettes', example: 'Whisky and champagne are common alcohol purchases.' },
+      { term: 'Cosmetics', definition: 'Category including face cream, aftershave, mascara, lipstick, eau de toilette', example: 'Mascara and lipstick are popular cosmetics.' },
+      { term: 'Gifts', definition: 'Category including a soft toy, chocolates, a model aircraft, a scarf, a pen', example: 'A model aircraft makes a fun gift.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Introducing the duty-free service', expression: 'The duty-free sales will begin shortly.', alternativeExpressions: ['We will start the duty-free service shortly.', 'Duty-free sales are starting now.'] },
+    { situation: 'Confirming payment method', expression: 'How would you like to pay?', alternativeExpressions: ['Card or cash?', 'How will you be settling this?'] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'How would you like to pay?', audioUrl: `${A4C}/pronunciation.wav`, durationSeconds: 2 },
+  ],
+  vocabulary: [
+    { word: 'Bargain', definition: 'An item sold at a good, discounted price' },
+    { word: 'Frequent flyer', definition: 'A passenger who is a member of an airline loyalty programme' },
+    { word: 'Receipt', definition: 'A printed proof of purchase' },
+    { word: 'Duty-free', definition: 'Goods sold without local tax, typically on board or at airports' },
+    { word: 'Bland', definition: 'Tasteless' },
+    { word: 'Dreadful', definition: 'Very bad' },
+  ],
+  grammar: [
+    {
+      rule: 'Basic maths language for transactions (plus, minus, times, equals) - used when calculating prices and change',
+      examples: [
+        { sentence: 'Forty-one plus 72 makes 113 dollars.', audioUrl: `${A4C}/money-3.wav` },
+        { sentence: 'Four times eight equals 32 dollars.', audioUrl: `${A4C}/money-4.wav` },
+        { sentence: 'A hundred dollars minus 85 - that\'s 15 dollars change.', audioUrl: `${A4C}/money-5.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'fill-blank', points: 10,
+      question: 'The duty-free sales will _________ shortly.',
+      audio: { id: 'ann-audio', text: 'Duty-free announcement', audioUrl: `${A4C}/announcement.wav`, durationSeconds: 25, speaker: 'crew' },
+      correctAnswer: 'begin',
+    },
+    {
+      id: 'ex-2', type: 'fill-blank', points: 10,
+      question: 'Please prepare your _________ of purchases.',
+      correctAnswer: 'list',
+    },
+    {
+      id: 'ex-3', type: 'fill-blank', points: 10,
+      question: 'Check the Shopping on Board magazine in your seat _________.',
+      correctAnswer: 'pocket',
+    },
+    {
+      id: 'ex-4', type: 'fill-blank', points: 10,
+      question: 'You can pay by cash or by _________ a credit card.',
+      correctAnswer: 'using',
+    },
+    {
+      id: 'ex-5', type: 'fill-blank', points: 10,
+      question: 'We _________ most major credit cards.',
+      correctAnswer: 'accept',
+      hint: 'The opposite of "refuse".',
+    },
+    {
+      id: 'ex-6', type: 'fill-blank', points: 10,
+      question: 'Frequent flyers _________ points on all sales on board.',
+      correctAnswer: 'earn',
+    },
+    {
+      id: 'ex-7', type: 'multiple-choice', points: 10,
+      question: 'Which word in the announcement means "soon"?',
+      options: [
+        { id: 'o1', text: 'Shortly', isCorrect: true },
+        { id: 'o2', text: 'Bargains', isCorrect: false },
+        { id: 'o3', text: 'Designed', isCorrect: false },
+        { id: 'o4', text: 'Purchases', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-8', type: 'multiple-choice', points: 10,
+      question: 'Which word means "discounted items"?',
+      options: [
+        { id: 'o1', text: 'Bargains', isCorrect: true },
+        { id: 'o2', text: 'Purchases', isCorrect: false },
+        { id: 'o3', text: 'Points', isCorrect: false },
+        { id: 'o4', text: 'Currency', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-9', type: 'multiple-choice', points: 10,
+      question: 'What does the passenger want to buy for his daughter?',
+      options: [
+        { id: 'o1', text: 'A crystal pendant bracelet', isCorrect: true },
+        { id: 'o2', text: 'A watch', isCorrect: false },
+        { id: 'o3', text: 'Earrings', isCorrect: false },
+        { id: 'o4', text: 'Perfume', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-10', type: 'multiple-choice', points: 10,
+      question: "How much does he pay for his daughter's present?",
+      options: [
+        { id: 'o1', text: '45 dollars', isCorrect: true },
+        { id: 'o2', text: '38 dollars', isCorrect: false },
+        { id: 'o3', text: '83 dollars', isCorrect: false },
+        { id: 'o4', text: '15 dollars', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-11', type: 'multiple-choice', points: 10,
+      question: 'What else does the passenger buy?',
+      options: [
+        { id: 'o1', text: 'A bottle of whisky', isCorrect: true },
+        { id: 'o2', text: 'Cigars', isCorrect: false },
+        { id: 'o3', text: 'Chocolates', isCorrect: false },
+        { id: 'o4', text: 'A watch', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-12', type: 'multiple-choice', points: 10,
+      question: 'How does he pay for his purchase?',
+      options: [
+        { id: 'o1', text: 'By credit card', isCorrect: true },
+        { id: 'o2', text: 'By cash', isCorrect: false },
+        { id: 'o3', text: 'A mix of cash and card', isCorrect: false },
+        { id: 'o4', text: 'He does not pay - it is free', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-13', type: 'multiple-choice', points: 10,
+      question: 'Why does the passenger give the flight attendant two cards?',
+      options: [
+        { id: 'o1', text: 'His credit card, and his frequent flyer card for points', isCorrect: true },
+        { id: 'o2', text: 'His first card did not work', isCorrect: false },
+        { id: 'o3', text: 'He wanted to split the payment', isCorrect: false },
+        { id: 'o4', text: 'He gave the wrong card by mistake', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-14', type: 'multiple-choice', points: 10,
+      question: 'What does he need with his purchase?',
+      options: [
+        { id: 'o1', text: 'A bag', isCorrect: true },
+        { id: 'o2', text: 'A box', isCorrect: false },
+        { id: 'o3', text: 'Wrapping paper', isCorrect: false },
+        { id: 'o4', text: 'Nothing extra', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-15', type: 'speaking', points: 15,
+      question: 'How good are you at counting money and adding up a total? Practise saying these totals aloud: $19.50 + $27.00, $20 − $11.75, €43.00 + €13.75, €6.75 × 2, £11.45 × 2, $33.39 + $7.20.',
+    },
+    {
+      id: 'ex-16', type: 'speaking', points: 15,
+      question: 'What is the currency in Spain, China, Saudi Arabia, Russia, Australia, the United Arab Emirates, Brazil, Nigeria, Singapore, and Pakistan? What is your local currency, and its exchange rate with the yen, US dollar, and euro?',
+    },
+    {
+      id: 'ex-17', type: 'speaking', points: 15,
+      question: "With a partner, take turns buying and selling duty-free goods, making up your own prices. Example: A: I'd like some mascara please. B: Certainly, madam. The mascara costs...",
+    },
+    {
+      id: 'ex-18', type: 'multiple-choice', points: 15,
+      question: 'In the "Airline Food" comments, which comment is clearly written by a flight attendant?',
+      options: [
+        { id: 'o1', text: '"I am a flight attendant for a major international airline. I\'ve been flying for nearly thirty years..."', isCorrect: true },
+        { id: 'o2', text: '"That was the worst meal I\'ve ever had."', isCorrect: false },
+        { id: 'o3', text: '"An aircraft is not a flying restaurant."', isCorrect: false },
+        { id: 'o4', text: '"I fly quite a bit, and to be honest I\'ve never had a bad meal."', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-19', type: 'speaking', points: 20,
+      question: 'Read the ten "Airline Food" comments. Which are from passengers (P), which from crew (C), and which could be either (E)? Which express a positive opinion, which a negative one, and which express no opinion at all? Underline the adjectives and phrases used to describe food, and say whether they are positive or negative.',
+    },
+    {
+      id: 'ex-20', type: 'speaking', points: 15,
+      question: 'In your experience, are passengers difficult to please when it comes to in-flight food? What do they complain about most? Are the problems usually with the service or the food itself?',
+    },
+    {
+      id: 'ex-21', type: 'speaking', points: 15,
+      question: 'Is the solution to have one excellent meal on long-haul flights and no food at all on short-haul flights? Why or why not? What improvements would you suggest to your airline?',
+    },
+    {
+      id: 'ex-22', type: 'speaking', points: 15,
+      question: 'Discuss common experiences flight attendants have with the meals and drinks service - what do they enjoy about it, and what special incidents have they encountered?',
+    },
+    {
+      id: 'ex-23', type: 'speaking', points: 15,
+      question: 'Airlines spend a lot of money on food. Why do you think this is, and are they successful? What do you think about meals for the crew on board - are they adequate? Do you agree that "bar snacks on short flights are insulting, over-priced and tasteless, and meals on most long-haul flights are bland, poorly presented and served without grace"?',
+    },
+  ],
+  quiz: {
+    id: 'quiz-4-3',
+    title: 'Duty-Free Sales Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'What can passengers use to pay for duty-free goods?',
+        options: [
+          { id: 'o1', text: 'Cash or credit card', isCorrect: true },
+          { id: 'o2', text: 'Only cash', isCorrect: false },
+          { id: 'o3', text: 'Only card', isCorrect: false },
+          { id: 'o4', text: 'Airline points only', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'What do frequent flyers earn on duty-free purchases?',
+        options: [
+          { id: 'o1', text: 'Points', isCorrect: true },
+          { id: 'o2', text: 'A discount voucher', isCorrect: false },
+          { id: 'o3', text: 'Free gifts', isCorrect: false },
+          { id: 'o4', text: 'Nothing extra', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'What does "bland" mean, according to the glossary?',
+        options: [
+          { id: 'o1', text: 'Tasteless', isCorrect: true },
+          { id: 'o2', text: 'Very spicy', isCorrect: false },
+          { id: 'o3', text: 'Overcooked', isCorrect: false },
+          { id: 'o4', text: 'Expensive', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'What does "complimentary" mean?',
+        options: [
+          { id: 'o1', text: 'Free', isCorrect: true },
+          { id: 'o2', text: 'Expensive', isCorrect: false },
+          { id: 'o3', text: 'Delicious', isCorrect: false },
+          { id: 'o4', text: 'Cold', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'According to the case study, where is food usually better - Business or Economy class?',
+        options: [
+          { id: 'o1', text: 'Business class', isCorrect: true },
+          { id: 'o2', text: 'Economy class', isCorrect: false },
+          { id: 'o3', text: 'They are described as the same', isCorrect: false },
+          { id: 'o4', text: 'Neither - both are described as excellent', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Duty-free', back: 'Goods sold without local tax, typically on board or at airports' },
+    { id: 'fc-2', front: 'Bargain', back: 'An item sold at a good, discounted price' },
+    { id: 'fc-3', front: 'Bland', back: 'Tasteless' },
+    { id: 'fc-4', front: 'Dreadful', back: 'Very bad' },
+    { id: 'fc-5', front: 'Complimentary', back: 'Free' },
+  ],
+  review: {
+    keyPoints: [
+      'Duty-free announcements explain timing, payment methods, and loyalty points',
+      'Basic maths language (plus, minus, times, equals) is essential for transactions',
+      'Always confirm the payment method and provide a receipt',
+      'Opinions about airline food vary widely between passengers and crew',
+      'Positive and negative comments both offer useful insight for improving service',
+    ],
+    commonMistakes: [
+      { mistake: 'Rushing the payment process', correction: 'Clearly state prices, totals, and change owed', explanation: 'Passengers need to follow the transaction, especially in a foreign currency' },
+      { mistake: 'Dismissing passenger complaints about food', correction: 'Listen and acknowledge feedback, even if you cannot change the menu', explanation: 'Passengers feel heard even when a solution is not immediately possible' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
 const UNIT_TITLES: Record<number, string> = {
   0: 'Unit 1: The Pre-Flight Briefing',
   1: 'Unit 2: Welcome on Board',
@@ -3249,6 +4179,12 @@ export const iCAOUnits: Unit[] = [
         ? GETTING_STARTED_LESSON
         : unitIdx === 2 && lessonIdx === 2
         ? SETTLE_PASSENGERS_LESSON
+        : unitIdx === 3 && lessonIdx === 0
+        ? GIVING_CHOICE_LESSON
+        : unitIdx === 3 && lessonIdx === 1
+        ? SERVING_DRINKS_LESSON
+        : unitIdx === 3 && lessonIdx === 2
+        ? DUTY_FREE_LESSON
         : LESSON_TEMPLATE(unitIdx + 1, lessonIdx + 1, `Lesson ${lessonIdx + 1}`)
     )
   })) as Unit[]
