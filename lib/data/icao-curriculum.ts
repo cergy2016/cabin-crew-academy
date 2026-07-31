@@ -1977,6 +1977,269 @@ const SETTLING_PASSENGERS_LESSON: any = {
 };
 
 // ============================================================
+// Unit 3, Lesson 1: Making the First Announcements
+// Formal and informal language on short-haul flights
+// ============================================================
+const A3A = '/audio/unit-3/lesson-1';
+
+const FIRST_ANNOUNCEMENTS_LESSON: any = {
+  id: 'lesson-3-1',
+  unitId: 'unit-3',
+  title: 'Making the First Announcements',
+  description: 'The first cabin announcements after take-off, and formal versus informal language',
+  icon: '📢',
+  icaoLevel: 4,
+  category: 'cabin-crew',
+  difficulty: 'intermediate',
+  xpReward: 150,
+  estimatedDurationMinutes: 40,
+  locked: false,
+  order: 1,
+  objectives: [
+    { id: 'obj-1', description: 'Understand the first cabin announcements after take-off', type: 'listening' },
+    { id: 'obj-2', description: 'Distinguish formal and informal announcement language', type: 'vocabulary' },
+    { id: 'obj-3', description: 'Read an announcement aloud with natural stress and intonation', type: 'speaking' },
+  ],
+  scenario: {
+    id: 'scenario-first-announcements',
+    title: 'Three Short-Haul Announcements',
+    description: 'Three different flight attendants make the first announcement after take-off, each with a different style.',
+    context: 'Cabin, just after the seatbelt sign is switched off on a short-haul flight',
+    audioSegments: [
+      { id: 'ann-1', text: "Ladies and gentlemen, boys and girls, it's great to have you on board! The seatbelt sign is off, but please don't leave your seats unless you have to. This is only a short flight and we'd like to serve you drinks and snacks as quickly as possible. There will only be time for one service and, er... apologies, we don't have any hot snacks today. Sorry about that. Speak to you again soon.", audioUrl: `${A3A}/ann1.wav`, durationSeconds: 20, speaker: 'crew' },
+      { id: 'ann-2', text: "Hello, everyone, this is Stefan speaking. The seatbelt sign is off. Feel free to walk around. We want to serve you drinks shortly, so watch out for the trolley - we don't want to run you down, so don't block the aisles. We don't have a lot of time, so be quick with your order, please, and your money, of course. Thanks for your cooperation. Have a good flight.", audioUrl: `${A3A}/ann2.wav`, durationSeconds: 20, speaker: 'crew' },
+      { id: 'ann-3', text: "Ladies and gentlemen, the seatbelt sign has been switched off and you can move around the cabin. We shall be coming through the cabin with refreshments in a few moments. Kindly look at the menu card in the pocket in front of you and have your order ready, please. We'd really appreciate it if you had the exact change for your purchases. Thank you, and enjoy the flight.", audioUrl: `${A3A}/ann3.wav`, durationSeconds: 18, speaker: 'crew' },
+    ],
+    vocabulary: [
+      { word: 'Formal', definition: 'Polite and correct in style, following conventions' },
+      { word: 'Informal', definition: 'Relaxed and friendly in style, like everyday speech' },
+      { word: 'Cooperation', definition: 'Working together helpfully' },
+      { word: 'Exact change', definition: 'The precise amount of money, without needing change back' },
+    ],
+  },
+  theory: {
+    title: 'Formal and Informal Announcements',
+    content: "The first announcements after take-off set the tone for the flight. Cabin crew choose formal or informal language depending on the airline's style, but every announcement needs to clearly explain the seatbelt sign, the service to come, and any changes passengers should know about.",
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of formal and informal announcement language',
+      audioUrl: `${A3A}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Formal and Informal Language',
+    phrases: [
+      { situation: 'Formal greeting', phrase: 'Ladies and gentlemen...', meaning: 'A formal way to open an announcement', example: 'Ladies and gentlemen, the seatbelt sign has been switched off.' },
+      { situation: 'Informal greeting', phrase: 'Hello, everyone.', meaning: 'A relaxed way to open an announcement', example: 'Hello, everyone, this is Stefan speaking.' },
+      { situation: 'Formal permission', phrase: 'You can move around the cabin.', meaning: 'A neutral, formal way to give permission', example: 'You can move around the cabin.' },
+      { situation: 'Informal permission', phrase: 'Feel free to walk around.', meaning: 'A relaxed way to give the same permission', example: 'Feel free to walk around.' },
+      { situation: 'Formal instruction', phrase: 'Kindly look at the menu card.', meaning: 'A polite, formal instruction', example: 'Kindly look at the menu card in the pocket in front of you.' },
+      { situation: 'Informal instruction', phrase: 'Be ready with your order.', meaning: 'A relaxed, direct instruction', example: 'Be ready with your order, please.' },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Announcement Language',
+    terms: [
+      { term: 'Formal', definition: 'Polite and correct in style, following conventions', example: 'Ladies and gentlemen is a formal greeting.' },
+      { term: 'Informal', definition: 'Relaxed and friendly in style', example: 'Hello, everyone is an informal greeting.' },
+      { term: 'Cooperation', definition: 'Working together helpfully', example: 'Thanks for your cooperation.' },
+      { term: 'Exact change', definition: 'The precise amount of money, without needing change back', example: "We'd appreciate it if you had the exact change." },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Apologizing for a limited service', expression: "Apologies, we don't have any hot snacks today.", alternativeExpressions: ["I'm sorry, that's not available today.", "Unfortunately, we don't have that today."] },
+    { situation: 'Thanking passengers', expression: 'Thanks for your cooperation.', alternativeExpressions: ['We appreciate your patience.', 'Thank you for understanding.'] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: "It's great to have you on board.", audioUrl: `${A3A}/pronunciation.wav`, durationSeconds: 3 },
+  ],
+  vocabulary: [
+    { word: 'Formal', definition: 'Polite and correct in style, following conventions' },
+    { word: 'Informal', definition: 'Relaxed and friendly in style' },
+    { word: 'Cooperation', definition: 'Working together helpfully' },
+    { word: 'Exact change', definition: 'The precise amount of money, without needing change back' },
+  ],
+  grammar: [
+    {
+      rule: 'Formal vs informal phrasing for the same message - the choice of words changes the tone without changing the meaning',
+      examples: [
+        { sentence: 'The seatbelt sign has been switched off. (formal) / The seatbelt sign is off. (informal)' },
+        { sentence: 'You can move around the cabin. (formal) / Feel free to walk around. (informal)' },
+        { sentence: 'Kindly look at the menu card. (formal) / Be ready with your order. (informal)' },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'fill-blank', points: 10,
+      question: "It's great to have you on _________!",
+      audio: { id: 'ann1-audio', text: 'Announcement 1', audioUrl: `${A3A}/ann1.wav`, durationSeconds: 20, speaker: 'crew' },
+      correctAnswer: 'board',
+    },
+    {
+      id: 'ex-2', type: 'fill-blank', points: 10,
+      question: "Please don't leave your seats _________ you have to.",
+      correctAnswer: 'unless',
+      hint: 'A conjunction meaning "except if".',
+    },
+    {
+      id: 'ex-3', type: 'fill-blank', points: 10,
+      question: "We'd like to serve you drinks and snacks as _________ as possible.",
+      correctAnswer: 'quickly',
+    },
+    {
+      id: 'ex-4', type: 'fill-blank', points: 10,
+      question: 'Feel _________ to walk around.',
+      audio: { id: 'ann2-audio', text: 'Announcement 2', audioUrl: `${A3A}/ann2.wav`, durationSeconds: 20, speaker: 'crew' },
+      correctAnswer: 'free',
+    },
+    {
+      id: 'ex-5', type: 'multiple-choice', points: 10,
+      question: 'On which announcement(s) is payment for food or drink mentioned?',
+      options: [
+        { id: 'o1', text: 'Announcements 2 and 3 (money / exact change)', isCorrect: true },
+        { id: 'o2', text: 'Only announcement 1', isCorrect: false },
+        { id: 'o3', text: 'None of them', isCorrect: false },
+        { id: 'o4', text: 'All three equally', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-6', type: 'multiple-choice', points: 10,
+      question: 'On which announcement is there a problem with the food service?',
+      options: [
+        { id: 'o1', text: 'Announcement 1 - no hot snacks today', isCorrect: true },
+        { id: 'o2', text: 'Announcement 2', isCorrect: false },
+        { id: 'o3', text: 'Announcement 3', isCorrect: false },
+        { id: 'o4', text: 'None of them', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-7', type: 'multiple-choice', points: 10,
+      question: 'On which announcement do the cabin crew seem least in a hurry?',
+      options: [
+        { id: 'o1', text: 'Announcement 3', isCorrect: true },
+        { id: 'o2', text: 'Announcement 1', isCorrect: false },
+        { id: 'o3', text: 'Announcement 2', isCorrect: false },
+        { id: 'o4', text: 'They are all equally rushed', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-8', type: 'speaking', points: 15,
+      question: 'Which of the three announcements is the most fun, the most serious, and the most friendly? Which do you like most, and why?',
+    },
+    {
+      id: 'ex-9', type: 'multiple-choice', points: 10,
+      question: 'Which is the formal version: "The seatbelt sign is off" or "The seatbelt sign has been switched off"?',
+      options: [
+        { id: 'o1', text: 'The seatbelt sign has been switched off', isCorrect: true },
+        { id: 'o2', text: 'The seatbelt sign is off', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-10', type: 'multiple-choice', points: 10,
+      question: 'Which is the informal version of "Kindly look at the menu card"?',
+      options: [
+        { id: 'o1', text: 'Be ready with your order', isCorrect: true },
+        { id: 'o2', text: 'You can move around the cabin', isCorrect: false },
+        { id: 'o3', text: 'Ladies and gentlemen', isCorrect: false },
+        { id: 'o4', text: 'Thanks for your cooperation', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-11', type: 'speaking', points: 15,
+      question: 'What other formal and informal words or expressions do you know in English? Give examples of each.',
+    },
+    {
+      id: 'ex-12', type: 'speaking', points: 15,
+      question: 'Read this sentence aloud, stressing the words you think are most important: "We\'d really appreciate it if you had the exact change for your purchases."',
+    },
+    {
+      id: 'ex-13', type: 'speaking', points: 20,
+      question: 'In groups of three, practise reading aloud the three announcements to each other. Then try to say them again from memory or short notes.',
+    },
+  ],
+  quiz: {
+    id: 'quiz-3-1',
+    title: 'Making the First Announcements Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'What is missing from the service in announcement 1?',
+        options: [
+          { id: 'o1', text: 'Hot snacks', isCorrect: true },
+          { id: 'o2', text: 'Drinks', isCorrect: false },
+          { id: 'o3', text: 'Menu cards', isCorrect: false },
+          { id: 'o4', text: 'Headphones', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'Who introduces themselves by name in the announcements?',
+        options: [
+          { id: 'o1', text: 'Stefan', isCorrect: true },
+          { id: 'o2', text: 'Jenny', isCorrect: false },
+          { id: 'o3', text: 'Marcus', isCorrect: false },
+          { id: 'o4', text: 'No one', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'Which phrase is more formal?',
+        options: [
+          { id: 'o1', text: 'Ladies and gentlemen', isCorrect: true },
+          { id: 'o2', text: 'Hello, everyone', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'What do announcements 2 and 3 both ask passengers to have ready?',
+        options: [
+          { id: 'o1', text: 'Money / exact change', isCorrect: true },
+          { id: 'o2', text: 'Their boarding pass', isCorrect: false },
+          { id: 'o3', text: 'Their passport', isCorrect: false },
+          { id: 'o4', text: 'A pen', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'What is the informal equivalent of "You can move around the cabin"?',
+        options: [
+          { id: 'o1', text: 'Feel free to walk around', isCorrect: true },
+          { id: 'o2', text: 'Kindly remain seated', isCorrect: false },
+          { id: 'o3', text: 'Please stay in your seat', isCorrect: false },
+          { id: 'o4', text: 'The cabin is now open', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Formal', back: 'Polite and correct in style, following conventions' },
+    { id: 'fc-2', front: 'Informal', back: 'Relaxed and friendly in style' },
+    { id: 'fc-3', front: 'Cooperation', back: 'Working together helpfully' },
+    { id: 'fc-4', front: 'Exact change', back: 'The precise amount of money, without needing change back' },
+  ],
+  review: {
+    keyPoints: [
+      'The first announcement after take-off explains the seatbelt sign and the service to come',
+      'Formal and informal language can express the same message with a different tone',
+      'Short-haul announcements are often brief because of limited service time',
+      'Stress the most important words when reading an announcement aloud',
+      'A confident, warm delivery matters as much as the words themselves',
+    ],
+    commonMistakes: [
+      { mistake: 'Mixing formal and informal language inconsistently', correction: 'Choose one style and stay consistent throughout the announcement', explanation: 'Mixing styles can sound unprofessional or confusing' },
+      { mistake: 'Reading announcements in a flat, monotone voice', correction: 'Stress key words and vary your intonation', explanation: 'This keeps passengers engaged and makes information clearer' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
+// ============================================================
 // Unit 2, Lesson 3: Demonstrating Safety Procedures
 // The full safety demonstration + Case Study: Bags in Bins
 // ============================================================
@@ -2308,6 +2571,637 @@ const SAFETY_DEMO_LESSON: any = {
   updatedAt: new Date().toISOString(),
 };
 
+// ============================================================
+// Unit 3, Lesson 2: Getting Started
+// Dealing with passenger needs at the start of the flight
+// ============================================================
+const A3B = '/audio/unit-3/lesson-2';
+
+const GETTING_STARTED_LESSON: any = {
+  id: 'lesson-3-2',
+  unitId: 'unit-3',
+  title: 'Getting Started',
+  description: 'Dealing with passenger requests during the refreshment service at the start of the flight',
+  icon: '🛎️',
+  icaoLevel: 4,
+  category: 'cabin-crew',
+  difficulty: 'intermediate',
+  xpReward: 150,
+  estimatedDurationMinutes: 40,
+  locked: false,
+  order: 2,
+  objectives: [
+    { id: 'obj-1', description: 'Understand short passenger requests during the refreshment service', type: 'listening' },
+    { id: 'obj-2', description: 'Respond politely and helpfully to passenger needs', type: 'speaking' },
+    { id: 'obj-3', description: 'Politely ask a passenger to wait when busy', type: 'speaking' },
+  ],
+  scenario: {
+    id: 'scenario-getting-started',
+    title: 'Dealing with Passenger Requests',
+    description: 'The refreshment service is beginning on a short-haul flight. The flight attendant deals with four different passenger requests.',
+    context: 'Cabin, short-haul flight, refreshment service beginning',
+    audioSegments: [
+      { id: 'c1-01', text: "Flight attendant: Excuse me, could you sit down, please? We're about to start the drinks service.", audioUrl: `${A3B}/c1-01-fa.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'c1-02', text: 'Passenger 1: Oh, sorry, of course.', audioUrl: `${A3B}/c1-02-passenger.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'c2-01', text: 'Passenger 2: Could I have a glass of water, please?', audioUrl: `${A3B}/c2-01-passenger.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'c2-02', text: 'Flight attendant: OK, no problem.', audioUrl: `${A3B}/c2-02-fa.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'c3-01', text: "Passenger 3: Could you check if there's a spare blanket?", audioUrl: `${A3B}/c3-01-passenger.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'c3-02', text: 'Flight attendant: Yes, of course.', audioUrl: `${A3B}/c3-02-fa.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'c4-01', text: 'Flight attendant: Can I help you?', audioUrl: `${A3B}/c4-01-fa.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'c4-02', text: "Passenger 4: Yes, I ordered a vegetarian meal but I don't think it's on board.", audioUrl: `${A3B}/c4-02-passenger.wav`, durationSeconds: 5, speaker: 'passenger' },
+      { id: 'c4-03', text: "Flight attendant: Leave it with me... I'll do it as quickly as possible.", audioUrl: `${A3B}/c4-03-fa.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'c4-04', text: 'Passenger 4: Thank you.', audioUrl: `${A3B}/c4-04-passenger.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'c4-05', text: 'Flight attendant: What can I do for you?', audioUrl: `${A3B}/c4-05-fa.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'c4-06', text: 'Passenger 4: Any news about my meal?', audioUrl: `${A3B}/c4-06-passenger.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'c4-07', text: "Flight attendant: Listen, don't worry. I'll get back to you.", audioUrl: `${A3B}/c4-07-fa.wav`, durationSeconds: 3, speaker: 'crew' },
+    ],
+    vocabulary: [
+      { word: 'Refreshment service', definition: 'The drinks and snacks service on a flight' },
+      { word: 'Spare', definition: 'Extra, available if needed' },
+      { word: 'Vegetarian meal', definition: 'A special meal without meat, ordered in advance' },
+    ],
+  },
+  theory: {
+    title: 'Dealing with Passenger Needs',
+    content: 'At the beginning of the flight, cabin crew deal with many small passenger requests at once. Being polite, quick, and reassuring helps everyone feel looked after, even when the crew are busy. When crew cannot help immediately, a promise to return builds trust.',
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of dealing with passenger needs',
+      audioUrl: `${A3B}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Dealing with Passenger Needs',
+    phrases: [
+      { situation: 'Offering help', phrase: 'Can I help you? / What can I do for you?', meaning: 'Polite and helpful opener', example: 'Can I help you?' },
+      { situation: 'Agreeing readily', phrase: 'Yes, of course. / OK, no problem.', meaning: 'Immediate, friendly agreement', example: 'Yes, of course.' },
+      { situation: 'Asking a passenger to wait', phrase: "I'm afraid we're busy just now. Can you wait a moment?", meaning: 'Polite way to delay a request when busy', example: "I'm afraid we're busy just now. Can you wait a moment?" },
+      { situation: 'Promising to return', phrase: "Leave it with me and I'll do it as soon as possible.", meaning: 'Reassuring the passenger their request will be handled', example: "Leave it with me and I'll do it as soon as possible." },
+      { situation: 'Promising an update', phrase: "I'll get back to you. I promise.", meaning: 'Committing to follow up on a request', example: "I'll get back to you. I promise." },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Passenger Requests',
+    terms: [
+      { term: 'Refreshment service', definition: 'The drinks and snacks service on a flight', example: 'The refreshment service is beginning on a short-haul flight.' },
+      { term: 'Spare blanket', definition: 'An extra blanket kept for passengers who need one', example: "Could you check if there's a spare blanket?" },
+      { term: 'Vegetarian meal', definition: 'A special meal without meat, ordered in advance', example: 'I ordered a vegetarian meal.' },
+      { term: 'Disembarkation card', definition: 'A form completed before landing in some countries', example: 'I need another disembarkation card.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Asking someone to sit for safety', expression: 'Could you sit down, please? We\'re about to start the service.', alternativeExpressions: ['Please take your seat, we\'re starting the service.', 'Would you mind sitting down for a moment?'] },
+    { situation: 'Reassuring a waiting passenger', expression: "Don't worry, I'll get back to you.", alternativeExpressions: ["I haven't forgotten, I'll be right with you.", "Bear with me, I'll sort this out."] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'Can I help you?', audioUrl: `${A3B}/pronunciation.wav`, durationSeconds: 2 },
+  ],
+  vocabulary: [
+    { word: 'Refreshment service', definition: 'The drinks and snacks service on a flight' },
+    { word: 'Spare', definition: 'Extra, available if needed' },
+    { word: 'Vegetarian meal', definition: 'A special meal without meat, ordered in advance' },
+    { word: 'Disembarkation card', definition: 'A form completed before landing in some countries' },
+  ],
+  grammar: [
+    {
+      rule: 'Polite promises with "will" (I\'ll...) - used to reassure a passenger that something will be done',
+      examples: [
+        { sentence: "I'll do it as soon as possible.", audioUrl: `${A3B}/lf-6.wav` },
+        { sentence: "I'll get back to you.", audioUrl: `${A3B}/lf-7.wav` },
+        { sentence: "I'm afraid we're busy just now. Can you wait a moment?", audioUrl: `${A3B}/lf-4.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'multiple-choice', points: 10,
+      question: 'What does the first passenger need to do?',
+      options: [
+        { id: 'o1', text: 'Sit down', isCorrect: true },
+        { id: 'o2', text: 'Fasten a seatbelt', isCorrect: false },
+        { id: 'o3', text: 'Move to another seat', isCorrect: false },
+        { id: 'o4', text: 'Turn off a device', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-2', type: 'multiple-choice', points: 10,
+      question: 'What does the second passenger want?',
+      options: [
+        { id: 'o1', text: 'A glass of water', isCorrect: true },
+        { id: 'o2', text: 'A blanket', isCorrect: false },
+        { id: 'o3', text: 'A vegetarian meal', isCorrect: false },
+        { id: 'o4', text: 'A newspaper', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 10,
+      question: 'What does the third passenger want the flight attendant to do?',
+      options: [
+        { id: 'o1', text: 'Check if there is a spare blanket', isCorrect: true },
+        { id: 'o2', text: 'Bring a glass of water', isCorrect: false },
+        { id: 'o3', text: 'Find their vegetarian meal', isCorrect: false },
+        { id: 'o4', text: 'Help with their bag', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-4', type: 'multiple-choice', points: 10,
+      question: 'What does the fourth passenger want to know?',
+      options: [
+        { id: 'o1', text: 'Whether their vegetarian meal is on board', isCorrect: true },
+        { id: 'o2', text: 'What time the flight lands', isCorrect: false },
+        { id: 'o3', text: 'Where the toilet is', isCorrect: false },
+        { id: 'o4', text: 'How to recline their seat', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-5', type: 'fill-blank', points: 10,
+      question: 'Excuse me, could you sit _________, please?',
+      correctAnswer: 'down',
+    },
+    {
+      id: 'ex-6', type: 'fill-blank', points: 10,
+      question: 'OK, no _________.',
+      correctAnswer: 'problem',
+    },
+    {
+      id: 'ex-7', type: 'fill-blank', points: 10,
+      question: 'Yes, _________ course.',
+      correctAnswer: 'of',
+    },
+    {
+      id: 'ex-8', type: 'fill-blank', points: 10,
+      question: 'Can I _________ you?',
+      correctAnswer: 'help',
+    },
+    {
+      id: 'ex-9', type: 'fill-blank', points: 10,
+      question: 'Leave it _________ me...',
+      correctAnswer: 'with',
+    },
+    {
+      id: 'ex-10', type: 'fill-blank', points: 10,
+      question: "I'll do it as _________ as possible.",
+      correctAnswer: 'quickly',
+    },
+    {
+      id: 'ex-11', type: 'fill-blank', points: 10,
+      question: 'What can I _________ for you?',
+      correctAnswer: 'do',
+    },
+    {
+      id: 'ex-12', type: 'fill-blank', points: 10,
+      question: "Listen, don't _________.",
+      correctAnswer: 'worry',
+    },
+    {
+      id: 'ex-13', type: 'fill-blank', points: 10,
+      question: "I'll _________ back to you.",
+      correctAnswer: 'get',
+    },
+    {
+      id: 'ex-14', type: 'speaking', points: 15,
+      question: 'How well does the flight attendant deal with the four requests? Discuss.',
+    },
+    {
+      id: 'ex-15', type: 'speaking', points: 20,
+      question: 'Role-play with a partner: Student A is the passenger with one of these needs (change seat, need another disembarkation card, very cold, very thirsty, bad headache, feeling sick) using "I need to.../I have to.../Could you...". Student B is the flight attendant, responding using the phrases from this lesson.',
+    },
+    {
+      id: 'ex-16', type: 'speaking', points: 15,
+      question: 'What other passenger needs do you have to deal with at the beginning of the flight? Discuss with examples.',
+    },
+  ],
+  quiz: {
+    id: 'quiz-3-2',
+    title: 'Getting Started Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'What meal problem does the fourth passenger have?',
+        options: [
+          { id: 'o1', text: 'Their vegetarian meal seems to not be on board', isCorrect: true },
+          { id: 'o2', text: 'Their meal is too cold', isCorrect: false },
+          { id: 'o3', text: 'They were charged twice', isCorrect: false },
+          { id: 'o4', text: 'They want a second meal', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'Which phrase politely asks a passenger to wait?',
+        options: [
+          { id: 'o1', text: "I'm afraid we're busy just now. Can you wait a moment?", isCorrect: true },
+          { id: 'o2', text: 'Not now.', isCorrect: false },
+          { id: 'o3', text: 'You have to wait.', isCorrect: false },
+          { id: 'o4', text: 'Later.', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'What does passenger 3 ask about?',
+        options: [
+          { id: 'o1', text: 'A spare blanket', isCorrect: true },
+          { id: 'o2', text: 'A spare pillow', isCorrect: false },
+          { id: 'o3', text: 'Headphones', isCorrect: false },
+          { id: 'o4', text: 'A newspaper', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'Which phrase reassures a passenger their request will be handled?',
+        options: [
+          { id: 'o1', text: "Leave it with me and I'll do it as soon as possible.", isCorrect: true },
+          { id: 'o2', text: "I can't help with that.", isCorrect: false },
+          { id: 'o3', text: "That's not my job.", isCorrect: false },
+          { id: 'o4', text: 'Ask someone else.', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'Why does passenger 1 need to sit down?',
+        options: [
+          { id: 'o1', text: 'The drinks service is about to start', isCorrect: true },
+          { id: 'o2', text: 'The seatbelt sign has come on', isCorrect: false },
+          { id: 'o3', text: 'There is turbulence', isCorrect: false },
+          { id: 'o4', text: 'The aircraft is about to land', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Refreshment service', back: 'The drinks and snacks service on a flight' },
+    { id: 'fc-2', front: 'Vegetarian meal', back: 'A special meal without meat, ordered in advance' },
+    { id: 'fc-3', front: 'Disembarkation card', back: 'A form completed before landing in some countries' },
+    { id: 'fc-4', front: 'Spare', back: 'Extra, available if needed' },
+  ],
+  review: {
+    keyPoints: [
+      'Deal with requests politely and quickly: "Yes, of course" / "OK, no problem"',
+      "When busy, politely ask passengers to wait rather than ignoring them",
+      "Always follow up on a promise to help, e.g. \"I'll get back to you\"",
+      'Common early-flight requests include seating, drinks, blankets, and special meals',
+      'A calm, reassuring tone matters as much as the words used',
+    ],
+    commonMistakes: [
+      { mistake: 'Ignoring a request because the crew are busy', correction: 'Acknowledge the request even if you cannot help immediately', explanation: 'Passengers feel respected when their request is at least acknowledged' },
+      { mistake: 'Forgetting to follow up on a promised request', correction: 'Always return to the passenger as promised', explanation: 'Broken promises damage trust in the crew' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
+// ============================================================
+// Unit 3, Lesson 3: Helping to Settle Passengers
+// 'Comfort' expressions + Case Study: Flying with Children
+// ============================================================
+const A3C = '/audio/unit-3/lesson-3';
+
+const SETTLE_PASSENGERS_LESSON: any = {
+  id: 'lesson-3-3',
+  unitId: 'unit-3',
+  title: 'Helping to Settle Passengers',
+  description: "Caring for different types of passengers with 'comfort' expressions, and the case study: Flying with Children",
+  icon: '🧸',
+  icaoLevel: 4,
+  category: 'cabin-crew',
+  difficulty: 'intermediate',
+  xpReward: 180,
+  estimatedDurationMinutes: 55,
+  locked: false,
+  order: 3,
+  objectives: [
+    { id: 'obj-1', description: 'Identify what different types of passengers might need', type: 'speaking' },
+    { id: 'obj-2', description: 'Understand short and long-haul passenger conversations', type: 'listening' },
+    { id: 'obj-3', description: 'Use comfort expressions in a caring, attentive tone', type: 'speaking' },
+    { id: 'obj-4', description: 'Discuss the challenges of flying with children', type: 'reading' },
+  ],
+  scenario: {
+    id: 'scenario-settle-passengers',
+    title: 'Caring for Different Passengers',
+    description: 'A flight attendant deals with four short-haul passenger situations, then four longer requests at the start of a long-haul flight.',
+    context: 'Cabin, short-haul and long-haul flights',
+    audioSegments: [
+      { id: 'sh1-01', text: 'Flight attendant: Hello, madam, are you feeling better now?', audioUrl: `${A3C}/sh1-01-fa.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'sh1-02', text: 'Passenger 1: Yes, thank you, much better.', audioUrl: `${A3C}/sh1-02-passenger.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'sh2-01', text: 'Flight attendant: Did you call, sir? Can I help you?', audioUrl: `${A3C}/sh2-01-fa.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'sh2-02', text: 'Passenger 2: Yes, I pressed the button ages ago!', audioUrl: `${A3C}/sh2-02-passenger.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'sh2-03', text: "Flight attendant: I'm so sorry, how can I help?", audioUrl: `${A3C}/sh2-03-fa.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'sh3-01', text: "Passenger 3: Excuse me, I still haven't got my headphones.", audioUrl: `${A3C}/sh3-01-passenger.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'sh3-02', text: "Flight attendant: I do apologize. I'll get it immediately.", audioUrl: `${A3C}/sh3-02-fa.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'sh4-01', text: 'Passenger 4: Is it OK if I recline my seat a little?', audioUrl: `${A3C}/sh4-01-passenger.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'sh4-02', text: "Flight attendant: Yes, that's fine, go ahead.", audioUrl: `${A3C}/sh4-02-fa.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'lh1-01', text: 'Passenger 1: Excuse me, how long is this flight?', audioUrl: `${A3C}/lh1-01-passenger.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'lh1-02', text: "Flight attendant: It's about eleven hours.", audioUrl: `${A3C}/lh1-02-fa.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'lh2-01', text: 'Passenger 2: When will the meal be served? My children are getting hungry and a bit restless.', audioUrl: `${A3C}/lh2-01-passenger.wav`, durationSeconds: 5, speaker: 'passenger' },
+      { id: 'lh2-02', text: "Flight attendant: We'll start the meal service in about thirty minutes.", audioUrl: `${A3C}/lh2-02-fa.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'lh3-01', text: 'Passenger 3: Could you tell me which channel the films are on?', audioUrl: `${A3C}/lh3-01-passenger.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'lh3-02', text: 'Flight attendant: The films are on channel nine.', audioUrl: `${A3C}/lh3-02-fa.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'lh4-01', text: 'Passenger 4: Could I have another pillow, please?', audioUrl: `${A3C}/lh4-01-passenger.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'lh4-02', text: "Flight attendant: Of course. I'll put your call light on so the other flight attendants know you need something, in case I get held up.", audioUrl: `${A3C}/lh4-02-fa.wav`, durationSeconds: 7, speaker: 'crew' },
+    ],
+    vocabulary: [
+      { word: 'Restless', definition: 'Unable to stay still or relaxed' },
+      { word: 'Call light', definition: 'A light that shows a flight attendant is needed at a seat' },
+      { word: 'To recline', definition: 'To lean a seat back' },
+      { word: 'Held up', definition: 'Delayed by something' },
+    ],
+  },
+  theory: {
+    title: 'Comfort and Care in the Cabin',
+    content: 'Settling passengers on a long flight means noticing who might need extra care - nervous first-time flyers, families with children, older passengers, or anyone travelling alone. Comfort expressions and a caring tone help everyone feel looked after throughout the flight.',
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of comfort and care in the cabin',
+      audioUrl: `${A3C}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: "'Comfort' Expressions",
+    phrases: [
+      { situation: 'Giving something to a passenger', phrase: 'Here you are.', meaning: 'Handing over the menu, headphones, a blanket, or a glass', example: 'Here you are.' },
+      { situation: 'Offering more help', phrase: 'Can I get you anything else? / Anything else I can do for you?', meaning: 'Checking if the passenger needs more', example: 'Can I get you anything else?' },
+      { situation: 'Flagging a need to colleagues', phrase: 'Let me put the call light on for you.', meaning: 'Making sure the passenger gets help even if you are busy', example: 'Let me put the call light on for you.' },
+      { situation: 'Reassuring a nervous passenger', phrase: "Don't worry, you'll be fine.", meaning: 'Calming a worried passenger', example: "Don't worry, you'll be fine." },
+      { situation: 'Agreeing warmly', phrase: 'Of course, no problem at all.', meaning: 'Friendly, immediate agreement', example: 'Of course, no problem at all.' },
+      { situation: 'Promising to return', phrase: "I'll be back in five minutes.", meaning: 'Giving a passenger a clear time to expect help', example: "I'll be back in five minutes." },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Passenger Care',
+    terms: [
+      { term: 'Restless', definition: 'Unable to stay still or relaxed', example: 'My children are getting hungry and a bit restless.' },
+      { term: 'Call light', definition: 'A light that shows a flight attendant is needed at a seat', example: "I'll put your call light on." },
+      { term: 'To recline', definition: 'To lean a seat back', example: 'Is it OK if I recline my seat a little?' },
+      { term: 'Held up', definition: 'Delayed by something', example: 'In case I get held up.' },
+      { term: 'Cramped', definition: 'Small, with not much space', example: 'A cramped cabin can be difficult with small children.' },
+      { term: 'Unruly', definition: 'Badly behaved, difficult to control', example: "I've never had an unruly child on board with a hands-on parent." },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Checking on a passenger who was unwell', expression: 'Are you feeling better now?', alternativeExpressions: ['How are you feeling?', 'Is everything all right now?'] },
+    { situation: 'Apologizing for a delay', expression: 'I do apologize. I\'ll get it immediately.', alternativeExpressions: ["I'm so sorry for the wait.", "My apologies, I'll sort that out right away."] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'Hello, madam, are you feeling better now?', audioUrl: `${A3C}/pron-1.wav`, durationSeconds: 3 },
+    { id: 'pron-2', text: 'Can I help you, sir?', audioUrl: `${A3C}/pron-2.wav`, durationSeconds: 2 },
+    { id: 'pron-3', text: 'Did you call, sir?', audioUrl: `${A3C}/pron-3.wav`, durationSeconds: 2 },
+    { id: 'pron-4', text: 'Hello there, is everything all right?', audioUrl: `${A3C}/pron-4.wav`, durationSeconds: 3 },
+    { id: 'pron-5', text: 'No problem, madam.', audioUrl: `${A3C}/pron-5.wav`, durationSeconds: 2 },
+    { id: 'pron-6', text: 'I do apologize. I\'ll get it immediately.', audioUrl: `${A3C}/pron-6.wav`, durationSeconds: 3 },
+    { id: 'pron-7', text: "You're quite right, sir.", audioUrl: `${A3C}/pron-7.wav`, durationSeconds: 2 },
+    { id: 'pron-8', text: "Yes, that's fine. Go ahead.", audioUrl: `${A3C}/pron-8.wav`, durationSeconds: 2 },
+  ],
+  vocabulary: [
+    { word: 'Restless', definition: 'Unable to stay still or relaxed' },
+    { word: 'Call light', definition: 'A light that shows a flight attendant is needed at a seat' },
+    { word: 'To recline', definition: 'To lean a seat back' },
+    { word: 'Cramped', definition: 'Small, with not much space' },
+    { word: 'Unruly', definition: 'Badly behaved, difficult to control' },
+    { word: 'Hands-on parent', definition: 'A parent who takes responsibility for their child' },
+  ],
+  grammar: [
+    {
+      rule: 'Reassuring language with future and modal forms - used to comfort or promise help to a passenger',
+      examples: [
+        { sentence: "Don't worry, you'll be fine.", audioUrl: `${A3C}/comfort-5.wav` },
+        { sentence: "I'll be back in five minutes.", audioUrl: `${A3C}/comfort-7.wav` },
+        { sentence: 'Can I get you anything else?', audioUrl: `${A3C}/comfort-2.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'speaking', points: 15,
+      question: 'What might these types of passenger need to get settled on a long-haul flight: passengers travelling alone, groups, families with small children, older people? Discuss with examples.',
+    },
+    {
+      id: 'ex-2', type: 'speaking', points: 15,
+      question: 'These passenger types can sometimes seem shy, nervous, unpleasant, noisy, arrogant, or demanding. Who do you think makes a "difficult" passenger, and why?',
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 10,
+      question: "What was passenger 1's problem?",
+      options: [
+        { id: 'o1', text: 'She had not been feeling well', isCorrect: true },
+        { id: 'o2', text: 'She missed her meal', isCorrect: false },
+        { id: 'o3', text: 'She lost her headphones', isCorrect: false },
+        { id: 'o4', text: 'She wanted to change seats', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-4', type: 'multiple-choice', points: 10,
+      question: "What was passenger 2's problem?",
+      options: [
+        { id: 'o1', text: 'He pressed the call button a while ago and no one came', isCorrect: true },
+        { id: 'o2', text: 'He wanted extra headphones', isCorrect: false },
+        { id: 'o3', text: 'He felt unwell', isCorrect: false },
+        { id: 'o4', text: 'He wanted to recline his seat', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-5', type: 'multiple-choice', points: 10,
+      question: "What was passenger 3's problem?",
+      options: [
+        { id: 'o1', text: 'They still had not received their headphones', isCorrect: true },
+        { id: 'o2', text: 'They felt unwell', isCorrect: false },
+        { id: 'o3', text: 'They wanted a blanket', isCorrect: false },
+        { id: 'o4', text: 'They wanted to know the flight time', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-6', type: 'multiple-choice', points: 10,
+      question: 'What did passenger 4 ask?',
+      options: [
+        { id: 'o1', text: 'If it was OK to recline their seat', isCorrect: true },
+        { id: 'o2', text: 'For a spare pillow', isCorrect: false },
+        { id: 'o3', text: 'For the call light to be turned on', isCorrect: false },
+        { id: 'o4', text: 'To move to another seat', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-7', type: 'speaking', points: 15,
+      question: 'Practise saying the caring, attentive pronunciation sentences from this lesson, copying the intonation you hear.',
+    },
+    {
+      id: 'ex-8', type: 'multiple-choice', points: 10,
+      question: 'What does passenger 1 want to know on the long-haul flight?',
+      options: [
+        { id: 'o1', text: 'How long the flight is', isCorrect: true },
+        { id: 'o2', text: 'When the meal is served', isCorrect: false },
+        { id: 'o3', text: 'Which channel the films are on', isCorrect: false },
+        { id: 'o4', text: 'Where the toilets are', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-9', type: 'multiple-choice', points: 10,
+      question: 'When will the meal be served, according to conversation 2?',
+      options: [
+        { id: 'o1', text: 'In about thirty minutes', isCorrect: true },
+        { id: 'o2', text: 'Immediately', isCorrect: false },
+        { id: 'o3', text: 'In two hours', isCorrect: false },
+        { id: 'o4', text: 'After the films', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-10', type: 'multiple-choice', points: 10,
+      question: "What is the problem with the passenger's children in conversation 2?",
+      options: [
+        { id: 'o1', text: 'They are hungry and a bit restless', isCorrect: true },
+        { id: 'o2', text: 'They are asleep and cannot be woken for the meal', isCorrect: false },
+        { id: 'o3', text: 'They do not have seats', isCorrect: false },
+        { id: 'o4', text: 'They are feeling sick', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-11', type: 'multiple-choice', points: 10,
+      question: 'Which channel are the films on?',
+      options: [
+        { id: 'o1', text: 'Channel 9', isCorrect: true },
+        { id: 'o2', text: 'Channel 3', isCorrect: false },
+        { id: 'o3', text: 'Channel 12', isCorrect: false },
+        { id: 'o4', text: 'Channel 1', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-12', type: 'multiple-choice', points: 10,
+      question: 'Why does the flight attendant put on the call light for passenger 4?',
+      options: [
+        { id: 'o1', text: 'So other crew know to help if she gets held up', isCorrect: true },
+        { id: 'o2', text: 'Because the passenger is unwell', isCorrect: false },
+        { id: 'o3', text: 'To signal the meal service is starting', isCorrect: false },
+        { id: 'o4', text: 'By mistake', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-13', type: 'speaking', points: 20,
+      question: "Look at these passenger types: an old lady travelling alone, a group of happy friends, a young man with a guitar, a nervous first-time flyer, excited children and parents, a mother and baby, a special needs traveller, a quiet elderly couple, a woman who is not very well. What could you say to help settle each one? Role-play a few of them with a partner.",
+      hint: 'Try phrases like "Don\'t worry, you\'ll be fine." or "Is everything all right?"',
+    },
+    {
+      id: 'ex-14', type: 'multiple-choice', points: 15,
+      question: 'Give an example from the "Flying with Children" text of behaviour that can annoy adult passengers.',
+      options: [
+        { id: 'o1', text: 'Kids kicking the back of a seat while the parent looks elsewhere', isCorrect: true },
+        { id: 'o2', text: 'Children reading quietly', isCorrect: false },
+        { id: 'o3', text: 'Babies sleeping the whole flight', isCorrect: false },
+        { id: 'o4', text: 'Parents keeping children in their seats at all times', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-15', type: 'multiple-choice', points: 15,
+      question: 'What solutions are proposed or outlined in the text?',
+      options: [
+        { id: 'o1', text: 'Family-only sections, and cards/colouring books or child-friendly areas at the gate', isCorrect: true },
+        { id: 'o2', text: 'Banning children from flights entirely', isCorrect: false },
+        { id: 'o3', text: 'Charging parents extra for noisy children', isCorrect: false },
+        { id: 'o4', text: 'No solutions are mentioned', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-16', type: 'speaking', points: 15,
+      question: "Do you agree that the purser's action of escorting the mother and screaming baby off the plane was 'a little harsh'? Why, or why not?",
+    },
+    {
+      id: 'ex-17', type: 'speaking', points: 15,
+      question: 'When you know in advance about young flyers and babies on your flight, how do you prepare to settle them in? Why do you think there are so many negative comments from other passengers about them? Is it really the flight attendants\' duty to keep the peace?',
+    },
+    {
+      id: 'ex-18', type: 'speaking', points: 15,
+      question: 'Discuss common duties and challenges flight attendants face after take-off, on both short-haul and long-haul flights, and share tips for handling them well.',
+    },
+    {
+      id: 'ex-19', type: 'speaking', points: 15,
+      question: 'After take-off, flight attendants have a duty of customer care for all passengers, including babies. With all their other duties, is there enough time? Do young flyers present the biggest challenge, or are there other types of passenger who cause more problems on board?',
+    },
+  ],
+  quiz: {
+    id: 'quiz-3-3',
+    title: 'Helping to Settle Passengers Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'How long is the flight in the first long-haul conversation?',
+        options: [
+          { id: 'o1', text: 'About eleven hours', isCorrect: true },
+          { id: 'o2', text: 'About five hours', isCorrect: false },
+          { id: 'o3', text: 'About two hours', isCorrect: false },
+          { id: 'o4', text: 'About twenty hours', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'What phrase hands something to a passenger?',
+        options: [
+          { id: 'o1', text: 'Here you are.', isCorrect: true },
+          { id: 'o2', text: 'Take this now.', isCorrect: false },
+          { id: 'o3', text: 'This is yours.', isCorrect: false },
+          { id: 'o4', text: 'Have it.', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'According to the case study, why was a mother and baby escorted off a plane?',
+        options: [
+          { id: 'o1', text: 'The purser thought other passengers could not hear the safety announcement', isCorrect: true },
+          { id: 'o2', text: 'The baby had no ticket', isCorrect: false },
+          { id: 'o3', text: 'The mother refused to sit down', isCorrect: false },
+          { id: 'o4', text: 'The baby was sick', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'What does "unruly" mean?',
+        options: [
+          { id: 'o1', text: 'Badly behaved, difficult to control', isCorrect: true },
+          { id: 'o2', text: 'Very quiet and calm', isCorrect: false },
+          { id: 'o3', text: 'Extremely tired', isCorrect: false },
+          { id: 'o4', text: 'Well-organized', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'What have some airlines provided to keep small passengers happy before boarding?',
+        options: [
+          { id: 'o1', text: 'Child-friendly tables, chairs and toys at the gate', isCorrect: true },
+          { id: 'o2', text: 'A separate check-in desk', isCorrect: false },
+          { id: 'o3', text: 'Free extra luggage allowance', isCorrect: false },
+          { id: 'o4', text: 'Priority boarding only', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Restless', back: 'Unable to stay still or relaxed' },
+    { id: 'fc-2', front: 'Call light', back: 'A light that shows a flight attendant is needed at a seat' },
+    { id: 'fc-3', front: 'Cramped', back: 'Small, with not much space' },
+    { id: 'fc-4', front: 'Unruly', back: 'Badly behaved, difficult to control' },
+    { id: 'fc-5', front: 'Hands-on parent', back: 'A parent who takes responsibility for their child' },
+  ],
+  review: {
+    keyPoints: [
+      'Different passenger types (alone, groups, families, older people) need different kinds of care',
+      'A caring, attentive tone matters as much as the words used',
+      'Comfort expressions reassure passengers and build trust throughout the flight',
+      'Flying with children is challenging for parents, crew, and other passengers alike',
+      'Cabin crew must balance customer care duties with limited time, especially on short-haul flights',
+    ],
+    commonMistakes: [
+      { mistake: 'Assuming all passengers of a type need the same thing', correction: 'Treat each passenger as an individual, even within a group type', explanation: 'A "difficult" passenger is often just someone with unmet needs' },
+      { mistake: 'Reacting harshly to a crying baby or misbehaving child', correction: 'Address the parent calmly and offer practical help first', explanation: 'A harsh response, as in the case study, can escalate the situation unnecessarily' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
 const UNIT_TITLES: Record<number, string> = {
   0: 'Unit 1: The Pre-Flight Briefing',
   1: 'Unit 2: Welcome on Board',
@@ -2349,6 +3243,12 @@ export const iCAOUnits: Unit[] = [
         ? SETTLING_PASSENGERS_LESSON
         : unitIdx === 1 && lessonIdx === 2
         ? SAFETY_DEMO_LESSON
+        : unitIdx === 2 && lessonIdx === 0
+        ? FIRST_ANNOUNCEMENTS_LESSON
+        : unitIdx === 2 && lessonIdx === 1
+        ? GETTING_STARTED_LESSON
+        : unitIdx === 2 && lessonIdx === 2
+        ? SETTLE_PASSENGERS_LESSON
         : LESSON_TEMPLATE(unitIdx + 1, lessonIdx + 1, `Lesson ${lessonIdx + 1}`)
     )
   })) as Unit[]
