@@ -5397,6 +5397,60 @@ const IDENTIFYING_PROBLEMS_LESSON: any = {
       id: 'ex-11', type: 'speaking', points: 20,
       question: 'Discuss with a partner: which two roles (diplomat, firefighter, referee, bank clerk, nurse, waiter/waitress, nanny, lifesaver, police officer, receptionist, friend, information officer) are the most important? Which are the least important? Which do you most commonly take, and what other roles do you sometimes take?',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'multiple-choice', points: 10,
+      question: "A flight attendant says: \"Can I help you, madam?\" Which of these means the same?",
+      options: [
+        { id: 'o1', text: 'What can I do for you?', isCorrect: true },
+        { id: 'o2', text: 'Are you enjoying the flight?', isCorrect: false },
+        { id: 'o3', text: 'Please take your seat.', isCorrect: false },
+        { id: 'o4', text: 'Do you need a doctor?', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-2', type: 'multiple-choice', points: 10,
+      question: "A flight attendant says: \"I'm really sorry, madam.\" Which of these means the same?",
+      options: [
+        { id: 'o1', text: 'I do apologize.', isCorrect: true },
+        { id: 'o2', text: "I'm not sure.", isCorrect: false },
+        { id: 'o3', text: "That's your problem.", isCorrect: false },
+        { id: 'o4', text: "I don't know.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-3', type: 'multiple-choice', points: 10,
+      question: 'A flight attendant asks: "Can I get you a blanket and maybe a hot beverage?" Which of these means the same?',
+      options: [
+        { id: 'o1', text: 'Would you like a blanket and maybe a hot drink?', isCorrect: true },
+        { id: 'o2', text: 'You must accept a blanket.', isCorrect: false },
+        { id: 'o3', text: 'There are no blankets left.', isCorrect: false },
+        { id: 'o4', text: 'Please stay seated.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-4', type: 'multiple-choice', points: 10,
+      question: 'A flight attendant says: "I\'ll be back in just a moment, madam." Which of these means the same?',
+      options: [
+        { id: 'o1', text: "I'll come back soon.", isCorrect: true },
+        { id: 'o2', text: "I won't be coming back.", isCorrect: false },
+        { id: 'o3', text: 'Please wait an hour.', isCorrect: false },
+        { id: 'o4', text: "I'm leaving now.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-5', type: 'multiple-choice', points: 10,
+      question: 'A flight attendant asks: "Would that be all right?" Which of these means the same?',
+      options: [
+        { id: 'o1', text: 'Is that OK?', isCorrect: true },
+        { id: 'o2', text: 'Is that impossible?', isCorrect: false },
+        { id: 'o3', text: 'Do you agree to pay?', isCorrect: false },
+        { id: 'o4', text: 'Are you leaving?', isCorrect: false },
+      ],
+    },
+  ],
+  logBookPrompts: [
+    'Think about the usual in-flight passenger problems. What are these minor problems? What language do you use to solve them? Are you tired of giving the same replies, or is every case different?',
   ],
   quiz: {
     id: 'quiz-5-1',
@@ -5650,6 +5704,82 @@ const DEALING_PROBLEMS_LESSON: any = {
       id: 'ex-11', type: 'speaking', points: 20,
       question: "Role-play with a partner using these problems: the video screen doesn't work, a baby is crying, the reading light goes on and off, a neighbour's music is too loud, a noisy group nearby, you can't open the overhead locker, the toilet is dirty, the seat cushion is wet, the headset is broken. Passenger: say the problem. Flight attendant: ask for information, then deal with it using 'I'll...'.",
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'multiple-choice', points: 10,
+      question: 'True or False: There is a passenger who is worried about a transit/connecting flight.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-2', type: 'multiple-choice', points: 10,
+      question: 'True or False: A passenger is cold.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-3', type: 'multiple-choice', points: 10,
+      question: 'True or False: Another passenger is hungry.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-4', type: 'multiple-choice', points: 10,
+      question: "True or False: A passenger's daughter is not feeling well.",
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-5', type: 'multiple-choice', points: 10,
+      question: 'True or False: Passenger 1 is worried about her baggage.',
+      options: [
+        { id: 'o1', text: 'False', isCorrect: true },
+        { id: 'o2', text: 'True', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-6', type: 'multiple-choice', points: 10,
+      question: 'True or False: Passenger 2 already has a sandwich.',
+      options: [
+        { id: 'o1', text: 'False', isCorrect: true },
+        { id: 'o2', text: 'True', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-7', type: 'multiple-choice', points: 10,
+      question: 'True or False: Passenger 3 must wait 20 minutes for a blanket.',
+      options: [
+        { id: 'o1', text: 'False', isCorrect: true },
+        { id: 'o2', text: 'True', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-8', type: 'multiple-choice', points: 10,
+      question: "True or False: The flight attendant describes exactly what is wrong with Passenger 4's daughter.",
+      options: [
+        { id: 'o1', text: 'False', isCorrect: true },
+        { id: 'o2', text: 'True', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-9', type: 'multiple-choice', points: 10,
+      question: 'True or False: The flight attendant fully solves all four problems on the spot.',
+      options: [
+        { id: 'o1', text: 'False', isCorrect: true },
+        { id: 'o2', text: 'True', isCorrect: false },
+      ],
+    },
+  ],
+  logBookPrompts: [
+    'Think about one particular problem you had to deal with. What happened? In what way was this problem different from others? Were you satisfied that you dealt with it in the best possible way?',
   ],
   quiz: {
     id: 'quiz-5-2',
@@ -5985,6 +6115,80 @@ const SAYING_SORRY_LESSON: any = {
       id: 'ex-23', type: 'speaking', points: 15,
       question: 'Is it always the flight attendant\'s job to make sure passenger problems are solved? How do you feel boarding a flight knowing you are likely to have passenger problems - tense and nervous, or do you look forward to the challenge?',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "I\'d like the beef, please." What is the best reply?',
+      options: [
+        { id: 'o1', text: "I am sorry, but we've run out of beef.", isCorrect: true },
+        { id: 'o2', text: 'Certainly. Earl Grey or English Breakfast?', isCorrect: false },
+        { id: 'o3', text: 'Sorry about that. Try pushing this button.', isCorrect: false },
+        { id: 'o4', text: "I can only apologize. I'll change it.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-2', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "Have you got any paracetamol?" What is the best reply?',
+      options: [
+        { id: 'o1', text: "Yes, but I'm afraid I can't give it to you without a doctor.", isCorrect: true },
+        { id: 'o2', text: "I am sorry, but we've run out of beef.", isCorrect: false },
+        { id: 'o3', text: "I do apologize, we've been so busy.", isCorrect: false },
+        { id: 'o4', text: 'Certainly. Earl Grey or English Breakfast?', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-3', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "I\'d like some tea, please." What is the best reply?',
+      options: [
+        { id: 'o1', text: 'Certainly. Earl Grey or English Breakfast?', isCorrect: true },
+        { id: 'o2', text: "I'm really sorry, we've only got beef left.", isCorrect: false },
+        { id: 'o3', text: 'Sorry about that. Try pushing this button.', isCorrect: false },
+        { id: 'o4', text: "I can only apologize. I'll change it.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-4', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "I rang the call button several times." What is the best reply?',
+      options: [
+        { id: 'o1', text: "I do apologize, we've been so busy.", isCorrect: true },
+        { id: 'o2', text: "Yes, but I'm afraid I can't give it to you without a doctor.", isCorrect: false },
+        { id: 'o3', text: 'Certainly. Earl Grey or English Breakfast?', isCorrect: false },
+        { id: 'o4', text: "I am sorry, but we've run out of beef.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-5', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "The sound of the film still doesn\'t work." What is the best reply?',
+      options: [
+        { id: 'o1', text: 'Sorry about that. Try pushing this button.', isCorrect: true },
+        { id: 'o2', text: "I can only apologize. I'll change it.", isCorrect: false },
+        { id: 'o3', text: "I do apologize, we've been so busy.", isCorrect: false },
+        { id: 'o4', text: 'Certainly. Earl Grey or English Breakfast?', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-6', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "This meal\'s cold." What is the best reply?',
+      options: [
+        { id: 'o1', text: "I can only apologize. I'll change it.", isCorrect: true },
+        { id: 'o2', text: 'Sorry about that. Try pushing this button.', isCorrect: false },
+        { id: 'o3', text: "I'm really sorry, we've only got beef left.", isCorrect: false },
+        { id: 'o4', text: "Yes, but I'm afraid I can't give it to you without a doctor.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-7', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "I\'d like the fish, please." What is the best reply?',
+      options: [
+        { id: 'o1', text: "I'm really sorry, we've only got beef left.", isCorrect: true },
+        { id: 'o2', text: "I am sorry, but we've run out of beef.", isCorrect: false },
+        { id: 'o3', text: 'Certainly. Earl Grey or English Breakfast?', isCorrect: false },
+        { id: 'o4', text: "I do apologize, we've been so busy.", isCorrect: false },
+      ],
+    },
+  ],
+  logBookPrompts: [
+    'Think about in-flight problems in general. Does your airline train you to manage problems and difficult passengers? Do problems spoil the flight experience for both the flight attendants and the passengers? Is dealing with passenger problems the worst side of your job, or simply what you are trained to expect?',
   ],
   quiz: {
     id: 'quiz-5-3',
