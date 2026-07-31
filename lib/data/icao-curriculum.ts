@@ -6529,6 +6529,90 @@ const ONBOARD_ACCIDENT_LESSON: any = {
       id: 'ex-19', type: 'speaking', points: 15,
       question: 'Label the items in the emergency medical kit: stethoscope, syringes, dressings, gloves, aspirin, CPR mask, AED, bandages, oxygen, antiseptic wipes. Describe what each is used for.',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'fill-blank', points: 10,
+      question: 'Complete the incident summary: "Leila rushed to the lady and saw she was _________ and her head was bleeding."',
+      correctAnswer: 'hurt',
+    },
+    {
+      id: 'self-2', type: 'fill-blank', points: 10,
+      question: 'Complete: "Another passenger said a _________ had fallen out of the overhead locker and hit her on the head."',
+      correctAnswer: 'laptop',
+    },
+    {
+      id: 'self-3', type: 'fill-blank', points: 10,
+      question: 'Complete: "Leila asked her colleague, Hemal, to get the first aid _________ quickly."',
+      correctAnswer: 'kit',
+    },
+    {
+      id: 'self-4', type: 'fill-blank', points: 10,
+      question: 'Complete: "Leila gave her a glass of _________ and told her the cut was not serious."',
+      correctAnswer: 'water',
+    },
+    {
+      id: 'self-5', type: 'fill-blank', points: 10,
+      question: 'Complete: "She cleaned up the wound and put a _________ over it."',
+      correctAnswer: 'dressing',
+    },
+    {
+      id: 'self-6', type: 'fill-blank', points: 10,
+      question: 'Complete: "She asked her to hold a _________ against her forehead."',
+      correctAnswer: 'compress',
+    },
+    {
+      id: 'self-7', type: 'fill-blank', points: 10,
+      question: 'Complete: "The lady said she was feeling _________ and Leila helped her to her seat."',
+      correctAnswer: 'faint',
+    },
+    {
+      id: 'self-8', type: 'fill-blank', points: 10,
+      question: 'Complete: "Leila helped her to her seat and _________ her seatbelt."',
+      correctAnswer: 'fastened',
+    },
+    {
+      id: 'self-9', type: 'multiple-choice', points: 10,
+      question: "Which of these belongs to 'CARE' (taking action), not CHECK or CALL?",
+      options: [
+        { id: 'o1', text: 'Lie the passenger down and undo their clothing.', isCorrect: true },
+        { id: 'o2', text: "What's wrong?", isCorrect: false },
+        { id: 'o3', text: 'Tell the captain.', isCorrect: false },
+        { id: 'o4', text: 'Are you in pain?', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-10', type: 'multiple-choice', points: 10,
+      question: "Which of these belongs to 'CALL' (describing and getting help)?",
+      options: [
+        { id: 'o1', text: 'Tell a colleague to get the oxygen, mask and defibrillator ready.', isCorrect: true },
+        { id: 'o2', text: 'How are you feeling?', isCorrect: false },
+        { id: 'o3', text: 'Give him some oxygen.', isCorrect: false },
+        { id: 'o4', text: "Take the passenger's pulse.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-11', type: 'multiple-choice', points: 10,
+      question: "Which of these belongs to 'CHECK' (finding out what's wrong)?",
+      options: [
+        { id: 'o1', text: 'Are you in pain?', isCorrect: true },
+        { id: 'o2', text: 'Make room, please.', isCorrect: false },
+        { id: 'o3', text: 'Lie him down.', isCorrect: false },
+        { id: 'o4', text: 'Get the oxygen and defibrillator.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-12', type: 'multiple-choice', points: 10,
+      question: "Which of these would you typically find in the cabin crew's basic first aid kit, rather than the full medical kit used by doctors?",
+      options: [
+        { id: 'o1', text: 'Antiseptic wipes', isCorrect: true },
+        { id: 'o2', text: 'Syringes', isCorrect: false },
+        { id: 'o3', text: 'Stethoscope', isCorrect: false },
+        { id: 'o4', text: 'Needles', isCorrect: false },
+      ],
+    },
+  ],
+  logBookPrompts: [
+    'What experience do you have of on-board medical incidents? What did you do to help the passenger(s)? What language did you use to find out the problem? Are there other expressions you could use in similar situations in the future?',
   ],
   quiz: {
     id: 'quiz-6-1',
@@ -6873,6 +6957,136 @@ const SERIOUS_INCIDENT_LESSON: any = {
       id: 'ex-25', type: 'speaking', points: 20,
       question: "Role-play a medical emergency in groups of four - two flight attendants, two passengers. Follow this pattern: A: What's happened? B: It's my husband, he's feeling ill. C: Are you on any medication, sir? D: Yes, I take pills for my heart... Then swap roles.",
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'multiple-choice', points: 10,
+      question: "Is 'How are you feeling?' part of CHECK, CALL, or CARE?",
+      options: [
+        { id: 'o1', text: 'CHECK', isCorrect: true },
+        { id: 'o2', text: 'CALL', isCorrect: false },
+        { id: 'o3', text: 'CARE', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-2', type: 'multiple-choice', points: 10,
+      question: "Is 'Are you in pain?' part of CHECK, CALL, or CARE?",
+      options: [
+        { id: 'o1', text: 'CHECK', isCorrect: true },
+        { id: 'o2', text: 'CALL', isCorrect: false },
+        { id: 'o3', text: 'CARE', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-3', type: 'multiple-choice', points: 10,
+      question: "Is 'He looks very sick' (told to a colleague) part of CHECK, CALL, or CARE?",
+      options: [
+        { id: 'o1', text: 'CALL', isCorrect: true },
+        { id: 'o2', text: 'CHECK', isCorrect: false },
+        { id: 'o3', text: 'CARE', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-4', type: 'multiple-choice', points: 10,
+      question: "Is 'Lie him down' part of CHECK, CALL, or CARE?",
+      options: [
+        { id: 'o1', text: 'CARE', isCorrect: true },
+        { id: 'o2', text: 'CHECK', isCorrect: false },
+        { id: 'o3', text: 'CALL', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-5', type: 'multiple-choice', points: 10,
+      question: "Is 'He's not breathing normally' (reported to a colleague) part of CHECK, CALL, or CARE?",
+      options: [
+        { id: 'o1', text: 'CALL', isCorrect: true },
+        { id: 'o2', text: 'CHECK', isCorrect: false },
+        { id: 'o3', text: 'CARE', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-6', type: 'multiple-choice', points: 10,
+      question: "Is 'Make room, please' part of CHECK, CALL, or CARE?",
+      options: [
+        { id: 'o1', text: 'CARE', isCorrect: true },
+        { id: 'o2', text: 'CHECK', isCorrect: false },
+        { id: 'o3', text: 'CALL', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-7', type: 'multiple-choice', points: 10,
+      question: "Is 'Get the oxygen and defibrillator' (asking a colleague to fetch it) part of CHECK, CALL, or CARE?",
+      options: [
+        { id: 'o1', text: 'CALL', isCorrect: true },
+        { id: 'o2', text: 'CHECK', isCorrect: false },
+        { id: 'o3', text: 'CARE', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-8', type: 'multiple-choice', points: 10,
+      question: "Is 'Where's the pain?' part of CHECK, CALL, or CARE?",
+      options: [
+        { id: 'o1', text: 'CHECK', isCorrect: true },
+        { id: 'o2', text: 'CALL', isCorrect: false },
+        { id: 'o3', text: 'CARE', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-9', type: 'multiple-choice', points: 10,
+      question: "Is 'He's complaining of a pain in his chest' (reported to a colleague) part of CHECK, CALL, or CARE?",
+      options: [
+        { id: 'o1', text: 'CALL', isCorrect: true },
+        { id: 'o2', text: 'CHECK', isCorrect: false },
+        { id: 'o3', text: 'CARE', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-10', type: 'multiple-choice', points: 10,
+      question: "Is 'Loosen his clothing' part of CHECK, CALL, or CARE?",
+      options: [
+        { id: 'o1', text: 'CARE', isCorrect: true },
+        { id: 'o2', text: 'CHECK', isCorrect: false },
+        { id: 'o3', text: 'CALL', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-11', type: 'multiple-choice', points: 10,
+      question: "Is 'Are you on any medication?' part of CHECK, CALL, or CARE?",
+      options: [
+        { id: 'o1', text: 'CHECK', isCorrect: true },
+        { id: 'o2', text: 'CALL', isCorrect: false },
+        { id: 'o3', text: 'CARE', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-12', type: 'multiple-choice', points: 10,
+      question: "Is 'He says he's got chest pains' (reported to a colleague) part of CHECK, CALL, or CARE?",
+      options: [
+        { id: 'o1', text: 'CALL', isCorrect: true },
+        { id: 'o2', text: 'CHECK', isCorrect: false },
+        { id: 'o3', text: 'CARE', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-13', type: 'multiple-choice', points: 10,
+      question: "Is 'Check his pulse' part of CHECK, CALL, or CARE?",
+      options: [
+        { id: 'o1', text: 'CHECK', isCorrect: true },
+        { id: 'o2', text: 'CALL', isCorrect: false },
+        { id: 'o3', text: 'CARE', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-14', type: 'multiple-choice', points: 10,
+      question: "Is 'Have you been sick before?' part of CHECK, CALL, or CARE?",
+      options: [
+        { id: 'o1', text: 'CHECK', isCorrect: true },
+        { id: 'o2', text: 'CALL', isCorrect: false },
+        { id: 'o3', text: 'CARE', isCorrect: false },
+      ],
+    },
+  ],
+  logBookPrompts: [
+    'Think about a serious incident you witnessed or assisted at. What happened? How did you and your colleagues react? What would you do differently the next time you had a similar experience?',
   ],
   quiz: {
     id: 'quiz-6-2',
@@ -7251,6 +7465,60 @@ const REPORTING_INCIDENT_LESSON: any = {
       id: 'ex-30', type: 'speaking', points: 20,
       question: 'Discuss with a partner: what training do flight attendants typically receive for medical incidents on board? What is the most common minor complaint or incident? Is training for medical incidents the most important part of cabin crew training? What personal qualities are needed for dealing with medical incidents? Life-threatening incidents are rare during flights - do you know of any? What happened?',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'fill-blank', points: 10,
+      question: 'Complete, using the past simple: "A passenger _________ and suffered a heart attack." (collapse)',
+      correctAnswer: 'collapsed',
+    },
+    {
+      id: 'self-2', type: 'fill-blank', points: 10,
+      question: 'Complete: "A passenger collapsed and _________ a heart attack." (suffer)',
+      correctAnswer: 'suffered',
+    },
+    {
+      id: 'self-3', type: 'fill-blank', points: 10,
+      question: 'Complete: "She _________ him and loosened his clothing." (check)',
+      correctAnswer: 'checked',
+    },
+    {
+      id: 'self-4', type: 'fill-blank', points: 10,
+      question: 'Complete: "She checked him and _________ his clothing." (loosen)',
+      correctAnswer: 'loosened',
+    },
+    {
+      id: 'self-5', type: 'fill-blank', points: 10,
+      question: 'Complete: "Yes, she _________ the passenger\'s condition to the captain." (report)',
+      correctAnswer: 'reported',
+    },
+    {
+      id: 'self-6', type: 'fill-blank', points: 10,
+      question: 'Complete: "She _________ CPR and remained with the passenger." (administer)',
+      correctAnswer: 'administered',
+    },
+    {
+      id: 'self-7', type: 'fill-blank', points: 10,
+      question: 'Complete: "She administered CPR and _________ with the passenger." (remain)',
+      correctAnswer: 'remained',
+    },
+    {
+      id: 'self-8', type: 'fill-blank', points: 10,
+      question: 'Complete: "Yes, he _________ quickly and recommended immediate hospitalization." (arrive)',
+      correctAnswer: 'arrived',
+    },
+    {
+      id: 'self-9', type: 'fill-blank', points: 10,
+      question: 'Complete: "He arrived quickly and _________ immediate hospitalization." (recommend)',
+      correctAnswer: 'recommended',
+    },
+    {
+      id: 'self-10', type: 'fill-blank', points: 10,
+      question: 'Complete: "He _________ to make an emergency landing." (decide)',
+      correctAnswer: 'decided',
+    },
+  ],
+  logBookPrompts: [
+    'Do you think you have sufficient training to deal with on-board medical incidents? Do you depend on your colleagues? Do you spend personal time improving your knowledge and first aid skills? Do you know how to ask the right questions? Can you use the right expressions to obtain information and describe sick passengers?',
   ],
   quiz: {
     id: 'quiz-6-3',
