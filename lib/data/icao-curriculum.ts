@@ -1795,6 +1795,137 @@ const WELCOME_ON_BOARD_LESSON: any = {
       id: 'ex-38', type: 'speaking', points: 15,
       question: 'Role play: take turns welcoming different types of passengers on board and organizing their seating.',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'fill-blank', points: 10,
+      question: 'A: Welcome on board. Your _________, please? B: Here it is.',
+      correctAnswer: 'boarding pass',
+    },
+    {
+      id: 'self-2', type: 'fill-blank', points: 10,
+      question: "A: Hello, good morning. Can I _________ your boarding passes?",
+      correctAnswer: 'check',
+    },
+    {
+      id: 'self-3', type: 'fill-blank', points: 10,
+      question: 'B: If possible we would like to sit _________.',
+      correctAnswer: 'together',
+    },
+    {
+      id: 'self-4', type: 'fill-blank', points: 10,
+      question: "A: I'll try to _________ them for you when all the passengers have boarded. The _________ isn't full today.",
+      correctAnswer: 'change',
+      hint: 'First blank: a verb meaning "swap for something else".',
+    },
+    {
+      id: 'self-5', type: 'fill-blank', points: 10,
+      question: "A: You're in seat 3B. It's on the left at the _________ of the aircraft.",
+      correctAnswer: 'front',
+    },
+    {
+      id: 'self-6', type: 'multiple-choice', points: 10,
+      question: 'Match "greet" with its phrase.',
+      options: [
+        { id: 'o1', text: 'passengers', isCorrect: true },
+        { id: 'o2', text: 'that all seatbelts are fastened', isCorrect: false },
+        { id: 'o3', text: 'the overhead lockers', isCorrect: false },
+        { id: 'o4', text: 'the safety instruction card', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-7', type: 'multiple-choice', points: 10,
+      question: 'Match "check" with its phrase.',
+      options: [
+        { id: 'o1', text: 'that all seatbelts are fastened', isCorrect: true },
+        { id: 'o2', text: 'passengers', isCorrect: false },
+        { id: 'o3', text: 'the overhead lockers', isCorrect: false },
+        { id: 'o4', text: 'everyone to switch off mobile phones', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-8', type: 'multiple-choice', points: 10,
+      question: 'Match "make sure that" with its phrase.',
+      options: [
+        { id: 'o1', text: 'the exit row is clear', isCorrect: true },
+        { id: 'o2', text: 'passengers', isCorrect: false },
+        { id: 'o3', text: 'the safety instruction card', isCorrect: false },
+        { id: 'o4', text: 'the overhead lockers', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-9', type: 'multiple-choice', points: 10,
+      question: 'Match "close" with its phrase.',
+      options: [
+        { id: 'o1', text: 'the overhead lockers', isCorrect: true },
+        { id: 'o2', text: 'passengers', isCorrect: false },
+        { id: 'o3', text: 'the exit row is clear', isCorrect: false },
+        { id: 'o4', text: 'everyone to switch off mobile phones', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-10', type: 'multiple-choice', points: 10,
+      question: 'Match "show" with its phrase.',
+      options: [
+        { id: 'o1', text: 'the safety instruction card', isCorrect: true },
+        { id: 'o2', text: 'passengers', isCorrect: false },
+        { id: 'o3', text: 'that all seatbelts are fastened', isCorrect: false },
+        { id: 'o4', text: 'the overhead lockers', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-11', type: 'multiple-choice', points: 10,
+      question: 'Match "tell" with its phrase.',
+      options: [
+        { id: 'o1', text: 'everyone to switch off mobile phones', isCorrect: true },
+        { id: 'o2', text: 'passengers', isCorrect: false },
+        { id: 'o3', text: 'the exit row is clear', isCorrect: false },
+        { id: 'o4', text: 'the safety instruction card', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-12', type: 'multiple-choice', points: 10,
+      question: 'Turn into a polite request: "I want to see your boarding pass."',
+      options: [
+        { id: 'o1', text: 'Could I see your boarding pass?', isCorrect: true },
+        { id: 'o2', text: 'I want your boarding pass now.', isCorrect: false },
+        { id: 'o3', text: 'Give me your boarding pass.', isCorrect: false },
+        { id: 'o4', text: 'Boarding pass?', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-13', type: 'multiple-choice', points: 10,
+      question: 'Turn into a polite request: "Put your bag in the overhead locker."',
+      options: [
+        { id: 'o1', text: 'Would you put your bag in the overhead locker?', isCorrect: true },
+        { id: 'o2', text: 'Put it there now.', isCorrect: false },
+        { id: 'o3', text: 'Bag in the locker.', isCorrect: false },
+        { id: 'o4', text: 'You must put your bag away.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-14', type: 'multiple-choice', points: 10,
+      question: 'Turn into a polite request: "Switch off your phone now."',
+      options: [
+        { id: 'o1', text: 'Could you switch off your phone now?', isCorrect: true },
+        { id: 'o2', text: 'Phone off now.', isCorrect: false },
+        { id: 'o3', text: 'Switch it off immediately.', isCorrect: false },
+        { id: 'o4', text: 'You have to turn off your phone.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-15', type: 'multiple-choice', points: 10,
+      question: 'Turn into a polite request: "Fold your tray table."',
+      options: [
+        { id: 'o1', text: 'Would you mind folding your tray table?', isCorrect: true },
+        { id: 'o2', text: 'Fold it now.', isCorrect: false },
+        { id: 'o3', text: 'Table down, please.', isCorrect: false },
+        { id: 'o4', text: 'You must fold your table.', isCorrect: false },
+      ],
+    },
+  ],
+  logBookPrompts: [
+    'Do you enjoy welcoming passengers on board your flight? How do you show this? Are you nervous of certain types of passenger? Do you recognize regular types of passenger?',
+    'What do you say to welcome different passengers? What do you say to children? Older people? Business travellers?',
   ],
   quiz: {
     id: 'quiz-2-1',
@@ -2173,6 +2304,122 @@ const SETTLING_PASSENGERS_LESSON: any = {
       question: "You're in seat 4F. _________ across the cabin, to the other side, and turn left.",
       correctAnswer: 'Straight',
       hint: 'Means "directly forward".',
+    },
+    // Self Study
+    {
+      id: 'self-1', type: 'multiple-choice', points: 15,
+      question: 'A mother needs 4 seats for her family. What does she ask the flight attendant?',
+      options: [
+        { id: 'o1', text: 'Is it possible to change seats with someone near us?', isCorrect: true },
+        { id: 'o2', text: 'Can you upgrade us to Business class?', isCorrect: false },
+        { id: 'o3', text: 'Can we get off the plane?', isCorrect: false },
+        { id: 'o4', text: 'Can our bags go in the hold?', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-2', type: 'multiple-choice', points: 15,
+      question: "Why can't the flight attendant change the seats immediately?",
+      options: [
+        { id: 'o1', text: 'Everyone is still boarding, so she needs to check availability first', isCorrect: true },
+        { id: 'o2', text: 'The flight is full and no change is possible', isCorrect: false },
+        { id: 'o3', text: 'She refuses to help', isCorrect: false },
+        { id: 'o4', text: 'The family has to pay extra', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-3', type: 'multiple-choice', points: 15,
+      question: 'What does the family need?',
+      options: [
+        { id: 'o1', text: 'Four seats together', isCorrect: true },
+        { id: 'o2', text: 'Window seats only', isCorrect: false },
+        { id: 'o3', text: 'A refund', isCorrect: false },
+        { id: 'o4', text: 'Extra blankets', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-4', type: 'multiple-choice', points: 15,
+      question: "Where does the mother say her husband's seat is?",
+      options: [
+        { id: 'o1', text: 'Three rows behind them', isCorrect: true },
+        { id: 'o2', text: 'In Business class', isCorrect: false },
+        { id: 'o3', text: 'At the very back of the plane', isCorrect: false },
+        { id: 'o4', text: 'Right next to them already', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-5', type: 'multiple-choice', points: 15,
+      question: 'What reason does the third passenger give for agreeing to change seats?',
+      options: [
+        { id: 'o1', text: 'The new seat is also an aisle seat, which she prefers', isCorrect: true },
+        { id: 'o2', text: 'She wants to sit near the family', isCorrect: false },
+        { id: 'o3', text: 'She is offered a free drink', isCorrect: false },
+        { id: 'o4', text: 'She has no reason, she just agrees', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-6', type: 'fill-blank', points: 10,
+      question: 'This is how the TV handset works. First, _________ this button and this gives you a choice of options.',
+      correctAnswer: 'press',
+    },
+    {
+      id: 'self-7', type: 'fill-blank', points: 10,
+      question: 'You can choose from these options by going up or _________.',
+      correctAnswer: 'down',
+    },
+    {
+      id: 'self-8', type: 'fill-blank', points: 10,
+      question: "So, let's _________ 'Films'. Then you get another choice.",
+      correctAnswer: 'select',
+    },
+    {
+      id: 'self-9', type: 'fill-blank', points: 10,
+      question: 'You have the _________ control on the left here.',
+      correctAnswer: 'volume',
+    },
+    {
+      id: 'self-10', type: 'fill-blank', points: 10,
+      question: 'And this is for your _________ light. Just press on and off.',
+      correctAnswer: 'reading',
+    },
+    {
+      id: 'self-11', type: 'multiple-choice', points: 10,
+      question: 'Reorder: "seatbelt please your sir fasten."',
+      options: [
+        { id: 'o1', text: 'Please fasten your seatbelt, sir.', isCorrect: true },
+        { id: 'o2', text: 'Your seatbelt please fasten sir.', isCorrect: false },
+        { id: 'o3', text: 'Sir please your seatbelt fasten.', isCorrect: false },
+        { id: 'o4', text: 'Fasten sir please your seatbelt.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-12', type: 'multiple-choice', points: 10,
+      question: 'Reorder: "upright the your in please seat position put."',
+      options: [
+        { id: 'o1', text: 'Please put your seat in the upright position.', isCorrect: true },
+        { id: 'o2', text: 'Put please the seat upright in your position.', isCorrect: false },
+        { id: 'o3', text: 'Your seat please put upright the position in.', isCorrect: false },
+        { id: 'o4', text: 'In the upright position please put your seat.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-13', type: 'multiple-choice', points: 10,
+      question: 'Reorder: "mind you off would computer switching your?"',
+      options: [
+        { id: 'o1', text: 'Would you mind switching your computer off?', isCorrect: true },
+        { id: 'o2', text: 'Your computer off would you mind switching?', isCorrect: false },
+        { id: 'o3', text: 'Would switching your computer off you mind?', isCorrect: false },
+        { id: 'o4', text: 'Mind you would off switching your computer?', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-14', type: 'multiple-choice', points: 10,
+      question: 'Reorder: "bag mind the putting in overhead would your locker you?"',
+      options: [
+        { id: 'o1', text: 'Would you mind putting your bag in the overhead locker?', isCorrect: true },
+        { id: 'o2', text: 'Your bag would you mind putting overhead in the locker?', isCorrect: false },
+        { id: 'o3', text: 'Putting your bag would you mind in the overhead locker?', isCorrect: false },
+        { id: 'o4', text: 'In the overhead locker would you mind putting your bag?', isCorrect: false },
+      ],
     },
   ],
   quiz: {
@@ -2768,6 +3015,36 @@ const SAFETY_DEMO_LESSON: any = {
       id: 'ex-17', type: 'speaking', points: 15,
       question: 'Which of these possible solutions to the hand-baggage problem do you prefer, and why? The ground crew should solve it before boarding / carry-on size and weight should be strictly controlled / airlines should be tougher / check-in should be stricter / oversized bags should be checked in / passengers should pay more for carry-on / overhead lockers should be bigger. Do you have any other ideas?',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'fill-blank', points: 10,
+      question: 'Listen _________ to the following safety instructions.',
+      correctAnswer: 'carefully',
+    },
+    {
+      id: 'self-2', type: 'fill-blank', points: 10,
+      question: 'You will find a safety instruction _________ in the pocket in front of you.',
+      correctAnswer: 'card',
+    },
+    {
+      id: 'self-3', type: 'fill-blank', points: 10,
+      question: 'Please read this carefully before take-off and _________ yourself with the emergency exits and procedures.',
+      correctAnswer: 'familiarize',
+    },
+    {
+      id: 'self-4', type: 'fill-blank', points: 10,
+      question: 'Familiarize yourself with the emergency exits and procedures _________ this Boeing 777S.',
+      correctAnswer: 'on board',
+    },
+    {
+      id: 'self-5', type: 'fill-blank', points: 10,
+      question: 'When the seatbelt _________ is on, you must fasten your seatbelt.',
+      correctAnswer: 'sign',
+    },
+  ],
+  logBookPrompts: [
+    'Have you become an expert in the safety instructions before take-off? Do you practise making the announcement?',
+    'Do you try to improve your demonstration of the safety instructions? Do you say anything to passengers who don\'t listen to the instructions?',
   ],
   quiz: {
     id: 'quiz-2-3',
