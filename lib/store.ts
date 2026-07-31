@@ -32,6 +32,10 @@ interface AppState {
   // Lesson completion (XP, progress, achievement checks all in one place)
   completeLesson: (lesson: Lesson, quizScorePercent: number) => void;
 
+  // Log Book - personal reflection notes per lesson, not graded
+  logBookEntries: Record<string, string>;
+  setLogBookEntry: (lessonId: string, text: string) => void;
+
   // Daily Challenge
   dailyChallenge: DailyChallenge | null;
   setDailyChallenge: (challenge: DailyChallenge | null) => void;
@@ -134,6 +138,12 @@ export const useAppStore = create<AppState>()(
       clearNewlyUnlocked: () => set({ newlyUnlocked: [] }),
 
       badges: badgeDefs,
+
+      logBookEntries: {},
+      setLogBookEntry: (lessonId, text) =>
+        set((state) => ({
+          logBookEntries: { ...state.logBookEntries, [lessonId]: text },
+        })),
 
       completeLesson: (lesson, quizScorePercent) =>
         set((state) => {

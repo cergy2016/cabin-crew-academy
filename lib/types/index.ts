@@ -143,6 +143,7 @@ export interface Lesson {
     keyPoints: string[];
     commonMistakes: { mistake: string; correction: string; explanation: string }[];
   };
+  logBookPrompts?: string[];
 
   // Gamification
   xpReward: number;

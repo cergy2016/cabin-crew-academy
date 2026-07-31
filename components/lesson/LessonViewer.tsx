@@ -16,7 +16,7 @@ interface LessonViewerProps {
   onComplete?: () => void;
 }
 
-type LessonSection = 'objectives' | 'scenario' | 'theory' | 'phraseology' | 'vocabulary' | 'exercises' | 'quiz';
+type LessonSection = 'objectives' | 'scenario' | 'theory' | 'phraseology' | 'vocabulary' | 'exercises' | 'quiz' | 'logbook';
 
 export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) {
   const [activeSection, setActiveSection] = useState<LessonSection>('objectives');
@@ -27,7 +27,11 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
   const completeLesson = useAppStore((s) => s.completeLesson);
   const newlyUnlocked = useAppStore((s) => s.newlyUnlocked);
   const clearNewlyUnlocked = useAppStore((s) => s.clearNewlyUnlocked);
+  const logBookEntries = useAppStore((s) => s.logBookEntries);
+  const setLogBookEntry = useAppStore((s) => s.setLogBookEntry);
   const hasFinalizedRef = useRef(false);
+  const [logBookDraft, setLogBookDraft] = useState(logBookEntries[lesson.id] || '');
+  const [logBookSaved, setLogBookSaved] = useState(false);
 
   // "Listen to full conversation" - plays all scenario audio segments in order
   const [playAllIndex, setPlayAllIndex] = useState<number | null>(null);
@@ -93,6 +97,9 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
     { id: 'vocabulary', label: 'Vocabulary', icon: '📖' },
     { id: 'exercises', label: 'Exercises', icon: '💪' },
     { id: 'quiz', label: 'Quiz', icon: '✅' },
+    ...(lesson.logBookPrompts && lesson.logBookPrompts.length > 0
+      ? [{ id: 'logbook' as LessonSection, label: 'Log Book', icon: '📓' }]
+      : []),
   ];
 
   return (
@@ -411,6 +418,59 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                       </div>
                     </div>
                   ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Log Book Section */}
+          {activeSection === 'logbook' && lesson.logBookPrompts && (
+            <motion.div
+              key="logbook"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="space-y-6"
+            >
+              <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-8">
+                <h2 className="text-2xl font-bold mb-2 text-slate-900 dark:text-white flex items-center gap-2">
+                  📓 Log Book
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 mb-6">
+                  Personal reflection - not graded. Use these questions for ideas, then write your own notes below.
+                </p>
+                <ul className="space-y-2 mb-6 list-disc list-inside text-slate-700 dark:text-slate-300">
+                  {lesson.logBookPrompts.map((prompt, idx) => (
+                    <li key={idx}>{prompt}</li>
+                  ))}
+                </ul>
+                <textarea
+                  value={logBookDraft}
+                  onChange={(e) => {
+                    setLogBookDraft(e.target.value);
+                    setLogBookSaved(false);
+                  }}
+                  placeholder="Write your thoughts here..."
+                  rows={8}
+                  className="w-full p-4 rounded-lg border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white resize-none"
+                />
+                <div className="flex items-center gap-4 mt-4">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => {
+                      setLogBookEntry(lesson.id, logBookDraft);
+                      setLogBookSaved(true);
+                    }}
+                    className="px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg transition-colors"
+                  >
+                    Save Notes
+                  </motion.button>
+                  {logBookSaved && (
+                    <span className="text-emerald-600 dark:text-emerald-400 text-sm font-medium">
+                      Saved ✓
+                    </span>
+                  )}
                 </div>
               </div>
             </motion.div>

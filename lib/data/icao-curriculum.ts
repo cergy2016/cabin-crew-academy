@@ -436,6 +436,185 @@ const MEETING_COLLEAGUES_LESSON: any = {
         { id: 'o4', text: 'Door three left', isCorrect: false },
       ],
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'fill-blank', points: 10,
+      question: "Complete: Jared: Soo-Min, _________ are you?",
+      correctAnswer: 'how',
+      hint: 'A question word asking about someone\'s state.',
+    },
+    {
+      id: 'self-2', type: 'fill-blank', points: 10,
+      question: "Complete: Soo-Min: Fine. What _________ you?",
+      correctAnswer: 'about',
+    },
+    {
+      id: 'self-3', type: 'fill-blank', points: 10,
+      question: "Complete: Soo-Min: No, we haven't _________.",
+      correctAnswer: 'met',
+      hint: 'Past participle of "meet".',
+    },
+    {
+      id: 'self-4', type: 'fill-blank', points: 10,
+      question: "Complete: Ana: _________ to meet you, Soo-Min.",
+      correctAnswer: 'Pleased',
+    },
+    {
+      id: 'self-5', type: 'multiple-choice', points: 10,
+      question: 'Who is in command of the plane?',
+      options: [
+        { id: 'o1', text: 'The captain', isCorrect: true },
+        { id: 'o2', text: 'The purser', isCorrect: false },
+        { id: 'o3', text: 'The galley leader', isCorrect: false },
+        { id: 'o4', text: 'The cabin supervisor', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-6', type: 'multiple-choice', points: 10,
+      question: 'Who is there to ensure the safety and comfort of passengers?',
+      options: [
+        { id: 'o1', text: 'The flight attendants', isCorrect: true },
+        { id: 'o2', text: 'The first officer only', isCorrect: false },
+        { id: 'o3', text: 'Ground staff', isCorrect: false },
+        { id: 'o4', text: 'Air traffic control', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-7', type: 'multiple-choice', points: 10,
+      question: 'Who is in charge of each section of the aircraft?',
+      options: [
+        { id: 'o1', text: 'The cabin supervisor', isCorrect: true },
+        { id: 'o2', text: 'The captain', isCorrect: false },
+        { id: 'o3', text: 'Ground staff', isCorrect: false },
+        { id: 'o4', text: 'A random passenger', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-8', type: 'multiple-choice', points: 10,
+      question: 'Who do all the cabin crew report to?',
+      options: [
+        { id: 'o1', text: 'The purser', isCorrect: true },
+        { id: 'o2', text: 'The first officer', isCorrect: false },
+        { id: 'o3', text: 'Ground staff', isCorrect: false },
+        { id: 'o4', text: 'Passengers', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-9', type: 'multiple-choice', points: 10,
+      question: 'Who is with the captain in the cockpit?',
+      options: [
+        { id: 'o1', text: 'The first officer', isCorrect: true },
+        { id: 'o2', text: 'The purser', isCorrect: false },
+        { id: 'o3', text: 'The galley leader', isCorrect: false },
+        { id: 'o4', text: 'The cabin supervisor', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-10', type: 'multiple-choice', points: 10,
+      question: 'Who is responsible for the meals service in their sector?',
+      options: [
+        { id: 'o1', text: 'The galley leader', isCorrect: true },
+        { id: 'o2', text: 'The captain', isCorrect: false },
+        { id: 'o3', text: 'The first officer', isCorrect: false },
+        { id: 'o4', text: 'Ground staff', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-11', type: 'multiple-choice', points: 10,
+      question: 'Which expression fits: meeting a friend?',
+      options: [
+        { id: 'o1', text: "Hi, how's it going?", isCorrect: true },
+        { id: 'o2', text: 'Pleased to meet you.', isCorrect: false },
+        { id: 'o3', text: 'Good morning, Captain.', isCorrect: false },
+        { id: 'o4', text: "My name's Paula.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-12', type: 'multiple-choice', points: 10,
+      question: 'Which expression fits: meeting a colleague for the first time?',
+      options: [
+        { id: 'o1', text: 'Pleased to meet you.', isCorrect: true },
+        { id: 'o2', text: "Hi, how's it going?", isCorrect: false },
+        { id: 'o3', text: 'Good morning, Captain.', isCorrect: false },
+        { id: 'o4', text: 'Nice to meet you again.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-13', type: 'multiple-choice', points: 10,
+      question: 'Which expression fits: telling someone your name?',
+      options: [
+        { id: 'o1', text: "My name's Paula.", isCorrect: true },
+        { id: 'o2', text: 'Pleased to meet you.', isCorrect: false },
+        { id: 'o3', text: 'Good morning, Captain.', isCorrect: false },
+        { id: 'o4', text: "Hi, how's it going?", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-14', type: 'multiple-choice', points: 10,
+      question: 'Which expression fits: the purser greeting the cabin crew?',
+      options: [
+        { id: 'o1', text: 'Hello, how are you all?', isCorrect: true },
+        { id: 'o2', text: "My name's Paula.", isCorrect: false },
+        { id: 'o3', text: 'Nice to meet you again.', isCorrect: false },
+        { id: 'o4', text: "Hi, how's it going?", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-15', type: 'multiple-choice', points: 10,
+      question: 'Which expression fits: greeting the captain?',
+      options: [
+        { id: 'o1', text: 'Good morning, Captain.', isCorrect: true },
+        { id: 'o2', text: "Hi, how's it going?", isCorrect: false },
+        { id: 'o3', text: "My name's Paula.", isCorrect: false },
+        { id: 'o4', text: 'Pleased to meet you.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-16', type: 'multiple-choice', points: 10,
+      question: "Which expression fits: greeting a colleague you've worked with before?",
+      options: [
+        { id: 'o1', text: 'Nice to meet you again.', isCorrect: true },
+        { id: 'o2', text: 'Pleased to meet you.', isCorrect: false },
+        { id: 'o3', text: 'Good morning, Captain.', isCorrect: false },
+        { id: 'o4', text: "My name's Paula.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-17', type: 'fill-blank', points: 10,
+      question: 'Unscramble: "dricet dsarc" - an item in the carry-on bag used for payment.',
+      correctAnswer: 'credit cards',
+      hint: 'Two words - a card used to pay without cash.',
+    },
+    {
+      id: 'self-18', type: 'fill-blank', points: 10,
+      question: 'Unscramble: "sganizame" - something you read for entertainment.',
+      correctAnswer: 'magazines',
+    },
+    {
+      id: 'self-19', type: 'fill-blank', points: 10,
+      question: 'Unscramble: "ekam-pu agb" - a bag for cosmetics.',
+      correctAnswer: 'make-up bag',
+    },
+    {
+      id: 'self-20', type: 'fill-blank', points: 10,
+      question: 'Unscramble: "saprostp" - an identity document needed to travel.',
+      correctAnswer: 'passports',
+    },
+    {
+      id: 'self-21', type: 'fill-blank', points: 10,
+      question: 'Unscramble: "htsotorbuh" - used for cleaning your teeth.',
+      correctAnswer: 'toothbrush',
+    },
+    {
+      id: 'self-22', type: 'fill-blank', points: 10,
+      question: 'Unscramble: "libome hopne" - used to make calls.',
+      correctAnswer: 'mobile phone',
+    },
+  ],
+  logBookPrompts: [
+    'Think about a time you arrived late for a pre-flight briefing. What did you say? How did you find out what you had missed? What do you remember about the flight which followed?',
+    'How do you prepare for a pre-flight briefing? Do you check the aircraft configuration and its safety features? Do you prepare for security questions? What kind of questions do you usually ask?',
+    'The pre-flight briefing is also a time for meeting colleagues. Is this important before the flight? Why? Do you look forward to meeting new colleagues? Do you also speak to the flight crew?',
   ],
   quiz: {
     id: 'quiz-1-1',
@@ -767,6 +946,107 @@ const FINDING_OUT_LESSON: any = {
       id: 'ex-19', type: 'speaking', points: 15,
       question: 'After the briefing, flight attendants board the aircraft. Discuss what they have to do on board before passengers start to arrive.',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'fill-blank', points: 10,
+      question: "I just wanted to warn the crew of some moderate _________ during the flight.",
+      correctAnswer: 'turbulence',
+    },
+    {
+      id: 'self-2', type: 'fill-blank', points: 10,
+      question: "This is due to strong _________ and storms over the Atlantic.",
+      correctAnswer: 'winds',
+    },
+    {
+      id: 'self-3', type: 'fill-blank', points: 10,
+      question: 'We anticipate this bad _________ about three and a half hours into the flight today.',
+      correctAnswer: 'weather',
+    },
+    {
+      id: 'self-4', type: 'multiple-choice', points: 10,
+      question: 'What does "cockpit procedures" mean?',
+      options: [
+        { id: 'o1', text: 'Flight deck rules and routines', isCorrect: true },
+        { id: 'o2', text: 'Wearing seatbelts', isCorrect: false },
+        { id: 'o3', text: 'A list of names and duties', isCorrect: false },
+        { id: 'o4', text: 'A crew bus to the aircraft', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-5', type: 'multiple-choice', points: 10,
+      question: 'What does "strapped in" mean?',
+      options: [
+        { id: 'o1', text: 'Wearing seatbelts', isCorrect: true },
+        { id: 'o2', text: 'Flight deck rules and routines', isCorrect: false },
+        { id: 'o3', text: 'A long flight', isCorrect: false },
+        { id: 'o4', text: 'A personal identity document', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-6', type: 'multiple-choice', points: 10,
+      question: 'What does "roster" mean?',
+      options: [
+        { id: 'o1', text: 'A list of names and duties', isCorrect: true },
+        { id: 'o2', text: 'A crew bus to the aircraft', isCorrect: false },
+        { id: 'o3', text: 'A long flight', isCorrect: false },
+        { id: 'o4', text: 'Where we write things down', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-7', type: 'multiple-choice', points: 10,
+      question: 'What does "shuttle" mean?',
+      options: [
+        { id: 'o1', text: 'A crew bus to the aircraft', isCorrect: true },
+        { id: 'o2', text: 'A list of names and duties', isCorrect: false },
+        { id: 'o3', text: 'A personal identity document', isCorrect: false },
+        { id: 'o4', text: 'Where we put things away', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-8', type: 'multiple-choice', points: 10,
+      question: 'What does "long-haul" mean?',
+      options: [
+        { id: 'o1', text: 'A long flight', isCorrect: true },
+        { id: 'o2', text: 'A crew bus to the aircraft', isCorrect: false },
+        { id: 'o3', text: 'Flight deck rules and routines', isCorrect: false },
+        { id: 'o4', text: 'A list of names and duties', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-9', type: 'multiple-choice', points: 10,
+      question: 'What does "log book" mean?',
+      options: [
+        { id: 'o1', text: 'Where we write things down', isCorrect: true },
+        { id: 'o2', text: 'A personal identity document', isCorrect: false },
+        { id: 'o3', text: 'Where we put things away', isCorrect: false },
+        { id: 'o4', text: 'A long flight', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-10', type: 'multiple-choice', points: 10,
+      question: 'What does "passport" mean?',
+      options: [
+        { id: 'o1', text: 'A personal identity document', isCorrect: true },
+        { id: 'o2', text: 'Where we write things down', isCorrect: false },
+        { id: 'o3', text: 'A list of names and duties', isCorrect: false },
+        { id: 'o4', text: 'A crew bus to the aircraft', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-11', type: 'multiple-choice', points: 10,
+      question: 'What does "stowage areas" mean?',
+      options: [
+        { id: 'o1', text: 'Where we put things away', isCorrect: true },
+        { id: 'o2', text: 'Where we write things down', isCorrect: false },
+        { id: 'o3', text: 'A personal identity document', isCorrect: false },
+        { id: 'o4', text: 'A long flight', isCorrect: false },
+      ],
+    },
+  ],
+  logBookPrompts: [
+    'Think about a time you arrived late for a pre-flight briefing. What did you say? How did you find out about what you had missed? What do you remember about the flight which followed?',
+    'How do you prepare for a pre-flight briefing? Do you check the aircraft configuration and its safety features? Do you prepare for security questions? What kind of questions do you usually ask?',
+    'The pre-flight briefing is also a time for meeting colleagues. Is this important before the flight? Why? Do you look forward to meeting new colleagues? Do you also speak to the flight crew?',
   ],
   quiz: {
     id: 'quiz-1-2',
