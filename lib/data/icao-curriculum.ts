@@ -6036,6 +6036,844 @@ const REPORTING_INCIDENT_LESSON: any = {
   updatedAt: new Date().toISOString(),
 };
 
+// ============================================================
+// Unit 7, Lesson 1: Taking Charge in an Emergency
+// Giving instructions
+// ============================================================
+const A7A = '/audio/unit-7/lesson-1';
+
+const TAKING_CHARGE_LESSON: any = {
+  id: 'lesson-7-1',
+  unitId: 'unit-7',
+  title: 'Taking Charge in an Emergency',
+  description: 'Giving clear instructions and taking charge during an in-flight emergency such as sudden cabin depressurization',
+  icon: '🚨',
+  icaoLevel: 5,
+  category: 'cabin-crew',
+  difficulty: 'upper-intermediate',
+  xpReward: 200,
+  estimatedDurationMinutes: 50,
+  locked: false,
+  order: 1,
+  objectives: [
+    { id: 'obj-1', description: 'Identify types of on-board emergency and their severity', type: 'vocabulary' },
+    { id: 'obj-2', description: 'Give clear instructions during a sudden emergency', type: 'speaking' },
+    { id: 'obj-3', description: 'Respond appropriately to different passenger reactions', type: 'speaking' },
+  ],
+  scenario: {
+    id: 'scenario-taking-charge',
+    title: 'Sudden Cabin Depressurization',
+    description: 'The purser and a flight attendant give urgent instructions to passengers during a sudden loss of cabin pressure.',
+    context: 'Cabin, sudden in-flight emergency',
+    audioSegments: [
+      { id: 'ann-1', text: 'Purser: Ladies and gentlemen, this is an emergency. Stay in your seats with your seatbelts fastened and follow these instructions. Pull down the oxygen mask. Put it over your nose and mouth immediately and breathe normally.', audioUrl: `${A7A}/announcement-1.wav`, durationSeconds: 12, speaker: 'crew' },
+      { id: 'ann-2', text: 'Flight attendant: Grab your mask. Pull it down and place it over your nose and mouth. Remain calm.', audioUrl: `${A7A}/announcement-2.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 'ann-3', text: 'Purser: Remain calm. Stay in your seats and pull the mask towards you. Place the mask over your mouth and nose like this and breathe normally, adjusting the strap to secure it. Do make sure your own mask is fitted properly before helping anyone else.', audioUrl: `${A7A}/announcement-3.wav`, durationSeconds: 14, speaker: 'crew' },
+    ],
+    vocabulary: [
+      { word: 'Depressurization', definition: 'A sudden loss of air pressure in the cabin' },
+      { word: 'PAN-PAN', definition: 'A radio call signalling urgency, but not immediate danger to life' },
+      { word: 'Mayday', definition: 'A radio call signalling a life-threatening emergency' },
+      { word: 'Ditching', definition: "Landing an aircraft on water in an emergency" },
+    ],
+  },
+  theory: {
+    title: 'Giving Instructions in an Emergency',
+    content: 'In an on-board emergency, cabin crew must take charge quickly - giving short, clear instructions, staying calm, and helping passengers stay calm too, even in a fast-moving, frightening situation.',
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of giving instructions in an emergency',
+      audioUrl: `${A7A}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Giving Instructions',
+    phrases: [
+      { situation: 'Instructing passengers to stay put', phrase: 'Stay in your seats.', meaning: 'Short, direct safety instruction', example: 'Stay in your seats.' },
+      { situation: 'Instructing passengers to be calm', phrase: 'Remain calm.', meaning: 'Short, direct instruction to reduce panic', example: 'Remain calm.' },
+      { situation: 'Instructing mask use', phrase: 'Pull down the oxygen mask. Pull it down over your nose and mouth.', meaning: 'Step-by-step safety instruction', example: 'Pull down the oxygen mask.' },
+      { situation: 'Instructing breathing', phrase: 'Breathe normally.', meaning: 'Reassuring, simple instruction', example: 'Breathe normally.' },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Emergency Severity',
+    terms: [
+      { term: 'PAN-PAN', definition: 'A radio call signalling urgency, but not immediate danger to life', example: 'A cardiac arrest on board may result in a PAN-PAN call.' },
+      { term: 'Mayday', definition: 'A radio call signalling a life-threatening emergency', example: 'Complete engine failure would require a Mayday call.' },
+      { term: 'Ditching', definition: 'Landing an aircraft on water in an emergency', example: "The pilot's announcement prepared passengers for ditching." },
+      { term: 'Aborted take-off', definition: 'Stopping a take-off before the aircraft leaves the ground', example: 'An aborted take-off is also called a rejected take-off.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Calming a hyperventilating passenger', expression: 'Breathe slowly and deeply. That\'s it.', alternativeExpressions: ['Try to slow your breathing down with me.', 'In through the nose, out through the mouth.'] },
+    { situation: 'Managing a noisy group', expression: 'Listen carefully, please, these instructions are for you.', alternativeExpressions: ['I need everyone\'s full attention right now.', 'Please stop and listen - this is important.'] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'Remain calm.', audioUrl: `${A7A}/pronunciation.wav`, durationSeconds: 2 },
+  ],
+  vocabulary: [
+    { word: 'Depressurization', definition: 'A sudden loss of air pressure in the cabin' },
+    { word: 'PAN-PAN', definition: 'A radio call signalling urgency, but not immediate danger to life' },
+    { word: 'Mayday', definition: 'A radio call signalling a life-threatening emergency' },
+    { word: 'Ditching', definition: 'Landing an aircraft on water in an emergency' },
+    { word: 'Aborted take-off', definition: 'Stopping a take-off before the aircraft leaves the ground' },
+  ],
+  grammar: [
+    {
+      rule: 'Short imperative instructions in emergencies - verb-first sentences with no subject, for maximum clarity and speed',
+      examples: [
+        { sentence: 'Stay in your seats.', audioUrl: `${A7A}/gi-1.wav` },
+        { sentence: 'Remain calm.', audioUrl: `${A7A}/gi-2.wav` },
+        { sentence: 'Breathe normally.', audioUrl: `${A7A}/gi-5.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'speaking', points: 15,
+      question: 'In an on-board emergency, which roles might a flight attendant take: diplomat, nurse, policeman, firefighter, referee, lifesaver? Discuss with a partner. Which is the most important role?',
+    },
+    {
+      id: 'ex-2', type: 'multiple-choice', points: 10,
+      question: 'Which of these is the most life-threatening emergency to everyone on board?',
+      options: [
+        { id: 'o1', text: 'Complete engine failure', isCorrect: true },
+        { id: 'o2', text: 'Passengers fighting', isCorrect: false },
+        { id: 'o3', text: 'Lots of passengers suffering from nausea', isCorrect: false },
+        { id: 'o4', text: 'A passenger giving birth', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 10,
+      question: 'Which of these events would usually be reported as a PAN-PAN rather than a Mayday?',
+      options: [
+        { id: 'o1', text: 'A cardiac arrest on board', isCorrect: true },
+        { id: 'o2', text: 'An engine on fire', isCorrect: false },
+        { id: 'o3', text: 'A sudden loss of cabin pressure and drop in altitude', isCorrect: false },
+        { id: 'o4', text: 'Complete engine failure', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-4', type: 'multiple-choice', points: 10,
+      question: 'Which of these is usually a temporary, less serious problem?',
+      options: [
+        { id: 'o1', text: 'A fire in the toilets (once extinguished)', isCorrect: true },
+        { id: 'o2', text: 'An engine on fire', isCorrect: false },
+        { id: 'o3', text: 'Complete engine failure', isCorrect: false },
+        { id: 'o4', text: 'Preparing for ditching', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-5', type: 'multiple-choice', points: 10,
+      question: 'In an emergency situation, what should you do first?',
+      options: [
+        { id: 'o1', text: 'Discuss the situation with your colleagues and follow the purser\'s lead', isCorrect: true },
+        { id: 'o2', text: 'Ask the passengers for their advice', isCorrect: false },
+        { id: 'o3', text: 'Wait silently for someone else to act', isCorrect: false },
+        { id: 'o4', text: 'Leave the decision entirely to passengers', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-6', type: 'fill-blank', points: 10,
+      question: 'Ladies and gentlemen, this is an _________.',
+      audio: { id: 'ann1-audio', text: 'Emergency announcement', audioUrl: `${A7A}/announcement-1.wav`, durationSeconds: 12, speaker: 'crew' },
+      correctAnswer: 'emergency',
+    },
+    {
+      id: 'ex-7', type: 'fill-blank', points: 10,
+      question: '_________ down the oxygen mask.',
+      correctAnswer: 'Pull',
+    },
+    {
+      id: 'ex-8', type: 'fill-blank', points: 10,
+      question: 'Put it over your nose and mouth immediately and breathe _________.',
+      correctAnswer: 'normally',
+    },
+    {
+      id: 'ex-9', type: 'fill-blank', points: 10,
+      question: 'Do make sure your own mask is fitted properly before _________ anyone else.',
+      correctAnswer: 'helping',
+    },
+    {
+      id: 'ex-10', type: 'speaking', points: 15,
+      question: 'Practise the emergency instructions with correct pronunciation: "Stay in your seats.", "Remain calm.", "Pull down the oxygen mask.", "Pull it down over your nose and mouth.", "Breathe normally."',
+    },
+    {
+      id: 'ex-11', type: 'speaking', points: 20,
+      question: 'What would you say to these people during an emergency: a worried passenger whose wife has just fainted; a pregnant woman experiencing contractions; a young boy running in the aisle; a panicky hyperventilating passenger; a loud noisy group ignoring instructions; a mother whose child is sick and vomiting; a woman with headphones listening to music? Choose appropriate phrases and explain your choices.',
+    },
+  ],
+  quiz: {
+    id: 'quiz-7-1',
+    title: 'Taking Charge in an Emergency Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'What does "PAN-PAN" signal?',
+        options: [
+          { id: 'o1', text: 'Urgency, but not immediate danger to life', isCorrect: true },
+          { id: 'o2', text: 'A life-threatening emergency', isCorrect: false },
+          { id: 'o3', text: 'A routine announcement', isCorrect: false },
+          { id: 'o4', text: 'A request for catering', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'What does "Mayday" signal?',
+        options: [
+          { id: 'o1', text: 'A life-threatening emergency', isCorrect: true },
+          { id: 'o2', text: 'A minor delay', isCorrect: false },
+          { id: 'o3', text: 'A request to land early', isCorrect: false },
+          { id: 'o4', text: 'A weather warning', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'What does "ditching" mean?',
+        options: [
+          { id: 'o1', text: 'Landing an aircraft on water in an emergency', isCorrect: true },
+          { id: 'o2', text: 'Cancelling a flight', isCorrect: false },
+          { id: 'o3', text: 'Diverting to another airport', isCorrect: false },
+          { id: 'o4', text: 'An aborted take-off', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'When should you put on your own oxygen mask relative to helping others?',
+        options: [
+          { id: 'o1', text: 'Before helping anyone else', isCorrect: true },
+          { id: 'o2', text: 'After helping everyone nearby', isCorrect: false },
+          { id: 'o3', text: 'It does not matter', isCorrect: false },
+          { id: 'o4', text: 'Only if you feel dizzy', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'What style of sentence is typically used for emergency instructions?',
+        options: [
+          { id: 'o1', text: 'Short imperatives (e.g. "Remain calm.")', isCorrect: true },
+          { id: 'o2', text: 'Long, formal explanations', isCorrect: false },
+          { id: 'o3', text: 'Questions', isCorrect: false },
+          { id: 'o4', text: 'Passive voice sentences', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'PAN-PAN', back: 'A radio call signalling urgency, but not immediate danger to life' },
+    { id: 'fc-2', front: 'Mayday', back: 'A radio call signalling a life-threatening emergency' },
+    { id: 'fc-3', front: 'Ditching', back: 'Landing an aircraft on water in an emergency' },
+    { id: 'fc-4', front: 'Depressurization', back: 'A sudden loss of air pressure in the cabin' },
+  ],
+  review: {
+    keyPoints: [
+      'Not all on-board emergencies are equally serious - know the difference between Mayday and PAN-PAN',
+      'Give short, clear, imperative instructions in an emergency',
+      'Put on your own oxygen mask before helping others',
+      'Match your tone and words to the passenger\'s emotional state',
+      'Staying calm yourself is essential to helping passengers stay calm',
+    ],
+    commonMistakes: [
+      { mistake: 'Using long, complex sentences during a fast-moving emergency', correction: 'Use short, direct imperatives', explanation: 'Passengers need to understand and act immediately' },
+      { mistake: 'Helping others before securing your own oxygen mask', correction: 'Always secure your own mask first', explanation: 'You cannot help others if you lose consciousness first' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
+// ============================================================
+// Unit 7, Lesson 2: Preparing for an Emergency Evacuation
+// Instructions not to do something
+// ============================================================
+const A7B = '/audio/unit-7/lesson-2';
+
+const EMERGENCY_EVACUATION_LESSON: any = {
+  id: 'lesson-7-2',
+  unitId: 'unit-7',
+  title: 'Preparing for an Emergency Evacuation',
+  description: 'Preparing passengers for an emergency landing and evacuation, with a focus on instructions not to do something',
+  icon: '🛝',
+  icaoLevel: 5,
+  category: 'cabin-crew',
+  difficulty: 'upper-intermediate',
+  xpReward: 200,
+  estimatedDurationMinutes: 55,
+  locked: false,
+  order: 2,
+  objectives: [
+    { id: 'obj-1', description: 'Understand a captain\'s emergency landing announcement', type: 'listening' },
+    { id: 'obj-2', description: 'Give clear "do not" instructions before an evacuation', type: 'speaking' },
+    { id: 'obj-3', description: 'Describe the emergency exit and evacuation procedure', type: 'vocabulary' },
+  ],
+  scenario: {
+    id: 'scenario-emergency-evacuation',
+    title: 'Flight JWZ157',
+    description: 'A Boeing 747 with 174 passengers and 14 crew has an engine fire. The captain decides to make an emergency landing and evacuate using the slides.',
+    context: 'Cabin, preparing for an emergency landing and evacuation',
+    audioSegments: [
+      { id: 'captain-ann', text: "Captain: Ladies and gentlemen, your captain speaking. We have a technical problem and for everyone's safety we've decided to land in the next fifteen minutes at the nearest airport. The landing should be perfectly normal, but for safety reasons we will evacuate the aircraft using the emergency slides. The cabin crew will now give you full instructions and prepare you for the landing. Please listen carefully to their instructions. Thank you.", audioUrl: `${A7B}/captain-announcement.wav`, durationSeconds: 25, speaker: 'pilot' },
+      { id: 'purser-a', text: 'Purser (part 1): Ladies and gentlemen, as the captain has just told you, we shall be landing in twenty minutes. For safety reasons, after landing we shall be evacuating the aircraft using the emergency slides. So please listen very carefully and do exactly as instructed. Please return to your seats immediately and keep your seatbelts fastened securely.', audioUrl: `${A7B}/purser-part-a.wav`, durationSeconds: 20, speaker: 'crew' },
+      { id: 'purser-b', text: "Purser (part 2): We are now starting to take you through our safety procedures... Emergency exits are on both sides of the aircraft. They are clearly marked and are being pointed out to you now... floor-level lighting is provided in the aisles.", audioUrl: `${A7B}/purser-part-b.wav`, durationSeconds: 35, speaker: 'crew' },
+      { id: 'purser-c', text: 'Purser (part 3): Please remain seated and follow instructions given to you by your crew. Do not leave your seats until instructed to do so by your crew. When the seatbelt signs are switched off, make your way to your nearest exit. Leave all personal belongings behind. Ladies, please remove high-heeled shoes, as they may tear the slide.', audioUrl: `${A7B}/purser-part-c.wav`, durationSeconds: 20, speaker: 'crew' },
+    ],
+    vocabulary: [
+      { word: 'Brace position', definition: 'The protective position adopted before an emergency landing' },
+      { word: 'Emergency slide', definition: 'An inflatable slide used to evacuate an aircraft quickly' },
+      { word: 'Floor-level lighting', definition: 'Lighting along the aisle floor to guide passengers to exits' },
+      { word: 'High-heeled shoes', definition: 'Shoes with a raised heel, which can damage evacuation slides' },
+    ],
+  },
+  theory: {
+    title: 'Instructions Not to Do Something',
+    content: "Preparing passengers for an emergency evacuation means giving very clear instructions about what NOT to do - don't collect your bags, don't wear high heels, don't leave your seat until told to.",
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of instructions not to do something',
+      audioUrl: `${A7B}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Instructions Not to Do Something',
+    phrases: [
+      { situation: 'Preventing early movement', phrase: 'Do not leave your seats until instructed to do so by your crew.', meaning: 'A clear negative instruction for safety', example: 'Do not leave your seats until instructed to do so by your crew.' },
+      { situation: 'Preventing passengers taking items', phrase: 'Do not take anything with you as you leave the aircraft.', meaning: 'A clear negative instruction to speed up evacuation', example: 'Do not take anything with you as you leave the aircraft.' },
+      { situation: 'Being specific about bags', phrase: 'Do not take handbags or briefcases.', meaning: 'Specifying exactly which items are forbidden', example: 'Do not take handbags or briefcases.' },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Evacuation Procedure',
+    terms: [
+      { term: 'Brace position', definition: 'The protective position adopted before an emergency landing', example: 'The safety card shows the brace position.' },
+      { term: 'Emergency slide', definition: 'An inflatable slide used to evacuate an aircraft quickly', example: 'We will evacuate the aircraft using the emergency slides.' },
+      { term: 'Floor-level lighting', definition: 'Lighting along the aisle floor to guide passengers to exits', example: 'Floor-level lighting is provided in the aisles.' },
+      { term: 'Escape route', definition: 'The path passengers take to reach an emergency exit', example: 'The safety card details your escape routes.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Reassuring before an emergency landing', expression: 'The landing should be perfectly normal.', alternativeExpressions: ['This should be a routine landing.', 'We expect this to go smoothly.'] },
+    { situation: 'Emphasizing an instruction', expression: 'I repeat, leave all personal hand-baggage behind.', alternativeExpressions: ['Once again, leave your belongings behind.', 'This is important: leave your bags.'] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'Do not leave your seats until instructed to do so by your crew.', audioUrl: `${A7B}/pronunciation.wav`, durationSeconds: 4 },
+  ],
+  vocabulary: [
+    { word: 'Brace position', definition: 'The protective position adopted before an emergency landing' },
+    { word: 'Emergency slide', definition: 'An inflatable slide used to evacuate an aircraft quickly' },
+    { word: 'Floor-level lighting', definition: 'Lighting along the aisle floor to guide passengers to exits' },
+    { word: 'Escape route', definition: 'The path passengers take to reach an emergency exit' },
+  ],
+  grammar: [
+    {
+      rule: "Negative imperatives ('Do not...' / 'Don't...') - used for critical safety instructions about what passengers must not do",
+      examples: [
+        { sentence: 'Do not leave your seats until instructed to do so by your crew.', audioUrl: `${A7B}/neg-1.wav` },
+        { sentence: 'Do not take anything with you as you leave the aircraft.', audioUrl: `${A7B}/neg-2.wav` },
+        { sentence: 'Do not take handbags or briefcases.', audioUrl: `${A7B}/neg-3.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'speaking', points: 15,
+      question: 'Have you ever been in a situation like Flight JWZ157 (severe turbulence and an engine fire leading to an emergency landing)? If so, what happened? Tell a partner.',
+    },
+    {
+      id: 'ex-2', type: 'fill-blank', points: 10,
+      question: 'Ladies and gentlemen, your captain _________.',
+      audio: { id: 'captain-audio', text: 'Captain announcement', audioUrl: `${A7B}/captain-announcement.wav`, durationSeconds: 25, speaker: 'pilot' },
+      correctAnswer: 'speaking',
+    },
+    {
+      id: 'ex-3', type: 'fill-blank', points: 10,
+      question: 'We have a _________ problem and for everyone\'s safety we\'ve decided to land at the nearest airport.',
+      correctAnswer: 'technical',
+    },
+    {
+      id: 'ex-4', type: 'fill-blank', points: 10,
+      question: 'The landing should be perfectly _________.',
+      correctAnswer: 'normal',
+    },
+    {
+      id: 'ex-5', type: 'fill-blank', points: 10,
+      question: 'We will evacuate the aircraft using the emergency _________.',
+      correctAnswer: 'slides',
+    },
+    {
+      id: 'ex-6', type: 'multiple-choice', points: 10,
+      question: 'After the emergency announcement, will cabin crew continue the food and drinks service?',
+      options: [
+        { id: 'o1', text: 'No, they will stop and secure the galleys', isCorrect: true },
+        { id: 'o2', text: 'Yes, service continues as normal', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-7', type: 'multiple-choice', points: 10,
+      question: 'Will the crew help passengers get bags from the overhead lockers to collect precious items?',
+      options: [
+        { id: 'o1', text: 'No, this is exactly what must NOT happen', isCorrect: true },
+        { id: 'o2', text: 'Yes, they will help with valuable items', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-8', type: 'multiple-choice', points: 10,
+      question: 'Will the crew point out the emergency exits?',
+      options: [
+        { id: 'o1', text: 'Yes', isCorrect: true },
+        { id: 'o2', text: 'No', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-9', type: 'fill-blank', points: 10,
+      question: 'The safety card in your seat pocket details your escape routes, oxygen masks and life _________.',
+      correctAnswer: 'jackets',
+    },
+    {
+      id: 'ex-10', type: 'fill-blank', points: 10,
+      question: 'It also shows the brace _________, which you must adopt in an emergency landing.',
+      correctAnswer: 'position',
+    },
+    {
+      id: 'ex-11', type: 'fill-blank', points: 10,
+      question: 'Emergency exits are clearly _________ and are being pointed out to you now.',
+      correctAnswer: 'marked',
+    },
+    {
+      id: 'ex-12', type: 'fill-blank', points: 10,
+      question: 'To help you find your way to the exits, floor-level _________ is provided in the aisles.',
+      correctAnswer: 'lighting',
+    },
+    {
+      id: 'ex-13', type: 'fill-blank', points: 10,
+      question: 'Do not leave your seats _________ instructed to do so by your crew.',
+      correctAnswer: 'until',
+    },
+    {
+      id: 'ex-14', type: 'fill-blank', points: 10,
+      question: 'Leave all personal _________ behind.',
+      correctAnswer: 'belongings',
+    },
+    {
+      id: 'ex-15', type: 'fill-blank', points: 10,
+      question: 'Ladies, remove high-heeled _________, as they may tear the slide.',
+      correctAnswer: 'shoes',
+    },
+    {
+      id: 'ex-16', type: 'speaking', points: 20,
+      question: 'In groups of three, practise speaking the three parts of the purser\'s announcement. Then say them again from memory or short notes.',
+    },
+  ],
+  quiz: {
+    id: 'quiz-7-2',
+    title: 'Preparing for an Emergency Evacuation Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'What kind of aircraft is Flight JWZ157?',
+        options: [
+          { id: 'o1', text: 'A Boeing 747', isCorrect: true },
+          { id: 'o2', text: 'An Airbus A320', isCorrect: false },
+          { id: 'o3', text: 'A Boeing 777', isCorrect: false },
+          { id: 'o4', text: 'An Airbus A380', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'Why must passengers remove high-heeled shoes before evacuating?',
+        options: [
+          { id: 'o1', text: 'They may tear the emergency slide', isCorrect: true },
+          { id: 'o2', text: 'They are not allowed on the plane at all', isCorrect: false },
+          { id: 'o3', text: 'They set off the metal detector', isCorrect: false },
+          { id: 'o4', text: 'There is no reason given', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'What guides passengers to exits if the cabin is dark or smoky?',
+        options: [
+          { id: 'o1', text: 'Floor-level lighting', isCorrect: true },
+          { id: 'o2', text: 'Overhead spotlights', isCorrect: false },
+          { id: 'o3', text: 'Crew members carrying torches only', isCorrect: false },
+          { id: 'o4', text: 'Nothing, passengers must feel their way', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'What must passengers do with their belongings during evacuation?',
+        options: [
+          { id: 'o1', text: 'Leave everything behind', isCorrect: true },
+          { id: 'o2', text: 'Take only small bags', isCorrect: false },
+          { id: 'o3', text: 'Take everything from the overhead locker', isCorrect: false },
+          { id: 'o4', text: 'Hand bags to crew for storage', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'When can passengers leave their seats during preparation for evacuation?',
+        options: [
+          { id: 'o1', text: 'Only when instructed to do so by the crew', isCorrect: true },
+          { id: 'o2', text: 'As soon as the announcement finishes', isCorrect: false },
+          { id: 'o3', text: 'Whenever they feel ready', isCorrect: false },
+          { id: 'o4', text: 'Only after landing is fully complete and taxiing has stopped', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Brace position', back: 'The protective position adopted before an emergency landing' },
+    { id: 'fc-2', front: 'Emergency slide', back: 'An inflatable slide used to evacuate an aircraft quickly' },
+    { id: 'fc-3', front: 'Floor-level lighting', back: 'Lighting along the aisle floor to guide passengers to exits' },
+    { id: 'fc-4', front: 'Escape route', back: 'The path passengers take to reach an emergency exit' },
+  ],
+  review: {
+    keyPoints: [
+      'The captain\'s announcement should reassure while explaining the safety plan clearly',
+      'Negative instructions ("Do not...") are essential for critical safety rules',
+      'Passengers must leave all belongings and remove high heels before evacuating',
+      'Floor-level lighting and clearly marked exits are crucial in low visibility',
+      'Practising announcements aloud builds confidence and clarity',
+    ],
+    commonMistakes: [
+      { mistake: 'Being vague about what passengers must NOT do', correction: 'State negative instructions explicitly and repeat if necessary', explanation: 'Vague safety instructions can be dangerously misunderstood' },
+      { mistake: 'Rushing through the safety card explanation', correction: 'Give passengers time to locate their nearest exit', explanation: 'The nearest usable exit may be behind them, which is easy to miss if rushed' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
+// ============================================================
+// Unit 7, Lesson 3: Reporting an Evacuation
+// Reporting instructions
+// + Case Study: Crew's Response to Take-off Incident Criticized
+// ============================================================
+const A7C = '/audio/unit-7/lesson-3';
+
+const REPORTING_EVACUATION_LESSON: any = {
+  id: 'lesson-7-3',
+  unitId: 'unit-7',
+  title: 'Reporting an Evacuation',
+  description: "Reporting instructions given during an emergency, the 'Miracle on the Hudson', and the case study: Crew's Response to Take-off Incident Criticized",
+  icon: '🛬',
+  icaoLevel: 5,
+  category: 'cabin-crew',
+  difficulty: 'upper-intermediate',
+  xpReward: 220,
+  estimatedDurationMinutes: 65,
+  locked: false,
+  order: 3,
+  objectives: [
+    { id: 'obj-1', description: 'Report instructions given during an emergency using reported speech', type: 'grammar' },
+    { id: 'obj-2', description: 'Understand a real emergency landing news report', type: 'reading' },
+    { id: 'obj-3', description: 'Discuss a criticized crew response to a take-off incident', type: 'reading' },
+  ],
+  scenario: {
+    id: 'scenario-hudson',
+    title: 'The Miracle on the Hudson',
+    description: 'US Airways Flight 1549 lost both engines to a bird-strike and ditched safely in the Hudson River, with all 155 on board surviving.',
+    context: 'US Airways Flight 1549, New York, February 2009',
+    audioSegments: [
+      { id: 'hudson-article', text: 'US Airways Flight 1549 lost both engines following a massive bird-strike three and a half minutes after take-off and made an emergency landing in the Hudson River yesterday in the late afternoon. There were 150 passengers and five crew members, including the captain, first officer and three flight attendants, on board. All 155 survived. The plane ditched at exactly 15:31, less than seven minutes after take-off. Four minutes later all the passengers and crew had been evacuated on to the wings of the floating aircraft or into the slightly submerged slides. They were then taken to safety on Hudson River ferries. Before leaving the aircraft himself, the captain made one last check inside to see that no one was left behind. There were no serious injuries. Many are calling this a miracle. However, aviation authorities are saying that the real reason for the success of the landing and evacuation was the first-class training of the pilots and cabin crew. They knew what to do and did it superbly.', audioUrl: `${A7C}/hudson-article.wav`, durationSeconds: 55, speaker: 'instructor' },
+    ],
+    vocabulary: [
+      { word: 'Massive', definition: 'Very big' },
+      { word: 'Bird-strike', definition: 'A collision between an aircraft and a bird' },
+      { word: 'Ditched', definition: 'Landed on water in an emergency' },
+      { word: 'Submerged', definition: 'Under water' },
+    ],
+  },
+  theory: {
+    title: 'Reporting Instructions',
+    content: 'Reporting an evacuation means describing, calmly and accurately, what instructions were given and what actually happened - useful both for training and for official incident reports.',
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of reporting instructions',
+      audioUrl: `${A7C}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Reporting Instructions',
+    phrases: [
+      { situation: 'Reporting a direct instruction', phrase: 'The captain told the crew to prepare the cabin for an emergency landing.', meaning: 'Reported speech: told + object + to + infinitive', example: 'The captain told the crew to prepare the cabin for an emergency landing.' },
+      { situation: 'Reporting another instruction', phrase: 'The flight attendant told the passengers to take off their shoes.', meaning: 'Reported speech pattern for a positive instruction', example: 'The flight attendant told the passengers to take off their shoes.' },
+      { situation: 'Reporting a negative instruction', phrase: 'The flight attendant told the passengers not to get anything from the overhead lockers.', meaning: 'Reported speech pattern for a negative instruction', example: 'The flight attendant told the passengers not to get anything from the overhead lockers.' },
+      { situation: 'Reporting reassurance', phrase: 'The purser told the passengers not to worry.', meaning: 'Reported speech for a reassuring instruction', example: 'The purser told the passengers not to worry.' },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'The Hudson River Landing',
+    terms: [
+      { term: 'Massive', definition: 'Very big', example: 'A massive bird-strike caused both engines to fail.' },
+      { term: 'Bird-strike', definition: 'A collision between an aircraft and a bird', example: 'The bird-strike happened shortly after take-off.' },
+      { term: 'Survived', definition: 'Lived through a dangerous event', example: 'All 155 people on board survived.' },
+      { term: 'Ditched', definition: 'Landed on water in an emergency', example: 'The plane ditched in the Hudson River.' },
+      { term: 'Floating', definition: 'Not sinking, staying on the surface of water', example: 'Passengers stood on the floating aircraft.' },
+      { term: 'Slightly', definition: 'Just a little', example: 'The slides were slightly submerged.' },
+      { term: 'Submerged', definition: 'Under water', example: 'The slides were slightly submerged in the river.' },
+      { term: 'Injuries', definition: 'Physical harm', example: 'There were no serious injuries.' },
+      { term: 'Superbly', definition: 'Very, very well', example: 'They knew what to do and did it superbly.' },
+      { term: 'First-class', definition: 'Very, very good (quality)', example: 'The first-class training of the crew made the difference.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Describing a successful outcome', expression: 'They knew what to do and did it superbly.', alternativeExpressions: ['Their training took over and they performed brilliantly.', 'Everything went exactly as trained.'] },
+    { situation: 'Making a final safety check', expression: 'The captain made one last check to see that no one was left behind.', alternativeExpressions: ['A final sweep of the cabin confirmed everyone had evacuated.', 'The captain checked the cabin was empty before leaving.'] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'The captain told the crew to prepare the cabin for an emergency landing.', audioUrl: `${A7C}/pronunciation.wav`, durationSeconds: 4 },
+  ],
+  vocabulary: [
+    { word: 'Massive', definition: 'Very big' },
+    { word: 'Bird-strike', definition: 'A collision between an aircraft and a bird' },
+    { word: 'Ditched', definition: 'Landed on water in an emergency' },
+    { word: 'Submerged', definition: 'Under water' },
+    { word: 'Superbly', definition: 'Very, very well' },
+    { word: 'First-class', definition: 'Very, very good (quality)' },
+  ],
+  grammar: [
+    {
+      rule: "Reported instructions with 'told...to' / 'told...not to' - the weak form 'to' /tə/ is unstressed in natural speech",
+      examples: [
+        { sentence: 'The captain told the crew to prepare the cabin for an emergency landing.', audioUrl: `${A7C}/ri-1.wav` },
+        { sentence: 'The flight attendant told the passengers to take off their shoes.', audioUrl: `${A7C}/ri-2.wav` },
+        { sentence: 'The purser told the passengers not to worry.', audioUrl: `${A7C}/ri-4.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'multiple-choice', points: 10,
+      question: 'What caused the engine failure on Flight 1549?',
+      options: [
+        { id: 'o1', text: 'A massive bird-strike', isCorrect: true },
+        { id: 'o2', text: 'A fuel leak', isCorrect: false },
+        { id: 'o3', text: 'A lightning strike', isCorrect: false },
+        { id: 'o4', text: 'Mechanical failure unrelated to birds', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-2', type: 'multiple-choice', points: 10,
+      question: 'Where did the plane land?',
+      options: [
+        { id: 'o1', text: 'On water - the Hudson River', isCorrect: true },
+        { id: 'o2', text: 'On a runway', isCorrect: false },
+        { id: 'o3', text: 'On a field', isCorrect: false },
+        { id: 'o4', text: 'On a highway', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 10,
+      question: 'How many people were injured?',
+      options: [
+        { id: 'o1', text: 'None seriously injured', isCorrect: true },
+        { id: 'o2', text: 'All 155 people', isCorrect: false },
+        { id: 'o3', text: 'Half of the passengers', isCorrect: false },
+        { id: 'o4', text: 'Only the crew', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-4', type: 'multiple-choice', points: 10,
+      question: 'Who was the last person to leave the aircraft?',
+      options: [
+        { id: 'o1', text: 'The captain, after checking no one was left behind', isCorrect: true },
+        { id: 'o2', text: 'A flight attendant', isCorrect: false },
+        { id: 'o3', text: 'The first officer', isCorrect: false },
+        { id: 'o4', text: 'A passenger', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-5', type: 'multiple-choice', points: 10,
+      question: "What reason do aviation authorities give for the 'miracle'?",
+      options: [
+        { id: 'o1', text: 'The first-class training of the pilots and cabin crew', isCorrect: true },
+        { id: 'o2', text: 'Pure luck', isCorrect: false },
+        { id: 'o3', text: 'Calm weather conditions', isCorrect: false },
+        { id: 'o4', text: 'The aircraft\'s design alone', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-6', type: 'fill-blank', points: 10,
+      question: 'A pickpocket steals from bags. Something "very big" in the article is described as _________.',
+      correctAnswer: 'massive',
+      hint: 'Look at "a massive bird-strike".',
+    },
+    {
+      id: 'ex-7', type: 'fill-blank', points: 10,
+      question: 'To land a plane on water is to _________ the plane.',
+      correctAnswer: 'ditch',
+    },
+    {
+      id: 'ex-8', type: 'fill-blank', points: 10,
+      question: 'Not sinking under the water means _________.',
+      correctAnswer: 'floating',
+    },
+    {
+      id: 'ex-9', type: 'fill-blank', points: 10,
+      question: 'Under water is described as _________.',
+      correctAnswer: 'submerged',
+    },
+    {
+      id: 'ex-10', type: 'fill-blank', points: 10,
+      question: 'To live after a bad accident is to _________.',
+      correctAnswer: 'survive',
+    },
+    {
+      id: 'ex-11', type: 'speaking', points: 15,
+      question: 'Practise the reported instruction sentences, noticing how the weak "to" is not stressed: "The captain told the crew to prepare the cabin for an emergency landing." / "The flight attendant told the passengers to take off their shoes." / "The purser told the passengers not to worry."',
+    },
+    {
+      id: 'ex-12', type: 'speaking', points: 20,
+      question: 'Imagine what happened inside the aircraft during the Hudson River incident. With a partner, take turns telling the story using questions and answers: "What happened? What did you do? How did the passengers/crew react? Then what happened?" Situation 1: Student A is a TV reporter, Student B is a crew member. Situation 2: Student A is a passenger, Student B is a TV reporter.',
+    },
+    {
+      id: 'ex-13', type: 'multiple-choice', points: 15,
+      question: 'What happened FIRST in the tail-strike incident on the Dublin to London flight?',
+      options: [
+        { id: 'o1', text: 'The flight crew heard a bump on take-off', isCorrect: true },
+        { id: 'o2', text: 'Nine oxygen masks failed to deploy', isCorrect: false },
+        { id: 'o3', text: 'A passenger received medical assistance', isCorrect: false },
+        { id: 'o4', text: 'The aircraft landed safely', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-14', type: 'multiple-choice', points: 15,
+      question: 'What did the flight crew do immediately after hearing the bump, even though they were not sure what had happened?',
+      options: [
+        { id: 'o1', text: 'They continued climbing and pressurizing the cabin', isCorrect: true },
+        { id: 'o2', text: 'They immediately turned back to Dublin', isCorrect: false },
+        { id: 'o3', text: 'They opened the cockpit door', isCorrect: false },
+        { id: 'o4', text: 'They declared a Mayday', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-15', type: 'multiple-choice', points: 15,
+      question: 'How did the cabin supervisor finally get the flight crew\'s attention?',
+      options: [
+        { id: 'o1', text: 'She banged on the cockpit door', isCorrect: true },
+        { id: 'o2', text: 'She pulled the fire alarm', isCorrect: false },
+        { id: 'o3', text: 'A passenger did it for her', isCorrect: false },
+        { id: 'o4', text: 'She used the emergency radio', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-16', type: 'multiple-choice', points: 15,
+      question: 'How did the flight attendants help when some oxygen masks did not deploy?',
+      options: [
+        { id: 'o1', text: 'They moved passengers to spare seats and used ID cards to try to open the mask units', isCorrect: true },
+        { id: 'o2', text: 'They did nothing, as it was not their responsibility', isCorrect: false },
+        { id: 'o3', text: 'They told passengers to share masks', isCorrect: false },
+        { id: 'o4', text: 'They evacuated the aircraft immediately', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-17', type: 'speaking', points: 20,
+      question: 'What kind of training do flight attendants get for emergencies like the tail-strike incident? Would you have done things differently if you had been on this flight? What would you have said to the passengers and other crew members? Who is responsible for talking to the captain?',
+    },
+    {
+      id: 'ex-18', type: 'speaking', points: 15,
+      question: 'Discuss what could go wrong during a rejected or difficult take-off - communication between cabin and flight deck, oxygen mask deployment, and how passengers might react if something unexpected happens.',
+    },
+    {
+      id: 'ex-19', type: 'speaking', points: 15,
+      question: 'Complete and discuss this advice from an experienced flight attendant: "I think all flight attendants have to be able to cope with pressure and stress. They have to be able to demonstrate calmness, and they also have to be confident about what they are doing and what their role is. If you can be calm, if you can absorb your training and know your role, then the training will automatically take over." Do you agree with this analysis?',
+    },
+    {
+      id: 'ex-20', type: 'speaking', points: 15,
+      question: 'In emergencies, do you wait for orders or follow your training and act quickly? Do you think training prepares crew well for real emergency incidents? What was your worst experience of an emergency, either as a flight attendant or as a passenger?',
+    },
+  ],
+  quiz: {
+    id: 'quiz-7-3',
+    title: 'Reporting an Evacuation Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'How many people were on board Flight 1549?',
+        options: [
+          { id: 'o1', text: '155 (150 passengers and 5 crew)', isCorrect: true },
+          { id: 'o2', text: '100', isCorrect: false },
+          { id: 'o3', text: '200', isCorrect: false },
+          { id: 'o4', text: '50', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'How long after take-off did Flight 1549 ditch?',
+        options: [
+          { id: 'o1', text: 'Less than seven minutes', isCorrect: true },
+          { id: 'o2', text: 'About one hour', isCorrect: false },
+          { id: 'o3', text: 'Thirty minutes', isCorrect: false },
+          { id: 'o4', text: 'It never took off', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'What caused the tail-strike incident?',
+        options: [
+          { id: 'o1', text: 'The aircraft tail hit the runway during take-off', isCorrect: true },
+          { id: 'o2', text: 'A bird-strike', isCorrect: false },
+          { id: 'o3', text: 'A lightning strike', isCorrect: false },
+          { id: 'o4', text: 'A collision with another aircraft', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'How many oxygen masks failed to deploy in the tail-strike incident?',
+        options: [
+          { id: 'o1', text: 'Nine', isCorrect: true },
+          { id: 'o2', text: 'All of them', isCorrect: false },
+          { id: 'o3', text: 'None', isCorrect: false },
+          { id: 'o4', text: 'Two', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'Reported speech: "Don\'t worry," said the purser to the passengers. How is this reported?',
+        options: [
+          { id: 'o1', text: 'The purser told the passengers not to worry.', isCorrect: true },
+          { id: 'o2', text: 'The purser told the passengers to not worry ever.', isCorrect: false },
+          { id: 'o3', text: 'The purser said don\'t worry to the passengers.', isCorrect: false },
+          { id: 'o4', text: 'The purser worried the passengers.', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Bird-strike', back: 'A collision between an aircraft and a bird' },
+    { id: 'fc-2', front: 'Ditched', back: 'Landed on water in an emergency' },
+    { id: 'fc-3', front: 'Submerged', back: 'Under water' },
+    { id: 'fc-4', front: 'Tail-strike', back: 'When the aircraft tail hits the ground on take-off' },
+    { id: 'fc-5', front: 'To deteriorate', back: 'To get worse' },
+  ],
+  review: {
+    keyPoints: [
+      "Reported speech uses 'told...to' for positive instructions and 'told...not to' for negative ones",
+      'The weak form of "to" is unstressed in natural spoken English',
+      'Flight 1549 succeeded because of first-class crew training, not luck alone',
+      'Clear, fast communication between cabin crew and the flight deck is critical',
+      'Even when an incident is minor, poor follow-up communication can upset passengers',
+    ],
+    commonMistakes: [
+      { mistake: 'Delaying communication with the flight deck when something feels wrong', correction: 'Escalate promptly, even without full information', explanation: 'The tail-strike case study shows how delay worsened the situation' },
+      { mistake: 'Assuming a "miracle" outcome was just luck', correction: 'Recognize the role of training and procedure in successful outcomes', explanation: 'This reinforces the value of taking training seriously' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
 const UNIT_TITLES: Record<number, string> = {
   0: 'Unit 1: The Pre-Flight Briefing',
   1: 'Unit 2: Welcome on Board',
@@ -6101,6 +6939,12 @@ export const iCAOUnits: Unit[] = [
         ? SERIOUS_INCIDENT_LESSON
         : unitIdx === 5 && lessonIdx === 2
         ? REPORTING_INCIDENT_LESSON
+        : unitIdx === 6 && lessonIdx === 0
+        ? TAKING_CHARGE_LESSON
+        : unitIdx === 6 && lessonIdx === 1
+        ? EMERGENCY_EVACUATION_LESSON
+        : unitIdx === 6 && lessonIdx === 2
+        ? REPORTING_EVACUATION_LESSON
         : LESSON_TEMPLATE(unitIdx + 1, lessonIdx + 1, `Lesson ${lessonIdx + 1}`)
     )
   })) as Unit[]
