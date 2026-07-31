@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Zap, Flame, Trophy, BookOpen, TrendingUp, Target } from 'lucide-react';
+import { Zap, Flame, Trophy, BookOpen, TrendingUp, Target, BookMarked, CheckSquare } from 'lucide-react';
 import { useAppStore } from '@/lib/store';
 import ProgressRing from '@/components/ProgressRing';
 import AchievementsPanel from '@/components/AchievementsPanel';
@@ -49,6 +49,22 @@ export default function DashboardPage() {
             <p className="text-slate-600 dark:text-slate-400">
               Master aviation English and prepare for your dream airline career
             </p>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-1 mt-3">
+              <Link
+                href="/glossary"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
+              >
+                <BookMarked className="w-4 h-4" />
+                Glossary of Key Expressions
+              </Link>
+              <Link
+                href="/answer-key"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
+              >
+                <CheckSquare className="w-4 h-4" />
+                Answer Key
+              </Link>
+            </div>
           </div>
           <motion.div
             whileHover={{ scale: 1.05 }}
