@@ -8898,6 +8898,46 @@ const RESPONDING_COMPLAINTS_LESSON: any = {
       id: 'ex-14', type: 'speaking', points: 15,
       question: 'Listen to five different complaints in your mind and imagine identifying each problem. What would you say in response to each? How well do experienced flight attendants typically deal with such complaints?',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "I can\'t sit in the middle. I feel trapped and I need to exercise during a 14-hour flight." What is the best reply?',
+      options: [
+        { id: 'o1', text: 'Let me see if I can move you to another seat. Wait a moment, please.', isCorrect: true },
+        { id: 'o2', text: 'Sorry, I do understand, but do get up and move around when you wish.', isCorrect: false },
+        { id: 'o3', text: 'There are lots of others who are just like you, sorry.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-2', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "I want to sit with my wife and children. When I checked in they promised me I could." What is the best reply?',
+      options: [
+        { id: 'o1', text: "I'll look into it and get back to you.", isCorrect: true },
+        { id: 'o2', text: 'Check-in was wrong to promise you that.', isCorrect: false },
+        { id: 'o3', text: 'Can you sort it out yourself, please?', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-3', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "Only fish left? No thanks, I\'m allergic to fish. We\'re the last to be served and now you tell me there\'s only fish. It\'s unacceptable." What is the best reply?',
+      options: [
+        { id: 'o1', text: "Let me see what I can get you from Business class. I'll be back.", isCorrect: true },
+        { id: 'o2', text: "I know, it happens often. I'm sorry.", isCorrect: false },
+        { id: 'o3', text: "I'm really sorry, but what can I do?", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-4', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "Excuse me, this is almost cold. I can\'t eat it like this." What is the best reply?',
+      options: [
+        { id: 'o1', text: 'Sorry about that, let me heat it up for you. Just two minutes.', isCorrect: true },
+        { id: 'o2', text: 'Really? No-one else has complained.', isCorrect: false },
+        { id: 'o3', text: "I'm sorry, I haven't got time to reheat it.", isCorrect: false },
+      ],
+    },
+  ],
+  logBookPrompts: [
+    'Think about passengers complaining. Is this the most challenging part of your job, or simply something you accept? Can you anticipate most complaints? What kind of complaints do you expect? Do you know what to say and, above all, how to say it to complaining passengers?',
   ],
   quiz: {
     id: 'quiz-8-1',
@@ -9206,6 +9246,145 @@ const COMPLAINTS_OTHERS_LESSON: any = {
       id: 'ex-18', type: 'speaking', points: 20,
       question: 'In pairs or groups of three, role-play a situation like Josef\'s: a flight attendant says hello to passengers, explains a problem, the passengers reply, the flight attendant responds, thanks them and makes an offer, and the passengers say thanks. Then swap roles and try again. Who dealt with the problem best?',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'fill-blank', points: 10,
+      question: 'Complete: Josef: "Hans, I _________ your help."',
+      correctAnswer: 'need',
+    },
+    {
+      id: 'self-2', type: 'fill-blank', points: 10,
+      question: 'Complete: Josef: "Can you see that guy _________ in the middle with his arms folded?"',
+      correctAnswer: 'sitting',
+    },
+    {
+      id: 'self-3', type: 'fill-blank', points: 10,
+      question: 'Complete: Hans: "Yes. He looks _________ and angry."',
+      correctAnswer: 'upset',
+    },
+    {
+      id: 'self-4', type: 'fill-blank', points: 10,
+      question: 'Complete: Josef: "He wants me to tell the group _________ him to keep quiet."',
+      correctAnswer: 'behind',
+    },
+    {
+      id: 'self-5', type: 'fill-blank', points: 10,
+      question: 'Complete: Josef: "...or else he is demanding a seat _________."',
+      correctAnswer: 'change',
+    },
+    {
+      id: 'self-6', type: 'fill-blank', points: 10,
+      question: "Complete: Hans: \"There aren't any _________ seats anywhere.\"",
+      correctAnswer: 'spare',
+    },
+    {
+      id: 'self-7', type: 'fill-blank', points: 10,
+      question: "Complete: Josef: \"OK. I'll go over and _________ the group to quieten down.\"",
+      correctAnswer: 'ask',
+    },
+    {
+      id: 'self-8', type: 'fill-blank', points: 10,
+      question: 'Complete: Hans: "Just use your usual charm and ask them to be a _________ quieter!"',
+      correctAnswer: 'little',
+    },
+    {
+      id: 'self-9', type: 'fill-blank', points: 10,
+      question: "Complete: Hans: \"You'll be _________, don't worry. I'll keep an eye on you.\"",
+      correctAnswer: 'fine',
+    },
+    {
+      id: 'self-10', type: 'multiple-choice', points: 10,
+      question: 'What does Josef have to do?',
+      options: [
+        { id: 'o1', text: 'Ask a noisy group of passengers to quieten down', isCorrect: true },
+        { id: 'o2', text: 'Serve a meal to Business class', isCorrect: false },
+        { id: 'o3', text: 'Find a doctor on board', isCorrect: false },
+        { id: 'o4', text: 'Announce a delay', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-11', type: 'multiple-choice', points: 10,
+      question: "What 'special' thing does Josef ask the group for?",
+      options: [
+        { id: 'o1', text: 'A favour - to keep their voices down a little', isCorrect: true },
+        { id: 'o2', text: 'Extra payment for their seats', isCorrect: false },
+        { id: 'o3', text: 'Their boarding passes', isCorrect: false },
+        { id: 'o4', text: 'To move to another cabin', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-12', type: 'multiple-choice', points: 10,
+      question: 'What do the passengers want in return for being quiet?',
+      options: [
+        { id: 'o1', text: 'Another drink', isCorrect: true },
+        { id: 'o2', text: 'A free upgrade', isCorrect: false },
+        { id: 'o3', text: 'An apology', isCorrect: false },
+        { id: 'o4', text: 'A window seat', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-13', type: 'multiple-choice', points: 10,
+      question: "Complete: 'If you're still feeling sick, ...'",
+      options: [
+        { id: 'o1', text: "I'll get my colleague, who's a nurse.", isCorrect: true },
+        { id: 'o2', text: "I'll come back.", isCorrect: false },
+        { id: 'o3', text: "I'll change it.", isCorrect: false },
+        { id: 'o4', text: "I'll get another one for you.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-14', type: 'multiple-choice', points: 10,
+      question: "Complete: 'If there is still a problem, ...'",
+      options: [
+        { id: 'o1', text: "I'll come back.", isCorrect: true },
+        { id: 'o2', text: "I'll change it.", isCorrect: false },
+        { id: 'o3', text: 'if there is one.', isCorrect: false },
+        { id: 'o4', text: "I'll get my colleague, who's a nurse.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-15', type: 'multiple-choice', points: 10,
+      question: "Complete: 'I'll find you another seat ...'",
+      options: [
+        { id: 'o1', text: 'if there is one.', isCorrect: true },
+        { id: 'o2', text: "I'll come back.", isCorrect: false },
+        { id: 'o3', text: "I'll change it.", isCorrect: false },
+        { id: 'o4', text: "if they'd like that.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-16', type: 'multiple-choice', points: 10,
+      question: "Complete: 'If the volume on the handset doesn't work, ...'",
+      options: [
+        { id: 'o1', text: "I'll change it.", isCorrect: true },
+        { id: 'o2', text: "I'll come back.", isCorrect: false },
+        { id: 'o3', text: 'if there is one.', isCorrect: false },
+        { id: 'o4', text: "I'll get another one for you.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-17', type: 'multiple-choice', points: 10,
+      question: "Complete: 'If you don't like the meal, ...'",
+      options: [
+        { id: 'o1', text: "I'll get another one for you.", isCorrect: true },
+        { id: 'o2', text: "I'll change it.", isCorrect: false },
+        { id: 'o3', text: "if they'd like that.", isCorrect: false },
+        { id: 'o4', text: "I'll come back.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-18', type: 'multiple-choice', points: 10,
+      question: "Complete: 'I'll get the children some colouring books ...'",
+      options: [
+        { id: 'o1', text: "if they'd like that.", isCorrect: true },
+        { id: 'o2', text: 'if there is one.', isCorrect: false },
+        { id: 'o3', text: "I'll change it.", isCorrect: false },
+        { id: 'o4', text: "I'll come back.", isCorrect: false },
+      ],
+    },
+  ],
+  logBookPrompts: [
+    'Think about passengers complaining about other passengers. How do you handle these situations? Think of several examples. What do you say? What is your usual expression to solve the problem? Are you a good referee? What are the qualities you need for these situations?',
   ],
   quiz: {
     id: 'quiz-8-2',
@@ -9540,6 +9719,93 @@ const DISRUPTIVE_PASSENGERS_LESSON: any = {
       id: 'ex-22', type: 'speaking', points: 15,
       question: 'Discuss the difference between "difficult" passengers (demanding, but not dangerous) and "disruptive" passengers (aggressive, dangerous, or a threat to safety). What is the best way to deal with each type? What special qualities do flight attendants need to manage these situations?',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'fill-blank', points: 10,
+      question: 'From the news report on disruptive passengers: "The men could not be _________ by cabin crew after they started fighting."',
+      correctAnswer: 'restrained',
+    },
+    {
+      id: 'self-2', type: 'fill-blank', points: 10,
+      question: 'Complete: "They were _________ and rude to the flight attendants."',
+      correctAnswer: 'abusive',
+    },
+    {
+      id: 'self-3', type: 'fill-blank', points: 10,
+      question: 'Complete: "They were aggressive and _________ to other passengers."',
+      correctAnswer: 'insulting',
+    },
+    {
+      id: 'self-4', type: 'fill-blank', points: 10,
+      question: 'Complete: "The captain decided to land quickly and the _________ pair were handed over to the police."',
+      correctAnswer: 'unruly',
+    },
+    {
+      id: 'self-5', type: 'fill-blank', points: 10,
+      question: 'Complete: "A fight between _________ football fans forced a plane to divert."',
+      correctAnswer: 'rival',
+    },
+    {
+      id: 'self-6', type: 'fill-blank', points: 10,
+      question: 'Complete: "The fight forced the plane to make an emergency _________."',
+      correctAnswer: 'landing',
+    },
+    {
+      id: 'self-7', type: 'fill-blank', points: 10,
+      question: 'Complete: "The unruly pair were handed over to the _________ on arrival."',
+      correctAnswer: 'police',
+    },
+    {
+      id: 'self-8', type: 'multiple-choice', points: 10,
+      question: 'Which sentence is correct?',
+      options: [
+        { id: 'o1', text: 'You must sit down, please.', isCorrect: true },
+        { id: 'o2', text: 'You must to sit down, please.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-9', type: 'multiple-choice', points: 10,
+      question: 'Which sentence is correct?',
+      options: [
+        { id: 'o1', text: 'I can see how upset you are.', isCorrect: true },
+        { id: 'o2', text: 'I can see how upset are you.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-10', type: 'multiple-choice', points: 10,
+      question: 'Which sentence is correct?',
+      options: [
+        { id: 'o1', text: 'Would you come to the back of the plane with me, please?', isCorrect: true },
+        { id: 'o2', text: 'Would you coming to the back of the plane with, please?', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-11', type: 'multiple-choice', points: 10,
+      question: 'Which sentence is correct?',
+      options: [
+        { id: 'o1', text: 'I do apologize.', isCorrect: true },
+        { id: 'o2', text: 'I am apologize.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-12', type: 'multiple-choice', points: 10,
+      question: 'Which sentence is correct?',
+      options: [
+        { id: 'o1', text: 'Everything is under control.', isCorrect: true },
+        { id: 'o2', text: 'Everything is in control.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-13', type: 'multiple-choice', points: 10,
+      question: 'Which sentence is correct?',
+      options: [
+        { id: 'o1', text: 'Incidents like this are extremely rare.', isCorrect: true },
+        { id: 'o2', text: 'Incident like this is extremely rare.', isCorrect: false },
+      ],
+    },
+  ],
+  logBookPrompts: [
+    'Think about passengers behaving badly. Have you or your colleagues had a recent experience of unruly passengers? What happened? What did you say? What would you do differently the next time you had a similar experience? Are you a good police officer, or do you prefer to be a diplomat?',
   ],
   quiz: {
     id: 'quiz-8-3',
