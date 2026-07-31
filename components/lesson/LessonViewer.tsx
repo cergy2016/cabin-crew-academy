@@ -334,6 +334,44 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
             >
               <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-8">
                 <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">
+                  💬 {lesson.cabinCrewPhraseoology.category}
+                </h2>
+                <div className="space-y-4">
+                  {lesson.cabinCrewPhraseoology.phrases.map((phrase, idx) => (
+                    <div
+                      key={idx}
+                      className="p-4 bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-800 rounded-lg"
+                    >
+                      <div className="flex justify-between items-start mb-2">
+                        <div>
+                          <p className="font-bold text-indigo-900 dark:text-indigo-100">
+                            {phrase.phrase}
+                          </p>
+                          {phrase.pronunciation && (
+                            <p className="text-sm text-indigo-700 dark:text-indigo-300 italic">
+                              /{phrase.pronunciation}/
+                            </p>
+                          )}
+                        </div>
+                        <span className="text-xs bg-indigo-200 dark:bg-indigo-800 text-indigo-900 dark:text-indigo-100 px-2 py-1 rounded">
+                          {phrase.situation}
+                        </span>
+                      </div>
+                      <p className="text-sm text-indigo-800 dark:text-indigo-200 mb-2">
+                        <strong>Meaning:</strong> {phrase.meaning}
+                      </p>
+                      {phrase.example && (
+                        <p className="text-sm text-indigo-800 dark:text-indigo-200 italic">
+                          Example: {phrase.example}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-8">
+                <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">
                   ✈️ {lesson.icaoPhraseoology.category}
                 </h2>
                 <div className="space-y-4">
