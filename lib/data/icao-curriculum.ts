@@ -4977,6 +4977,1065 @@ const SAYING_SORRY_LESSON: any = {
   updatedAt: new Date().toISOString(),
 };
 
+// ============================================================
+// Unit 6, Lesson 1: Dealing with an On-Board Accident
+// Check -> Call -> Care response to medical problems
+// ============================================================
+const A6A = '/audio/unit-6/lesson-1';
+
+const ONBOARD_ACCIDENT_LESSON: any = {
+  id: 'lesson-6-1',
+  unitId: 'unit-6',
+  title: 'Dealing with an On-Board Accident',
+  description: 'Using the Check, Call, Care model to respond to an on-board accident',
+  icon: '🩹',
+  icaoLevel: 4,
+  category: 'cabin-crew',
+  difficulty: 'intermediate',
+  xpReward: 150,
+  estimatedDurationMinutes: 40,
+  locked: false,
+  order: 1,
+  objectives: [
+    { id: 'obj-1', description: 'Respond to an on-board accident using Check, Call, Care', type: 'listening' },
+    { id: 'obj-2', description: 'Use correct intonation for open and yes/no questions', type: 'speaking' },
+    { id: 'obj-3', description: 'Identify items in the emergency medical kit', type: 'vocabulary' },
+  ],
+  scenario: {
+    id: 'scenario-onboard-accident',
+    title: 'A Laptop Falls from the Locker',
+    description: 'Flight attendants Leila and Hemal deal with a passenger injured when a laptop falls from the overhead locker.',
+    context: 'Cabin, in-flight accident',
+    audioSegments: [
+      { id: 'd1-01', text: "Leila: What's happened?", audioUrl: `${A6A}/d1-01-leila.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'd1-02', text: 'Male passenger: A laptop fell out of the locker and hit that lady on the head!', audioUrl: `${A6A}/d1-02-male.wav`, durationSeconds: 4, speaker: 'passenger' },
+      { id: 'd1-03', text: "Leila: This lady's been hurt. She's bleeding. Sir, could you please stay with her for a moment while I get help?", audioUrl: `${A6A}/d1-03-leila.wav`, durationSeconds: 6, speaker: 'crew' },
+      { id: 'd1-04', text: 'Male passenger: Of course.', audioUrl: `${A6A}/d1-04-male.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'd1-05', text: 'Leila: Hemal, can you bring the first aid kit right away?', audioUrl: `${A6A}/d1-05-leila.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'd1-06', text: "Hemal: On my way.", audioUrl: `${A6A}/d1-06-hemal.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'd2-01', text: "Leila: Hello, I'm Leila, a flight attendant. How are you feeling?", audioUrl: `${A6A}/d2-01-leila.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'd2-02', text: "Injured passenger: I was a bit dizzy, but I'm fine now.", audioUrl: `${A6A}/d2-02-injured.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'd2-03', text: "Leila: You've had a nasty bump on your head. Is your husband with you?", audioUrl: `${A6A}/d2-03-leila.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'd2-04', text: "Injured passenger: Yes, he's just gone to the toilet.", audioUrl: `${A6A}/d2-04-injured.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'd2-05', text: 'Leila: Can I get you a glass of water?', audioUrl: `${A6A}/d2-05-leila.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'd2-06', text: 'Injured passenger: Yes please, that would be good.', audioUrl: `${A6A}/d2-06-injured.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'd2-07', text: "Leila: You've got a small cut on your forehead too. I'll clean it up and put a dressing over it.", audioUrl: `${A6A}/d2-07-leila.wav`, durationSeconds: 6, speaker: 'crew' },
+      { id: 'd2-08', text: 'Injured passenger: Okay, thank you.', audioUrl: `${A6A}/d2-08-injured.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'd2-09', text: 'Leila: Can you hold this compress against your forehead for me? And please try to stay still while I check you over.', audioUrl: `${A6A}/d2-09-leila.wav`, durationSeconds: 6, speaker: 'crew' },
+    ],
+    vocabulary: [
+      { word: 'Dressing', definition: 'A covering placed over a wound to protect it' },
+      { word: 'Compress', definition: 'A pad pressed against a wound to control bleeding or swelling' },
+      { word: 'Dizzy', definition: 'Feeling unsteady, as if everything is spinning' },
+      { word: 'Bump', definition: 'A swelling caused by a knock or blow' },
+    ],
+  },
+  theory: {
+    title: 'Check, Call, Care',
+    content: "The Check, Call, Care model is the standard response to any on-board medical problem: check what's wrong, call for help and describe the situation, then care for the passenger and take action.",
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of Check, Call, Care',
+      audioUrl: `${A6A}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Check -> Call -> Care',
+    phrases: [
+      { situation: 'Check - finding out what is wrong', phrase: 'Do you have any pain? / How are you feeling?', meaning: 'Assessing the passenger\'s condition', example: 'Do you have any pain?' },
+      { situation: 'Call - describing and getting help', phrase: 'I need some help. / Get the first aid kit immediately.', meaning: 'Alerting colleagues and requesting equipment', example: 'Get the first aid kit immediately.' },
+      { situation: 'Care - taking action', phrase: "I'm going to clean up the wound and put a dressing over it.", meaning: 'Explaining the care being given', example: "I'm going to clean up the wound and put a dressing over it." },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Emergency Medical Kit',
+    terms: [
+      { term: 'Stethoscope', definition: 'An instrument used to listen to the heart and lungs', example: 'The doctor used a stethoscope to check his breathing.' },
+      { term: 'Syringes', definition: 'Instruments used to inject medication', example: 'Syringes are kept in the medical kit.' },
+      { term: 'Dressings', definition: 'Coverings used to protect a wound', example: 'She applied a dressing to the cut.' },
+      { term: 'Gloves', definition: 'Worn to protect hands when giving first aid', example: 'Always wear gloves when treating a wound.' },
+      { term: 'Automatic external defibrillator (AED)', definition: 'A device that can restart the heart in an emergency', example: 'They used the AED on the passenger.' },
+      { term: 'Bandages', definition: 'Strips of material used to bind a wound', example: 'The bandage was wrapped around his arm.' },
+      { term: 'Antiseptic wipes', definition: 'Wipes used to clean a wound and prevent infection', example: 'Clean the cut with antiseptic wipes first.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Reassuring an injured passenger', expression: "You've had a nasty bump, but you're going to be fine.", alternativeExpressions: ["That looks worse than it is, don't worry.", "We'll take good care of you."] },
+    { situation: 'Asking someone to help temporarily', expression: 'Could you please stay with her for a moment while I get help?', alternativeExpressions: ['Would you mind keeping an eye on her while I get assistance?', 'Could you wait here with her, just for a minute?'] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: "What's happened?", audioUrl: `${A6A}/pronunciation.wav`, durationSeconds: 2 },
+  ],
+  vocabulary: [
+    { word: 'Dressing', definition: 'A covering placed over a wound to protect it' },
+    { word: 'Compress', definition: 'A pad pressed against a wound to control bleeding or swelling' },
+    { word: 'Dizzy', definition: 'Feeling unsteady, as if everything is spinning' },
+    { word: 'Bump', definition: 'A swelling caused by a knock or blow' },
+    { word: 'Stethoscope', definition: 'An instrument used to listen to the heart and lungs' },
+    { word: 'Antiseptic', definition: 'A substance that prevents infection' },
+  ],
+  grammar: [
+    {
+      rule: "Question intonation: open questions ('What's happened?', 'How are you feeling?') fall at the end; yes/no questions ('Are you all right?', 'Do you have any pain?') rise at the end",
+      examples: [
+        { sentence: "What's happened? (falling)", audioUrl: `${A6A}/cc-3.wav` },
+        { sentence: 'Do you have any pain? (rising)', audioUrl: `${A6A}/cc-1.wav` },
+        { sentence: 'Can you hold this compress against your forehead? (rising)', audioUrl: `${A6A}/cc-8.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'speaking', points: 15,
+      question: 'What kinds of accident requiring medical attention can happen to both cabin crew and passengers on a flight? Make a list with a partner. What is the worst on-board accident you have seen or experienced? What first aid are you qualified to carry out, and what are you not qualified to do?',
+    },
+    {
+      id: 'ex-2', type: 'multiple-choice', points: 10,
+      question: 'Who has been injured?',
+      options: [
+        { id: 'o1', text: 'A female passenger', isCorrect: true },
+        { id: 'o2', text: 'A male passenger', isCorrect: false },
+        { id: 'o3', text: 'Hemal', isCorrect: false },
+        { id: 'o4', text: 'Leila', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 10,
+      question: 'What kind of injury does the person have?',
+      options: [
+        { id: 'o1', text: 'A bump and a small cut on her head', isCorrect: true },
+        { id: 'o2', text: 'A broken arm', isCorrect: false },
+        { id: 'o3', text: 'A sprained ankle', isCorrect: false },
+        { id: 'o4', text: 'Burns', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-4', type: 'multiple-choice', points: 10,
+      question: 'What caused the accident?',
+      options: [
+        { id: 'o1', text: 'A laptop fell from the overhead locker', isCorrect: true },
+        { id: 'o2', text: 'She tripped in the aisle', isCorrect: false },
+        { id: 'o3', text: 'Turbulence threw her from her seat', isCorrect: false },
+        { id: 'o4', text: 'She hit her head on the tray table', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-5', type: 'multiple-choice', points: 10,
+      question: 'What does Leila ask the male passenger to do?',
+      options: [
+        { id: 'o1', text: 'Stay with the injured lady while she gets help', isCorrect: true },
+        { id: 'o2', text: 'Fetch the first aid kit', isCorrect: false },
+        { id: 'o3', text: 'Move to another seat', isCorrect: false },
+        { id: 'o4', text: 'Call the captain', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-6', type: 'multiple-choice', points: 10,
+      question: 'What does Leila ask Hemal to do?',
+      options: [
+        { id: 'o1', text: 'Bring the first aid kit', isCorrect: true },
+        { id: 'o2', text: 'Ask if there is a doctor on board', isCorrect: false },
+        { id: 'o3', text: 'Inform the captain', isCorrect: false },
+        { id: 'o4', text: 'Serve the other passengers', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-7', type: 'multiple-choice', points: 10,
+      question: 'Who is the injured passenger travelling with?',
+      options: [
+        { id: 'o1', text: 'Her husband', isCorrect: true },
+        { id: 'o2', text: 'Alone', isCorrect: false },
+        { id: 'o3', text: 'A tour group', isCorrect: false },
+        { id: 'o4', text: 'Her children', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-8', type: 'multiple-choice', points: 10,
+      question: 'How is the injured passenger feeling?',
+      options: [
+        { id: 'o1', text: 'She was a bit dizzy but is fine now', isCorrect: true },
+        { id: 'o2', text: 'She has fainted', isCorrect: false },
+        { id: 'o3', text: 'She is in severe pain', isCorrect: false },
+        { id: 'o4', text: 'She feels completely normal, no symptoms', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-9', type: 'multiple-choice', points: 10,
+      question: 'What does Leila offer her?',
+      options: [
+        { id: 'o1', text: 'A glass of water', isCorrect: true },
+        { id: 'o2', text: 'A blanket', isCorrect: false },
+        { id: 'o3', text: 'Painkillers', isCorrect: false },
+        { id: 'o4', text: 'A seat upgrade', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-10', type: 'multiple-choice', points: 10,
+      question: "What has the injured passenger got on her forehead?",
+      options: [
+        { id: 'o1', text: 'A small cut', isCorrect: true },
+        { id: 'o2', text: 'A burn', isCorrect: false },
+        { id: 'o3', text: 'Nothing visible', isCorrect: false },
+        { id: 'o4', text: 'A rash', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-11', type: 'multiple-choice', points: 10,
+      question: 'What does Leila say she is going to do?',
+      options: [
+        { id: 'o1', text: 'Clean the wound and put a dressing over it', isCorrect: true },
+        { id: 'o2', text: 'Call for a doctor immediately', isCorrect: false },
+        { id: 'o3', text: 'Move the passenger to another seat', isCorrect: false },
+        { id: 'o4', text: 'Give her painkillers', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-12', type: 'multiple-choice', points: 10,
+      question: 'What two things does Leila want the injured passenger to do?',
+      options: [
+        { id: 'o1', text: 'Hold the compress against her forehead and stay still', isCorrect: true },
+        { id: 'o2', text: 'Stand up and walk around', isCorrect: false },
+        { id: 'o3', text: 'Drink water quickly and sleep', isCorrect: false },
+        { id: 'o4', text: 'Remove her seatbelt and lie down', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-13', type: 'fill-blank', points: 10,
+      question: "This lady's been _________. She's bleeding.",
+      correctAnswer: 'hurt',
+    },
+    {
+      id: 'ex-14', type: 'fill-blank', points: 10,
+      question: 'A laptop _________ onto her head.',
+      correctAnswer: 'fell',
+    },
+    {
+      id: 'ex-15', type: 'fill-blank', points: 10,
+      question: "You've had a nasty _________ on your head.",
+      correctAnswer: 'bump',
+    },
+    {
+      id: 'ex-16', type: 'fill-blank', points: 10,
+      question: "I'll put a _________ over it.",
+      correctAnswer: 'dressing',
+    },
+    {
+      id: 'ex-17', type: 'fill-blank', points: 10,
+      question: 'I was a bit _________, but I\'m fine now.',
+      correctAnswer: 'dizzy',
+    },
+    {
+      id: 'ex-18', type: 'speaking', points: 15,
+      question: "Practise the Check, Call, Care questions with correct intonation: 'What's happened?', 'Are you all right?', 'Can you hear me?', 'How are you feeling?', 'Do you have any pain?', 'Do you feel well enough to sit up?'",
+    },
+    {
+      id: 'ex-19', type: 'speaking', points: 15,
+      question: 'Label the items in the emergency medical kit: stethoscope, syringes, dressings, gloves, aspirin, CPR mask, AED, bandages, oxygen, antiseptic wipes. Describe what each is used for.',
+    },
+  ],
+  quiz: {
+    id: 'quiz-6-1',
+    title: 'Dealing with an On-Board Accident Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'What is the correct order of the Check, Call, Care model?',
+        options: [
+          { id: 'o1', text: 'Check, then Call, then Care', isCorrect: true },
+          { id: 'o2', text: 'Call, then Check, then Care', isCorrect: false },
+          { id: 'o3', text: 'Care, then Check, then Call', isCorrect: false },
+          { id: 'o4', text: 'Check, then Care, then Call', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'What caused the passenger\'s injury?',
+        options: [
+          { id: 'o1', text: 'A falling laptop', isCorrect: true },
+          { id: 'o2', text: 'A hot drink spill', isCorrect: false },
+          { id: 'o3', text: 'Turbulence', isCorrect: false },
+          { id: 'o4', text: 'A trolley collision', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'What device can restart a heart in an emergency?',
+        options: [
+          { id: 'o1', text: 'AED (automatic external defibrillator)', isCorrect: true },
+          { id: 'o2', text: 'Stethoscope', isCorrect: false },
+          { id: 'o3', text: 'Syringe', isCorrect: false },
+          { id: 'o4', text: 'CPR mask', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'What does a rising intonation usually signal in a question?',
+        options: [
+          { id: 'o1', text: 'A yes/no question', isCorrect: true },
+          { id: 'o2', text: 'An open (wh-) question', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'What is a "compress" used for?',
+        options: [
+          { id: 'o1', text: 'Pressing against a wound to control bleeding or swelling', isCorrect: true },
+          { id: 'o2', text: 'Measuring blood pressure', isCorrect: false },
+          { id: 'o3', text: 'Cleaning a wound', isCorrect: false },
+          { id: 'o4', text: 'Listening to the heart', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Dressing', back: 'A covering placed over a wound to protect it' },
+    { id: 'fc-2', front: 'Compress', back: 'A pad pressed against a wound to control bleeding or swelling' },
+    { id: 'fc-3', front: 'AED', back: 'Automatic external defibrillator - restarts the heart in an emergency' },
+    { id: 'fc-4', front: 'Stethoscope', back: 'An instrument used to listen to the heart and lungs' },
+  ],
+  review: {
+    keyPoints: [
+      'Check, Call, Care is the standard response to any on-board medical problem',
+      "Open questions fall in intonation; yes/no questions rise",
+      'Always ask a nearby passenger for temporary help while getting equipment',
+      'Explain each step of care to reassure the passenger',
+      'Know the contents of the emergency medical kit and what each item is for',
+    ],
+    commonMistakes: [
+      { mistake: 'Rushing straight to "care" without checking or calling first', correction: 'Always check the situation and call for help before acting', explanation: 'This ensures you have the right equipment and support' },
+      { mistake: 'Not explaining what you are doing to the injured passenger', correction: 'Narrate your actions clearly, e.g. "I\'m going to clean the wound now."', explanation: 'This reduces anxiety and builds trust' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
+// ============================================================
+// Unit 6, Lesson 2: Dealing with a Serious Medical Incident
+// Giving instructions to crew
+// ============================================================
+const A6B = '/audio/unit-6/lesson-2';
+
+const SERIOUS_INCIDENT_LESSON: any = {
+  id: 'lesson-6-2',
+  unitId: 'unit-6',
+  title: 'Dealing with a Serious Medical Incident',
+  description: 'Giving clear instructions to crew during a major medical incident, and diverting the flight',
+  icon: '🚑',
+  icaoLevel: 4,
+  category: 'cabin-crew',
+  difficulty: 'upper-intermediate',
+  xpReward: 180,
+  estimatedDurationMinutes: 50,
+  locked: false,
+  order: 2,
+  objectives: [
+    { id: 'obj-1', description: 'Give clear, urgent instructions to fellow crew members', type: 'speaking' },
+    { id: 'obj-2', description: 'Understand a captain-purser exchange about a diversion', type: 'listening' },
+    { id: 'obj-3', description: 'Understand a flight diversion announcement', type: 'listening' },
+  ],
+  scenario: {
+    id: 'scenario-serious-incident',
+    title: 'A Suspected Heart Attack',
+    description: 'Flight attendants Rani and Bilal respond to a passenger who has collapsed on a flight from Delhi to Colombo, and the purser informs the captain.',
+    context: 'Cabin, major medical emergency, flight from Delhi to Colombo',
+    audioSegments: [
+      { id: 'd1-01', text: 'Rani: Sir? Sir, can you hear me?', audioUrl: `${A6B}/d1-01-rani.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'd1-02', text: "Rani: I think he's had a heart attack. He's not breathing!", audioUrl: `${A6B}/d1-02-rani.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'd1-03', text: 'Rani: Bilal, help me get him on the floor.', audioUrl: `${A6B}/d1-03-rani.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'd1-04', text: 'Bilal: OK, got him.', audioUrl: `${A6B}/d1-04-bilal.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'd1-05', text: 'Rani: Bilal, grab the oxygen.', audioUrl: `${A6B}/d1-05-rani.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'd1-06', text: 'Bilal: On it.', audioUrl: `${A6B}/d1-06-bilal.wav`, durationSeconds: 1, speaker: 'crew' },
+      { id: 'd1-07', text: 'Rani: Help me get the mask over his head.', audioUrl: `${A6B}/d1-07-rani.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'd1-08', text: "Rani: Don't worry, we're taking care of him.", audioUrl: `${A6B}/d1-08-rani.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'd1-09', text: 'Rani: We administered CPR for two minutes, but his pulse is very weak.', audioUrl: `${A6B}/d1-09-rani.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'd1-10', text: 'Wife: Is he going to be alright? He takes pills for his heart...', audioUrl: `${A6B}/d1-10-wife.wav`, durationSeconds: 4, speaker: 'passenger' },
+      { id: 'anton-1', text: "Anton: Captain, we have a passenger who's had a suspected heart attack. The doctor on board says it looks like a cardiac arrest, and he's in a serious condition.", audioUrl: `${A6B}/anton-captain-1.wav`, durationSeconds: 6, speaker: 'crew' },
+      { id: 'captain-1', text: 'Captain: Is the passenger in danger?', audioUrl: `${A6B}/captain-1.wav`, durationSeconds: 2, speaker: 'pilot' },
+      { id: 'anton-2', text: 'Anton: Yes, the doctor says he needs immediate hospitalization.', audioUrl: `${A6B}/anton-captain-2.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'captain-2', text: "Captain: Understood. I'll divert to Mumbai, the closest international airport.", audioUrl: `${A6B}/captain-2.wav`, durationSeconds: 4, speaker: 'pilot' },
+    ],
+    vocabulary: [
+      { word: 'Cardiac arrest', definition: 'When the heart suddenly stops beating' },
+      { word: 'Administer CPR', definition: 'To perform cardiopulmonary resuscitation' },
+      { word: 'Divert', definition: 'To change a flight\'s route, usually to land somewhere unplanned' },
+      { word: 'Hospitalization', definition: 'Admission to hospital for treatment' },
+    ],
+  },
+  theory: {
+    title: 'Giving Instructions to Crew',
+    content: 'In a serious medical incident, cabin crew must give clear, short instructions to each other, get a doctor if possible, and keep the captain informed so a decision can be made about diverting the flight.',
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of giving instructions to crew',
+      audioUrl: `${A6B}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Giving Instructions to Crew',
+    phrases: [
+      { situation: 'Assigning a task', phrase: 'Bilal, grab the oxygen.', meaning: 'Short, direct instruction using a name and imperative', example: 'Bilal, grab the oxygen.' },
+      { situation: 'Relaying a message', phrase: 'Get Safiya to call Anton.', meaning: 'Instructing one crew member to pass a message via another', example: 'Get Safiya to call Anton.' },
+      { situation: 'Asking for physical help', phrase: 'Help me get the mask over his head.', meaning: 'Direct request for physical assistance', example: 'Help me get the mask over his head.' },
+      { situation: 'Escalating to the flight deck', phrase: 'Tell the captain. / Make an announcement immediately.', meaning: 'Urgent instructions to inform the captain or passengers', example: 'Tell the captain.' },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Serious Medical Incidents',
+    terms: [
+      { term: 'Cardiac arrest', definition: 'When the heart suddenly stops beating', example: 'The doctor confirmed it was a cardiac arrest.' },
+      { term: 'CPR', definition: 'Cardiopulmonary resuscitation - chest compressions and rescue breathing', example: 'We administered CPR for two minutes.' },
+      { term: 'Divert', definition: "To change a flight's route, usually to land somewhere unplanned", example: "I'll divert to Mumbai." },
+      { term: 'Purser', definition: 'The senior cabin crew member in charge of the flight', example: 'Anton, the purser, informed the captain.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Reassuring a worried family member', expression: "Don't worry, we're taking care of him.", alternativeExpressions: ["We're doing everything we can.", 'He is in good hands.'] },
+    { situation: 'Explaining a diversion to passengers', expression: 'We need to divert to the closest airport as soon as possible.', alternativeExpressions: ['We will be landing at an alternative airport shortly.', 'For medical reasons, we are changing our destination.'] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'Bilal, grab the oxygen.', audioUrl: `${A6B}/pronunciation.wav`, durationSeconds: 2 },
+  ],
+  vocabulary: [
+    { word: 'Cardiac arrest', definition: 'When the heart suddenly stops beating' },
+    { word: 'Administer CPR', definition: 'To perform cardiopulmonary resuscitation' },
+    { word: 'Divert', definition: "To change a flight's route, usually to land somewhere unplanned" },
+    { word: 'Hospitalization', definition: 'Admission to hospital for treatment' },
+    { word: 'Purser', definition: 'The senior cabin crew member in charge of the flight' },
+  ],
+  grammar: [
+    {
+      rule: 'Imperative instructions with a name - addressing a colleague by name before a short command makes urgent instructions clear',
+      examples: [
+        { sentence: 'Bilal, grab the oxygen.', audioUrl: `${A6B}/gi-1.wav` },
+        { sentence: 'Get Safiya to call Anton.', audioUrl: `${A6B}/gi-2.wav` },
+        { sentence: 'Tell the captain.', audioUrl: `${A6B}/gi-4.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'speaking', points: 15,
+      question: 'Apart from accidental injuries, what other kinds of medical problem have you had to deal with on flights? Make a list of major and minor incidents. What is the most serious on-board medical incident you have had to deal with?',
+    },
+    {
+      id: 'ex-2', type: 'multiple-choice', points: 10,
+      question: 'True or False: The sick passenger is unconscious.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 10,
+      question: 'True or False: The sick passenger is travelling alone.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: false },
+        { id: 'o2', text: 'False', isCorrect: true, explanation: 'He is travelling with his wife.' },
+      ],
+    },
+    {
+      id: 'ex-4', type: 'multiple-choice', points: 10,
+      question: 'True or False: Rani wants to put the sick passenger in a seat.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: false },
+        { id: 'o2', text: 'False', isCorrect: true, explanation: 'She wants him on the floor to give CPR.' },
+      ],
+    },
+    {
+      id: 'ex-5', type: 'multiple-choice', points: 10,
+      question: 'True or False: Rani and Bilal give the sick passenger oxygen.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-6', type: 'multiple-choice', points: 10,
+      question: 'True or False: Rani and Bilal can deal with the situation themselves.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: false },
+        { id: 'o2', text: 'False', isCorrect: true, explanation: 'They need a doctor and inform the purser and captain.' },
+      ],
+    },
+    {
+      id: 'ex-7', type: 'multiple-choice', points: 10,
+      question: 'True or False: The sick passenger is on medication.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true, explanation: 'His wife says he takes pills for his heart.' },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-8', type: 'multiple-choice', points: 10,
+      question: 'True or False: There is a doctor on board.',
+      options: [
+        { id: 'o1', text: 'True', isCorrect: true },
+        { id: 'o2', text: 'False', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-9', type: 'fill-blank', points: 10,
+      question: 'Sir, can you _________ me?',
+      audio: { id: 'd1-01-audio', text: 'Checking on the passenger', audioUrl: `${A6B}/d1-01-rani.wav`, durationSeconds: 3, speaker: 'crew' },
+      correctAnswer: 'hear',
+    },
+    {
+      id: 'ex-10', type: 'fill-blank', points: 10,
+      question: "I think he's had a _________ attack.",
+      correctAnswer: 'heart',
+    },
+    {
+      id: 'ex-11', type: 'fill-blank', points: 10,
+      question: "He's not _________.",
+      correctAnswer: 'breathing',
+    },
+    {
+      id: 'ex-12', type: 'fill-blank', points: 10,
+      question: "Let's _________ him on the floor.",
+      correctAnswer: 'get',
+    },
+    {
+      id: 'ex-13', type: 'fill-blank', points: 10,
+      question: 'Help me get the _________ over his head.',
+      correctAnswer: 'mask',
+    },
+    {
+      id: 'ex-14', type: 'fill-blank', points: 10,
+      question: "We're taking _________ of him.",
+      correctAnswer: 'care',
+    },
+    {
+      id: 'ex-15', type: 'fill-blank', points: 10,
+      question: 'We _________ CPR for two minutes.',
+      correctAnswer: 'administered',
+    },
+    {
+      id: 'ex-16', type: 'fill-blank', points: 10,
+      question: 'His _________ is very weak.',
+      correctAnswer: 'pulse',
+    },
+    {
+      id: 'ex-17', type: 'speaking', points: 15,
+      question: 'How well did Rani and Bilal follow the Check, Call, Care procedure? Discuss with a partner.',
+    },
+    {
+      id: 'ex-18', type: 'multiple-choice', points: 15,
+      question: "What's the doctor's diagnosis?",
+      options: [
+        { id: 'o1', text: 'A cardiac arrest', isCorrect: true },
+        { id: 'o2', text: 'A panic attack', isCorrect: false },
+        { id: 'o3', text: 'Food poisoning', isCorrect: false },
+        { id: 'o4', text: 'A fainting spell', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-19', type: 'multiple-choice', points: 15,
+      question: 'Is the passenger in danger?',
+      options: [
+        { id: 'o1', text: 'Yes, he needs immediate hospitalization', isCorrect: true },
+        { id: 'o2', text: 'No, he is stable', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-20', type: 'multiple-choice', points: 15,
+      question: 'What action does the captain say he will take?',
+      options: [
+        { id: 'o1', text: 'Divert to Mumbai, the closest international airport', isCorrect: true },
+        { id: 'o2', text: 'Continue to Colombo as planned', isCorrect: false },
+        { id: 'o3', text: 'Turn back to Delhi', isCorrect: false },
+        { id: 'o4', text: 'Wait for further instructions from the doctor', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-21', type: 'fill-blank', points: 10,
+      question: 'Ladies and gentlemen, this is an _________ announcement.',
+      audio: { id: 'announcement-audio', text: 'Captain announcement', audioUrl: `${A6B}/announcement.wav`, durationSeconds: 25, speaker: 'pilot' },
+      correctAnswer: 'important',
+    },
+    {
+      id: 'ex-22', type: 'fill-blank', points: 10,
+      question: 'We need to _________ to Mumbai, the closest airport, as soon as possible.',
+      correctAnswer: 'divert',
+    },
+    {
+      id: 'ex-23', type: 'fill-blank', points: 10,
+      question: 'The flight attendants will now _________ the cabin for landing.',
+      correctAnswer: 'prepare',
+    },
+    {
+      id: 'ex-24', type: 'fill-blank', points: 10,
+      question: 'I do apologize for any _________ this diversion may cause.',
+      correctAnswer: 'inconvenience',
+    },
+    {
+      id: 'ex-25', type: 'speaking', points: 20,
+      question: "Role-play a medical emergency in groups of four - two flight attendants, two passengers. Follow this pattern: A: What's happened? B: It's my husband, he's feeling ill. C: Are you on any medication, sir? D: Yes, I take pills for my heart... Then swap roles.",
+    },
+  ],
+  quiz: {
+    id: 'quiz-6-2',
+    title: 'Serious Medical Incident Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'Which flight are Rani and Bilal working on?',
+        options: [
+          { id: 'o1', text: 'Delhi to Colombo', isCorrect: true },
+          { id: 'o2', text: 'Colombo to Delhi', isCorrect: false },
+          { id: 'o3', text: 'Mumbai to Delhi', isCorrect: false },
+          { id: 'o4', text: 'Tokyo to Paris', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'Where does the captain decide to divert to?',
+        options: [
+          { id: 'o1', text: 'Mumbai', isCorrect: true },
+          { id: 'o2', text: 'Delhi', isCorrect: false },
+          { id: 'o3', text: 'Colombo', isCorrect: false },
+          { id: 'o4', text: 'Chennai', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'Who informs the captain about the medical emergency?',
+        options: [
+          { id: 'o1', text: 'Anton, the purser', isCorrect: true },
+          { id: 'o2', text: 'Rani', isCorrect: false },
+          { id: 'o3', text: 'Bilal', isCorrect: false },
+          { id: 'o4', text: "The passenger's wife", isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'What does the passenger take pills for?',
+        options: [
+          { id: 'o1', text: 'His heart', isCorrect: true },
+          { id: 'o2', text: 'Diabetes', isCorrect: false },
+          { id: 'o3', text: 'High blood pressure only', isCorrect: false },
+          { id: 'o4', text: 'Nothing, he takes no medication', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'How long do Rani and Bilal administer CPR before the pulse check?',
+        options: [
+          { id: 'o1', text: 'Two minutes', isCorrect: true },
+          { id: 'o2', text: 'Thirty seconds', isCorrect: false },
+          { id: 'o3', text: 'Ten minutes', isCorrect: false },
+          { id: 'o4', text: 'One hour', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Cardiac arrest', back: 'When the heart suddenly stops beating' },
+    { id: 'fc-2', front: 'Divert', back: "To change a flight's route, usually to land somewhere unplanned" },
+    { id: 'fc-3', front: 'Purser', back: 'The senior cabin crew member in charge of the flight' },
+    { id: 'fc-4', front: 'Hospitalization', back: 'Admission to hospital for treatment' },
+  ],
+  review: {
+    keyPoints: [
+      'Give short, direct instructions using a colleague\'s name plus an imperative',
+      'Escalate quickly: inform the purser, who informs the captain',
+      'The captain decides whether to divert based on medical advice',
+      'Diversion announcements should apologize, explain, and reassure passengers',
+      'Stay calm and reassure family members even under pressure',
+    ],
+    commonMistakes: [
+      { mistake: 'Giving vague instructions during an emergency', correction: "Use a name and a short, clear command, e.g. 'Bilal, grab the oxygen.'", explanation: 'Clarity saves time in a critical situation' },
+      { mistake: 'Delaying informing the captain', correction: 'Escalate serious incidents to the purser and captain immediately', explanation: 'The captain needs time to plan a diversion if necessary' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
+// ============================================================
+// Unit 6, Lesson 3: Reporting a Medical Incident
+// Talking about the past; linking words
+// + Case Study: Is There a Doctor on Board?
+// ============================================================
+const A6C = '/audio/unit-6/lesson-3';
+
+const REPORTING_INCIDENT_LESSON: any = {
+  id: 'lesson-6-3',
+  unitId: 'unit-6',
+  title: 'Reporting a Medical Incident',
+  description: 'Talking about a past incident, linking words, and the case study: Is There a Doctor on Board?',
+  icon: '📋',
+  icaoLevel: 4,
+  category: 'cabin-crew',
+  difficulty: 'upper-intermediate',
+  xpReward: 200,
+  estimatedDurationMinutes: 60,
+  locked: false,
+  order: 3,
+  objectives: [
+    { id: 'obj-1', description: 'Report a past medical incident using correct past tense forms', type: 'speaking' },
+    { id: 'obj-2', description: 'Use linking words to sequence events', type: 'grammar' },
+    { id: 'obj-3', description: 'Discuss the experience of an on-board doctor', type: 'reading' },
+  ],
+  scenario: {
+    id: 'scenario-reporting-incident',
+    title: 'Telling a Colleague What Happened',
+    description: 'Two flight attendants discuss the medical incident from yesterday\'s flight.',
+    context: 'Crew room, after the flight',
+    audioSegments: [
+      { id: 'd1-01', text: 'Crew member A: Did you hear about our flight yesterday?', audioUrl: `${A6C}/d1-01.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'd1-02', text: 'Crew member B: No, what happened?', audioUrl: `${A6C}/d1-02.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'd1-03', text: 'Crew member A: Well...', audioUrl: `${A6C}/d1-03.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'd1-04', text: 'Crew member B: Really!', audioUrl: `${A6C}/d1-04.wav`, durationSeconds: 2, speaker: 'crew' },
+    ],
+    vocabulary: [
+      { word: 'Collapsed', definition: 'Fell down suddenly, often due to illness' },
+      { word: 'Administered', definition: 'Gave or applied, e.g. medication or treatment' },
+      { word: 'Recovered', definition: 'Got better after being ill or injured' },
+    ],
+  },
+  theory: {
+    title: 'Talking About the Past',
+    content: 'When reporting a past incident, cabin crew describe what happened using past tense verbs, and use linking words like "at first", "then", and "eventually" to put events in order clearly.',
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of talking about the past',
+      audioUrl: `${A6C}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Reporting a Past Incident',
+    phrases: [
+      { situation: 'Asking what happened', phrase: 'What happened? / What was the problem?', meaning: 'Asking a colleague to describe a past incident', example: 'What happened?' },
+      { situation: 'Asking what action was taken', phrase: 'What did you do?', meaning: 'Asking about the response to the incident', example: 'What did you do?' },
+      { situation: 'Describing the outcome', phrase: 'We gave him oxygen and gave first aid.', meaning: 'Reporting the actions taken', example: 'We gave him oxygen and gave first aid.' },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Linking Words',
+    terms: [
+      { term: 'At the beginning / At first', definition: 'Used to introduce the start of a sequence of events', example: "At first the turbulence wasn't too bad." },
+      { term: 'Soon after / Then', definition: 'Used to show what happened next', example: 'Soon after, it started to get worse.' },
+      { term: 'In the end / Eventually', definition: 'Used to introduce the final result', example: 'In the end, we had to stop the meals service.' },
+      { term: 'First... then / after that', definition: 'Used to sequence two connected actions', example: 'First we fetched the first aid kit, and then we cleaned the wound.' },
+      { term: 'Finally', definition: 'Used to introduce the last step', example: 'Finally we put a dressing on it.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Starting an incident report to a colleague', expression: 'Did you hear about our flight yesterday?', alternativeExpressions: ['You won\'t believe what happened on my flight.', 'Something happened on my last flight...'] },
+    { situation: 'Reacting with interest', expression: 'Really! What happened?', alternativeExpressions: ['No way, tell me more.', 'Oh no, go on...'] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'The passenger collapsed during the flight.', audioUrl: `${A6C}/pronunciation.wav`, durationSeconds: 3 },
+  ],
+  vocabulary: [
+    { word: 'Collapsed', definition: 'Fell down suddenly, often due to illness' },
+    { word: 'Administered', definition: 'Gave or applied, e.g. medication or treatment' },
+    { word: 'Recovered', definition: 'Got better after being ill or injured' },
+    { word: 'Diagnosis', definition: 'A doctor\'s identification of what is wrong' },
+    { word: 'Anxious', definition: 'Worried or nervous' },
+  ],
+  grammar: [
+    {
+      rule: 'Past tense -ed endings are pronounced three ways: /t/ after unvoiced sounds (checked, stopped), /d/ after voiced sounds (happened, arrived), and /ɪd/ after t/d sounds (wanted, decided)',
+      examples: [
+        { sentence: 'wanted, decided, reported (/ɪd/)', audioUrl: `${A6C}/linking-1.wav` },
+        { sentence: 'collapsed, stopped, asked (/t/)', audioUrl: `${A6C}/linking-2.wav` },
+        { sentence: 'happened, arrived, suffered (/d/)', audioUrl: `${A6C}/linking-3.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'speaking', points: 15,
+      question: 'With a partner, role-play telling a colleague what happened during the serious medical incident from the previous lesson. Start with: "Did you hear about our flight yesterday?"',
+    },
+    {
+      id: 'ex-2', type: 'multiple-choice', points: 10,
+      question: 'Which sound does the -ed ending make in "wanted"?',
+      options: [
+        { id: 'o1', text: '/ɪd/ (extra syllable)', isCorrect: true },
+        { id: 'o2', text: '/t/', isCorrect: false },
+        { id: 'o3', text: '/d/', isCorrect: false },
+      ],
+      hint: 'The base verb ends in a /t/ sound, so an extra syllable is added.',
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 10,
+      question: 'Which sound does the -ed ending make in "decided"?',
+      options: [
+        { id: 'o1', text: '/ɪd/ (extra syllable)', isCorrect: true },
+        { id: 'o2', text: '/t/', isCorrect: false },
+        { id: 'o3', text: '/d/', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-4', type: 'multiple-choice', points: 10,
+      question: 'Which sound does the -ed ending make in "reported"?',
+      options: [
+        { id: 'o1', text: '/ɪd/ (extra syllable)', isCorrect: true },
+        { id: 'o2', text: '/t/', isCorrect: false },
+        { id: 'o3', text: '/d/', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-5', type: 'multiple-choice', points: 10,
+      question: 'Which sound does the -ed ending make in "collapsed"?',
+      options: [
+        { id: 'o1', text: '/t/', isCorrect: true },
+        { id: 'o2', text: '/ɪd/ (extra syllable)', isCorrect: false },
+        { id: 'o3', text: '/d/', isCorrect: false },
+      ],
+      hint: '"Collapse" ends in an unvoiced /s/ sound.',
+    },
+    {
+      id: 'ex-6', type: 'multiple-choice', points: 10,
+      question: 'Which sound does the -ed ending make in "stopped"?',
+      options: [
+        { id: 'o1', text: '/t/', isCorrect: true },
+        { id: 'o2', text: '/ɪd/ (extra syllable)', isCorrect: false },
+        { id: 'o3', text: '/d/', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-7', type: 'multiple-choice', points: 10,
+      question: 'Which sound does the -ed ending make in "asked"?',
+      options: [
+        { id: 'o1', text: '/t/', isCorrect: true },
+        { id: 'o2', text: '/ɪd/ (extra syllable)', isCorrect: false },
+        { id: 'o3', text: '/d/', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-8', type: 'multiple-choice', points: 10,
+      question: 'Which sound does the -ed ending make in "happened"?',
+      options: [
+        { id: 'o1', text: '/d/', isCorrect: true },
+        { id: 'o2', text: '/ɪd/ (extra syllable)', isCorrect: false },
+        { id: 'o3', text: '/t/', isCorrect: false },
+      ],
+      hint: '"Happen" ends in a voiced /n/ sound.',
+    },
+    {
+      id: 'ex-9', type: 'multiple-choice', points: 10,
+      question: 'Which sound does the -ed ending make in "arrived"?',
+      options: [
+        { id: 'o1', text: '/d/', isCorrect: true },
+        { id: 'o2', text: '/ɪd/ (extra syllable)', isCorrect: false },
+        { id: 'o3', text: '/t/', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-10', type: 'multiple-choice', points: 10,
+      question: 'Which sound does the -ed ending make in "suffered"?',
+      options: [
+        { id: 'o1', text: '/d/', isCorrect: true },
+        { id: 'o2', text: '/ɪd/ (extra syllable)', isCorrect: false },
+        { id: 'o3', text: '/t/', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-11', type: 'speaking', points: 15,
+      question: 'Make sentences using these verbs in the context of medical incidents: loosened, informed, fainted, resumed, closed, remained, switched, assisted. Example: "The passenger collapsed during the flight."',
+    },
+    {
+      id: 'ex-12', type: 'speaking', points: 15,
+      question: 'Think about the on-board accident from the first lesson of this unit. Take turns telling a colleague what happened, using past tense verbs and linking words like "at first", "then", "in the end", and "finally".',
+    },
+    {
+      id: 'ex-13', type: 'fill-blank', points: 10,
+      question: 'The incident _________ at 16:40, two hours into the flight.',
+      audio: { id: 'report-audio', text: 'Report form', audioUrl: `${A6C}/report-form.wav`, durationSeconds: 40, speaker: 'instructor' },
+      correctAnswer: 'happened',
+    },
+    {
+      id: 'ex-14', type: 'fill-blank', points: 10,
+      question: 'A male passenger aged 63 suffered a _________ arrest.',
+      correctAnswer: 'cardiac',
+    },
+    {
+      id: 'ex-15', type: 'fill-blank', points: 10,
+      question: "The flight attendants immediately checked the man's _________.",
+      correctAnswer: 'pulse',
+    },
+    {
+      id: 'ex-16', type: 'fill-blank', points: 10,
+      question: 'The flight attendants made him _________.',
+      correctAnswer: 'comfortable',
+    },
+    {
+      id: 'ex-17', type: 'fill-blank', points: 10,
+      question: 'They got the oxygen and a _________.',
+      correctAnswer: 'defibrillator',
+    },
+    {
+      id: 'ex-18', type: 'fill-blank', points: 10,
+      question: 'The flight attendants gave _________ aid and then began CPR.',
+      correctAnswer: 'first',
+    },
+    {
+      id: 'ex-19', type: 'fill-blank', points: 10,
+      question: 'The doctor confirmed the man was in a serious _________.',
+      correctAnswer: 'condition',
+    },
+    {
+      id: 'ex-20', type: 'fill-blank', points: 10,
+      question: 'The doctor _________ immediate hospitalization.',
+      correctAnswer: 'recommended',
+    },
+    {
+      id: 'ex-21', type: 'fill-blank', points: 10,
+      question: 'The captain made passengers _________ of the situation.',
+      correctAnswer: 'aware',
+    },
+    {
+      id: 'ex-22', type: 'fill-blank', points: 10,
+      question: 'The captain requested full medical emergency _________ on arrival.',
+      correctAnswer: 'services',
+    },
+    {
+      id: 'ex-23', type: 'fill-blank', points: 10,
+      question: 'The doctor remained with the patient _________ landing.',
+      correctAnswer: 'until',
+    },
+    {
+      id: 'ex-24', type: 'fill-blank', points: 10,
+      question: 'The patient was _________ to hospital.',
+      correctAnswer: 'transferred',
+    },
+    {
+      id: 'ex-25', type: 'fill-blank', points: 10,
+      question: 'The flight _________ at 18:10.',
+      correctAnswer: 'resumed',
+    },
+    {
+      id: 'ex-26', type: 'multiple-choice', points: 15,
+      question: 'What happened on the transatlantic flight in "Is There a Doctor on Board?"',
+      options: [
+        { id: 'o1', text: 'A doctor treated three separate passengers with medical problems', isCorrect: true },
+        { id: 'o2', text: 'A passenger had to be taken to hospital immediately', isCorrect: false },
+        { id: 'o3', text: 'The flight was diverted', isCorrect: false },
+        { id: 'o4', text: 'No passengers needed help', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-27', type: 'multiple-choice', points: 15,
+      question: 'How many passengers did the doctor see, and were these serious medical emergencies?',
+      options: [
+        { id: 'o1', text: 'Three - none were life-threatening emergencies', isCorrect: true },
+        { id: 'o2', text: 'One - a life-threatening emergency', isCorrect: false },
+        { id: 'o3', text: 'Five - all serious', isCorrect: false },
+        { id: 'o4', text: 'None - the doctor was not needed', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-28', type: 'multiple-choice', points: 15,
+      question: 'What was the role of the flight attendants during the medical situations?',
+      options: [
+        { id: 'o1', text: 'Waking the doctor, fetching the medical kit, and giving oxygen', isCorrect: true },
+        { id: 'o2', text: 'They handled everything without the doctor', isCorrect: false },
+        { id: 'o3', text: 'They had no role at all', isCorrect: false },
+        { id: 'o4', text: 'They refused to help the doctor', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-29', type: 'speaking', points: 15,
+      question: 'What is your opinion of the doctor and his behaviour on this flight? Discuss the actions of the flight attendants. What kind of medical training have most flight attendants had? What do you think would have happened if no doctor had been on board?',
+    },
+    {
+      id: 'ex-30', type: 'speaking', points: 20,
+      question: 'Discuss with a partner: what training do flight attendants typically receive for medical incidents on board? What is the most common minor complaint or incident? Is training for medical incidents the most important part of cabin crew training? What personal qualities are needed for dealing with medical incidents? Life-threatening incidents are rare during flights - do you know of any? What happened?',
+    },
+  ],
+  quiz: {
+    id: 'quiz-6-3',
+    title: 'Reporting a Medical Incident Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'How is -ed pronounced in "checked"?',
+        options: [
+          { id: 'o1', text: '/t/', isCorrect: true },
+          { id: 'o2', text: '/d/', isCorrect: false },
+          { id: 'o3', text: '/ɪd/', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'How is -ed pronounced in "needed"?',
+        options: [
+          { id: 'o1', text: '/ɪd/', isCorrect: true },
+          { id: 'o2', text: '/t/', isCorrect: false },
+          { id: 'o3', text: '/d/', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'Which linking word introduces the final result of a story?',
+        options: [
+          { id: 'o1', text: 'Eventually / In the end', isCorrect: true },
+          { id: 'o2', text: 'At first', isCorrect: false },
+          { id: 'o3', text: 'Soon after', isCorrect: false },
+          { id: 'o4', text: 'Meanwhile', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'In the case study, where did the doctor first hide when the call for a doctor was made?',
+        options: [
+          { id: 'o1', text: 'Behind a magazine, sinking into the seat', isCorrect: true },
+          { id: 'o2', text: 'In the cockpit', isCorrect: false },
+          { id: 'o3', text: 'In the galley', isCorrect: false },
+          { id: 'o4', text: 'Nowhere, they responded immediately', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'What did the doctor decide about admitting to being a doctor on future flights?',
+        options: [
+          { id: 'o1', text: 'They would never again admit to being a doctor on a flight', isCorrect: true },
+          { id: 'o2', text: 'They would always volunteer immediately next time', isCorrect: false },
+          { id: 'o3', text: 'They would only help in Business class', isCorrect: false },
+          { id: 'o4', text: 'They decided to stop flying altogether', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Collapsed', back: 'Fell down suddenly, often due to illness' },
+    { id: 'fc-2', front: 'Administered', back: 'Gave or applied, e.g. medication or treatment' },
+    { id: 'fc-3', front: 'Diagnosis', back: 'A doctor\'s identification of what is wrong' },
+    { id: 'fc-4', front: 'Anxious', back: 'Worried or nervous' },
+  ],
+  review: {
+    keyPoints: [
+      'Past tense -ed endings follow three pronunciation patterns: /t/, /d/, and /ɪd/',
+      'Linking words (at first, then, eventually, finally) help sequence a story clearly',
+      'A calm, organized incident report helps colleagues and management understand what happened',
+      'Even experienced doctors can feel reluctant to volunteer on a flight',
+      'Most on-board medical incidents are minor and resolved without a diversion',
+    ],
+    commonMistakes: [
+      { mistake: 'Telling a story with no clear sequence', correction: 'Use linking words to show the order of events', explanation: 'This makes incident reports much easier to follow' },
+      { mistake: 'Mispronouncing -ed endings', correction: 'Practise the three patterns: /t/, /d/, and /ɪd/', explanation: 'Correct pronunciation improves clarity in spoken reports' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
 const UNIT_TITLES: Record<number, string> = {
   0: 'Unit 1: The Pre-Flight Briefing',
   1: 'Unit 2: Welcome on Board',
@@ -5036,6 +6095,12 @@ export const iCAOUnits: Unit[] = [
         ? DEALING_PROBLEMS_LESSON
         : unitIdx === 4 && lessonIdx === 2
         ? SAYING_SORRY_LESSON
+        : unitIdx === 5 && lessonIdx === 0
+        ? ONBOARD_ACCIDENT_LESSON
+        : unitIdx === 5 && lessonIdx === 1
+        ? SERIOUS_INCIDENT_LESSON
+        : unitIdx === 5 && lessonIdx === 2
+        ? REPORTING_INCIDENT_LESSON
         : LESSON_TEMPLATE(unitIdx + 1, lessonIdx + 1, `Lesson ${lessonIdx + 1}`)
     )
   })) as Unit[]
