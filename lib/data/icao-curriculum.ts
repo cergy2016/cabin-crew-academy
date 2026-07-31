@@ -11204,6 +11204,142 @@ const DISEMBARKING_LESSON: any = {
       id: 'ex-12', type: 'speaking', points: 20,
       question: 'In groups, practise leaving the aircraft one by one and saying goodbye to the cabin crew. Rotate roles so everyone plays the flight attendant. Use: "Thank you for flying with us, sir.", "Goodbye, madam.", "Have a good holiday.", "Enjoy your trip.", "Look forward to seeing you again soon.", "Have a good day, Mr Gerighty." Remember to be polite and friendly - you want passengers to fly with you again!',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'multiple-choice', points: 10,
+      question: 'Reorder the words to make a farewell sentence: "wonderful / a / have / holiday"',
+      options: [
+        { id: 'o1', text: 'Have a wonderful holiday.', isCorrect: true },
+        { id: 'o2', text: 'A wonderful have holiday.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-2', type: 'multiple-choice', points: 10,
+      question: 'Reorder the words: "madam / your / trip / enjoy"',
+      options: [
+        { id: 'o1', text: 'Enjoy your trip, madam.', isCorrect: true },
+        { id: 'o2', text: 'Your trip enjoy, madam.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-3', type: 'multiple-choice', points: 10,
+      question: 'Reorder the words: "home / safe / journey"',
+      options: [
+        { id: 'o1', text: 'Safe journey home.', isCorrect: true },
+        { id: 'o2', text: 'Journey safe home.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-4', type: 'multiple-choice', points: 10,
+      question: 'Reorder the words: "soon / to / you / seeing / look / again / forward"',
+      options: [
+        { id: 'o1', text: 'Look forward to seeing you again soon.', isCorrect: true },
+        { id: 'o2', text: 'To you seeing look forward again soon.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-5', type: 'multiple-choice', points: 10,
+      question: 'Reorder the words: "sir / flying / us / for / thank / with / you"',
+      options: [
+        { id: 'o1', text: 'Thank you for flying with us, sir.', isCorrect: true },
+        { id: 'o2', text: 'Flying thank you for us sir with.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-6', type: 'multiple-choice', points: 10,
+      question: 'Reorder the words: "day / a / have / good"',
+      options: [
+        { id: 'o1', text: 'Have a good day.', isCorrect: true },
+        { id: 'o2', text: 'A good have day.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-7', type: 'multiple-choice', points: 10,
+      question: 'Which of these would you NOT normally say to a passenger when saying goodbye?',
+      options: [
+        { id: 'o1', text: "I'm sorry it was such a bad flight.", isCorrect: true },
+        { id: 'o2', text: 'Have a wonderful holiday.', isCorrect: false },
+        { id: 'o3', text: 'Thank you for flying with us, sir.', isCorrect: false },
+        { id: 'o4', text: 'Have a good day.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-8', type: 'multiple-choice', points: 10,
+      question: 'Choose the correct word in the disembarkation announcement: "Before you leave the aircraft, please _________ you have all your personal items with you."',
+      options: [
+        { id: 'o1', text: 'ensure', isCorrect: true },
+        { id: 'o2', text: 'sure', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-9', type: 'multiple-choice', points: 10,
+      question: 'Choose the correct word: "Please be careful when opening overhead lockers as items may fall out causing _________."',
+      options: [
+        { id: 'o1', text: 'injury', isCorrect: true },
+        { id: 'o2', text: 'problem', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-10', type: 'multiple-choice', points: 10,
+      question: 'Choose the correct word: "We would like to _________ you that smoking is not permitted."',
+      options: [
+        { id: 'o1', text: 'remind', isCorrect: true },
+        { id: 'o2', text: 'remember', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-11', type: 'multiple-choice', points: 10,
+      question: "Choose the correct word: \"Smoking is not _________ until you've reached a designated area.\"",
+      options: [
+        { id: 'o1', text: 'permitted', isCorrect: true },
+        { id: 'o2', text: 'permitting', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-12', type: 'multiple-choice', points: 10,
+      question: 'Choose the correct word: "Mobile phones _________ not be switched on until the seatbelt signs have been turned off."',
+      options: [
+        { id: 'o1', text: 'should', isCorrect: true },
+        { id: 'o2', text: 'would', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-13', type: 'multiple-choice', points: 10,
+      question: 'Choose the correct word: "We _________ you a very pleasant stay or a safe journey."',
+      options: [
+        { id: 'o1', text: 'wish', isCorrect: true },
+        { id: 'o2', text: 'hope', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-14', type: 'fill-blank', points: 10,
+      question: 'Complete the suggestion: "I suggest you don\'t _________ your coats outside - Sydney is very hot in December."',
+      correctAnswer: 'wear',
+    },
+    {
+      id: 'self-15', type: 'fill-blank', points: 10,
+      question: 'Complete: "I suggest you _________ the other passengers get off first."',
+      correctAnswer: 'let',
+    },
+    {
+      id: 'self-16', type: 'fill-blank', points: 10,
+      question: 'Complete: "I suggest you _________ your passports and disembarkation forms ready."',
+      correctAnswer: 'have',
+    },
+    {
+      id: 'self-17', type: 'fill-blank', points: 10,
+      question: "Complete: \"I suggest you _________ the shuttle train - it's quicker than a taxi.\"",
+      correctAnswer: 'take',
+    },
+    {
+      id: 'self-18', type: 'fill-blank', points: 10,
+      question: "Complete: \"I suggest you _________ the old town - it's really beautiful.\"",
+      correctAnswer: 'visit',
+    },
+  ],
+  logBookPrompts: [
+    'Think about the disembarkation of passengers. Are there still safety precautions to tell passengers about? Do you have the same attitude when you welcome passengers as when you say goodbye to them? What kinds of things do you say to passengers as they leave the aircraft?',
+    "Think about a bad experience you've had as passengers are leaving the aircraft. What happened? Did you expect it, or was it a surprise? How did you reply? Did you get angry or discuss things calmly? What do you say to passengers who are difficult at this time?",
   ],
   quiz: {
     id: 'quiz-10-1',
@@ -11506,6 +11642,101 @@ const CREW_DEBRIEFING_LESSON: any = {
       id: 'ex-13', type: 'speaking', points: 20,
       question: 'Discuss what makes cabin and flight crew into a successful team: teamwork, good communication, customer care, problem-solving, crew coordination, decision-making. Match each to its meaning: looking after passengers; knowing precisely each other\'s roles; working for each other; taking action; talking to each other; working out how best to do things.',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'multiple-choice', points: 10,
+      question: 'According to the debrief, which of these is something the flight attendant should have done to avoid being late?',
+      options: [
+        { id: 'o1', text: 'Checked the exit doors', isCorrect: true },
+        { id: 'o2', text: 'Looked at his watch', isCorrect: false },
+        { id: 'o3', text: 'Secured the galley', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-2', type: 'multiple-choice', points: 10,
+      question: 'According to the debrief, which of these is something the flight attendant should have done?',
+      options: [
+        { id: 'o1', text: 'Stopped talking to the passenger sooner', isCorrect: true },
+        { id: 'o2', text: 'Looked at his watch', isCorrect: false },
+        { id: 'o3', text: 'Secured the galley', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-3', type: 'multiple-choice', points: 10,
+      question: 'According to the debrief, which of these is something the flight attendant should have done?',
+      options: [
+        { id: 'o1', text: 'Got strapped in on time', isCorrect: true },
+        { id: 'o2', text: 'Looked at his watch', isCorrect: false },
+        { id: 'o3', text: 'Secured the galley', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-4', type: 'multiple-choice', points: 10,
+      question: 'Is this sentence correct? "You should sit down now and fasten your seatbelt."',
+      options: [
+        { id: 'o1', text: 'Correct', isCorrect: true },
+        { id: 'o2', text: 'Incorrect', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-5', type: 'multiple-choice', points: 10,
+      question: 'Is this sentence correct? "We should do our last checks now."',
+      options: [
+        { id: 'o1', text: 'Correct', isCorrect: true },
+        { id: 'o2', text: 'Incorrect', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-6', type: 'multiple-choice', points: 10,
+      question: 'Is this sentence correct? "We should\'ve told them before."',
+      options: [
+        { id: 'o1', text: 'Correct', isCorrect: true },
+        { id: 'o2', text: 'Incorrect', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-7', type: 'multiple-choice', points: 10,
+      question: 'Is this sentence correct? "They shouldn\'t be shouting at all."',
+      options: [
+        { id: 'o1', text: 'Correct', isCorrect: true },
+        { id: 'o2', text: 'Incorrect', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-8', type: 'multiple-choice', points: 10,
+      question: 'Which is correct?',
+      options: [
+        { id: 'o1', text: "You shouldn't open the overhead lockers now.", isCorrect: true },
+        { id: 'o2', text: "You shouldn't to open the overhead lockers now.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-9', type: 'multiple-choice', points: 10,
+      question: 'Which is correct?',
+      options: [
+        { id: 'o1', text: "You shouldn't have got involved in an argument with that passenger.", isCorrect: true },
+        { id: 'o2', text: 'You should have not got involved in an argument with that passenger.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-10', type: 'multiple-choice', points: 10,
+      question: 'Which is correct?',
+      options: [
+        { id: 'o1', text: "They shouldn't be going to the toilets any more.", isCorrect: true },
+        { id: 'o2', text: "They shouldn't to be going to the toilets any more.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-11', type: 'multiple-choice', points: 10,
+      question: 'Which is correct?',
+      options: [
+        { id: 'o1', text: 'I should tell the purser.', isCorrect: true },
+        { id: 'o2', text: 'I should to tell the purser.', isCorrect: false },
+      ],
+    },
+  ],
+  logBookPrompts: [
+    'Think about crew debriefings. What is usually discussed? Is it always about something that went wrong? Can you think of examples? Is this debriefing important for you in your career? How do you assess your performance and progress?',
   ],
   quiz: {
     id: 'quiz-10-2',
@@ -11741,6 +11972,62 @@ const FLIGHT_253_LESSON: any = {
     {
       id: 'ex-9', type: 'speaking', points: 15,
       question: 'Do you keep a diary or journal of your different flights, noting your experiences? Why, or why not? Being a flight attendant used to be considered a dream job - do you think it still is? If not, what has changed?',
+    },
+    // Self Study
+    {
+      id: 'self-1', type: 'fill-blank', points: 10,
+      question: 'Course-review crossword clue: "You say this when someone is leaving."',
+      correctAnswer: 'goodbye',
+    },
+    {
+      id: 'self-2', type: 'fill-blank', points: 10,
+      question: "Crossword clue: \"'Cabin crew, cabin crew, seats for _________.'\"",
+      correctAnswer: 'landing',
+    },
+    {
+      id: 'self-3', type: 'fill-blank', points: 10,
+      question: 'Crossword clue: "Opposite of quiet."',
+      correctAnswer: 'noisy',
+    },
+    {
+      id: 'self-4', type: 'fill-blank', points: 10,
+      question: 'Crossword clue: "Serious and urgent events."',
+      correctAnswer: 'emergencies',
+    },
+    {
+      id: 'self-5', type: 'fill-blank', points: 10,
+      question: 'Crossword clue: "Leave the ground."',
+      correctAnswer: 'takeoff',
+    },
+    {
+      id: 'self-6', type: 'fill-blank', points: 10,
+      question: 'Crossword clue: "This man is ill - is there a _________ on board?"',
+      correctAnswer: 'doctor',
+    },
+    {
+      id: 'self-7', type: 'fill-blank', points: 10,
+      question: 'Crossword clue: "A meeting where you get information."',
+      correctAnswer: 'briefing',
+    },
+    {
+      id: 'self-8', type: 'fill-blank', points: 10,
+      question: 'Crossword clue: "You find this on a menu."',
+      correctAnswer: 'food',
+    },
+    {
+      id: 'self-9', type: 'fill-blank', points: 10,
+      question: 'Crossword clue: "You might get a lot of these if the flight is delayed."',
+      correctAnswer: 'complaints',
+    },
+    {
+      id: 'self-10', type: 'fill-blank', points: 10,
+      question: 'Crossword clue: "You say this when you greet passengers."',
+      correctAnswer: 'welcome',
+    },
+    {
+      id: 'self-11', type: 'fill-blank', points: 10,
+      question: 'Crossword clue: "The person in command of an aircraft."',
+      correctAnswer: 'captain',
     },
   ],
   quiz: {
