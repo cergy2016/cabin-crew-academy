@@ -6874,6 +6874,902 @@ const REPORTING_EVACUATION_LESSON: any = {
   updatedAt: new Date().toISOString(),
 };
 
+// ============================================================
+// Unit 8, Lesson 1: Responding to Passenger Complaints
+// Offering to help (2)
+// ============================================================
+const A8A = '/audio/unit-8/lesson-1';
+
+const RESPONDING_COMPLAINTS_LESSON: any = {
+  id: 'lesson-8-1',
+  unitId: 'unit-8',
+  title: 'Responding to Passenger Complaints',
+  description: 'Responding positively to meal-service complaints using sympathize, apologize, reason, solution',
+  icon: '😤',
+  icaoLevel: 5,
+  category: 'cabin-crew',
+  difficulty: 'upper-intermediate',
+  xpReward: 180,
+  estimatedDurationMinutes: 45,
+  locked: false,
+  order: 1,
+  objectives: [
+    { id: 'obj-1', description: 'Respond positively to common passenger complaints', type: 'speaking' },
+    { id: 'obj-2', description: 'Apply the sympathize-apologize-reason-solution pattern', type: 'speaking' },
+    { id: 'obj-3', description: 'Recognize a range of complaint-response phrases', type: 'listening' },
+  ],
+  scenario: {
+    id: 'scenario-responding-complaints',
+    title: 'Three Meal-Service Complaints',
+    description: 'A flight attendant responds to three different passenger complaints during the meal service.',
+    context: 'Cabin, meal service',
+    audioSegments: [
+      { id: 'c1-p', text: "Passenger: Excuse me, we've been waiting for drinks for a long time. We finished eating 20 minutes ago.", audioUrl: `${A8A}/c1-passenger.wav`, durationSeconds: 5, speaker: 'passenger' },
+      { id: 'c1-fa', text: "Flight attendant: Oh, I do understand. I apologize. It's been so busy. What can I get you?", audioUrl: `${A8A}/c1-fa.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 'c2-p', text: "Passenger: I'm sorry, I can't eat this meal - it's cold!", audioUrl: `${A8A}/c2-passenger.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'c2-fa', text: "Flight attendant: Oh dear, that's not right. I'm so sorry. Let me take it for you and see if I can get you a hot cooked meal immediately.", audioUrl: `${A8A}/c2-fa.wav`, durationSeconds: 6, speaker: 'crew' },
+      { id: 'c3-p', text: 'Passenger: This is not what I asked for. I ordered a vegetarian meal!', audioUrl: `${A8A}/c3-passenger.wav`, durationSeconds: 4, speaker: 'passenger' },
+      { id: 'c3-fa', text: 'Flight attendant: Oh, I see. I\'m sorry about this. Please, be patient. Let me just check the meals list.', audioUrl: `${A8A}/c3-fa.wav`, durationSeconds: 5, speaker: 'crew' },
+    ],
+    vocabulary: [
+      { word: 'Sympathize', definition: 'To show understanding of someone\'s feelings' },
+      { word: 'Patient', definition: 'Able to wait calmly without complaining' },
+      { word: 'Immediately', definition: 'Right away, without delay' },
+    ],
+  },
+  theory: {
+    title: 'The Complaint-Response Pattern',
+    content: 'The flight attendant must be a diplomat. It is important to sympathize, apologize, give a good reason where possible, and then find a solution.',
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of the complaint-response pattern',
+      audioUrl: `${A8A}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Offering to Help (2)',
+    phrases: [
+      { situation: 'Checking something for a passenger', phrase: 'Let me just check the special meals list.', meaning: 'Offering to investigate a problem', example: 'Let me just check the special meals list.' },
+      { situation: 'Getting a form or document', phrase: 'Let me get an official form for you.', meaning: 'Offering to fetch paperwork', example: 'Let me get an official form for you.' },
+      { situation: 'Offering a replacement', phrase: 'Let me see if I can get you another one.', meaning: 'Offering to try to fix a problem', example: 'Let me see if I can get you another one.' },
+      { situation: 'Offering comfort items', phrase: 'Let me get you a blanket.', meaning: 'A simple, immediate offer', example: 'Let me get you a blanket.' },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Common Complaints',
+    terms: [
+      { term: 'Flight delay', definition: 'Waiting time before or during a flight', example: 'Passengers often complain about flight delays and waiting time.' },
+      { term: 'Cabin temperature', definition: 'How hot or cold the cabin feels', example: 'Some passengers complain about the cabin temperature.' },
+      { term: 'Seating arrangements', definition: 'Where passengers are seated', example: 'Seating arrangements are a common complaint.' },
+      { term: 'Lack of information', definition: 'Not being told enough about a situation', example: 'Passengers dislike a lack of information during delays.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Sympathizing with a complaint', expression: 'Oh, I do understand.', alternativeExpressions: ['I completely understand your frustration.', 'That must be frustrating.'] },
+    { situation: 'Explaining a reason without excusing', expression: "It's been so busy.", alternativeExpressions: ['We\'ve had a lot to manage today.', 'The service has taken longer than usual.'] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'Let me just check the special meals list.', audioUrl: `${A8A}/pronunciation.wav`, durationSeconds: 3 },
+  ],
+  vocabulary: [
+    { word: 'Sympathize', definition: 'To show understanding of someone\'s feelings' },
+    { word: 'Patient', definition: 'Able to wait calmly without complaining' },
+    { word: 'Immediately', definition: 'Right away, without delay' },
+    { word: 'Frustrating', definition: 'Causing annoyance or a feeling of being unable to change something' },
+  ],
+  grammar: [
+    {
+      rule: "The complaint-response pattern: Sympathize -> Apologize -> Reason (optional) -> Solution",
+      examples: [
+        { sentence: 'Sympathize: "I do understand." Apologize: "I apologize." Reason: "It\'s been so busy." Solution: "What can I get you?"' },
+        { sentence: 'Sympathize: "Oh dear, that\'s not right." Apologize: "I\'m so sorry." Solution: "Let me get you a hot meal immediately."' },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'speaking', points: 15,
+      question: 'What do passengers commonly complain about: flight delays, the service, the food, the cabin temperature, seating arrangements, the drinks, lack of information, the state of the toilets, or even the cabin crew? What would passengers typically say when complaining about each?',
+    },
+    {
+      id: 'ex-2', type: 'speaking', points: 15,
+      question: 'What would you say in reply to these complaints? 1) "We\'ve been waiting for drinks for a long time. We finished eating 20 minutes ago." 2) "I can\'t eat this meal - it\'s cold!" 3) "This is not what I asked for. I ordered a vegetarian meal!"',
+    },
+    {
+      id: 'ex-3', type: 'fill-blank', points: 10,
+      question: "Oh, I do understand. I apologize. It's been so _________. What can I get you?",
+      audio: { id: 'c1-audio', text: 'Response to drinks complaint', audioUrl: `${A8A}/c1-fa.wav`, durationSeconds: 5, speaker: 'crew' },
+      correctAnswer: 'busy',
+    },
+    {
+      id: 'ex-4', type: 'fill-blank', points: 10,
+      question: "Oh dear, that's not right. I'm sorry. Let me take it for you and see if I can get you a hot cooked meal _________.",
+      correctAnswer: 'immediately',
+    },
+    {
+      id: 'ex-5', type: 'fill-blank', points: 10,
+      question: "Oh, I see. I'm sorry about this. Please, be _________. Let me just check the meals list.",
+      correctAnswer: 'patient',
+    },
+    {
+      id: 'ex-6', type: 'multiple-choice', points: 10,
+      question: 'What is the first step in the complaint-response pattern?',
+      options: [
+        { id: 'o1', text: 'Sympathize', isCorrect: true },
+        { id: 'o2', text: 'Apologize', isCorrect: false },
+        { id: 'o3', text: 'Give a reason', isCorrect: false },
+        { id: 'o4', text: 'Find a solution', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-7', type: 'multiple-choice', points: 10,
+      question: 'What is the last step in the complaint-response pattern?',
+      options: [
+        { id: 'o1', text: 'Find a solution', isCorrect: true },
+        { id: 'o2', text: 'Sympathize', isCorrect: false },
+        { id: 'o3', text: 'Apologize', isCorrect: false },
+        { id: 'o4', text: 'Blame someone else', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-8', type: 'speaking', points: 15,
+      question: 'Is it always a good idea to give a reason or excuse for a problem? Are there times when it is better not to give excuses? Discuss with examples.',
+    },
+    {
+      id: 'ex-9', type: 'speaking', points: 15,
+      question: "Practise saying the offering-to-help phrases: 'Let me just check the special meals list.', 'Let me get an official form for you.', 'Let me see if I can get you another one.', 'Let me get you a blanket.'",
+    },
+    {
+      id: 'ex-10', type: 'fill-blank', points: 10,
+      question: 'Thank you for _________ me know, and I do apologize.',
+      correctAnswer: 'letting',
+    },
+    {
+      id: 'ex-11', type: 'fill-blank', points: 10,
+      question: 'I do apologize, sir. I know how _________ it is.',
+      correctAnswer: 'frustrating',
+    },
+    {
+      id: 'ex-12', type: 'fill-blank', points: 10,
+      question: "I'm sorry that you haven't _________ your flight.",
+      correctAnswer: 'enjoyed',
+    },
+    {
+      id: 'ex-13', type: 'fill-blank', points: 10,
+      question: "We've had many problems today and I can only _________.",
+      correctAnswer: 'apologize',
+    },
+    {
+      id: 'ex-14', type: 'speaking', points: 15,
+      question: 'Listen to five different complaints in your mind and imagine identifying each problem. What would you say in response to each? How well do experienced flight attendants typically deal with such complaints?',
+    },
+  ],
+  quiz: {
+    id: 'quiz-8-1',
+    title: 'Responding to Passenger Complaints Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'What does the flight attendant offer the passenger with the cold meal?',
+        options: [
+          { id: 'o1', text: 'A hot cooked meal immediately', isCorrect: true },
+          { id: 'o2', text: 'A refund', isCorrect: false },
+          { id: 'o3', text: 'Nothing, the meal cannot be changed', isCorrect: false },
+          { id: 'o4', text: 'A different drink', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'What is the correct order of the complaint-response pattern?',
+        options: [
+          { id: 'o1', text: 'Sympathize, apologize, reason, solution', isCorrect: true },
+          { id: 'o2', text: 'Solution, sympathize, apologize, reason', isCorrect: false },
+          { id: 'o3', text: 'Reason, solution, apologize, sympathize', isCorrect: false },
+          { id: 'o4', text: 'Apologize, solution, sympathize, reason', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'What meal problem does the third passenger have?',
+        options: [
+          { id: 'o1', text: 'They received the wrong meal - not the vegetarian one they ordered', isCorrect: true },
+          { id: 'o2', text: 'Their meal was cold', isCorrect: false },
+          { id: 'o3', text: 'They received no meal at all', isCorrect: false },
+          { id: 'o4', text: 'Their meal was too spicy', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'Which phrase offers to investigate a problem?',
+        options: [
+          { id: 'o1', text: 'Let me just check the special meals list.', isCorrect: true },
+          { id: 'o2', text: 'There is nothing I can do.', isCorrect: false },
+          { id: 'o3', text: 'That is not my department.', isCorrect: false },
+          { id: 'o4', text: 'You should have ordered earlier.', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'What does "immediately" mean?',
+        options: [
+          { id: 'o1', text: 'Right away, without delay', isCorrect: true },
+          { id: 'o2', text: 'Eventually', isCorrect: false },
+          { id: 'o3', text: 'Never', isCorrect: false },
+          { id: 'o4', text: 'Rarely', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Sympathize', back: 'To show understanding of someone\'s feelings' },
+    { id: 'fc-2', front: 'Patient', back: 'Able to wait calmly without complaining' },
+    { id: 'fc-3', front: 'Frustrating', back: 'Causing annoyance or a feeling of being unable to change something' },
+  ],
+  review: {
+    keyPoints: [
+      'The complaint-response pattern: sympathize, apologize, reason (optional), solution',
+      'Always end a complaint response with a concrete offer of help',
+      'A reason is not always necessary or wise to give',
+      '"Let me..." phrases signal an immediate, personal offer to help',
+      'A calm, understanding tone de-escalates most complaints',
+    ],
+    commonMistakes: [
+      { mistake: 'Responding to a complaint with only an apology and no solution', correction: 'Always follow up with a concrete offer of help', explanation: 'Passengers want action, not just words' },
+      { mistake: 'Making excuses that sound like blaming someone else', correction: 'Keep reasons brief and focused on the solution', explanation: 'Excessive excuse-making can seem defensive' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
+// ============================================================
+// Unit 8, Lesson 2: Dealing with Complaints About Other Passengers
+// If...
+// ============================================================
+const A8B = '/audio/unit-8/lesson-2';
+
+const COMPLAINTS_OTHERS_LESSON: any = {
+  id: 'lesson-8-2',
+  unitId: 'unit-8',
+  title: 'Dealing with Complaints About Other Passengers',
+  description: 'Handling a passenger complaint about a noisy group, using conditional sentences with "if"',
+  icon: '🗣️',
+  icaoLevel: 5,
+  category: 'cabin-crew',
+  difficulty: 'upper-intermediate',
+  xpReward: 180,
+  estimatedDurationMinutes: 45,
+  locked: false,
+  order: 2,
+  objectives: [
+    { id: 'obj-1', description: 'Handle a complaint about another passenger diplomatically', type: 'speaking' },
+    { id: 'obj-2', description: 'Use conditional sentences with "if" to explain next steps', type: 'grammar' },
+    { id: 'obj-3', description: 'Make polite requests to disruptive passengers', type: 'speaking' },
+  ],
+  scenario: {
+    id: 'scenario-complaints-others',
+    title: 'A Noisy Group',
+    description: 'Flight attendant Josef deals with a passenger complaint about a noisy group, then speaks to the group directly.',
+    context: 'Cabin, passenger complaining about a noisy nearby group',
+    audioSegments: [
+      { id: 'd1-01', text: "Passenger: Excuse me, listen, I can't sit here any longer. That group of people is making too much noise. They are disturbing me and everyone around. If you can't do anything about it, you'll have to find me another seat. I don't want to sit here any longer.", audioUrl: `${A8B}/d1-01-passenger.wav`, durationSeconds: 8, speaker: 'passenger' },
+      { id: 'd1-02', text: "Josef: Hmm, yes, I understand. I can hear how noisy they are and I'm sorry they are disturbing you. Have you spoken to them yourself?", audioUrl: `${A8B}/d1-02-josef.wav`, durationSeconds: 6, speaker: 'crew' },
+      { id: 'd1-03', text: "Passenger: Of course not. I don't think they care about me or anyone else.", audioUrl: `${A8B}/d1-03-passenger.wav`, durationSeconds: 4, speaker: 'passenger' },
+      { id: 'd1-04', text: "Josef: Let me have a word with them. If it doesn't get better, then I'll try to find you another seat, although the plane is pretty full. Is that alright about that?", audioUrl: `${A8B}/d1-04-josef.wav`, durationSeconds: 7, speaker: 'crew' },
+      { id: 'd1-05', text: 'Passenger: Well, er... yes, OK. Thank you. That would be fine.', audioUrl: `${A8B}/d1-05-passenger.wav`, durationSeconds: 3, speaker: 'passenger' },
+      { id: 'd2-01', text: "Josef: Hans, I've got a problem. A passenger is complaining about a noisy group nearby and wants to move seats.", audioUrl: `${A8B}/d2-01-josef.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 'd2-02', text: 'Hans: Is that possible?', audioUrl: `${A8B}/d2-02-hans.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'd2-03', text: "Josef: It'll be difficult, the plane's pretty full. I'm going to speak to the group first and ask them to quiet down.", audioUrl: `${A8B}/d2-03-josef.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 'd2-04', text: "Hans: OK, I'll check if there are any free seats just in case.", audioUrl: `${A8B}/d2-04-hans.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'd3-01', text: 'Josef: Excuse me, excuse me. Listen guys, are you enjoying the flight?', audioUrl: `${A8B}/d3-01-josef.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'd3-02', text: 'Passenger 2: Yes, yes, sure.', audioUrl: `${A8B}/d3-02-p2.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'd3-03', text: "Passenger 3: You bet, it's great.", audioUrl: `${A8B}/d3-03-p3.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'd3-04', text: "Josef: Could I ask you a special favour? Would you mind just keeping your voices down a little? You're getting a little loud and some people are trying to sleep or watch a film.", audioUrl: `${A8B}/d3-04-josef.wav`, durationSeconds: 8, speaker: 'crew' },
+      { id: 'd3-05', text: "Passenger 2: Why? Who's complaining?", audioUrl: `${A8B}/d3-05-p2.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'd3-06', text: 'Passenger 3: Are we making a lot of noise?', audioUrl: `${A8B}/d3-06-p3.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'd3-07', text: "Josef: No-one's complained, but we can hear you all in the galley!", audioUrl: `${A8B}/d3-07-josef.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'd3-08', text: 'Passenger 2: Oh, OK, no problem.', audioUrl: `${A8B}/d3-08-p2.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'd3-09', text: 'Passenger 3: OK.', audioUrl: `${A8B}/d3-09-p3.wav`, durationSeconds: 1, speaker: 'passenger' },
+      { id: 'd3-10', text: 'Passenger 2: How about a drink?', audioUrl: `${A8B}/d3-10-p2.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'd3-11', text: "Josef: Sure, I'll get you another drink if you keep your voices down. Thanks for your cooperation.", audioUrl: `${A8B}/d3-11-josef.wav`, durationSeconds: 5, speaker: 'crew' },
+    ],
+    vocabulary: [
+      { word: 'Disturbing', definition: 'Interrupting or upsetting someone' },
+      { word: 'Favour', definition: 'A kind or helpful act asked of someone' },
+      { word: 'Cooperation', definition: 'Working together helpfully' },
+    ],
+  },
+  theory: {
+    title: "Complaints About Other Passengers",
+    content: 'When passengers complain about each other, cabin crew must listen, address the source of the problem diplomatically, and only offer to move someone as a last resort if the plane has space.',
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of dealing with complaints about other passengers',
+      audioUrl: `${A8B}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'If... (Conditional Offers)',
+    phrases: [
+      { situation: 'Offering a conditional solution', phrase: "If the situation doesn't get better, then I'll try to find you another seat.", meaning: 'A conditional promise depending on future events', example: "If the situation doesn't get better, then I'll try to find you another seat." },
+      { situation: 'Promising to follow up', phrase: "If there's still a problem, then I'll come over.", meaning: 'A conditional commitment to return', example: "If there's still a problem, then I'll come over." },
+      { situation: 'Reassuring with a condition', phrase: "If there is still a problem, I won't leave you on your own.", meaning: 'A reassuring conditional promise', example: "If there is still a problem, I won't leave you on your own." },
+      { situation: 'Trading a favour', phrase: "I'll get you another drink if you keep your voices down.", meaning: 'A conditional exchange', example: "I'll get you another drink if you keep your voices down." },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Polite Requests',
+    terms: [
+      { term: 'Special favour', definition: 'A polite way to introduce an unusual request', example: 'Could I ask you a special favour?' },
+      { term: 'Keep your voice down', definition: 'To speak more quietly', example: 'Would you mind just keeping your voices down a little?' },
+      { term: 'Galley', definition: 'The kitchen area of an aircraft', example: 'We can hear you all in the galley!' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Getting a group\'s attention politely', expression: 'Excuse me, excuse me. Listen guys...', alternativeExpressions: ['Sorry to interrupt, could I have a moment?', 'Excuse me, may I ask you something?'] },
+    { situation: 'Softening a request', expression: 'No-one\'s complained, but we can hear you all in the galley!', alternativeExpressions: ['It\'s just that your voices carry quite far.', 'We can hear you from the back of the cabin.'] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'Could I ask you a special favour?', audioUrl: `${A8B}/pronunciation.wav`, durationSeconds: 3 },
+  ],
+  vocabulary: [
+    { word: 'Disturbing', definition: 'Interrupting or upsetting someone' },
+    { word: 'Favour', definition: 'A kind or helpful act asked of someone' },
+    { word: 'Cooperation', definition: 'Working together helpfully' },
+    { word: 'Galley', definition: 'The kitchen area of an aircraft' },
+  ],
+  grammar: [
+    {
+      rule: "First conditional (If + present simple, will + verb) - used for offers and promises that depend on a future condition",
+      examples: [
+        { sentence: "If the situation doesn't get better, then I'll try to find you another seat.", audioUrl: `${A8B}/if-1.wav` },
+        { sentence: "If there's still a problem, then I'll come over.", audioUrl: `${A8B}/if-2.wav` },
+        { sentence: "I'll get you another drink if you keep your voices down.", audioUrl: `${A8B}/if-4.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'speaking', points: 15,
+      question: 'What sort of complaints can passengers make about other passengers? In your experience, which are the most common? What do you do when passengers complain about other passengers?',
+    },
+    {
+      id: 'ex-2', type: 'multiple-choice', points: 10,
+      question: 'Why is the passenger angry?',
+      options: [
+        { id: 'o1', text: 'A nearby group is making too much noise', isCorrect: true },
+        { id: 'o2', text: 'The food is cold', isCorrect: false },
+        { id: 'o3', text: 'The flight is delayed', isCorrect: false },
+        { id: 'o4', text: 'Their seat is broken', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 10,
+      question: 'What does the passenger want to do?',
+      options: [
+        { id: 'o1', text: 'Move to another seat', isCorrect: true },
+        { id: 'o2', text: 'Get off the plane', isCorrect: false },
+        { id: 'o3', text: 'Speak to the captain', isCorrect: false },
+        { id: 'o4', text: 'Have the group arrested', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-4', type: 'multiple-choice', points: 10,
+      question: 'What does Josef suggest first?',
+      options: [
+        { id: 'o1', text: 'Speaking to the noisy group before considering a seat move', isCorrect: true },
+        { id: 'o2', text: 'Moving the passenger immediately', isCorrect: false },
+        { id: 'o3', text: 'Ignoring the complaint', isCorrect: false },
+        { id: 'o4', text: 'Calling the purser straight away', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-5', type: 'multiple-choice', points: 10,
+      question: 'Is the passenger satisfied with Josef\'s response?',
+      options: [
+        { id: 'o1', text: 'Yes, reluctantly, but satisfied', isCorrect: true },
+        { id: 'o2', text: 'No, they demand to speak to the captain', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-6', type: 'fill-blank', points: 10,
+      question: 'They are _________ me and everyone around.',
+      audio: { id: 'd1-01-audio', text: 'Passenger complaint', audioUrl: `${A8B}/d1-01-passenger.wav`, durationSeconds: 8, speaker: 'passenger' },
+      correctAnswer: 'disturbing',
+    },
+    {
+      id: 'ex-7', type: 'fill-blank', points: 10,
+      question: 'I don\'t think they _________ about me or anyone else.',
+      correctAnswer: 'care',
+    },
+    {
+      id: 'ex-8', type: 'fill-blank', points: 10,
+      question: 'Let me have a _________ with them.',
+      correctAnswer: 'word',
+    },
+    {
+      id: 'ex-9', type: 'multiple-choice', points: 10,
+      question: 'Will it be easy for Josef to move the angry passenger?',
+      options: [
+        { id: 'o1', text: 'No, the plane is pretty full', isCorrect: true },
+        { id: 'o2', text: 'Yes, there are many free seats', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-10', type: 'multiple-choice', points: 10,
+      question: 'What will Josef have to do first to deal with the situation?',
+      options: [
+        { id: 'o1', text: 'Speak to the noisy group', isCorrect: true },
+        { id: 'o2', text: 'Inform the captain', isCorrect: false },
+        { id: 'o3', text: 'File an incident report', isCorrect: false },
+        { id: 'o4', text: 'Call security', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-11', type: 'multiple-choice', points: 10,
+      question: 'What will Hans do to help?',
+      options: [
+        { id: 'o1', text: 'Check if there are any free seats', isCorrect: true },
+        { id: 'o2', text: 'Speak to the group himself', isCorrect: false },
+        { id: 'o3', text: 'Serve the noisy group more drinks', isCorrect: false },
+        { id: 'o4', text: 'Nothing', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-12', type: 'fill-blank', points: 10,
+      question: 'Listen guys, are you _________ the flight?',
+      correctAnswer: 'enjoying',
+    },
+    {
+      id: 'ex-13', type: 'fill-blank', points: 10,
+      question: 'Would you mind just keeping your voices down a little? You\'re getting a little _________.',
+      correctAnswer: 'loud',
+    },
+    {
+      id: 'ex-14', type: 'fill-blank', points: 10,
+      question: 'Some people are trying to sleep or watch a _________.',
+      correctAnswer: 'film',
+    },
+    {
+      id: 'ex-15', type: 'fill-blank', points: 10,
+      question: 'No-one\'s complained, but we can _________ you all in the galley!',
+      correctAnswer: 'hear',
+    },
+    {
+      id: 'ex-16', type: 'speaking', points: 15,
+      question: "How well do you think Josef dealt with the situation? Is there anything you would handle differently?",
+    },
+    {
+      id: 'ex-17', type: 'speaking', points: 15,
+      question: 'Practise these polite requests with very polite intonation: "Could I ask you a special favour?", "Would you mind just keeping the noise down a little?", "Please could you come over to help me?"',
+    },
+    {
+      id: 'ex-18', type: 'speaking', points: 20,
+      question: 'In pairs or groups of three, role-play a situation like Josef\'s: a flight attendant says hello to passengers, explains a problem, the passengers reply, the flight attendant responds, thanks them and makes an offer, and the passengers say thanks. Then swap roles and try again. Who dealt with the problem best?',
+    },
+  ],
+  quiz: {
+    id: 'quiz-8-2',
+    title: 'Dealing with Complaints About Other Passengers Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'What does the noisy group agree to do?',
+        options: [
+          { id: 'o1', text: 'Keep their voices down', isCorrect: true },
+          { id: 'o2', text: 'Move to different seats', isCorrect: false },
+          { id: 'o3', text: 'Leave the aircraft', isCorrect: false },
+          { id: 'o4', text: 'Stop drinking', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'What does Josef offer the group in exchange for quieting down?',
+        options: [
+          { id: 'o1', text: 'Another drink', isCorrect: true },
+          { id: 'o2', text: 'A free upgrade', isCorrect: false },
+          { id: 'o3', text: 'Extra snacks', isCorrect: false },
+          { id: 'o4', text: 'Nothing', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'Complete: "If there\'s still a problem, then I\'ll _____."',
+        options: [
+          { id: 'o1', text: 'come over', isCorrect: true },
+          { id: 'o2', text: 'ignore it', isCorrect: false },
+          { id: 'o3', text: 'call the police', isCorrect: false },
+          { id: 'o4', text: 'shout at them', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'What is Hans\'s role in this situation?',
+        options: [
+          { id: 'o1', text: 'A colleague who checks for free seats', isCorrect: true },
+          { id: 'o2', text: 'The purser', isCorrect: false },
+          { id: 'o3', text: 'The captain', isCorrect: false },
+          { id: 'o4', text: 'A passenger', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'What does "galley" mean?',
+        options: [
+          { id: 'o1', text: 'The kitchen area of an aircraft', isCorrect: true },
+          { id: 'o2', text: 'The cockpit', isCorrect: false },
+          { id: 'o3', text: 'An emergency exit', isCorrect: false },
+          { id: 'o4', text: 'The overhead locker', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Disturbing', back: 'Interrupting or upsetting someone' },
+    { id: 'fc-2', front: 'Favour', back: 'A kind or helpful act asked of someone' },
+    { id: 'fc-3', front: 'Galley', back: 'The kitchen area of an aircraft' },
+    { id: 'fc-4', front: 'Cooperation', back: 'Working together helpfully' },
+  ],
+  review: {
+    keyPoints: [
+      'Address the source of a complaint (the other passenger/group) before offering to move anyone',
+      'Use first conditional sentences (if + will) to make clear, fair offers',
+      'Very polite requests work well with disruptive groups: "Could I ask you a special favour?"',
+      'A small gesture (like offering a drink) can help secure cooperation',
+      'Moving a passenger should be a last resort, especially on a full flight',
+    ],
+    commonMistakes: [
+      { mistake: 'Immediately promising to move a complaining passenger', correction: 'Try to resolve the root cause first', explanation: 'Moving passengers is often impossible on a full flight' },
+      { mistake: 'Being too direct or confrontational with a noisy group', correction: 'Use very polite, indirect language', explanation: 'This avoids embarrassing or provoking the group' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
+// ============================================================
+// Unit 8, Lesson 3: Managing Disruptive Passengers
+// Expressing obligation
+// + Case Study: Unruly and Disruptive Behaviour (six newspaper extracts)
+// ============================================================
+const A8C = '/audio/unit-8/lesson-3';
+
+const DISRUPTIVE_PASSENGERS_LESSON: any = {
+  id: 'lesson-8-3',
+  unitId: 'unit-8',
+  title: 'Managing Disruptive Passengers',
+  description: "Managing a seriously disruptive passenger with clear obligation language, and the case study: Unruly and Disruptive Behaviour",
+  icon: '🚫',
+  icaoLevel: 5,
+  category: 'cabin-crew',
+  difficulty: 'upper-intermediate',
+  xpReward: 220,
+  estimatedDurationMinutes: 65,
+  locked: false,
+  order: 3,
+  objectives: [
+    { id: 'obj-1', description: 'Manage a seriously disruptive passenger', type: 'speaking' },
+    { id: 'obj-2', description: 'Express obligation clearly (have to, must, need to)', type: 'grammar' },
+    { id: 'obj-3', description: 'Discuss real cases of air rage and disruptive behaviour', type: 'reading' },
+  ],
+  scenario: {
+    id: 'scenario-disruptive-passenger',
+    title: 'A Disruptive Passenger',
+    description: 'Flight attendants Jenny and Tom, and purser Ted, deal with a drunk and aggressive passenger who wants more alcohol.',
+    context: 'Cabin, a seriously disruptive passenger incident',
+    audioSegments: [
+      { id: 'd1-01', text: "Jenny: Tom, I've got a problem in 24C - the passenger's been drinking and he's getting aggressive. He wants another drink but he's clearly had enough.", audioUrl: `${A8C}/d1-01-jenny.wav`, durationSeconds: 6, speaker: 'crew' },
+      { id: 'd1-02', text: 'Tom: How aggressive?', audioUrl: `${A8C}/d1-02-tom.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'd1-03', text: "Jenny: He's shouting, and he just said if we don't serve him he's going to cause trouble.", audioUrl: `${A8C}/d1-03-jenny.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 'd1-04', text: "Ted: Sir, I'm afraid we can't serve you any more alcohol.", audioUrl: `${A8C}/d1-04-ted.wav`, durationSeconds: 3, speaker: 'crew' },
+      { id: 'd1-05', text: "Passenger: I'll do whatever I want!", audioUrl: `${A8C}/d1-05-passenger.wav`, durationSeconds: 2, speaker: 'passenger' },
+      { id: 'd1-06', text: "Ted: I have to ask you to calm down, or I'll have to involve the captain.", audioUrl: `${A8C}/d1-06-ted.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'd1-07', text: "Ted: I have to inform the captain about this. We'll need police assistance after landing.", audioUrl: `${A8C}/d1-07-ted.wav`, durationSeconds: 4, speaker: 'crew' },
+      { id: 'd1-08', text: 'Ted: Tom, please keep the other passengers calm and reassured while I deal with this.', audioUrl: `${A8C}/d1-08-ted.wav`, durationSeconds: 4, speaker: 'crew' },
+    ],
+    vocabulary: [
+      { word: 'Aggressive', definition: 'Ready to attack or behave in a hostile way' },
+      { word: 'Restrain', definition: 'To hold someone back or stop them from doing something' },
+      { word: 'Assistance', definition: 'Help' },
+    ],
+  },
+  theory: {
+    title: 'Expressing Obligation',
+    content: 'When a passenger becomes truly disruptive, cabin crew must express clear obligation - what they have to do - while keeping other passengers calm and involving the captain when necessary.',
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of expressing obligation',
+      audioUrl: `${A8C}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Expressing Obligation',
+    phrases: [
+      { situation: 'Stating a personal obligation', phrase: 'I have to speak to the captain. / I\'ve got to speak to the captain. / I must speak to the captain.', meaning: 'Three ways to express the same obligation', example: 'I have to speak to the captain.' },
+      { situation: 'Stating a shared obligation', phrase: 'We must call the police. / We need to call security.', meaning: 'Expressing group obligation in a serious situation', example: 'We must call the police.' },
+      { situation: 'Instructing the passenger', phrase: 'You have to sit down, sir. / You have to be quiet.', meaning: 'Direct obligation instructions to a disruptive passenger', example: 'You have to sit down, sir.' },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Managing Disruptive Passengers',
+    terms: [
+      { term: 'Aggressive', definition: 'Ready to attack or behave in a hostile way', example: 'The passenger became aggressive after being refused more alcohol.' },
+      { term: 'Restrain', definition: 'To hold someone back or stop them from doing something', example: 'It took several crew members to restrain him.' },
+      { term: 'Under control', definition: 'Being safely managed', example: 'Everything is under control.' },
+      { term: 'Offloaded', definition: 'Removed from an aircraft before or after a flight', example: 'The abusive passenger was offloaded before take-off.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Reassuring nearby passengers', expression: 'Please don\'t worry. Everything is under control.', alternativeExpressions: ['There\'s no need for concern, we\'re handling it.', 'We have this fully under control.'] },
+    { situation: 'Acknowledging a passenger\'s distress', expression: 'I can see how upset you are.', alternativeExpressions: ['I understand this is distressing.', 'I can tell this has shaken you.'] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'I have to speak to the captain.', audioUrl: `${A8C}/pronunciation.wav`, durationSeconds: 3 },
+  ],
+  vocabulary: [
+    { word: 'Aggressive', definition: 'Ready to attack or behave in a hostile way' },
+    { word: 'Restrain', definition: 'To hold someone back or stop them from doing something' },
+    { word: 'Assistance', definition: 'Help' },
+    { word: 'Under control', definition: 'Being safely managed' },
+    { word: 'Offloaded', definition: 'Removed from an aircraft before or after a flight' },
+  ],
+  grammar: [
+    {
+      rule: "Expressing obligation with have to / must / need to - all express necessity, with slightly different formality",
+      examples: [
+        { sentence: 'I have to speak to the captain.', audioUrl: `${A8C}/eo-1.wav` },
+        { sentence: 'We must call the police.', audioUrl: `${A8C}/eo-4.wav` },
+        { sentence: 'You have to sit down, sir.', audioUrl: `${A8C}/eo-6.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'speaking', points: 15,
+      question: 'What are your procedures for dealing with really disruptive passengers who become aggressive, insulting or drunk and refuse to do what they are asked? What can you do, and what can\'t you do?',
+    },
+    {
+      id: 'ex-2', type: 'multiple-choice', points: 10,
+      question: 'What is the problem with the passenger?',
+      options: [
+        { id: 'o1', text: 'He is drunk and aggressive', isCorrect: true },
+        { id: 'o2', text: 'He is unwell', isCorrect: false },
+        { id: 'o3', text: 'He lost his boarding pass', isCorrect: false },
+        { id: 'o4', text: 'He is afraid of flying', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 10,
+      question: 'What does the passenger want?',
+      options: [
+        { id: 'o1', text: 'Another alcoholic drink', isCorrect: true },
+        { id: 'o2', text: 'A different seat', isCorrect: false },
+        { id: 'o3', text: 'To speak to the captain', isCorrect: false },
+        { id: 'o4', text: 'A refund', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-4', type: 'multiple-choice', points: 10,
+      question: 'How does Jenny describe the passenger to Tom?',
+      options: [
+        { id: 'o1', text: 'Aggressive and shouting', isCorrect: true },
+        { id: 'o2', text: 'Quiet but worried', isCorrect: false },
+        { id: 'o3', text: 'Confused and sleepy', isCorrect: false },
+        { id: 'o4', text: 'Polite but persistent', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-5', type: 'multiple-choice', points: 10,
+      question: 'What does the passenger say he is going to do?',
+      options: [
+        { id: 'o1', text: 'Cause trouble', isCorrect: true },
+        { id: 'o2', text: 'Complain to the airline afterwards', isCorrect: false },
+        { id: 'o3', text: 'Leave his seat calmly', isCorrect: false },
+        { id: 'o4', text: 'Apologize', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-6', type: 'multiple-choice', points: 10,
+      question: 'How do the flight attendants deal with the situation?',
+      options: [
+        { id: 'o1', text: 'They refuse to serve more alcohol and involve the purser', isCorrect: true },
+        { id: 'o2', text: 'They ignore the passenger', isCorrect: false },
+        { id: 'o3', text: 'They give him whatever he wants', isCorrect: false },
+        { id: 'o4', text: 'They ask other passengers to intervene', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-7', type: 'multiple-choice', points: 10,
+      question: 'What does Ted say he has to do?',
+      options: [
+        { id: 'o1', text: 'Inform the captain', isCorrect: true },
+        { id: 'o2', text: 'Give the passenger a free drink', isCorrect: false },
+        { id: 'o3', text: 'Move all nearby passengers', isCorrect: false },
+        { id: 'o4', text: 'Nothing further', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-8', type: 'multiple-choice', points: 10,
+      question: 'What does Ted say they will need after landing?',
+      options: [
+        { id: 'o1', text: 'Police assistance', isCorrect: true },
+        { id: 'o2', text: 'Medical assistance', isCorrect: false },
+        { id: 'o3', text: 'A replacement crew', isCorrect: false },
+        { id: 'o4', text: 'Nothing special', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-9', type: 'multiple-choice', points: 10,
+      question: 'What does Ted tell Tom to do with the other passengers?',
+      options: [
+        { id: 'o1', text: 'Keep them calm and reassured', isCorrect: true },
+        { id: 'o2', text: 'Move them to another cabin', isCorrect: false },
+        { id: 'o3', text: 'Ask them to help restrain the passenger', isCorrect: false },
+        { id: 'o4', text: 'Give them all free drinks', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-10', type: 'fill-blank', points: 10,
+      question: 'About half an hour before _________, a drunk passenger became aggressive.',
+      correctAnswer: 'landing',
+    },
+    {
+      id: 'ex-11', type: 'fill-blank', points: 10,
+      question: 'The passenger became aggressive because he was refused more _________.',
+      correctAnswer: 'alcohol',
+    },
+    {
+      id: 'ex-12', type: 'fill-blank', points: 10,
+      question: 'He began to shout and scream, and it took several crew members to _________ him.',
+      correctAnswer: 'restrain',
+    },
+    {
+      id: 'ex-13', type: 'fill-blank', points: 10,
+      question: 'The captain was informed and the local _________ met the plane on arrival.',
+      correctAnswer: 'police',
+    },
+    {
+      id: 'ex-14', type: 'speaking', points: 15,
+      question: 'Practise these obligation sentences, noticing the pronunciation of "have to": "You have to sit down, sir.", "I have to speak to the captain.", "You have to stop that now.", "You have to be quiet.", "You have to do what the captain says."',
+    },
+    {
+      id: 'ex-15', type: 'speaking', points: 15,
+      question: 'Practise these calming phrases for other passengers affected by an incident: "Would you come to the back of the plane with me, please, madam?", "I can see how upset you are.", "Can you tell me exactly what happened?", "I do apologize. Incidents like this are extremely rare.", "Please don\'t worry. Everything is under control."',
+    },
+    {
+      id: 'ex-16', type: 'speaking', points: 15,
+      question: 'Read the six newspaper extracts about unruly and disruptive behaviour (football fan brawl, an attempted door opening, an assault leading to a diversion, a wine-related assault, an offloaded abusive passenger, and a rampage at 30,000 feet). Make a list of the different kinds of behaviour mentioned and put them in order of seriousness from 1 to 5.',
+    },
+    {
+      id: 'ex-17', type: 'speaking', points: 15,
+      question: 'What seems to be the main cause of the bad behaviour in these stories? Are there several reasons, or mainly one?',
+      hint: 'Consider how many of the stories involve alcohol.',
+    },
+    {
+      id: 'ex-18', type: 'multiple-choice', points: 10,
+      question: 'What caused the emergency landing in Germany in one of the stories?',
+      options: [
+        { id: 'o1', text: 'A brawl between rival football fans', isCorrect: true },
+        { id: 'o2', text: 'A bomb threat', isCorrect: false },
+        { id: 'o3', text: 'A medical emergency', isCorrect: false },
+        { id: 'o4', text: 'Bad weather', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-19', type: 'multiple-choice', points: 10,
+      question: 'What did the passenger in the "One too many" story do when refused a sixth drink?',
+      options: [
+        { id: 'o1', text: 'He became abusive and grabbed the flight attendant\'s arms', isCorrect: true },
+        { id: 'o2', text: 'He apologized and calmed down', isCorrect: false },
+        { id: 'o3', text: 'He fell asleep', isCorrect: false },
+        { id: 'o4', text: 'He asked to leave the plane', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-20', type: 'speaking', points: 15,
+      question: 'Discuss the reactions of the cabin crew in these stories - fire extinguishers positioned near the cockpit, offloading a passenger, dumping fuel to land. Do you think flight attendants are given enough training to deal with unruly passengers?',
+    },
+    {
+      id: 'ex-21', type: 'speaking', points: 15,
+      question: 'Why is the problem of "air rage" growing? What can be done to prevent or limit it? Do you think alcohol should be banned on flights? How is airline security and the safety of all on board at risk from disruptive passengers?',
+    },
+    {
+      id: 'ex-22', type: 'speaking', points: 15,
+      question: 'Discuss the difference between "difficult" passengers (demanding, but not dangerous) and "disruptive" passengers (aggressive, dangerous, or a threat to safety). What is the best way to deal with each type? What special qualities do flight attendants need to manage these situations?',
+    },
+  ],
+  quiz: {
+    id: 'quiz-8-3',
+    title: 'Managing Disruptive Passengers Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'Which modal verb expresses a strong personal obligation?',
+        options: [
+          { id: 'o1', text: 'Must', isCorrect: true },
+          { id: 'o2', text: 'Might', isCorrect: false },
+          { id: 'o3', text: 'Could', isCorrect: false },
+          { id: 'o4', text: 'Would', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'Who does Ted need to inform about the disruptive passenger?',
+        options: [
+          { id: 'o1', text: 'The captain', isCorrect: true },
+          { id: 'o2', text: 'Only the other passengers', isCorrect: false },
+          { id: 'o3', text: 'No one, he handles it alone', isCorrect: false },
+          { id: 'o4', text: 'The airline\'s head office immediately by phone', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'What is a common cause of air rage in the case study articles?',
+        options: [
+          { id: 'o1', text: 'Alcohol', isCorrect: true },
+          { id: 'o2', text: 'Cabin temperature', isCorrect: false },
+          { id: 'o3', text: 'Flight delays only', isCorrect: false },
+          { id: 'o4', text: 'Poor food quality', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'What happened to the passenger who tried to get into first class during a rampage?',
+        options: [
+          { id: 'o1', text: 'He was jailed for eight months', isCorrect: true },
+          { id: 'o2', text: 'He was given a warning only', isCorrect: false },
+          { id: 'o3', text: 'Nothing happened to him', isCorrect: false },
+          { id: 'o4', text: 'He was upgraded', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'What does "offloaded" mean in this context?',
+        options: [
+          { id: 'o1', text: 'Removed from the aircraft', isCorrect: true },
+          { id: 'o2', text: 'Given extra luggage allowance', isCorrect: false },
+          { id: 'o3', text: 'Promoted to Business class', isCorrect: false },
+          { id: 'o4', text: 'Served a meal', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Aggressive', back: 'Ready to attack or behave in a hostile way' },
+    { id: 'fc-2', front: 'Restrain', back: 'To hold someone back or stop them from doing something' },
+    { id: 'fc-3', front: 'Offloaded', back: 'Removed from an aircraft before or after a flight' },
+    { id: 'fc-4', front: 'A brawl', back: 'A fight' },
+    { id: 'fc-5', front: 'To go on a rampage', back: 'To go around causing damage' },
+  ],
+  review: {
+    keyPoints: [
+      'Refuse further alcohol clearly and calmly when a passenger has had enough',
+      'Use clear obligation language (have to, must, need to) when escalating a serious incident',
+      'Always inform the captain of a genuinely disruptive or dangerous passenger',
+      'Reassure nearby passengers that the situation is under control',
+      'Alcohol is a major factor in most reported air rage incidents',
+    ],
+    commonMistakes: [
+      { mistake: 'Continuing to serve alcohol to an already intoxicated passenger', correction: 'Refuse further alcohol clearly, citing safety', explanation: 'This is often the trigger for serious incidents in the case studies' },
+      { mistake: 'Trying to handle a dangerous passenger alone without informing the captain', correction: 'Escalate to the purser and captain promptly', explanation: 'The captain needs to know in case police assistance is required on arrival' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
 const UNIT_TITLES: Record<number, string> = {
   0: 'Unit 1: The Pre-Flight Briefing',
   1: 'Unit 2: Welcome on Board',
@@ -6945,6 +7841,12 @@ export const iCAOUnits: Unit[] = [
         ? EMERGENCY_EVACUATION_LESSON
         : unitIdx === 6 && lessonIdx === 2
         ? REPORTING_EVACUATION_LESSON
+        : unitIdx === 7 && lessonIdx === 0
+        ? RESPONDING_COMPLAINTS_LESSON
+        : unitIdx === 7 && lessonIdx === 1
+        ? COMPLAINTS_OTHERS_LESSON
+        : unitIdx === 7 && lessonIdx === 2
+        ? DISRUPTIVE_PASSENGERS_LESSON
         : LESSON_TEMPLATE(unitIdx + 1, lessonIdx + 1, `Lesson ${lessonIdx + 1}`)
     )
   })) as Unit[]
