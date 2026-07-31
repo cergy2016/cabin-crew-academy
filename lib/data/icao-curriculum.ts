@@ -10072,6 +10072,184 @@ const FINAL_ANNOUNCEMENTS_LESSON: any = {
       id: 'ex-14', type: 'speaking', points: 15,
       question: 'With a partner, practise asking passengers to do things in preparation for landing: put away devices, fold away the table, put the seat back upright, put bags in the locker, turn off electronics.',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'multiple-choice', points: 10,
+      question: "When would cabin crew typically 'complete paperwork'?",
+      options: [
+        { id: 'o1', text: '20 minutes before landing', isCorrect: true },
+        { id: 'o2', text: '10 minutes before landing', isCorrect: false },
+        { id: 'o3', text: '2 minutes before landing', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-2', type: 'multiple-choice', points: 10,
+      question: "When would cabin crew typically 'collect headsets'?",
+      options: [
+        { id: 'o1', text: '20 minutes before landing', isCorrect: true },
+        { id: 'o2', text: '10 minutes before landing', isCorrect: false },
+        { id: 'o3', text: '2 minutes before landing', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-3', type: 'multiple-choice', points: 10,
+      question: "When would cabin crew typically 'secure trolleys in the galleys'?",
+      options: [
+        { id: 'o1', text: '20 minutes before landing', isCorrect: true },
+        { id: 'o2', text: '10 minutes before landing', isCorrect: false },
+        { id: 'o3', text: '2 minutes before landing', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-4', type: 'multiple-choice', points: 10,
+      question: "When would cabin crew typically 'clear up debris'?",
+      options: [
+        { id: 'o1', text: '20 minutes before landing', isCorrect: true },
+        { id: 'o2', text: '10 minutes before landing', isCorrect: false },
+        { id: 'o3', text: '2 minutes before landing', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-5', type: 'multiple-choice', points: 10,
+      question: "When would cabin crew typically 'make sure bags are in overhead lockers'?",
+      options: [
+        { id: 'o1', text: '10 minutes before landing', isCorrect: true },
+        { id: 'o2', text: '20 minutes before landing', isCorrect: false },
+        { id: 'o3', text: '2 minutes before landing', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-6', type: 'multiple-choice', points: 10,
+      question: "When would cabin crew typically check that 'tables are folded away, seat backs are upright, arm-rests are down'?",
+      options: [
+        { id: 'o1', text: '10 minutes before landing', isCorrect: true },
+        { id: 'o2', text: '20 minutes before landing', isCorrect: false },
+        { id: 'o3', text: '2 minutes before landing', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-7', type: 'multiple-choice', points: 10,
+      question: "When would cabin crew typically 'clear bags from exit rows'?",
+      options: [
+        { id: 'o1', text: '10 minutes before landing', isCorrect: true },
+        { id: 'o2', text: '20 minutes before landing', isCorrect: false },
+        { id: 'o3', text: '2 minutes before landing', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-8', type: 'multiple-choice', points: 10,
+      question: "When would cabin crew typically 'ask people to switch off electrical devices'?",
+      options: [
+        { id: 'o1', text: '10 minutes before landing', isCorrect: true },
+        { id: 'o2', text: '20 minutes before landing', isCorrect: false },
+        { id: 'o3', text: '2 minutes before landing', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-9', type: 'multiple-choice', points: 10,
+      question: "When would cabin crew typically 'check seatbelts are fastened'?",
+      options: [
+        { id: 'o1', text: '2 minutes before landing', isCorrect: true },
+        { id: 'o2', text: '20 minutes before landing', isCorrect: false },
+        { id: 'o3', text: '10 minutes before landing', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-10', type: 'multiple-choice', points: 10,
+      question: "When would cabin crew typically 'get strapped in for landing'?",
+      options: [
+        { id: 'o1', text: '2 minutes before landing', isCorrect: true },
+        { id: 'o2', text: '20 minutes before landing', isCorrect: false },
+        { id: 'o3', text: '10 minutes before landing', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-11', type: 'multiple-choice', points: 10,
+      question: "When would cabin crew typically 'check again that electrical devices are switched off'?",
+      options: [
+        { id: 'o1', text: '2 minutes before landing', isCorrect: true },
+        { id: 'o2', text: '20 minutes before landing', isCorrect: false },
+        { id: 'o3', text: '10 minutes before landing', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-12', type: 'multiple-choice', points: 10,
+      question: "When would cabin crew typically 'make final checks'?",
+      options: [
+        { id: 'o1', text: '2 minutes before landing', isCorrect: true },
+        { id: 'o2', text: '20 minutes before landing', isCorrect: false },
+        { id: 'o3', text: '10 minutes before landing', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-13', type: 'multiple-choice', points: 10,
+      question: "When would cabin crew typically 'check no-one is in the toilets'?",
+      options: [
+        { id: 'o1', text: '2 minutes before landing', isCorrect: true },
+        { id: 'o2', text: '20 minutes before landing', isCorrect: false },
+        { id: 'o3', text: '10 minutes before landing', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-14', type: 'multiple-choice', points: 10,
+      question: "When would cabin crew typically signal 'cabin secure'?",
+      options: [
+        { id: 'o1', text: '2 minutes before landing', isCorrect: true },
+        { id: 'o2', text: '20 minutes before landing', isCorrect: false },
+        { id: 'o3', text: '10 minutes before landing', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-15', type: 'multiple-choice', points: 10,
+      question: 'Which is correct?',
+      options: [
+        { id: 'o1', text: 'Twenty minutes to landing.', isCorrect: true },
+        { id: 'o2', text: 'Twenty minutes for landing.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-16', type: 'multiple-choice', points: 10,
+      question: 'Which is correct?',
+      options: [
+        { id: 'o1', text: '16.00 = 4 o\'clock', isCorrect: true },
+        { id: 'o2', text: '16.00 = 4 of the clock', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-17', type: 'multiple-choice', points: 10,
+      question: 'Which is correct?',
+      options: [
+        { id: 'o1', text: 'It takes three hours to get to Tenerife.', isCorrect: true },
+        { id: 'o2', text: 'It is taking three hours to get to Tenerife.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-18', type: 'multiple-choice', points: 10,
+      question: 'Which is correct?',
+      options: [
+        { id: 'o1', text: 'The flight lasts seven and a half hours.', isCorrect: true },
+        { id: 'o2', text: 'The flight is lasting seven and a half hours.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-19', type: 'multiple-choice', points: 10,
+      question: 'Which is correct?',
+      options: [
+        { id: 'o1', text: '12.00 p.m. = noon', isCorrect: true },
+        { id: 'o2', text: '12.00 p.m. = midnight', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-20', type: 'multiple-choice', points: 10,
+      question: 'Which is correct?',
+      options: [
+        { id: 'o1', text: 'Your connecting flight is at 10.15.', isCorrect: true },
+        { id: 'o2', text: 'Your connected flight is at 10.15.', isCorrect: false },
+      ],
+    },
+  ],
+  logBookPrompts: [
+    'Think about the last 20 minutes before landing. Is this the most stressful moment of the flight? Why? Is this when you see the best and the worst of your colleagues? Do you show by example, or tell others what to do?',
   ],
   quiz: {
     id: 'quiz-9-1',
@@ -10375,6 +10553,70 @@ const DELAYED_LANDINGS_LESSON: any = {
       id: 'ex-14', type: 'speaking', points: 20,
       question: 'With a partner, take turns dealing with a passenger who has to make a connection when the landing is delayed. Passenger: state your problem, then demand a solution. Flight attendant: sympathize and ask for more information, then do your best to find a solution.',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'fill-blank', points: 10,
+      question: 'Complete the passenger dialogue: "Excuse me, what\'s _________ difference between Paris and Dubai?"',
+      correctAnswer: 'the time',
+    },
+    {
+      id: 'self-2', type: 'fill-blank', points: 10,
+      question: 'Complete: "So what _________ is it on the ground in Dubai now?"',
+      correctAnswer: 'time',
+    },
+    {
+      id: 'self-3', type: 'fill-blank', points: 10,
+      question: 'Complete: "And, sorry to bother you again, _________ longer before we arrive?"',
+      correctAnswer: 'how much',
+    },
+    {
+      id: 'self-4', type: 'fill-blank', points: 10,
+      question: 'Complete: "_________ exactly do we get there?"',
+      correctAnswer: 'When',
+    },
+    {
+      id: 'self-5', type: 'fill-blank', points: 10,
+      question: 'Complete: "Do you know _________ long it takes from the terminal to the city centre?"',
+      correctAnswer: 'how',
+    },
+    {
+      id: 'self-6', type: 'fill-blank', points: 10,
+      question: 'Complete: "Yes, it takes _________ 40 minutes."',
+      correctAnswer: 'about',
+    },
+    {
+      id: 'self-7', type: 'fill-blank', points: 10,
+      question: 'Complete the first officer\'s delay announcement: "Ladies and gentlemen, this is the first officer _________."',
+      correctAnswer: 'speaking',
+    },
+    {
+      id: 'self-8', type: 'fill-blank', points: 10,
+      question: 'Complete: "Unfortunately I have some _________ news for you."',
+      correctAnswer: 'bad',
+    },
+    {
+      id: 'self-9', type: 'fill-blank', points: 10,
+      question: 'Complete: "Air Traffic Control has advised us that, due to a problem on the ground, we will be _________ for approximately 30 minutes or so."',
+      correctAnswer: 'delayed',
+    },
+    {
+      id: 'self-10', type: 'fill-blank', points: 10,
+      question: 'Complete: "My _________ for any inconvenience."',
+      correctAnswer: 'apologies',
+    },
+    {
+      id: 'self-11', type: 'fill-blank', points: 10,
+      question: "Complete: \"We'll get you on the ground as _________ as possible.\"",
+      correctAnswer: 'quickly',
+    },
+    {
+      id: 'self-12', type: 'fill-blank', points: 10,
+      question: 'Complete: "In the meantime, please keep your seatbelts _________."',
+      correctAnswer: 'fastened',
+    },
+  ],
+  logBookPrompts: [
+    'Think about a bad experience you\'ve had during the preparation for landing. What happened? How did you evaluate your own performance? What do you say to colleagues who perform badly? Do you get angry, or discuss things calmly? What do you say to passengers who are difficult at this time?',
   ],
   quiz: {
     id: 'quiz-9-2',
@@ -10664,6 +10906,65 @@ const FINAL_TEN_MINUTES_LESSON: any = {
       id: 'ex-16', type: 'speaking', points: 15,
       question: 'Do you agree that preparing for landing is the most stressful part of the flight? Why or why not? Is 20 minutes enough time for cabin crew to perform all their duties on a short-haul flight? Can you suggest improvements to communication between flight crew and cabin crew during the last ten minutes?',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'fill-blank', points: 10,
+      question: "Complete the present-perfect question: \"_________ you done the cabin clearing?\"",
+      correctAnswer: 'Have',
+    },
+    {
+      id: 'self-2', type: 'fill-blank', points: 10,
+      question: 'Complete: "Has she _________ the trolley in the galley?"',
+      correctAnswer: 'secured',
+    },
+    {
+      id: 'self-3', type: 'fill-blank', points: 10,
+      question: 'Complete: "Has he _________ that the tables are upright?"',
+      correctAnswer: 'checked',
+    },
+    {
+      id: 'self-4', type: 'fill-blank', points: 10,
+      question: 'Complete: "Have they _________ all the headsets?"',
+      correctAnswer: 'collected',
+    },
+    {
+      id: 'self-5', type: 'fill-blank', points: 10,
+      question: 'Complete: "Have you _________ the bar paperwork?"',
+      correctAnswer: 'finished',
+    },
+    {
+      id: 'self-6', type: 'fill-blank', points: 10,
+      question: 'Complete: "_________ we done the final checks?"',
+      correctAnswer: 'Have',
+    },
+    {
+      id: 'self-7', type: 'fill-blank', points: 10,
+      question: 'Complete the "ten minutes to landing" announcement: "The call is a call from the _________ to the cabin crew."',
+      correctAnswer: 'flight deck',
+    },
+    {
+      id: 'self-8', type: 'fill-blank', points: 10,
+      question: 'Complete: "They will then make final _________ and make sure that the cabin is secure."',
+      correctAnswer: 'checks',
+    },
+    {
+      id: 'self-9', type: 'fill-blank', points: 10,
+      question: 'Complete: "They will then make final checks and make sure that the cabin is _________."',
+      correctAnswer: 'secure',
+    },
+    {
+      id: 'self-10', type: 'fill-blank', points: 10,
+      question: 'Complete: "All passengers must be seated with seatbelts fastened, and all bags must be _________ away."',
+      correctAnswer: 'stowed',
+    },
+    {
+      id: 'self-11', type: 'fill-blank', points: 10,
+      question: 'Complete: "At the \'Cabin crew, seats for landing\' call, they must return to their seats and get _________ in for landing."',
+      correctAnswer: 'strapped',
+    },
+  ],
+  logBookPrompts: [
+    "Think about the organization of these final 20 minutes. Is your routine always automatic? Do things work perfectly, as in your training? Who does what among the cabin crew and the flight crew? What do you think about when you hear 'Cabin crew, seats for landing'?",
   ],
   quiz: {
     id: 'quiz-9-3',
