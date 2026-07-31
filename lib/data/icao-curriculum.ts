@@ -4252,6 +4252,86 @@ const GIVING_CHOICE_LESSON: any = {
       id: 'ex-15', type: 'speaking', points: 15,
       question: 'With a partner, take turns ordering and taking orders from the menu. Ask and answer questions like "Is the chicken very spicy?" and "What are chives?"',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'fill-blank', points: 10,
+      question: 'Complete: Passenger: "Excuse me, can I _________ a question about the menu, please?"',
+      correctAnswer: 'ask',
+    },
+    {
+      id: 'self-2', type: 'fill-blank', points: 10,
+      question: 'Complete: Passenger: "It\'s not for me, it\'s for my daughter. This is a _________ meal, isn\'t it?"',
+      correctAnswer: 'special',
+    },
+    {
+      id: 'self-3', type: 'fill-blank', points: 10,
+      question: 'Complete: Flight attendant: "Yes, that\'s right - look, it says starter, main _________ and dessert."',
+      correctAnswer: 'course',
+    },
+    {
+      id: 'self-4', type: 'fill-blank', points: 10,
+      question: "Complete: Passenger: \"I thought so, but that's too _________ for my daughter.\"",
+      correctAnswer: 'much',
+    },
+    {
+      id: 'self-5', type: 'fill-blank', points: 10,
+      question: 'Complete: Flight attendant: "Yes, we do, but you have to _________ for special meals."',
+      correctAnswer: 'pre-order',
+    },
+    {
+      id: 'self-6', type: 'fill-blank', points: 10,
+      question: "Complete: Flight attendant: \"I'll bring her the full _________ and she can pick and choose what she likes.\"",
+      correctAnswer: 'tray',
+    },
+    {
+      id: 'self-7', type: 'fill-blank', points: 10,
+      question: "Complete: Flight attendant: \"She can pick and _________ what she likes. She will probably give you the vegetables!\"",
+      correctAnswer: 'choose',
+    },
+    {
+      id: 'self-8', type: 'multiple-choice', points: 10,
+      question: 'A full meal is a starter, main course and dessert. Which of these is a starter?',
+      options: [
+        { id: 'o1', text: 'Smoked salmon', isCorrect: true },
+        { id: 'o2', text: 'Beef bourguignon', isCorrect: false },
+        { id: 'o3', text: 'Apple pie', isCorrect: false },
+        { id: 'o4', text: 'Lasagne', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-9', type: 'multiple-choice', points: 10,
+      question: 'Which of these is a main course?',
+      options: [
+        { id: 'o1', text: 'Beef bourguignon', isCorrect: true },
+        { id: 'o2', text: 'Smoked salmon', isCorrect: false },
+        { id: 'o3', text: 'Apple pie', isCorrect: false },
+        { id: 'o4', text: 'Tomatoes and olives', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-10', type: 'multiple-choice', points: 10,
+      question: 'Which of these is a dessert?',
+      options: [
+        { id: 'o1', text: 'Apple pie', isCorrect: true },
+        { id: 'o2', text: 'Lasagne', isCorrect: false },
+        { id: 'o3', text: 'Smoked salmon', isCorrect: false },
+        { id: 'o4', text: 'Tomatoes and olives', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-11', type: 'multiple-choice', points: 10,
+      question: 'Which item does NOT fit into starter, main course, or dessert?',
+      options: [
+        { id: 'o1', text: 'Cheese and biscuits', isCorrect: true },
+        { id: 'o2', text: 'Lasagne', isCorrect: false },
+        { id: 'o3', text: 'Apple pie', isCorrect: false },
+        { id: 'o4', text: 'Smoked salmon', isCorrect: false },
+      ],
+    },
+  ],
+  logBookPrompts: [
+    'The in-flight meals service is the best moment to get to know the passengers. Do you think this is true, or is it just about serving meals and nothing else? Do you have time to talk to passengers about their travel, holidays, and so on? Do you think most passengers appreciate the meals service?',
+    "What do you say if there is no choice of meal left? What do you say to a passenger who pre-ordered a meal, but it hasn't been recorded? What do you say to someone who says, 'It's awful, I can't eat this, and it's cold'?",
   ],
   quiz: {
     id: 'quiz-4-1',
@@ -4529,6 +4609,71 @@ const SERVING_DRINKS_LESSON: any = {
     {
       id: 'ex-11', type: 'speaking', points: 15,
       question: 'What problems can flight attendants have when serving food and drinks? Consider: the meal isn\'t hot enough, the meal is not what the passenger ordered, the passenger has already drunk too much but wants more, unexpected turbulence. Add your own ideas and discuss which are the worst.',
+    },
+    // Self Study
+    {
+      id: 'self-1', type: 'multiple-choice', points: 10,
+      question: 'When would you typically offer champagne?',
+      options: [
+        { id: 'o1', text: 'Before the meal, as a welcome drink', isCorrect: true },
+        { id: 'o2', text: 'Only after the meal', isCorrect: false },
+        { id: 'o3', text: 'Never on a flight', isCorrect: false },
+        { id: 'o4', text: 'Only with dessert', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-2', type: 'multiple-choice', points: 10,
+      question: 'When would you typically offer a wine such as Sauvignon Blanc?',
+      options: [
+        { id: 'o1', text: 'During the meal', isCorrect: true },
+        { id: 'o2', text: 'Before boarding', isCorrect: false },
+        { id: 'o3', text: 'Only after landing', isCorrect: false },
+        { id: 'o4', text: 'During the safety demo', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-3', type: 'multiple-choice', points: 10,
+      question: 'When would you typically offer coffee or tea?',
+      options: [
+        { id: 'o1', text: 'After the meal', isCorrect: true },
+        { id: 'o2', text: 'Before the meal', isCorrect: false },
+        { id: 'o3', text: 'During take-off only', isCorrect: false },
+        { id: 'o4', text: 'Never during cabin service', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-4', type: 'multiple-choice', points: 10,
+      question: 'When would you typically offer cognac or port?',
+      options: [
+        { id: 'o1', text: 'After the meal, as a digestif', isCorrect: true },
+        { id: 'o2', text: 'Before the meal', isCorrect: false },
+        { id: 'o3', text: 'During boarding', isCorrect: false },
+        { id: 'o4', text: 'During the safety demo', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-5', type: 'multiple-choice', points: 10,
+      question: 'Which is the correctly-ordered question?',
+      options: [
+        { id: 'o1', text: 'What would you like to drink, madam?', isCorrect: true },
+        { id: 'o2', text: 'Drink, you madam to what like would?', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-6', type: 'multiple-choice', points: 10,
+      question: 'Which is the correctly-ordered question?',
+      options: [
+        { id: 'o1', text: 'Could I have a glass of water?', isCorrect: true },
+        { id: 'o2', text: 'I water of have glass a could?', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-7', type: 'multiple-choice', points: 10,
+      question: 'Which is the correctly-ordered question?',
+      options: [
+        { id: 'o1', text: 'Can I have a cold beer, please?', isCorrect: true },
+        { id: 'o2', text: 'Please cold I beer, have a can?', isCorrect: false },
+      ],
     },
   ],
   quiz: {
@@ -4871,6 +5016,130 @@ const DUTY_FREE_LESSON: any = {
       id: 'ex-23', type: 'speaking', points: 15,
       question: 'Airlines spend a lot of money on food. Why do you think this is, and are they successful? What do you think about meals for the crew on board - are they adequate? Do you agree that "bar snacks on short flights are insulting, over-priced and tasteless, and meals on most long-haul flights are bland, poorly presented and served without grace"?',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "Any duty-free items?" What is a natural response from you?',
+      options: [
+        { id: 'o1', text: "Yes, I'd like to see ladies' perfumes, please.", isCorrect: true },
+        { id: 'o2', text: 'In cash in local currency, please.', isCorrect: false },
+        { id: 'o3', text: 'That\'s all, thank you.', isCorrect: false },
+        { id: 'o4', text: 'My mistake, I do apologize.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-2', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "Have you got any toys for children?" What is the best reply?',
+      options: [
+        { id: 'o1', text: "Yes, we've got two: a model aircraft and a teddy bear.", isCorrect: true },
+        { id: 'o2', text: 'Fifty-four dollars. They\'re made of silk.', isCorrect: false },
+        { id: 'o3', text: 'In cash in local currency, please.', isCorrect: false },
+        { id: 'o4', text: 'My mistake, I do apologize.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-3', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "How much do these scarves cost?" What is the best reply?',
+      options: [
+        { id: 'o1', text: "Fifty-four dollars. They're made of silk.", isCorrect: true },
+        { id: 'o2', text: 'Yes, we have a range of gifts for men.', isCorrect: false },
+        { id: 'o3', text: 'That\'s all, thank you.', isCorrect: false },
+        { id: 'o4', text: 'In cash in local currency, please.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-4', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "Have you got any aftershave?" What is the best reply?',
+      options: [
+        { id: 'o1', text: 'Yes, we have a range of gifts for men.', isCorrect: true },
+        { id: 'o2', text: "Yes, I'd like to see ladies' perfumes, please.", isCorrect: false },
+        { id: 'o3', text: 'My mistake, I do apologize.', isCorrect: false },
+        { id: 'o4', text: "Fifty-four dollars. They're made of silk.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-5', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "How much is this brooch?" What is the best reply?',
+      options: [
+        { id: 'o1', text: 'We have a special promotion on jewellery: it\'s only $39 instead of $49.', isCorrect: true },
+        { id: 'o2', text: 'In cash in local currency, please.', isCorrect: false },
+        { id: 'o3', text: 'That\'s all, thank you.', isCorrect: false },
+        { id: 'o4', text: 'Yes, we have a range of gifts for men.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-6', type: 'multiple-choice', points: 10,
+      question: 'Flight attendant: "How do you want to pay?" What is a natural passenger reply?',
+      options: [
+        { id: 'o1', text: 'In cash in local currency, please.', isCorrect: true },
+        { id: 'o2', text: "Fifty-four dollars. They're made of silk.", isCorrect: false },
+        { id: 'o3', text: 'My mistake, I do apologize.', isCorrect: false },
+        { id: 'o4', text: 'That\'s all, thank you.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-7', type: 'multiple-choice', points: 10,
+      question: 'Flight attendant: "Sure. Anything else?" What is a natural passenger reply?',
+      options: [
+        { id: 'o1', text: "That's all, thank you.", isCorrect: true },
+        { id: 'o2', text: 'In cash in local currency, please.', isCorrect: false },
+        { id: 'o3', text: 'My mistake, I do apologize.', isCorrect: false },
+        { id: 'o4', text: 'We have a special promotion on jewellery.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-8', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "Excuse me, did you give me a receipt?" What is the best reply?',
+      options: [
+        { id: 'o1', text: 'My mistake, I do apologize.', isCorrect: true },
+        { id: 'o2', text: "That's all, thank you.", isCorrect: false },
+        { id: 'o3', text: 'In cash in local currency, please.', isCorrect: false },
+        { id: 'o4', text: "Yes, we've got two: a model aircraft and a teddy bear.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-9', type: 'fill-blank', points: 10,
+      question: 'Duty-free item: You use a travel _________ for shaving.',
+      correctAnswer: 'razor',
+    },
+    {
+      id: 'self-10', type: 'fill-blank', points: 10,
+      question: "Duty-free item: Scotland's most famous alcoholic drink is _________.",
+      correctAnswer: 'whisky',
+    },
+    {
+      id: 'self-11', type: 'fill-blank', points: 10,
+      question: 'Duty-free item: A ladies\' gift that smells nice is _________.',
+      correctAnswer: 'perfume',
+    },
+    {
+      id: 'self-12', type: 'fill-blank', points: 10,
+      question: 'Duty-free item: Chocolates are made from _________ beans.',
+      correctAnswer: 'cocoa',
+    },
+    {
+      id: 'self-13', type: 'fill-blank', points: 10,
+      question: 'Duty-free item: A strong alcoholic drink from Russia is _________.',
+      correctAnswer: 'vodka',
+    },
+    {
+      id: 'self-14', type: 'fill-blank', points: 10,
+      question: 'Duty-free item: A _________ bear is a favourite soft toy for children.',
+      correctAnswer: 'teddy',
+    },
+    {
+      id: 'self-15', type: 'fill-blank', points: 10,
+      question: 'Duty-free item: You can smoke _________.',
+      correctAnswer: 'cigarettes',
+    },
+    {
+      id: 'self-16', type: 'fill-blank', points: 10,
+      question: 'Duty-free item: Rings, necklaces and bracelets are types of _________.',
+      correctAnswer: 'jewellery',
+    },
+  ],
+  logBookPrompts: [
+    'What is your experience of selling duty-free goods? Do you enjoy being a sales person? What do passengers buy? What is your most interesting experience? What do you say if you haven\'t got the goods someone asks for?',
   ],
   quiz: {
     id: 'quiz-4-3',
