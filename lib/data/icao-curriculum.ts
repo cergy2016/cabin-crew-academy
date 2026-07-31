@@ -2687,6 +2687,72 @@ const FIRST_ANNOUNCEMENTS_LESSON: any = {
       id: 'ex-13', type: 'speaking', points: 20,
       question: 'In groups of three, practise reading aloud the three announcements to each other. Then try to say them again from memory or short notes.',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'multiple-choice', points: 10,
+      question: 'Which sentence is correct?',
+      options: [
+        { id: 'o1', text: "Ladies and gentlemen, it's great to have you on board.", isCorrect: true },
+        { id: 'o2', text: "Ladies and men, it's great have you on board.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-2', type: 'multiple-choice', points: 10,
+      question: 'Which sentence is correct?',
+      options: [
+        { id: 'o1', text: 'The seatbelt sign has been switched off.', isCorrect: true },
+        { id: 'o2', text: 'The seatbelt sign has been switched.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-3', type: 'multiple-choice', points: 10,
+      question: 'Which sentence is correct?',
+      options: [
+        { id: 'o1', text: 'You can move around the cabin now.', isCorrect: true },
+        { id: 'o2', text: 'You can to move around the cabin now.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-4', type: 'multiple-choice', points: 10,
+      question: 'Which sentence is correct?',
+      options: [
+        { id: 'o1', text: 'In a few moments we shall be coming through the cabin with refreshments.', isCorrect: true },
+        { id: 'o2', text: 'In a few moments we shall be come through cabin with refreshments.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-5', type: 'fill-blank', points: 10,
+      question: 'Complete: "Please be ready with your _________."',
+      correctAnswer: 'order',
+    },
+    {
+      id: 'self-6', type: 'fill-blank', points: 10,
+      question: "Complete: \"We'd really appreciate it if you had the exact _________ for your purchases.\"",
+      correctAnswer: 'change',
+    },
+    {
+      id: 'self-7', type: 'multiple-choice', points: 10,
+      question: 'Which phrase means the same as "in a few moments"?',
+      options: [
+        { id: 'o1', text: 'Shortly', isCorrect: true },
+        { id: 'o2', text: 'Eventually', isCorrect: false },
+        { id: 'o3', text: 'Never', isCorrect: false },
+        { id: 'o4', text: 'Later this week', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-8', type: 'multiple-choice', points: 10,
+      question: 'Which phrase means the same as "a short flight"?',
+      options: [
+        { id: 'o1', text: 'Less than an hour and a half of flying time', isCorrect: true },
+        { id: 'o2', text: 'A long-haul flight over eight hours', isCorrect: false },
+        { id: 'o3', text: 'A flight with a stopover', isCorrect: false },
+        { id: 'o4', text: 'A delayed flight', isCorrect: false },
+      ],
+    },
+  ],
+  logBookPrompts: [
+    'Think about a bad experience during or immediately after take-off. What happened? How did you and your colleagues react? What would you do differently the next time you had a similar experience?',
   ],
   quiz: {
     id: 'quiz-3-1',
@@ -3330,6 +3396,100 @@ const GETTING_STARTED_LESSON: any = {
       id: 'ex-16', type: 'speaking', points: 15,
       question: 'What other passenger needs do you have to deal with at the beginning of the flight? Discuss with examples.',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'fill-blank', points: 10,
+      question: 'Complete Fatima\'s conversation with her colleague: "OK, the seatbelt _________ is off."',
+      correctAnswer: 'sign',
+    },
+    {
+      id: 'self-2', type: 'fill-blank', points: 10,
+      question: 'Complete: "This is a _________ flight, only an hour and 25 minutes."',
+      correctAnswer: 'short',
+    },
+    {
+      id: 'self-3', type: 'fill-blank', points: 10,
+      question: 'Complete: "We have to finish the _________ about 20 minutes before landing."',
+      correctAnswer: 'service',
+    },
+    {
+      id: 'self-4', type: 'fill-blank', points: 10,
+      question: 'Complete: "We have to finish the service about 20 _________ before landing."',
+      correctAnswer: 'minutes',
+    },
+    {
+      id: 'self-5', type: 'fill-blank', points: 10,
+      question: "Complete: \"We've got 169 passengers and there are just four of us. So, no _________ to waste.\"",
+      correctAnswer: 'time',
+    },
+    {
+      id: 'self-6', type: 'fill-blank', points: 10,
+      question: 'Complete: "I asked people to remain _________ but there are passengers moving in the aisles."',
+      correctAnswer: 'seated',
+    },
+    {
+      id: 'self-7', type: 'fill-blank', points: 10,
+      question: 'Complete: "There are passengers moving in the _________."',
+      correctAnswer: 'aisles',
+    },
+    {
+      id: 'self-8', type: 'fill-blank', points: 10,
+      question: "Complete: \"Let's get the _________ out and do our best!\"",
+      correctAnswer: 'trolleys',
+    },
+    {
+      id: 'self-9', type: 'multiple-choice', points: 10,
+      question: 'At what stage of the flight is Fatima speaking?',
+      options: [
+        { id: 'o1', text: 'Shortly after the seatbelt sign has been switched off, early in a short-haul flight', isCorrect: true },
+        { id: 'o2', text: 'Just before landing', isCorrect: false },
+        { id: 'o3', text: 'During boarding', isCorrect: false },
+        { id: 'o4', text: 'During a long-haul overnight flight', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-10', type: 'multiple-choice', points: 10,
+      question: 'How much time does the crew realistically have left to finish the drinks service?',
+      options: [
+        { id: 'o1', text: 'About 50 minutes, since the service must finish 20 minutes before landing', isCorrect: true },
+        { id: 'o2', text: 'Only 5 minutes', isCorrect: false },
+        { id: 'o3', text: 'Three hours', isCorrect: false },
+        { id: 'o4', text: 'The whole flight', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-11', type: 'multiple-choice', points: 10,
+      question: 'What problem does Fatima mention to her colleague?',
+      options: [
+        { id: 'o1', text: 'Passengers are moving in the aisles instead of remaining seated', isCorrect: true },
+        { id: 'o2', text: 'The plane is delayed', isCorrect: false },
+        { id: 'o3', text: 'There is no food left', isCorrect: false },
+        { id: 'o4', text: 'A passenger is unwell', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-12', type: 'multiple-choice', points: 10,
+      question: 'How many cabin crew are working this flight, for 169 passengers?',
+      options: [
+        { id: 'o1', text: 'Four', isCorrect: true },
+        { id: 'o2', text: 'Two', isCorrect: false },
+        { id: 'o3', text: 'Six', isCorrect: false },
+        { id: 'o4', text: 'Eight', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-13', type: 'multiple-choice', points: 10,
+      question: 'What does Fatima decide to do at the end of the conversation?',
+      options: [
+        { id: 'o1', text: 'Get the trolleys out and start the service anyway', isCorrect: true },
+        { id: 'o2', text: 'Cancel the service', isCorrect: false },
+        { id: 'o3', text: 'Ask the captain for more time', isCorrect: false },
+        { id: 'o4', text: 'Wait until all passengers sit down', isCorrect: false },
+      ],
+    },
+  ],
+  logBookPrompts: [
+    'Think about when there was a problem with the refreshment service on a short-haul flight. What happened? What did you say and do to resolve the problem?',
   ],
   quiz: {
     id: 'quiz-3-2',
@@ -3677,6 +3837,110 @@ const SETTLE_PASSENGERS_LESSON: any = {
       id: 'ex-19', type: 'speaking', points: 15,
       question: 'After take-off, flight attendants have a duty of customer care for all passengers, including babies. With all their other duties, is there enough time? Do young flyers present the biggest challenge, or are there other types of passenger who cause more problems on board?',
     },
+    // Self Study
+    {
+      id: 'self-1', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "Yes, fine thanks. Can I have a glass of water?" What is the best reply?',
+      options: [
+        { id: 'o1', text: "Of course, no problem at all. I'll be right back.", isCorrect: true },
+        { id: 'o2', text: "Just give me a few minutes to get that ready for you.", isCorrect: false },
+        { id: 'o3', text: "I'll be back with a new pair in a few minutes.", isCorrect: false },
+        { id: 'o4', text: 'Let me get them a snack.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-2', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "My earphones don\'t work." Flight attendant: "Oh dear, let me change them." What is the best follow-up?',
+      options: [
+        { id: 'o1', text: "I'll be back with a new pair in a few minutes.", isCorrect: true },
+        { id: 'o2', text: "Of course, no problem at all. I'll be right back.", isCorrect: false },
+        { id: 'o3', text: 'Let me get them a snack.', isCorrect: false },
+        { id: 'o4', text: 'Just give me a few minutes to get that ready for you.', isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-3', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "Yes, sorry to bother you, but my children are a little hungry." Flight attendant: "No bother at all." What is the best follow-up?',
+      options: [
+        { id: 'o1', text: 'Let me get them a snack.', isCorrect: true },
+        { id: 'o2', text: "I'll be back with a new pair in a few minutes.", isCorrect: false },
+        { id: 'o3', text: 'Just give me a few minutes to get that ready for you.', isCorrect: false },
+        { id: 'o4', text: "Of course, no problem at all. I'll be right back.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-4', type: 'multiple-choice', points: 10,
+      question: 'Passenger: "I\'m still a bit nervous, but I\'d love a cup of tea." Flight attendant: "With pleasure." What is the best follow-up?',
+      options: [
+        { id: 'o1', text: 'Just give me a few minutes to get that ready for you.', isCorrect: true },
+        { id: 'o2', text: 'Let me get them a snack.', isCorrect: false },
+        { id: 'o3', text: "I'll be back with a new pair in a few minutes.", isCorrect: false },
+        { id: 'o4', text: "Of course, no problem at all. I'll be right back.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-5', type: 'fill-blank', points: 10,
+      question: 'Complete the expression used when settling a passenger: "Don\'t _________, you\'ll be fine."',
+      correctAnswer: 'worry',
+    },
+    {
+      id: 'self-6', type: 'fill-blank', points: 10,
+      question: 'Complete: "Let me _________ you with that."',
+      correctAnswer: 'help',
+    },
+    {
+      id: 'self-7', type: 'fill-blank', points: 10,
+      question: 'Complete: "Is _________ all right?"',
+      correctAnswer: 'everything',
+    },
+    {
+      id: 'self-8', type: 'fill-blank', points: 10,
+      question: 'Complete: "Push the _________ if you need anything."',
+      correctAnswer: 'button',
+    },
+    {
+      id: 'self-9', type: 'fill-blank', points: 10,
+      question: 'Complete: "Of _________, no problem at all."',
+      correctAnswer: 'course',
+    },
+    {
+      id: 'self-10', type: 'fill-blank', points: 10,
+      question: "Complete: \"I'll be back in five _________.\"",
+      correctAnswer: 'minutes',
+    },
+    {
+      id: 'self-11', type: 'fill-blank', points: 10,
+      question: 'Complete: "I do _________, madam. I\'ll get your blanket now."',
+      correctAnswer: 'apologize',
+    },
+    {
+      id: 'self-12', type: 'fill-blank', points: 10,
+      question: 'Complete: "Can I _________ you, madam?"',
+      correctAnswer: 'help',
+    },
+    {
+      id: 'self-13', type: 'multiple-choice', points: 10,
+      question: 'Which of these is NOT appropriate to say to a passenger who is difficult to understand?',
+      options: [
+        { id: 'o1', text: 'You are impossible to understand.', isCorrect: true },
+        { id: 'o2', text: 'Could you repeat that, please?', isCorrect: false },
+        { id: 'o3', text: 'Sorry, please say that again.', isCorrect: false },
+        { id: 'o4', text: "Excuse me, I didn't catch that.", isCorrect: false },
+      ],
+    },
+    {
+      id: 'self-14', type: 'multiple-choice', points: 10,
+      question: 'Which of these is NOT appropriate to say to a passenger who is difficult to understand?',
+      options: [
+        { id: 'o1', text: "I don't know what you're saying.", isCorrect: true },
+        { id: 'o2', text: 'Say again, please.', isCorrect: false },
+        { id: 'o3', text: 'Could you repeat that, please?', isCorrect: false },
+        { id: 'o4', text: 'Sorry, please say that again.', isCorrect: false },
+      ],
+    },
+  ],
+  logBookPrompts: [
+    'Think about a time you helped to settle a passenger on a long-haul flight. What did you do to help them? What language did you use? Have you learned any new expressions that you could use in the future?',
   ],
   quiz: {
     id: 'quiz-3-3',
