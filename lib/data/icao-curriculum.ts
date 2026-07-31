@@ -8627,6 +8627,783 @@ const FINAL_TEN_MINUTES_LESSON: any = {
   updatedAt: new Date().toISOString(),
 };
 
+// ============================================================
+// Unit 10, Lesson 1: Arriving at the Gate and Disembarking the Passengers
+// Making a recommendation
+// ============================================================
+const A10A = '/audio/unit-10/lesson-1';
+
+const DISEMBARKING_LESSON: any = {
+  id: 'lesson-10-1',
+  unitId: 'unit-10',
+  title: 'Arriving at the Gate and Disembarking the Passengers',
+  description: 'Making the final gate announcement, recommendations, and saying a warm goodbye to passengers',
+  icon: '👋',
+  icaoLevel: 5,
+  category: 'cabin-crew',
+  difficulty: 'upper-intermediate',
+  xpReward: 180,
+  estimatedDurationMinutes: 45,
+  locked: false,
+  order: 1,
+  objectives: [
+    { id: 'obj-1', description: 'Understand the final gate-arrival announcement', type: 'listening' },
+    { id: 'obj-2', description: 'Make recommendations to passengers using "I suggest that..."', type: 'speaking' },
+    { id: 'obj-3', description: 'Say goodbye to passengers warmly and professionally', type: 'speaking' },
+  ],
+  scenario: {
+    id: 'scenario-disembarking',
+    title: 'Arriving in Boston',
+    description: "The purser, Ted, makes the final announcement as the plane taxis to the gate in Boston.",
+    context: 'Cabin, taxiing to the gate on arrival in Boston',
+    audioSegments: [
+      { id: 'announcement', text: "Purser: Ladies and gentlemen, on behalf of the captain and the entire crew we would like to welcome you to Boston, where the local time is 14:55. For your safety, please remain seated with your seatbelt fastened, leaving all items of hand luggage safely stowed, until the seatbelt signs have been switched off. Before you leave the aircraft, please ensure that you have all your personal items and hand-luggage with you. Please be careful when opening overhead lockers as items may fall out causing injury. We would like to remind you that smoking is not permitted until you've reached a designated smoking area outside the terminal building. We would also like to remind all passengers that mobile phones should not be switched on until the seatbelt signs have been turned off. As the captain told you, it is very cold outside so I suggest you have your coats ready for when you get outside the terminal! We wish you a very pleasant stay or a safe journey if you are continuing your journey. We hope to see you again in the future. Goodbye.", audioUrl: `${A10A}/announcement.wav`, durationSeconds: 55, speaker: 'crew' },
+    ],
+    vocabulary: [
+      { word: 'On behalf of', definition: "Representing or speaking for someone else" },
+      { word: 'Designated area', definition: 'A specific place set aside for a purpose' },
+      { word: 'Stowed', definition: 'Safely and neatly put away' },
+    ],
+  },
+  theory: {
+    title: 'Arriving at the Gate',
+    content: 'Arriving at the gate is the final safety-critical moment of the flight. Cabin crew give clear final reminders, make thoughtful recommendations, and say a warm, professional goodbye to every passenger.',
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of arriving at the gate',
+      audioUrl: `${A10A}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Making a Recommendation',
+    phrases: [
+      { situation: 'Recommending an action', phrase: 'I suggest (that) you have your coats ready for when you get outside the terminal!', meaning: 'A polite recommendation based on local conditions', example: 'I suggest that you have your coats ready.' },
+      { situation: 'Recommending transport', phrase: 'I suggest (that) you take the airport bus into the city centre.', meaning: 'A polite travel recommendation', example: 'I suggest that you take the airport bus into the city centre.' },
+      { situation: 'Recommending patience', phrase: "I suggest (that) you don't get up immediately but wait a few moments.", meaning: 'A polite negative recommendation', example: "I suggest that you don't get up immediately." },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Final Announcement Phrases',
+    terms: [
+      { term: 'The entire crew', definition: 'All crew members together', example: 'On behalf of the captain and the entire crew.' },
+      { term: 'Safely stowed', definition: 'Put away securely', example: 'Leaving all items of hand luggage safely stowed.' },
+      { term: 'Designated area', definition: 'A specific place set aside for a purpose', example: 'A designated smoking area outside the terminal.' },
+      { term: 'Terminal building', definition: 'The airport building where passengers arrive and depart', example: 'Outside the terminal building.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Thanking a passenger as they leave', expression: 'Thank you for flying with us, sir.', alternativeExpressions: ['We appreciate you flying with us.', 'Thanks for choosing our airline.'] },
+    { situation: 'Wishing a passenger well', expression: 'Have a good holiday. / Enjoy your trip.', alternativeExpressions: ['Safe travels.', 'Enjoy the rest of your journey.'] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'I suggest you have your coats ready.', audioUrl: `${A10A}/pronunciation.wav`, durationSeconds: 3 },
+  ],
+  vocabulary: [
+    { word: 'On behalf of', definition: 'Representing or speaking for someone else' },
+    { word: 'Designated area', definition: 'A specific place set aside for a purpose' },
+    { word: 'Stowed', definition: 'Safely and neatly put away' },
+    { word: 'Terminal building', definition: 'The airport building where passengers arrive and depart' },
+  ],
+  grammar: [
+    {
+      rule: "Making recommendations with 'I suggest (that) you...' - followed by the base form of the verb, not 'should'",
+      examples: [
+        { sentence: 'I suggest that you have your coats ready.', audioUrl: `${A10A}/suggest-1.wav` },
+        { sentence: 'I suggest that you take the airport bus into the city centre.', audioUrl: `${A10A}/suggest-2.wav` },
+        { sentence: "I suggest that you don't get up immediately but wait a few moments.", audioUrl: `${A10A}/suggest-3.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'speaking', points: 20,
+      question: 'Discuss: What do passengers usually want to do once the plane has landed? What are some safety issues with disembarking? Why is it important to smile and say goodbye? What special needs do passengers sometimes have? What do cabin crew have to do themselves after passengers leave?',
+    },
+    {
+      id: 'ex-2', type: 'fill-blank', points: 10,
+      question: 'Ladies and gentlemen, on _________ of the captain and the entire crew we would like to welcome you to Boston.',
+      audio: { id: 'announcement-audio', text: 'Final announcement', audioUrl: `${A10A}/announcement.wav`, durationSeconds: 55, speaker: 'crew' },
+      correctAnswer: 'behalf',
+    },
+    {
+      id: 'ex-3', type: 'fill-blank', points: 10,
+      question: 'Please remain seated, leaving all _________ of hand luggage safely stowed.',
+      correctAnswer: 'items',
+    },
+    {
+      id: 'ex-4', type: 'fill-blank', points: 10,
+      question: 'Before you leave the aircraft, please _________ that you have all your personal items with you.',
+      correctAnswer: 'ensure',
+    },
+    {
+      id: 'ex-5', type: 'fill-blank', points: 10,
+      question: 'Please be careful when opening overhead lockers as items may fall out causing _________.',
+      correctAnswer: 'injury',
+    },
+    {
+      id: 'ex-6', type: 'fill-blank', points: 10,
+      question: 'We would also like to _________ all passengers that mobile phones should not be switched on.',
+      correctAnswer: 'remind',
+    },
+    {
+      id: 'ex-7', type: 'fill-blank', points: 10,
+      question: 'I suggest you have your coats _________ for when you get outside the terminal!',
+      correctAnswer: 'ready',
+    },
+    {
+      id: 'ex-8', type: 'speaking', points: 15,
+      question: 'Practise making the final announcement. Use information about places you fly to, and try to do it from memory or notes.',
+    },
+    {
+      id: 'ex-9', type: 'speaking', points: 20,
+      question: 'What arrangements might need to be made before disembarking disabled or elderly passengers, or unaccompanied children? Practise using: "I suggest that you wait until all the passengers have disembarked.", "Would you mind staying in your seats until the wheelchairs arrive?", "Just stay in your seat for a little, and then someone will come and take you into the airport.", "It\'s better to wait until everyone has left the plane."',
+    },
+    {
+      id: 'ex-10', type: 'multiple-choice', points: 15,
+      question: 'Which of these is important to do before leaving the plane?',
+      options: [
+        { id: 'o1', text: 'Check there are no passengers still in their seats', isCorrect: true },
+        { id: 'o2', text: 'Check that the toilets are clean', isCorrect: false },
+        { id: 'o3', text: 'Ask passengers for feedback forms', isCorrect: false },
+        { id: 'o4', text: 'Count the number of empty seats', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-11', type: 'multiple-choice', points: 15,
+      question: 'What else should crew check before leaving the plane?',
+      options: [
+        { id: 'o1', text: 'Under the seats for forgotten passenger items', isCorrect: true },
+        { id: 'o2', text: 'The pilots\' personal belongings', isCorrect: false },
+        { id: 'o3', text: 'The weather at the next destination', isCorrect: false },
+        { id: 'o4', text: 'Nothing else is necessary', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-12', type: 'speaking', points: 20,
+      question: 'In groups, practise leaving the aircraft one by one and saying goodbye to the cabin crew. Rotate roles so everyone plays the flight attendant. Use: "Thank you for flying with us, sir.", "Goodbye, madam.", "Have a good holiday.", "Enjoy your trip.", "Look forward to seeing you again soon.", "Have a good day, Mr Gerighty." Remember to be polite and friendly - you want passengers to fly with you again!',
+    },
+  ],
+  quiz: {
+    id: 'quiz-10-1',
+    title: 'Arriving at the Gate Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'What is the local time in Boston according to the announcement?',
+        options: [
+          { id: 'o1', text: '14:55', isCorrect: true },
+          { id: 'o2', text: '15:31', isCorrect: false },
+          { id: 'o3', text: '09:00', isCorrect: false },
+          { id: 'o4', text: '18:10', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'Why does the purser suggest passengers have their coats ready?',
+        options: [
+          { id: 'o1', text: "It's very cold outside", isCorrect: true },
+          { id: 'o2', text: "It's raining heavily", isCorrect: false },
+          { id: 'o3', text: 'There is a long walk to the terminal', isCorrect: false },
+          { id: 'o4', text: 'No reason is given', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'When is smoking permitted?',
+        options: [
+          { id: 'o1', text: 'Only in a designated area outside the terminal', isCorrect: true },
+          { id: 'o2', text: 'As soon as the seatbelt sign is off', isCorrect: false },
+          { id: 'o3', text: 'Anywhere in the terminal', isCorrect: false },
+          { id: 'o4', text: 'It is not mentioned', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'Which phrase makes a polite recommendation?',
+        options: [
+          { id: 'o1', text: 'I suggest that you...', isCorrect: true },
+          { id: 'o2', text: 'You must...', isCorrect: false },
+          { id: 'o3', text: 'I order you to...', isCorrect: false },
+          { id: 'o4', text: 'It is forbidden to...', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'Why is it important to smile and say goodbye to passengers?',
+        options: [
+          { id: 'o1', text: 'It leaves a good final impression and encourages passengers to fly again', isCorrect: true },
+          { id: 'o2', text: 'It is a legal requirement', isCorrect: false },
+          { id: 'o3', text: 'It has no real purpose', isCorrect: false },
+          { id: 'o4', text: 'It speeds up disembarkation', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'On behalf of', back: 'Representing or speaking for someone else' },
+    { id: 'fc-2', front: 'Designated area', back: 'A specific place set aside for a purpose' },
+    { id: 'fc-3', front: 'Stowed', back: 'Safely and neatly put away' },
+    { id: 'fc-4', front: 'Terminal building', back: 'The airport building where passengers arrive and depart' },
+  ],
+  review: {
+    keyPoints: [
+      'The final announcement combines safety reminders with a warm welcome',
+      'Use "I suggest that you..." to make polite recommendations, not commands',
+      'Passengers with special needs may need to wait or be assisted separately',
+      'Always check the cabin thoroughly before crew themselves leave the aircraft',
+      'A genuine, friendly goodbye encourages passenger loyalty',
+    ],
+    commonMistakes: [
+      { mistake: 'Rushing disembarking passengers with special needs', correction: 'Politely suggest they wait, and explain why', explanation: 'This ensures safety and comfort for everyone' },
+      { mistake: 'Treating the goodbye as a formality rather than a genuine interaction', correction: 'Make eye contact and personalize the goodbye where possible', explanation: 'This is the last impression passengers have of the airline' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
+// ============================================================
+// Unit 10, Lesson 2: Taking Part in the Crew Debriefing
+// should / should have
+// ============================================================
+const A10B = '/audio/unit-10/lesson-2';
+
+const CREW_DEBRIEFING_LESSON: any = {
+  id: 'lesson-10-2',
+  unitId: 'unit-10',
+  title: 'Taking Part in the Crew Debriefing',
+  description: 'Reviewing a flight honestly in the post-flight debriefing, using should and should have',
+  icon: '📝',
+  icaoLevel: 5,
+  category: 'cabin-crew',
+  difficulty: 'upper-intermediate',
+  xpReward: 180,
+  estimatedDurationMinutes: 45,
+  locked: false,
+  order: 2,
+  objectives: [
+    { id: 'obj-1', description: 'Understand the purpose and structure of a crew debriefing', type: 'listening' },
+    { id: 'obj-2', description: 'Use should / shouldn\'t and should have / shouldn\'t have to reflect on a flight', type: 'grammar' },
+    { id: 'obj-3', description: 'Discuss what makes an effective cabin crew team', type: 'speaking' },
+  ],
+  scenario: {
+    id: 'scenario-crew-debriefing',
+    title: 'The Post-Flight Debriefing',
+    description: 'The captain leads a debriefing with purser Ted and flight attendant Leila, reviewing two incidents from the flight.',
+    context: 'Crew room, after landing',
+    audioSegments: [
+      { id: 'd1-01', text: "Captain: OK everyone, let's keep this short since it was a smooth flight overall - no incidents reported by passengers, so I think safety was well managed throughout.", audioUrl: `${A10B}/d1-01-captain.wav`, durationSeconds: 6, speaker: 'pilot' },
+      { id: 'd1-02', text: "Ted: Actually Captain, I'd like to raise two things. First, during the turbulence over the Atlantic, the drinks trolley wasn't secured in time and it rolled into the aisle.", audioUrl: `${A10B}/d1-02-ted.wav`, durationSeconds: 6, speaker: 'crew' },
+      { id: 'd1-03', text: 'Captain: That sounds concerning. What happened?', audioUrl: `${A10B}/d1-03-captain.wav`, durationSeconds: 3, speaker: 'pilot' },
+      { id: 'd1-04', text: 'Ted: Leila, can you explain?', audioUrl: `${A10B}/d1-04-ted.wav`, durationSeconds: 2, speaker: 'crew' },
+      { id: 'd1-05', text: "Leila: Yes, when the seatbelt sign came on, I was still finishing a service round and didn't get back to secure the trolley fast enough.", audioUrl: `${A10B}/d1-05-leila.wav`, durationSeconds: 6, speaker: 'crew' },
+      { id: 'd1-06', text: 'Ted: The second issue - Hemal and Jutta were slow securing the cabin and galley before landing.', audioUrl: `${A10B}/d1-06-ted.wav`, durationSeconds: 5, speaker: 'crew' },
+      { id: 'd1-07', text: 'Captain: Why was that?', audioUrl: `${A10B}/d1-07-captain.wav`, durationSeconds: 2, speaker: 'pilot' },
+      { id: 'd1-08', text: "Leila: I think there was a bit of a communication gap - I didn't tell them clearly enough how much time we had left.", audioUrl: `${A10B}/d1-08-leila.wav`, durationSeconds: 6, speaker: 'crew' },
+      { id: 'd1-09', text: "Captain: I see. Leila, you should've communicated the timing more clearly to your team.", audioUrl: `${A10B}/d1-09-captain.wav`, durationSeconds: 4, speaker: 'pilot' },
+      { id: 'd1-10', text: "Leila: You're right, I should've acted faster. Next time I'll check in with the team as soon as the seatbelt sign comes on.", audioUrl: `${A10B}/d1-10-leila.wav`, durationSeconds: 6, speaker: 'crew' },
+    ],
+    vocabulary: [
+      { word: 'Debriefing', definition: 'A meeting held after an event to review what happened' },
+      { word: 'Communication gap', definition: 'A breakdown in sharing information clearly' },
+      { word: 'Secure', definition: 'To make something safely fixed in place' },
+    ],
+  },
+  theory: {
+    title: 'The Crew Debriefing',
+    content: 'Crew debriefings review the flight honestly, using should and should have to reflect on what went well and what could improve next time - without blame, but with clear commitments to change.',
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of the crew debriefing',
+      audioUrl: `${A10B}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Should / Should Have',
+    phrases: [
+      { situation: 'Present/future recommendation', phrase: 'We should talk about two incidents now. / You should act more promptly in future.', meaning: 'Should for present and future advice', example: 'You should act more promptly in future.' },
+      { situation: 'Negative recommendation', phrase: "You shouldn't continue serving food next time.", meaning: 'Should not for negative advice', example: "You shouldn't continue serving food next time." },
+      { situation: 'Past regret', phrase: "You should've shut down the service immediately. / You should've told them to stop.", meaning: 'Should have for criticizing a past action', example: "You should've shut down the service immediately." },
+      { situation: 'Self-reflection', phrase: "I should've communicated better. / We shouldn't have been late.", meaning: 'Should have / shouldn\'t have for reflecting on your own past actions', example: "I should've communicated better." },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Teamwork Vocabulary',
+    terms: [
+      { term: 'Teamwork', definition: 'Working for each other', example: 'Good teamwork made the flight run smoothly.' },
+      { term: 'Good communication', definition: 'Talking to each other clearly', example: 'Good communication prevents misunderstandings.' },
+      { term: 'Customer care', definition: 'Looking after passengers', example: 'Customer care is central to the role.' },
+      { term: 'Problem-solving', definition: 'Working out how best to do things', example: 'Problem-solving skills help in unexpected situations.' },
+      { term: 'Crew coordination', definition: 'Knowing precisely each other\'s roles', example: 'Crew coordination is essential during an emergency.' },
+      { term: 'Decision-making', definition: 'Taking action', example: 'Quick decision-making can prevent a small issue becoming serious.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'Raising an issue diplomatically', expression: "I'd like to raise two things.", alternativeExpressions: ['There are a couple of points I\'d like to mention.', 'Can I flag two issues?'] },
+    { situation: 'Accepting responsibility', expression: "You're right, I should've acted faster.", alternativeExpressions: ['I agree, I could have done better.', 'That\'s fair, I\'ll improve on that.'] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: "You should've communicated better.", audioUrl: `${A10B}/pronunciation.wav`, durationSeconds: 3 },
+  ],
+  vocabulary: [
+    { word: 'Debriefing', definition: 'A meeting held after an event to review what happened' },
+    { word: 'Communication gap', definition: 'A breakdown in sharing information clearly' },
+    { word: 'Secure', definition: 'To make something safely fixed in place' },
+    { word: 'Promptly', definition: 'Quickly, without delay' },
+  ],
+  grammar: [
+    {
+      rule: "'Should' for present/future advice, 'should have' (should've) for regret about the past",
+      examples: [
+        { sentence: 'You should act more promptly in future.', audioUrl: `${A10B}/should-2.wav` },
+        { sentence: "You should've shut down the service immediately.", audioUrl: `${A10B}/should-4.wav` },
+        { sentence: "I should've communicated better.", audioUrl: `${A10B}/should-6.wav` },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'multiple-choice', points: 15,
+      question: 'Where do debriefings usually take place?',
+      options: [
+        { id: 'o1', text: 'In the terminal', isCorrect: true },
+        { id: 'o2', text: 'On the plane during the flight', isCorrect: false },
+        { id: 'o3', text: 'Only at head office', isCorrect: false },
+        { id: 'o4', text: 'At the passenger\'s hotel', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-2', type: 'multiple-choice', points: 15,
+      question: 'What is the point of a debriefing?',
+      options: [
+        { id: 'o1', text: 'To review the flight and any incidents', isCorrect: true },
+        { id: 'o2', text: 'To relax together after the flight', isCorrect: false },
+        { id: 'o3', text: 'Only to complete paperwork', isCorrect: false },
+        { id: 'o4', text: 'To plan the next flight\'s menu', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 15,
+      question: 'Who attends a crew debriefing?',
+      options: [
+        { id: 'o1', text: 'All the flight crew and cabin crew', isCorrect: true },
+        { id: 'o2', text: 'Only senior crew members', isCorrect: false },
+        { id: 'o3', text: 'Only the captain and the purser', isCorrect: false },
+        { id: 'o4', text: 'Passengers are also invited', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-4', type: 'multiple-choice', points: 15,
+      question: 'Why are debriefings important?',
+      options: [
+        { id: 'o1', text: 'They are part of an essential ongoing safety review', isCorrect: true },
+        { id: 'o2', text: 'They are purely a social tradition', isCorrect: false },
+        { id: 'o3', text: 'They are optional and rarely held', isCorrect: false },
+        { id: 'o4', text: 'They exist only for new crew members', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-5', type: 'multiple-choice', points: 10,
+      question: 'Why does the captain say the meeting will be short?',
+      options: [
+        { id: 'o1', text: 'The flight was smooth with no passenger-reported incidents', isCorrect: true },
+        { id: 'o2', text: 'The crew are in a hurry to leave', isCorrect: false },
+        { id: 'o3', text: 'There is nothing to discuss ever', isCorrect: false },
+        { id: 'o4', text: 'The captain dislikes debriefings', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-6', type: 'multiple-choice', points: 10,
+      question: 'What two incidents does Ted want to discuss?',
+      options: [
+        { id: 'o1', text: 'The trolley rolling during turbulence, and slow cabin/galley securing', isCorrect: true },
+        { id: 'o2', text: 'A missed meal and a lost passport', isCorrect: false },
+        { id: 'o3', text: 'A medical emergency and a diversion', isCorrect: false },
+        { id: 'o4', text: 'A disruptive passenger and a delay', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-7', type: 'multiple-choice', points: 10,
+      question: 'Why were Hemal and Jutta slow in securing the cabin and galley?',
+      options: [
+        { id: 'o1', text: 'A communication gap - Leila didn\'t clearly tell them the time remaining', isCorrect: true },
+        { id: 'o2', text: 'They were dealing with a medical emergency', isCorrect: false },
+        { id: 'o3', text: 'The galley equipment was broken', isCorrect: false },
+        { id: 'o4', text: 'No reason is given', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-8', type: 'multiple-choice', points: 10,
+      question: 'What does the "Fasten seatbelts" sign mean for the cabin crew?',
+      options: [
+        { id: 'o1', text: 'They must secure the cabin and be seated quickly', isCorrect: true },
+        { id: 'o2', text: 'Nothing changes for them', isCorrect: false },
+        { id: 'o3', text: 'They should continue food service as normal', isCorrect: false },
+        { id: 'o4', text: 'They should leave their positions', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-9', type: 'multiple-choice', points: 10,
+      question: 'What should Leila have done?',
+      options: [
+        { id: 'o1', text: 'Communicated the timing more clearly to her team', isCorrect: true },
+        { id: 'o2', text: 'Ignored the situation', isCorrect: false },
+        { id: 'o3', text: 'Told the captain immediately without informing the team', isCorrect: false },
+        { id: 'o4', text: 'Nothing - she acted correctly', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-10', type: 'multiple-choice', points: 10,
+      question: 'During the turbulence, what happened to the trolley in the cabin?',
+      options: [
+        { id: 'o1', text: 'It wasn\'t secured in time and rolled into the aisle', isCorrect: true },
+        { id: 'o2', text: 'It was properly secured with no issue', isCorrect: false },
+        { id: 'o3', text: 'It was never taken out during the flight', isCorrect: false },
+        { id: 'o4', text: 'A passenger was injured by it', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-11', type: 'multiple-choice', points: 15,
+      question: 'What will Leila do next time?',
+      options: [
+        { id: 'o1', text: 'Check in with her team as soon as the seatbelt sign comes on', isCorrect: true },
+        { id: 'o2', text: 'Do everything herself without delegating', isCorrect: false },
+        { id: 'o3', text: 'Avoid discussing incidents in future debriefings', isCorrect: false },
+        { id: 'o4', text: 'Ask to be moved to a different role', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-12', type: 'speaking', points: 15,
+      question: 'Think back to previous incidents in your flying career (real or imagined). What kinds of things have gone wrong? Use should / shouldn\'t and should have (done) / shouldn\'t have (done) to talk about these incidents.',
+    },
+    {
+      id: 'ex-13', type: 'speaking', points: 20,
+      question: 'Discuss what makes cabin and flight crew into a successful team: teamwork, good communication, customer care, problem-solving, crew coordination, decision-making. Match each to its meaning: looking after passengers; knowing precisely each other\'s roles; working for each other; taking action; talking to each other; working out how best to do things.',
+    },
+  ],
+  quiz: {
+    id: 'quiz-10-2',
+    title: 'Taking Part in the Crew Debriefing Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'What happened to the drinks trolley during turbulence?',
+        options: [
+          { id: 'o1', text: 'It rolled into the aisle because it wasn\'t secured in time', isCorrect: true },
+          { id: 'o2', text: 'Nothing, it was properly secured', isCorrect: false },
+          { id: 'o3', text: 'It fell and broke', isCorrect: false },
+          { id: 'o4', text: 'It was never mentioned', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'Complete: "You _____ communicated the timing more clearly."',
+        options: [
+          { id: 'o1', text: "should've", isCorrect: true },
+          { id: 'o2', text: 'will', isCorrect: false },
+          { id: 'o3', text: 'can', isCorrect: false },
+          { id: 'o4', text: 'might', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'Which word describes working for each other as a team?',
+        options: [
+          { id: 'o1', text: 'Teamwork', isCorrect: true },
+          { id: 'o2', text: 'Customer care', isCorrect: false },
+          { id: 'o3', text: 'Decision-making', isCorrect: false },
+          { id: 'o4', text: 'Problem-solving', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'What caused Hemal and Jutta to be slow securing the cabin?',
+        options: [
+          { id: 'o1', text: 'A communication gap with Leila', isCorrect: true },
+          { id: 'o2', text: 'A broken trolley', isCorrect: false },
+          { id: 'o3', text: 'A disruptive passenger', isCorrect: false },
+          { id: 'o4', text: 'A medical emergency', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'Why are debriefings considered essential, not optional?',
+        options: [
+          { id: 'o1', text: 'They are part of an ongoing safety review process', isCorrect: true },
+          { id: 'o2', text: 'They are only for socializing', isCorrect: false },
+          { id: 'o3', text: 'They are required only after emergencies', isCorrect: false },
+          { id: 'o4', text: 'They are not actually important', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'Debriefing', back: 'A meeting held after an event to review what happened' },
+    { id: 'fc-2', front: 'Crew coordination', back: "Knowing precisely each other's roles" },
+    { id: 'fc-3', front: 'Communication gap', back: 'A breakdown in sharing information clearly' },
+    { id: 'fc-4', front: 'Promptly', back: 'Quickly, without delay' },
+  ],
+  review: {
+    keyPoints: [
+      'Debriefings review both what went well and what needs improvement',
+      "'Should' gives future advice; 'should have' reflects on a past mistake",
+      'Raising issues diplomatically ("I\'d like to raise two things") keeps debriefings constructive',
+      'Good teamwork combines communication, coordination, and clear decision-making',
+      'Taking responsibility ("I should\'ve...") builds trust within a crew',
+    ],
+    commonMistakes: [
+      { mistake: 'Avoiding raising problems in a debriefing', correction: 'Raise issues honestly and constructively', explanation: 'Debriefings only improve safety if problems are discussed openly' },
+      { mistake: 'Confusing "should" and "should have" forms', correction: "Use 'should' for now/future, 'should have' for past regret", explanation: 'This is a key grammar distinction for professional reflection' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
+// ============================================================
+// Unit 10, Lesson 3 (Case Study): Fear and Heroism aboard Flight 253
+// Standalone case study - no merge needed (Unit 10 has only 2 topics)
+// ============================================================
+const A10C = '/audio/unit-10/lesson-3';
+
+const FLIGHT_253_LESSON: any = {
+  id: 'lesson-10-3',
+  unitId: 'unit-10',
+  title: 'Case Study: Fear and Heroism aboard Flight 253',
+  description: 'A real security incident, passenger heroism, and reflecting on the flight attendant role today',
+  icon: '🦸',
+  icaoLevel: 6,
+  category: 'cabin-crew',
+  difficulty: 'advanced',
+  xpReward: 250,
+  estimatedDurationMinutes: 60,
+  locked: false,
+  order: 3,
+  objectives: [
+    { id: 'obj-1', description: 'Understand a real in-flight security incident', type: 'reading' },
+    { id: 'obj-2', description: 'Discuss airport security and crew training for threats', type: 'speaking' },
+    { id: 'obj-3', description: 'Reflect on how the flight attendant role has changed over time', type: 'speaking' },
+  ],
+  scenario: {
+    id: 'scenario-flight-253',
+    title: 'Fear and Heroism aboard Flight 253',
+    description: 'A passenger attempted to detonate a home-made explosive device on a long-haul flight. Passengers and crew reacted quickly to prevent disaster.',
+    context: 'A long-haul flight, during the final approach',
+    audioSegments: [
+      { id: 'case-1', text: 'The flight was long and the passengers were quiet in the final few minutes. First came a strange popping sound, followed by silence. Then came the unmistakable smell of smoke, and passengers began to shout and scream.', audioUrl: `${A10C}/case-1.wav`, durationSeconds: 12, speaker: 'instructor' },
+      { id: 'case-2', text: 'People were just running, and they were scared, said one passenger who saw the fire six rows behind her. They were running toward the centre of the plane, running to get away from the flames.', audioUrl: `${A10C}/case-2.wav`, durationSeconds: 10, speaker: 'instructor' },
+      { id: 'case-3', text: 'One passenger jumped over several other passengers to reach the fire. He burned his fingers as he grabbed a piece of very hot plastic held by the man accused of trying to bring down the passenger jet with a home-made explosive device.', audioUrl: `${A10C}/case-3.wav`, durationSeconds: 12, speaker: 'instructor' },
+      { id: 'case-4', text: 'Other passengers used blankets, and a flight attendant rushed to the scene with a fire extinguisher to put out the flames. When the fire was out, the passenger who intervened marched the man to the front of the plane, helped by a flight attendant. The man said nothing and did not resist.', audioUrl: `${A10C}/case-4.wav`, durationSeconds: 14, speaker: 'instructor' },
+      { id: 'case-5', text: "We heard a pop, then the smell, and the reality kicked in for all of us. The reality was the fear in the flight attendants' eyes, said one businessman on board.", audioUrl: `${A10C}/case-5.wav`, durationSeconds: 8, speaker: 'instructor' },
+      { id: 'case-6', text: 'The captain told passengers over the intercom: There was an incident, and everything is under control. It is over. Fasten your seatbelts. We are about to land.', audioUrl: `${A10C}/case-6.wav`, durationSeconds: 8, speaker: 'instructor' },
+      { id: 'case-7', text: 'The incident had lasted just a few minutes, but the experience left many passengers upset long after the aircraft safely landed.', audioUrl: `${A10C}/case-7.wav`, durationSeconds: 6, speaker: 'instructor' },
+    ],
+    vocabulary: [
+      { word: 'To pop', definition: 'To make a short, explosive sound' },
+      { word: 'An explosive device', definition: 'Something designed to explode' },
+      { word: 'To put out', definition: 'To extinguish; to stop from burning' },
+      { word: 'To march someone', definition: 'To make someone walk with you, under control' },
+    ],
+  },
+  theory: {
+    title: 'Fear and Heroism aboard Flight 253',
+    content: "A recent flight became the scene of a serious security incident during its final approach. A passenger attempted to detonate a home-made explosive device concealed in his clothing. The device produced a popping sound and smoke rather than a full explosion. Nearby passengers reacted immediately: one man jumped across seats to reach the source of the fire, burning his fingers as he grabbed the hot device from the man's hands. Other passengers used blankets to help smother the flames, and a flight attendant arrived with a fire extinguisher to finish putting out the fire. The passenger who first intervened then marched the man to the front of the aircraft, assisted by a flight attendant, while the man offered no resistance. The captain calmly informed passengers over the intercom that the situation was under control and the aircraft would shortly land. Although the incident lasted only a few minutes, it left many passengers deeply shaken.",
+    audioExplanation: {
+      id: 'theory-audio',
+      text: 'Explanation of the security incident',
+      audioUrl: `${A10C}/theory-explanation.wav`,
+      durationSeconds: 20,
+      speaker: 'instructor',
+    },
+  },
+  icaoPhraseoology: STANDARD_PHRASEOLOGY,
+  cabinCrewPhraseoology: {
+    category: 'Reassuring in a Crisis',
+    phrases: [
+      { situation: 'Announcing that a threat is over', phrase: 'There was an incident, and everything is under control. It is over.', meaning: 'Calm, factual reassurance from the captain', example: 'Everything is under control.' },
+      { situation: 'Giving a final safety instruction', phrase: 'Fasten your seatbelts. We are about to land.', meaning: 'A clear, calm instruction to close out the incident', example: 'Fasten your seatbelts. We are about to land.' },
+    ],
+  },
+  airlineVocabulary: [{
+    category: 'Security Incident Vocabulary',
+    terms: [
+      { term: 'To pop', definition: 'To make a short, explosive sound', example: 'First came a strange popping sound.' },
+      { term: 'To bring down', definition: 'To cause to crash', example: 'He was accused of trying to bring down the aircraft.' },
+      { term: 'To blow up', definition: 'To explode; to destroy in an explosion', example: 'He tried to blow up the plane.' },
+      { term: 'An explosive device', definition: 'Something designed to explode', example: 'He concealed an explosive device on board.' },
+      { term: 'To put out', definition: 'To extinguish; to stop from burning', example: 'A flight attendant helped put out the flames.' },
+      { term: 'To march someone', definition: 'To make someone walk with you, under control', example: 'He marched the man to the front of the plane.' },
+    ],
+  }],
+  professionalExpressions: [
+    { situation: 'De-escalating fear among passengers', expression: 'Everything is under control.', alternativeExpressions: ['We have the situation handled.', 'You are safe now.'] },
+    { situation: 'Closing out an incident calmly', expression: 'It is over. We are about to land.', alternativeExpressions: ['The situation has been resolved.', 'We\'ll be on the ground shortly.'] },
+  ],
+  pronunciation: [
+    { id: 'pron-1', text: 'Everything is under control.', audioUrl: `${A10C}/pronunciation.wav`, durationSeconds: 3 },
+  ],
+  vocabulary: [
+    { word: 'To pop', definition: 'To make a short, explosive sound' },
+    { word: 'To bring down', definition: 'To cause to crash' },
+    { word: 'To blow up', definition: 'To explode; to destroy in an explosion' },
+    { word: 'An explosive device', definition: 'Something designed to explode' },
+    { word: 'To put out', definition: 'To extinguish; to stop from burning' },
+    { word: 'To march someone', definition: 'To make someone walk with you, under control' },
+  ],
+  grammar: [
+    {
+      rule: 'Reported witness accounts often use past simple with direct quotations for vividness',
+      examples: [
+        { sentence: '"People were just running, and they were scared," said one passenger.' },
+        { sentence: '"The reality was the fear in the flight attendants\' eyes," said one businessman.' },
+        { sentence: 'The captain told passengers: "Everything is under control."' },
+      ],
+    },
+  ],
+  exercises: [
+    {
+      id: 'ex-1', type: 'multiple-choice', points: 15,
+      question: 'What happened, and when during the flight did it happen?',
+      options: [
+        { id: 'o1', text: 'A passenger tried to set off an explosive device during the final approach', isCorrect: true },
+        { id: 'o2', text: 'An engine caught fire shortly after take-off', isCorrect: false },
+        { id: 'o3', text: 'A passenger had a medical emergency mid-flight', isCorrect: false },
+        { id: 'o4', text: 'A fight broke out between two passengers', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-2', type: 'multiple-choice', points: 15,
+      question: 'How did the man conceal the device, according to the case study?',
+      options: [
+        { id: 'o1', text: 'He hid it in his clothing and spent time in the toilet beforehand', isCorrect: true },
+        { id: 'o2', text: 'He had it in his checked luggage', isCorrect: false },
+        { id: 'o3', text: 'It was hidden inside food', isCorrect: false },
+        { id: 'o4', text: 'It was not concealed at all', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-3', type: 'multiple-choice', points: 15,
+      question: 'How did passengers and crew react?',
+      options: [
+        { id: 'o1', text: 'They acted quickly - one passenger tackled the fire, others helped with blankets, a flight attendant used a fire extinguisher', isCorrect: true },
+        { id: 'o2', text: 'Everyone remained seated and did nothing', isCorrect: false },
+        { id: 'o3', text: 'Passengers panicked and no one helped', isCorrect: false },
+        { id: 'o4', text: 'The crew evacuated the aircraft mid-flight', isCorrect: false },
+      ],
+    },
+    {
+      id: 'ex-4', type: 'speaking', points: 20,
+      question: 'How do you think the man managed to pass all the security checks? Has airport security changed since incidents like this? If so, in what ways?',
+    },
+    {
+      id: 'ex-5', type: 'speaking', points: 20,
+      question: "What do you think about the crew's reaction to this incident? Have you been trained for such possibilities? What would you do differently, if anything?",
+    },
+    {
+      id: 'ex-6', type: 'speaking', points: 15,
+      question: 'Discuss: Has the threat of terrorism changed the flight attendant\'s job? What are flight attendants typically expected to check, both routinely and for security? Which passengers are usually the last to leave the aircraft, and why?',
+    },
+    {
+      id: 'ex-7', type: 'speaking', points: 15,
+      question: 'When the plane touches down, is that the end of a flight attendant\'s duties? What happens once the flight has landed - when do cabin crew leave the aircraft, and what about the purser and flight crew?',
+    },
+    {
+      id: 'ex-8', type: 'speaking', points: 15,
+      question: 'What makes you feel that you have done a good job after a flight? Does the fear of incidents like this make you want to be an even better professional, or does it make you think about changing your job?',
+    },
+    {
+      id: 'ex-9', type: 'speaking', points: 15,
+      question: 'Do you keep a diary or journal of your different flights, noting your experiences? Why, or why not? Being a flight attendant used to be considered a dream job - do you think it still is? If not, what has changed?',
+    },
+  ],
+  quiz: {
+    id: 'quiz-10-3',
+    title: 'Fear and Heroism aboard Flight 253 Quiz',
+    passingScore: 70,
+    exercises: [
+      {
+        id: 'q-1', type: 'multiple-choice', points: 20,
+        question: 'What sound did passengers hear at the start of the incident?',
+        options: [
+          { id: 'o1', text: 'A strange popping sound', isCorrect: true },
+          { id: 'o2', text: 'A loud explosion', isCorrect: false },
+          { id: 'o3', text: 'An alarm bell', isCorrect: false },
+          { id: 'o4', text: 'Nothing unusual', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-2', type: 'multiple-choice', points: 20,
+        question: 'What did passengers use to help control the fire?',
+        options: [
+          { id: 'o1', text: 'Blankets and a fire extinguisher', isCorrect: true },
+          { id: 'o2', text: 'Bottled water only', isCorrect: false },
+          { id: 'o3', text: 'Nothing, crew alone handled it', isCorrect: false },
+          { id: 'o4', text: 'Their coats', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-3', type: 'multiple-choice', points: 20,
+        question: 'What did the captain tell passengers over the intercom?',
+        options: [
+          { id: 'o1', text: 'Everything is under control and they were about to land', isCorrect: true },
+          { id: 'o2', text: 'The flight would be diverted immediately', isCorrect: false },
+          { id: 'o3', text: 'Nothing - there was no announcement', isCorrect: false },
+          { id: 'o4', text: 'Passengers should evacuate immediately', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-4', type: 'multiple-choice', points: 20,
+        question: 'What does "to put out" mean?',
+        options: [
+          { id: 'o1', text: 'To extinguish; to stop from burning', isCorrect: true },
+          { id: 'o2', text: 'To place outside', isCorrect: false },
+          { id: 'o3', text: 'To publish', isCorrect: false },
+          { id: 'o4', text: 'To remove from the aircraft', isCorrect: false },
+        ],
+      },
+      {
+        id: 'q-5', type: 'multiple-choice', points: 20,
+        question: 'What does "to march someone" mean in this context?',
+        options: [
+          { id: 'o1', text: 'To make someone walk with you, under control', isCorrect: true },
+          { id: 'o2', text: 'To arrest someone officially', isCorrect: false },
+          { id: 'o3', text: 'To celebrate with someone', isCorrect: false },
+          { id: 'o4', text: 'To carry someone', isCorrect: false },
+        ],
+      },
+    ],
+  },
+  flashcards: [
+    { id: 'fc-1', front: 'An explosive device', back: 'Something designed to explode' },
+    { id: 'fc-2', front: 'To put out', back: 'To extinguish; to stop from burning' },
+    { id: 'fc-3', front: 'To bring down', back: 'To cause to crash' },
+    { id: 'fc-4', front: 'To march someone', back: 'To make someone walk with you, under control' },
+  ],
+  review: {
+    keyPoints: [
+      'Rare but serious security incidents can happen even after extensive screening',
+      'Quick, coordinated passenger and crew action can prevent a disaster',
+      'A calm captain\'s announcement is essential to reassure passengers after an incident',
+      'The flight attendant role now includes security awareness alongside service and safety',
+      'Reflecting on real incidents, even rare ones, strengthens preparedness',
+    ],
+    commonMistakes: [
+      { mistake: 'Assuming a security incident could never happen on your flight', correction: 'Stay alert and know your emergency procedures, however rare the risk', explanation: 'This case study shows how quickly a calm flight can change' },
+      { mistake: 'Underestimating the emotional impact of a security incident', correction: 'Recognize that both passengers and crew may need support afterwards', explanation: 'The article notes passengers remained upset long after landing' },
+    ],
+  },
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+};
+
 const UNIT_TITLES: Record<number, string> = {
   0: 'Unit 1: The Pre-Flight Briefing',
   1: 'Unit 2: Welcome on Board',
@@ -8710,6 +9487,12 @@ export const iCAOUnits: Unit[] = [
         ? DELAYED_LANDINGS_LESSON
         : unitIdx === 8 && lessonIdx === 2
         ? FINAL_TEN_MINUTES_LESSON
+        : unitIdx === 9 && lessonIdx === 0
+        ? DISEMBARKING_LESSON
+        : unitIdx === 9 && lessonIdx === 1
+        ? CREW_DEBRIEFING_LESSON
+        : unitIdx === 9 && lessonIdx === 2
+        ? FLIGHT_253_LESSON
         : LESSON_TEMPLATE(unitIdx + 1, lessonIdx + 1, `Lesson ${lessonIdx + 1}`)
     )
   })) as Unit[]
