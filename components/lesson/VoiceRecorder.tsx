@@ -6,6 +6,7 @@ import { Mic, Square, Play, Loader2, CheckCircle2, AlertCircle } from 'lucide-re
 import { useVoiceRecording } from '@/lib/services/voiceRecordingService';
 import type { VoiceAnalysis } from '@/lib/services/voiceRecordingService';
 import AudioPlayer from './AudioPlayer';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 interface VoiceRecorderProps {
   exerciseId: string;
@@ -18,6 +19,7 @@ export default function VoiceRecorder({
   expectedText,
   onRecordingComplete,
 }: VoiceRecorderProps) {
+  const { t } = useTranslation();
   const {
     startRecording,
     stopRecording,
@@ -48,7 +50,7 @@ export default function VoiceRecorder({
       }, 1000);
     } catch (err) {
       const errorMessage =
-        err instanceof Error ? err.message : 'Failed to start recording';
+        err instanceof Error ? err.message : t((d) => d.voiceRecorder.errorStart);
       setError(errorMessage);
       console.error('Recording error:', err);
     }
@@ -71,7 +73,7 @@ export default function VoiceRecorder({
       await handleAnalyze(blob);
     } catch (err) {
       const errorMessage =
-        err instanceof Error ? err.message : 'Failed to stop recording';
+        err instanceof Error ? err.message : t((d) => d.voiceRecorder.errorStop);
       setError(errorMessage);
       console.error('Stop recording error:', err);
     }
@@ -90,7 +92,7 @@ export default function VoiceRecorder({
   const handleAnalyze = async (blob?: Blob) => {
     try {
       if (!recordingBlobRef.current && !blob) {
-        setError('No recording found');
+        setError(t((d) => d.voiceRecorder.errorNoRecording));
         return;
       }
 
@@ -104,7 +106,7 @@ export default function VoiceRecorder({
       onRecordingComplete?.(result);
     } catch (err) {
       const errorMessage =
-        err instanceof Error ? err.message : 'Failed to analyze recording';
+        err instanceof Error ? err.message : t((d) => d.voiceRecorder.errorAnalyze);
       setError(errorMessage);
       setRecordingState('idle');
       console.error('Analysis error:', err);
@@ -138,15 +140,13 @@ export default function VoiceRecorder({
           >
             <div className="p-4 bg-stone-50 dark:bg-white/[0.03] border border-stone-200 dark:border-white/10 rounded-sm">
               <p className="text-sm text-stone-700 dark:text-stone-300">
-                <strong className="text-amber-700 dark:text-amber-400">Instructions:</strong> Click the microphone button to start
-                recording. Read the sentence below out loud, then click stop when
-                done.
+                <strong className="text-amber-700 dark:text-amber-400">{t((d) => d.voiceRecorder.instructionsLabel)}</strong> {t((d) => d.voiceRecorder.instructionsText)}
               </p>
             </div>
 
             <div className="p-4 bg-stone-50 dark:bg-white/[0.03] rounded-sm border border-stone-200 dark:border-white/10">
               <p className="text-stone-900 dark:text-amber-50 font-medium">
-                Say this:
+                {t((d) => d.voiceRecorder.sayThis)}
               </p>
               <p className="text-lg text-stone-600 dark:text-stone-300 mt-2 italic">
                 {expectedText}
@@ -160,7 +160,7 @@ export default function VoiceRecorder({
               className="w-full flex items-center justify-center gap-3 py-4 rounded-xl bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white font-bold transition-all"
             >
               <Mic className="w-6 h-6" />
-              Start Recording
+              {t((d) => d.voiceRecorder.startRecording)}
             </motion.button>
           </motion.div>
         )}
@@ -184,7 +184,7 @@ export default function VoiceRecorder({
                   <Mic className="w-8 h-8 text-red-600 dark:text-red-400" />
                 </motion.div>
                 <p className="text-lg font-bold text-red-900 dark:text-red-100">
-                  Recording...
+                  {t((d) => d.voiceRecorder.recording)}
                 </p>
                 <p className="text-2xl font-mono text-red-600 dark:text-red-400 mt-2">
                   {formatTime(recordingTime)}
@@ -200,7 +200,7 @@ export default function VoiceRecorder({
                 className="py-3 flex items-center justify-center gap-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold transition-colors"
               >
                 <Square className="w-4 h-4" />
-                Stop Recording
+                {t((d) => d.voiceRecorder.stopRecording)}
               </motion.button>
 
               <motion.button
@@ -209,7 +209,7 @@ export default function VoiceRecorder({
                 onClick={handleCancel}
                 className="py-3 flex items-center justify-center gap-2 rounded-sm bg-stone-500 hover:bg-stone-600 text-white font-bold transition-colors"
               >
-                Cancel
+                {t((d) => d.voiceRecorder.cancel)}
               </motion.button>
             </div>
           </motion.div>
@@ -228,7 +228,7 @@ export default function VoiceRecorder({
               <Loader2 className="w-8 h-8 text-amber-600 dark:text-amber-400 mx-auto" />
             </motion.div>
             <p className="font-semibold text-stone-900 dark:text-amber-50">
-              Analyzing your pronunciation...
+              {t((d) => d.voiceRecorder.analyzing)}
             </p>
           </motion.div>
         )}
@@ -246,7 +246,7 @@ export default function VoiceRecorder({
             {recordedAudio && (
               <div className="space-y-2">
                 <p className="text-sm font-medium text-stone-600 dark:text-stone-300">
-                  Your Recording
+                  {t((d) => d.voiceRecorder.yourRecording)}
                 </p>
                 <AudioPlayer audioUrl={recordedAudio} />
               </div>
@@ -261,7 +261,7 @@ export default function VoiceRecorder({
               <div className="flex items-center gap-3 mb-4">
                 <CheckCircle2 className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
                 <h3 className="font-display text-lg text-emerald-900 dark:text-emerald-100">
-                  Analysis Complete
+                  {t((d) => d.voiceRecorder.analysisComplete)}
                 </h3>
               </div>
 
@@ -286,7 +286,7 @@ export default function VoiceRecorder({
             {/* Transcription */}
             <div className="p-4 bg-stone-50 dark:bg-white/[0.03] rounded-sm border border-stone-200 dark:border-white/10">
               <p className="text-sm font-medium text-stone-600 dark:text-stone-300 mb-2">
-                Transcription
+                {t((d) => d.voiceRecorder.transcription)}
               </p>
               <p className="text-stone-900 dark:text-amber-50">
                 {analysis.transcription}
@@ -297,7 +297,7 @@ export default function VoiceRecorder({
             {analysis.corrections.length > 0 && (
               <div className="space-y-3">
                 <p className="font-medium text-stone-900 dark:text-amber-50">
-                  Corrections
+                  {t((d) => d.voiceRecorder.corrections)}
                 </p>
                 {analysis.corrections.map((correction, idx) => (
                   <motion.div
@@ -327,7 +327,7 @@ export default function VoiceRecorder({
             {analysis.suggestions.length > 0 && (
               <div className="space-y-2">
                 <p className="font-medium text-stone-900 dark:text-amber-50">
-                  Tips for Improvement
+                  {t((d) => d.voiceRecorder.tipsForImprovement)}
                 </p>
                 <ul className="space-y-1">
                   {analysis.suggestions.map((suggestion, idx) => (
@@ -346,7 +346,7 @@ export default function VoiceRecorder({
               onClick={handleRetry}
               className="w-full py-3 bg-amber-500 hover:bg-amber-600 text-[#0b0a08] font-bold rounded-sm transition-colors"
             >
-              Try Again
+              {t((d) => d.exercise.tryAgain)}
             </motion.button>
           </motion.div>
         )}
@@ -363,7 +363,7 @@ export default function VoiceRecorder({
             <AlertCircle className="w-5 h-5 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
             <div>
               <p className="font-semibold text-red-900 dark:text-red-100">
-                Recording Error
+                {t((d) => d.voiceRecorder.recordingError)}
               </p>
               <p className="text-sm text-red-800 dark:text-red-200 mt-1">
                 {error}

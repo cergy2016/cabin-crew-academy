@@ -10,6 +10,8 @@ import { getAudioUrl } from '@/lib/config/audioUrls';
 import AudioPlayer from './AudioPlayer';
 import ExerciseCard from './ExerciseCard';
 import ThemeToggle from '@/components/ThemeToggle';
+import LanguageToggle from '@/components/LanguageToggle';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 interface LessonViewerProps {
   lesson: Lesson;
@@ -19,6 +21,7 @@ interface LessonViewerProps {
 type LessonSection = 'objectives' | 'scenario' | 'theory' | 'phraseology' | 'vocabulary' | 'exercises' | 'quiz' | 'logbook';
 
 export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) {
+  const { t } = useTranslation();
   const [activeSection, setActiveSection] = useState<LessonSection>('objectives');
   const [completedExercises, setCompletedExercises] = useState<Set<string>>(new Set());
   const [quizFirstTry, setQuizFirstTry] = useState<Map<string, boolean>>(new Map());
@@ -90,15 +93,15 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
   }, [lessonFullyComplete, lesson, quizFirstTry, completeLesson, onComplete]);
 
   const sectionTabs: { id: LessonSection; label: string }[] = [
-    { id: 'objectives', label: 'Objectives' },
-    { id: 'scenario', label: 'Scenario' },
-    { id: 'theory', label: 'Theory' },
-    { id: 'phraseology', label: 'Phraseology' },
-    { id: 'vocabulary', label: 'Vocabulary' },
-    { id: 'exercises', label: 'Exercises' },
-    { id: 'quiz', label: 'Quiz' },
+    { id: 'objectives', label: t((d) => d.lesson.tabs.objectives) },
+    { id: 'scenario', label: t((d) => d.lesson.tabs.scenario) },
+    { id: 'theory', label: t((d) => d.lesson.tabs.theory) },
+    { id: 'phraseology', label: t((d) => d.lesson.tabs.phraseology) },
+    { id: 'vocabulary', label: t((d) => d.lesson.tabs.vocabulary) },
+    { id: 'exercises', label: t((d) => d.lesson.tabs.exercises) },
+    { id: 'quiz', label: t((d) => d.lesson.tabs.quiz) },
     ...(lesson.logBookPrompts && lesson.logBookPrompts.length > 0
-      ? [{ id: 'logbook' as LessonSection, label: 'Log Book' }]
+      ? [{ id: 'logbook' as LessonSection, label: t((d) => d.lesson.tabs.logBook) }]
       : []),
   ];
 
@@ -114,8 +117,8 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
             href="/"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-stone-500 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors mb-4"
           >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Dashboard
+            <ArrowLeft className="w-4 h-4 rtl:rotate-180" />
+            {t((d) => d.common.backToDashboard)}
           </Link>
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
@@ -125,12 +128,12 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                   {lesson.title}
                 </h1>
                 <p className="text-stone-500 dark:text-stone-400 text-sm">
-                  ICAO Level {lesson.icaoLevel} &middot; {lesson.difficulty}
+                  {t((d) => d.lesson.icaoLevelLabel)} {lesson.icaoLevel} &middot; {lesson.difficulty}
                 </p>
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="text-right">
+              <div className="text-end">
                 <div className="flex items-center gap-1 text-amber-600 dark:text-amber-400 font-bold">
                   <Zap className="w-4 h-4" />
                   {lesson.xpReward} XP
@@ -140,6 +143,7 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                   {lesson.estimatedDurationMinutes} min
                 </div>
               </div>
+              <LanguageToggle />
               <ThemeToggle />
             </div>
           </div>
@@ -180,7 +184,7 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
             >
               <div className={cardClass}>
                 <h2 className="font-display text-2xl mb-6 text-stone-900 dark:text-amber-50">
-                  Learning Objectives
+                  {t((d) => d.lesson.objectivesTitle)}
                 </h2>
                 <div className="grid gap-4">
                   {lesson.objectives.map((objective) => (
@@ -196,7 +200,7 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                           {objective.description}
                         </p>
                         <p className="text-sm text-stone-500 dark:text-stone-400 mt-1">
-                          Type: <span className="font-medium capitalize">{objective.type}</span>
+                          {t((d) => d.lesson.typeLabel)} <span className="font-medium capitalize">{objective.type}</span>
                         </p>
                       </div>
                     </motion.div>
@@ -224,13 +228,13 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                 </p>
                 <div className={`${infoBoxClass} mb-6`}>
                   <p className="text-sm text-stone-700 dark:text-stone-300">
-                    <strong className="text-amber-700 dark:text-amber-400">Context:</strong> {lesson.scenario.context}
+                    <strong className="text-amber-700 dark:text-amber-400">{t((d) => d.lesson.contextLabel)}</strong> {lesson.scenario.context}
                   </p>
                 </div>
 
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-display text-lg text-stone-900 dark:text-amber-50">
-                    Dialogue Audio
+                    {t((d) => d.lesson.dialogueAudio)}
                   </h3>
                   <motion.button
                     whileHover={{ scale: 1.03 }}
@@ -240,11 +244,11 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                   >
                     {playAllIndex === null ? (
                       <>
-                        <PlayCircle className="w-4 h-4" /> Listen to Full Conversation
+                        <PlayCircle className="w-4 h-4" /> {t((d) => d.lesson.listenFullConversation)}
                       </>
                     ) : (
                       <>
-                        <StopCircle className="w-4 h-4" /> Stop
+                        <StopCircle className="w-4 h-4" /> {t((d) => d.lesson.stop)}
                       </>
                     )}
                   </motion.button>
@@ -272,7 +276,7 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                 {lesson.scenario.vocabulary.length > 0 && (
                   <>
                     <h3 className="font-display text-lg mt-8 mb-4 text-stone-900 dark:text-amber-50">
-                      Key Vocabulary
+                      {t((d) => d.lesson.keyVocabulary)}
                     </h3>
                     <div className="grid md:grid-cols-2 gap-4">
                       {lesson.scenario.vocabulary.map((item, idx) => (
@@ -318,7 +322,7 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                 {lesson.theory.audioExplanation && (
                   <div className={`mt-6 ${infoBoxClass}`}>
                     <p className="text-sm font-medium text-amber-700 dark:text-amber-400 mb-3">
-                      Audio Explanation
+                      {t((d) => d.lesson.audioExplanation)}
                     </p>
                     <AudioPlayer audioUrl={lesson.theory.audioExplanation.audioUrl} />
                   </div>
@@ -359,11 +363,11 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                         </span>
                       </div>
                       <p className="text-sm text-stone-600 dark:text-stone-300 mb-2">
-                        <strong>Meaning:</strong> {phrase.meaning}
+                        <strong>{t((d) => d.lesson.meaningLabel)}</strong> {phrase.meaning}
                       </p>
                       {phrase.example && (
                         <p className="text-sm text-stone-500 dark:text-stone-400 italic">
-                          Example: {phrase.example}
+                          {t((d) => d.lesson.exampleLabel)} {phrase.example}
                         </p>
                       )}
                     </div>
@@ -394,11 +398,11 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                         </span>
                       </div>
                       <p className="text-sm text-stone-600 dark:text-stone-300 mb-2">
-                        <strong>Meaning:</strong> {phrase.meaning}
+                        <strong>{t((d) => d.lesson.meaningLabel)}</strong> {phrase.meaning}
                       </p>
                       {phrase.example && (
                         <p className="text-sm text-stone-500 dark:text-stone-400 italic">
-                          Example: {phrase.example}
+                          {t((d) => d.lesson.exampleLabel)} {phrase.example}
                         </p>
                       )}
                     </div>
@@ -419,7 +423,7 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
             >
               <div className={cardClass}>
                 <h2 className="font-display text-2xl mb-6 text-stone-900 dark:text-amber-50">
-                  Vocabulary
+                  {t((d) => d.lesson.vocabularyTitle)}
                 </h2>
                 <div className="space-y-6">
                   {lesson.airlineVocabulary.map((vocab, vIdx) => (
@@ -443,7 +447,7 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                             </p>
                             {term.example && (
                               <p className="text-xs text-stone-500 dark:text-stone-400 mt-2">
-                                Example: {term.example}
+                                {t((d) => d.lesson.exampleLabel)} {term.example}
                               </p>
                             )}
                           </div>
@@ -467,10 +471,10 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
             >
               <div className={cardClass}>
                 <h2 className="font-display text-2xl mb-2 text-stone-900 dark:text-amber-50">
-                  Log Book
+                  {t((d) => d.lesson.logBookTitle)}
                 </h2>
                 <p className="text-stone-500 dark:text-stone-400 mb-6">
-                  Personal reflection - not graded. Use these questions for ideas, then write your own notes below.
+                  {t((d) => d.lesson.logBookDescription)}
                 </p>
                 <ul className="space-y-2 mb-6 list-disc list-inside text-stone-600 dark:text-stone-300">
                   {lesson.logBookPrompts.map((prompt, idx) => (
@@ -483,7 +487,7 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                     setLogBookDraft(e.target.value);
                     setLogBookSaved(false);
                   }}
-                  placeholder="Write your thoughts here..."
+                  placeholder={t((d) => d.lesson.logBookPlaceholder)}
                   rows={8}
                   className="w-full p-4 rounded-sm border border-stone-300 dark:border-white/15 bg-white dark:bg-white/[0.02] text-stone-900 dark:text-amber-50 resize-none focus:outline-none focus:border-amber-500 dark:focus:border-amber-400"
                 />
@@ -497,11 +501,11 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                     }}
                     className="px-6 py-2 bg-amber-500 hover:bg-amber-600 text-[#0b0a08] font-bold rounded-sm transition-colors"
                   >
-                    Save Notes
+                    {t((d) => d.lesson.saveNotes)}
                   </motion.button>
                   {logBookSaved && (
                     <span className="text-amber-600 dark:text-amber-400 text-sm font-medium">
-                      Saved &#10003;
+                      {t((d) => d.lesson.savedLabel)} &#10003;
                     </span>
                   )}
                 </div>
@@ -523,7 +527,7 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                   {lesson.quiz.title}
                 </h2>
                 <p className="text-stone-500 dark:text-stone-400 mb-6">
-                  Passing Score: <span className="font-bold text-amber-700 dark:text-amber-400">{lesson.quiz.passingScore}%</span>
+                  {t((d) => d.lesson.quizPassingScore)} <span className="font-bold text-amber-700 dark:text-amber-400">{lesson.quiz.passingScore}%</span>
                 </p>
                 <div className="space-y-6">
                   {lesson.quiz.exercises.map((exercise, idx) => (
@@ -552,7 +556,7 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
             >
               <div className={cardClass}>
                 <h2 className="font-display text-2xl mb-6 text-stone-900 dark:text-amber-50">
-                  Practice Exercises
+                  {t((d) => d.lesson.practiceExercises)}
                 </h2>
                 <div className="space-y-6">
                   {lesson.exercises.map((exercise, idx) => (
@@ -581,23 +585,23 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(217,180,90,0.16),transparent_55%)]" />
             <div className="relative flex items-center gap-3 mb-3">
               <Trophy className="w-8 h-8 text-amber-400" />
-              <h3 className="font-display text-2xl text-amber-50">Lesson Complete!</h3>
+              <h3 className="font-display text-2xl text-amber-50">{t((d) => d.lesson.lessonComplete)}</h3>
             </div>
             {(() => {
               const correctFirstTry = lesson.quiz.exercises.filter((e) => quizFirstTry.get(e.id)).length;
               const quizScorePercent = Math.round((correctFirstTry / lesson.quiz.exercises.length) * 100);
               const message =
                 quizScorePercent >= 90
-                  ? "Outstanding work! You've mastered this lesson."
+                  ? t((d) => d.lesson.messageOutstanding)
                   : quizScorePercent >= 70
-                  ? 'Good progress! A quick review of the trickier exercises will help it stick.'
-                  : 'You made it through - consider revisiting the Theory and Vocabulary tabs before moving on.';
+                  ? t((d) => d.lesson.messageGood)
+                  : t((d) => d.lesson.messageReview);
               return (
                 <div className="relative">
                   <p className="text-stone-300 mb-1">
-                    Quiz score (first attempt): <span className="font-bold text-amber-400">{quizScorePercent}%</span>
+                    {t((d) => d.lesson.quizScoreFirstAttempt)} <span className="font-bold text-amber-400">{quizScorePercent}%</span>
                   </p>
-                  <p className="text-stone-300 mb-4">+{lesson.xpReward} XP earned</p>
+                  <p className="text-stone-300 mb-4">+{lesson.xpReward} {t((d) => d.lesson.xpEarned)}</p>
                   <p className="text-stone-400">{message}</p>
                 </div>
               );
@@ -610,12 +614,12 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="fixed bottom-6 right-6 z-50 bg-[#14120e] border border-amber-400/40 rounded-sm shadow-xl p-4 max-w-sm"
+            className="fixed bottom-6 end-6 z-50 bg-[#14120e] border border-amber-400/40 rounded-sm shadow-xl p-4 max-w-sm"
           >
             <div className="flex items-start justify-between gap-3">
               <div>
                 <p className="font-bold text-amber-400 mb-1">
-                  Achievement Unlocked!
+                  {t((d) => d.lesson.achievementUnlocked)}
                 </p>
                 {newlyUnlocked.map((a) => (
                   <p key={a.id} className="text-sm text-stone-300">

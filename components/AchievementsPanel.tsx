@@ -3,17 +3,21 @@
 import { motion } from 'framer-motion';
 import { Award } from 'lucide-react';
 import { useAppStore } from '@/lib/store';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 export default function AchievementsPanel() {
   const achievements = useAppStore((s) => s.achievements);
   const unlockedCount = achievements.filter((a) => a.unlockedAt).length;
+  const { t } = useTranslation();
 
   return (
     <div className="mb-14">
       <h2 className="text-xs font-semibold tracking-[0.25em] uppercase text-stone-400 dark:text-stone-500 mb-6 flex items-center gap-2">
-        <Award className="w-3.5 h-3.5" /> Achievements
+        <Award className="w-3.5 h-3.5" /> {t((d) => d.achievements.title)}
         <span className="font-normal normal-case tracking-normal text-stone-400 dark:text-stone-600">
-          {unlockedCount}/{achievements.length} unlocked
+          {t((d) => d.achievements.unlockedCount)
+            .replace('{unlocked}', String(unlockedCount))
+            .replace('{total}', String(achievements.length))}
         </span>
       </h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">

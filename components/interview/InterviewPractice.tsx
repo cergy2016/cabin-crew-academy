@@ -6,6 +6,7 @@ import { Mic, Play, ArrowRight, Star } from 'lucide-react';
 import type { InterviewQuestion } from '@/lib/types';
 import AudioPlayer from '../lesson/AudioPlayer';
 import VoiceRecorder from '../lesson/VoiceRecorder';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 interface InterviewPracticeProps {
   question: InterviewQuestion;
@@ -18,6 +19,7 @@ export default function InterviewPractice({
   question,
   onComplete,
 }: InterviewPracticeProps) {
+  const { t } = useTranslation();
   const [mode, setMode] = useState<PracticeMode>('select');
   const [recordingScore, setRecordingScore] = useState<number>(0);
 
@@ -44,7 +46,7 @@ export default function InterviewPractice({
             <div className="bg-white dark:bg-white/[0.02] rounded-sm border border-amber-500/30 dark:border-amber-400/25 p-8">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-[11px] font-semibold tracking-widest uppercase text-amber-700 dark:text-amber-400">
-                  {question.airline ?? 'General'} &middot; Interview Question
+                  {question.airline ?? t((d) => d.interviewPractice.generalLabel)} &middot; {t((d) => d.interviewPractice.interviewQuestionLabel)}
                 </span>
                 <div className="flex items-center gap-1">
                   {Array.from({ length: question.difficulty }).map((_, i) => (
@@ -68,12 +70,12 @@ export default function InterviewPractice({
               >
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="font-display text-lg text-stone-900 dark:text-amber-50">
-                    Listen to Answers
+                    {t((d) => d.interviewPractice.listenToAnswersTitle)}
                   </h3>
                   <Play className="w-5 h-5 text-amber-600 dark:text-amber-400" />
                 </div>
                 <p className="text-sm text-stone-500 dark:text-stone-400">
-                  Learn from model answers and expert responses
+                  {t((d) => d.interviewPractice.listenToAnswersDescription)}
                 </p>
               </motion.button>
 
@@ -85,12 +87,12 @@ export default function InterviewPractice({
               >
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="font-display text-lg text-stone-900 dark:text-amber-50">
-                    Record Answer
+                    {t((d) => d.interviewPractice.recordAnswerTitle)}
                   </h3>
                   <Mic className="w-5 h-5 text-amber-600 dark:text-amber-400" />
                 </div>
                 <p className="text-sm text-stone-500 dark:text-stone-400">
-                  Practice speaking and get AI feedback
+                  {t((d) => d.interviewPractice.recordAnswerDescription)}
                 </p>
               </motion.button>
             </div>
@@ -107,7 +109,7 @@ export default function InterviewPractice({
             className="space-y-6"
           >
             <h2 className="font-display text-2xl text-stone-900 dark:text-amber-50">
-              Model Answers
+              {t((d) => d.interviewPractice.modelAnswersTitle)}
             </h2>
 
             {question.modelAnswers.map((answer, idx) => (
@@ -121,7 +123,7 @@ export default function InterviewPractice({
                 {/* Scores */}
                 <div className="bg-stone-50 dark:bg-white/[0.03] p-6 border-b border-stone-200 dark:border-white/10">
                   <p className="text-[11px] font-semibold tracking-widest uppercase text-stone-500 dark:text-stone-400 mb-4">
-                    Score Breakdown
+                    {t((d) => d.interviewPractice.scoreBreakdown)}
                   </p>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                     {Object.entries(answer.scoreBreakdown).map(([key, score]) => (
@@ -131,7 +133,7 @@ export default function InterviewPractice({
                         </p>
                         <div className="relative h-1.5 bg-stone-200 dark:bg-white/10 rounded-full overflow-hidden">
                           <motion.div
-                            className="absolute inset-y-0 left-0 bg-amber-500"
+                            className="absolute inset-y-0 start-0 bg-amber-500"
                             initial={{ width: 0 }}
                             animate={{ width: `${score}%` }}
                             transition={{ duration: 1, delay: idx * 0.1 }}
@@ -148,7 +150,7 @@ export default function InterviewPractice({
                 {/* Answer Text */}
                 <div className="p-6 space-y-4">
                   <p className="text-stone-700 dark:text-stone-300 leading-relaxed">
-                    {answer.text || answer.answer || 'Answer not available'}
+                    {answer.text || answer.answer || t((d) => d.interviewPractice.answerNotAvailable)}
                   </p>
                   <AudioPlayer audioUrl={`/audio/interview/${question.id}/answer-${idx}.wav`} />
                 </div>
@@ -159,7 +161,7 @@ export default function InterviewPractice({
             {question.mistakesToAvoid && question.mistakesToAvoid.length > 0 && (
               <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-300 dark:border-yellow-800 rounded-sm p-6">
                 <h3 className="font-bold text-yellow-900 dark:text-yellow-100 mb-3">
-                  Mistakes to Avoid
+                  {t((d) => d.interviewPractice.mistakesToAvoid)}
                 </h3>
                 <ul className="space-y-2">
                   {question.mistakesToAvoid?.map((mistake, idx) => (
@@ -182,7 +184,7 @@ export default function InterviewPractice({
               onClick={() => setMode('select')}
               className="w-full py-3 border border-stone-300 dark:border-white/15 text-stone-600 dark:text-stone-300 font-bold rounded-sm hover:border-amber-500 dark:hover:border-amber-400 transition-colors"
             >
-              Back to Options
+              {t((d) => d.interviewPractice.backToOptions)}
             </motion.button>
           </motion.div>
         )}
@@ -198,8 +200,7 @@ export default function InterviewPractice({
           >
             <div className="bg-stone-50 dark:bg-white/[0.03] border border-stone-200 dark:border-white/10 rounded-sm p-4">
               <p className="text-sm text-stone-700 dark:text-stone-300">
-                <strong className="text-amber-700 dark:text-amber-400">Ready?</strong> Take a moment to think about your answer.
-                Click record when you&apos;re ready to speak.
+                <strong className="text-amber-700 dark:text-amber-400">{t((d) => d.interviewPractice.readyLabel)}</strong> {t((d) => d.interviewPractice.readyText)}
               </p>
             </div>
 
@@ -222,13 +223,13 @@ export default function InterviewPractice({
           >
             <div className="bg-emerald-50 dark:bg-emerald-900/20 rounded-sm border border-emerald-300 dark:border-emerald-700 p-8 text-center">
               <p className="text-[11px] font-semibold tracking-widest uppercase text-emerald-600 dark:text-emerald-400 mb-2">
-                Interview Score
+                {t((d) => d.interviewPractice.interviewScore)}
               </p>
               <p className="font-display text-5xl text-emerald-900 dark:text-emerald-100 mb-2">
                 {recordingScore}%
               </p>
               <p className="text-emerald-800 dark:text-emerald-200">
-                Great effort! Compare with model answers to improve.
+                {t((d) => d.interviewPractice.greatEffort)}
               </p>
             </div>
 
@@ -240,7 +241,7 @@ export default function InterviewPractice({
                 className="flex items-center justify-center gap-2 py-3 bg-amber-500 hover:bg-amber-600 text-[#0b0a08] font-bold rounded-sm transition-colors"
               >
                 <Play className="w-5 h-5" />
-                Listen to Model Answers
+                {t((d) => d.interviewPractice.listenToModelAnswers)}
               </motion.button>
 
               <motion.button
@@ -252,8 +253,8 @@ export default function InterviewPractice({
                 }}
                 className="flex items-center justify-center gap-2 py-3 bg-stone-800 hover:bg-stone-900 dark:bg-white/10 dark:hover:bg-white/15 text-white dark:text-amber-50 font-bold rounded-sm transition-colors"
               >
-                Try Another Question
-                <ArrowRight className="w-5 h-5" />
+                {t((d) => d.interviewPractice.tryAnotherQuestion)}
+                <ArrowRight className="w-5 h-5 rtl:rotate-180" />
               </motion.button>
             </div>
           </motion.div>

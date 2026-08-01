@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display, Cairo } from "next/font/google";
 import ThemeSync from "@/components/ThemeSync";
+import LanguageSync from "@/components/LanguageSync";
 import "./globals.css";
 
 // Runs before hydration to avoid a flash of the wrong theme.
@@ -12,6 +13,20 @@ const themeInitScript = `
       ? stored.state.darkMode
       : window.matchMedia('(prefers-color-scheme: dark)').matches;
     document.documentElement.classList.add(isDark ? 'dark' : 'light');
+  } catch (e) {}
+})();
+`;
+
+// Runs before hydration to avoid a flash of the wrong text direction.
+const languageInitScript = `
+(function () {
+  try {
+    var stored = JSON.parse(localStorage.getItem('cabin-crew-store') || 'null');
+    var lang = stored && stored.state && typeof stored.state.language === 'string'
+      ? stored.state.language
+      : 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
   } catch (e) {}
 })();
 `;
@@ -29,6 +44,11 @@ const geistMono = Geist_Mono({
 const playfairDisplay = Playfair_Display({
   variable: "--font-display",
   subsets: ["latin"],
+});
+
+const cairo = Cairo({
+  variable: "--font-arabic",
+  subsets: ["arabic", "latin"],
 });
 
 export const metadata: Metadata = {
@@ -51,14 +71,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} ${cairo.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <script dangerouslySetInnerHTML={{ __html: languageInitScript }} />
       </head>
       <body className="min-h-full flex flex-col">
         <ThemeSync />
+        <LanguageSync />
         {children}
       </body>
     </html>

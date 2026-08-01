@@ -9,11 +9,14 @@ import ProgressRing from '@/components/ProgressRing';
 import AchievementsPanel from '@/components/AchievementsPanel';
 import UnitIllustration from '@/components/UnitIllustration';
 import ThemeToggle from '@/components/ThemeToggle';
+import LanguageToggle from '@/components/LanguageToggle';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import { iCAOUnits } from '@/lib/data/icao-curriculum';
 
 export default function DashboardPage() {
   const { stats, user, lessonProgress } = useAppStore();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -56,36 +59,37 @@ export default function DashboardPage() {
               className="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium tracking-wide uppercase text-stone-500 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors"
             >
               <BookMarked className="w-3.5 h-3.5" />
-              Glossary
+              {t((d) => d.nav.glossary)}
             </Link>
             <Link
               href="/answer-key"
               className="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium tracking-wide uppercase text-stone-500 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors"
             >
               <CheckSquare className="w-3.5 h-3.5" />
-              Answer Key
+              {t((d) => d.nav.answerKey)}
             </Link>
             <Link
               href="/interview-prep"
               className="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium tracking-wide uppercase text-stone-500 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors"
             >
               <Briefcase className="w-3.5 h-3.5" />
-              Interview Prep
+              {t((d) => d.nav.interviewPrep)}
             </Link>
             <Link
               href="/aviation-glossary"
               className="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium tracking-wide uppercase text-stone-500 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors"
             >
               <Plane className="w-3.5 h-3.5" />
-              Aviation Glossary
+              {t((d) => d.nav.aviationGlossary)}
             </Link>
             <Link
               href="/visual-guides"
               className="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium tracking-wide uppercase text-stone-500 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors"
             >
               <ImageIcon className="w-3.5 h-3.5" />
-              Visual Guides
+              {t((d) => d.nav.visualGuides)}
             </Link>
+            <LanguageToggle />
             <ThemeToggle />
             <div className="w-9 h-9 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-[#0b0a08] text-sm font-bold shadow-[0_0_0_1px_rgba(217,180,90,0.4)]">
               {user?.name?.charAt(0) || 'C'}
@@ -117,7 +121,7 @@ export default function DashboardPage() {
                   className="flex items-center gap-2.5 px-4 py-3 text-sm font-medium text-stone-600 dark:text-stone-300 hover:text-amber-700 dark:hover:text-amber-300"
                 >
                   <BookMarked className="w-4 h-4" />
-                  Glossary of Key Expressions
+                  {t((d) => d.nav.glossaryFull)}
                 </Link>
                 <Link
                   href="/answer-key"
@@ -125,7 +129,7 @@ export default function DashboardPage() {
                   className="flex items-center gap-2.5 px-4 py-3 text-sm font-medium text-stone-600 dark:text-stone-300 hover:text-amber-700 dark:hover:text-amber-300"
                 >
                   <CheckSquare className="w-4 h-4" />
-                  Answer Key
+                  {t((d) => d.nav.answerKey)}
                 </Link>
                 <Link
                   href="/interview-prep"
@@ -133,7 +137,7 @@ export default function DashboardPage() {
                   className="flex items-center gap-2.5 px-4 py-3 text-sm font-medium text-stone-600 dark:text-stone-300 hover:text-amber-700 dark:hover:text-amber-300"
                 >
                   <Briefcase className="w-4 h-4" />
-                  Interview Prep
+                  {t((d) => d.nav.interviewPrep)}
                 </Link>
                 <Link
                   href="/aviation-glossary"
@@ -141,7 +145,7 @@ export default function DashboardPage() {
                   className="flex items-center gap-2.5 px-4 py-3 text-sm font-medium text-stone-600 dark:text-stone-300 hover:text-amber-700 dark:hover:text-amber-300"
                 >
                   <Plane className="w-4 h-4" />
-                  Aviation Glossary
+                  {t((d) => d.nav.aviationGlossary)}
                 </Link>
                 <Link
                   href="/visual-guides"
@@ -149,7 +153,7 @@ export default function DashboardPage() {
                   className="flex items-center gap-2.5 px-4 py-3 text-sm font-medium text-stone-600 dark:text-stone-300 hover:text-amber-700 dark:hover:text-amber-300"
                 >
                   <ImageIcon className="w-4 h-4" />
-                  Visual Guides
+                  {t((d) => d.nav.visualGuides)}
                 </Link>
               </div>
             </motion.div>
@@ -164,15 +168,15 @@ export default function DashboardPage() {
           className="mb-10"
         >
           <p className="text-xs font-semibold tracking-[0.25em] uppercase text-amber-600 dark:text-amber-400 mb-3">
-            ICAO Level 4-6 &middot; Cabin Crew English
+            {t((d) => d.dashboard.eyebrow)}
           </p>
           <h1 className="font-display text-5xl md:text-6xl text-stone-900 dark:text-amber-50 leading-[1.1]">
-            Master aviation English,
+            {t((d) => d.dashboard.heroLine1)}
             <br />
-            <span className="italic text-amber-700 dark:text-amber-400">fluently.</span>
+            <span className="italic text-amber-700 dark:text-amber-400">{t((d) => d.dashboard.heroAccent)}</span>
           </h1>
           <p className="mt-5 text-lg text-stone-500 dark:text-stone-400 max-w-xl font-light">
-            Complete ICAO-aligned training, crafted for your dream airline career.
+            {t((d) => d.dashboard.heroSubtitle)}
           </p>
         </motion.div>
 
@@ -187,7 +191,7 @@ export default function DashboardPage() {
             <div className="p-5 md:p-6">
               <div className="flex items-center gap-1.5 text-stone-400 dark:text-stone-500 mb-1.5">
                 <Zap className="w-3.5 h-3.5" />
-                <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">XP</span>
+                <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">{t((d) => d.dashboard.xp)}</span>
               </div>
               <p className="font-display text-3xl text-amber-600 dark:text-amber-400 tabular-nums">
                 {stats.totalXp.toLocaleString()}
@@ -196,7 +200,7 @@ export default function DashboardPage() {
             <div className="p-5 md:p-6">
               <div className="flex items-center gap-1.5 text-stone-400 dark:text-stone-500 mb-1.5">
                 <Trophy className="w-3.5 h-3.5" />
-                <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">Level</span>
+                <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">{t((d) => d.dashboard.level)}</span>
               </div>
               <p className="font-display text-3xl text-stone-900 dark:text-amber-50 tabular-nums">
                 {stats.level}
@@ -205,19 +209,19 @@ export default function DashboardPage() {
             <div className="p-5 md:p-6">
               <div className="flex items-center gap-1.5 text-stone-400 dark:text-stone-500 mb-1.5">
                 <Flame className="w-3.5 h-3.5" />
-                <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">Streak</span>
+                <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">{t((d) => d.dashboard.streak)}</span>
               </div>
               <p className="font-display text-3xl text-stone-900 dark:text-amber-50 tabular-nums">
-                {stats.streak}<span className="text-sm font-sans text-stone-400 ml-1">days</span>
+                {stats.streak}<span className="text-sm font-sans text-stone-400 ms-1">{t((d) => d.dashboard.days)}</span>
               </p>
             </div>
             <div className="p-5 md:p-6">
               <div className="flex items-center gap-1.5 text-stone-400 dark:text-stone-500 mb-1.5">
                 <TrendingUp className="w-3.5 h-3.5" />
-                <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">Studied</span>
+                <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">{t((d) => d.dashboard.studied)}</span>
               </div>
               <p className="font-display text-3xl text-stone-900 dark:text-amber-50 tabular-nums">
-                {stats.totalHoursStudied}<span className="text-sm font-sans text-stone-400 ml-1">h</span>
+                {stats.totalHoursStudied}<span className="text-sm font-sans text-stone-400 ms-1">{t((d) => d.dashboard.hours)}</span>
               </p>
             </div>
           </div>
@@ -242,7 +246,7 @@ export default function DashboardPage() {
                   <div>
                     <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.25em] uppercase text-amber-400 mb-3">
                       <PlayCircle className="w-3.5 h-3.5" />
-                      Continue Learning
+                      {t((d) => d.dashboard.continueLearning)}
                     </span>
                     <h2 className="font-display text-2xl md:text-3xl text-amber-50 mb-2">
                       {nextLesson.lesson.title}
@@ -252,7 +256,7 @@ export default function DashboardPage() {
                     </p>
                   </div>
                   <div className="shrink-0 w-14 h-14 rounded-full border border-amber-400/40 flex items-center justify-center group-hover:bg-amber-400 transition-all">
-                    <ArrowRight className="w-5 h-5 text-amber-300 group-hover:text-[#14120e] transition-colors" />
+                    <ArrowRight className="w-5 h-5 text-amber-300 group-hover:text-[#14120e] transition-colors rtl:rotate-180" />
                   </div>
                 </div>
               </div>
@@ -268,14 +272,14 @@ export default function DashboardPage() {
           className="mb-14"
         >
           <h2 className="text-xs font-semibold tracking-[0.25em] uppercase text-stone-400 dark:text-stone-500 mb-6">
-            Your Progress
+            {t((d) => d.dashboard.yourProgress)}
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { label: 'Speaking', score: stats.speakingScore },
-              { label: 'Listening', score: stats.listeningScore },
-              { label: 'Grammar', score: stats.grammarScore },
-              { label: 'Vocabulary', score: stats.vocabularyLearned },
+              { label: t((d) => d.dashboard.speaking), score: stats.speakingScore },
+              { label: t((d) => d.dashboard.listening), score: stats.listeningScore },
+              { label: t((d) => d.dashboard.grammar), score: stats.grammarScore },
+              { label: t((d) => d.dashboard.vocabulary), score: stats.vocabularyLearned },
             ].map((skill) => (
               <div key={skill.label} className="flex flex-col items-center">
                 <ProgressRing progress={skill.score} size={92} />
@@ -296,11 +300,11 @@ export default function DashboardPage() {
           animate="visible"
         >
           <h2 className="text-xs font-semibold tracking-[0.25em] uppercase text-stone-400 dark:text-stone-500 mb-6">
-            Your Learning Path
+            {t((d) => d.dashboard.yourLearningPath)}
           </h2>
 
           <div className="relative">
-            <div className="absolute left-[19px] top-3 bottom-3 w-px bg-amber-900/15 dark:bg-amber-400/15 hidden sm:block" />
+            <div className="absolute start-[19px] top-3 bottom-3 w-px bg-amber-900/15 dark:bg-amber-400/15 hidden sm:block" />
             <div className="space-y-12">
               {iCAOUnits.map((unit, unitIdx) => (
                 <motion.div
@@ -308,9 +312,9 @@ export default function DashboardPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: unitIdx * 0.07 }}
-                  className="relative sm:pl-14"
+                  className="relative sm:ps-14"
                 >
-                  <div className="absolute left-0 top-0 hidden sm:flex w-10 h-10 rounded-full bg-[#faf6ee] dark:bg-[#0b0a08] border border-amber-600/40 dark:border-amber-400/40 items-center justify-center text-xs font-display text-amber-700 dark:text-amber-400 tabular-nums">
+                  <div className="absolute start-0 top-0 hidden sm:flex w-10 h-10 rounded-full bg-[#faf6ee] dark:bg-[#0b0a08] border border-amber-600/40 dark:border-amber-400/40 items-center justify-center text-xs font-display text-amber-700 dark:text-amber-400 tabular-nums">
                     {String(unitIdx + 1).padStart(2, '0')}
                   </div>
 
@@ -367,7 +371,10 @@ export default function DashboardPage() {
                     {unit.lessons.length > 3 && (
                       <div className="flex items-center justify-center rounded-sm border border-dashed border-stone-200 dark:border-white/10 h-full min-h-[5rem]">
                         <p className="text-center text-sm text-stone-400 dark:text-stone-500 font-medium">
-                          +{unit.lessons.length - 3} more
+                          {t((d) => d.dashboard.moreLessons).replace(
+                            '{count}',
+                            String(unit.lessons.length - 3)
+                          )}
                         </p>
                       </div>
                     )}

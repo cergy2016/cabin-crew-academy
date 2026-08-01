@@ -6,6 +6,7 @@ import { CheckCircle2, XCircle, HelpCircle, Lightbulb } from 'lucide-react';
 import type { Exercise } from '@/lib/types';
 import AudioPlayer from './AudioPlayer';
 import VoiceRecorder from './VoiceRecorder';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 interface ExerciseCardProps {
   exercise: Exercise;
@@ -18,6 +19,7 @@ export default function ExerciseCard({
   number,
   onComplete,
 }: ExerciseCardProps) {
+  const { t } = useTranslation();
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [showExplanation, setShowExplanation] = useState(false);
@@ -52,11 +54,11 @@ export default function ExerciseCard({
 
   const adaptiveMessage = isCorrect
     ? attempts > 1
-      ? 'Correct! Nice recovery. 💪'
-      : 'Correct! Well done! 🎉'
+      ? t((d) => d.exercise.correctRecovery)
+      : t((d) => d.exercise.correctWellDone)
     : attempts >= 2
-    ? "Still not quite - check the hint and give it one more try."
-    : 'Not quite right. Try again!';
+    ? t((d) => d.exercise.stillNotQuite)
+    : t((d) => d.exercise.notQuiteRight);
 
   const getExerciseContent = () => {
     switch (exercise.type) {
@@ -100,9 +102,9 @@ export default function ExerciseCard({
                   <span className="font-medium text-stone-900 dark:text-amber-50">{option.text}</span>
                   {submitted && selectedAnswer === option.id && (
                     option.isCorrect ? (
-                      <CheckCircle2 className="w-5 h-5 text-emerald-600 ml-auto" />
+                      <CheckCircle2 className="w-5 h-5 text-emerald-600 ms-auto" />
                     ) : (
-                      <XCircle className="w-5 h-5 text-red-600 ml-auto" />
+                      <XCircle className="w-5 h-5 text-red-600 ms-auto" />
                     )
                   )}
                 </div>
@@ -143,7 +145,7 @@ export default function ExerciseCard({
               value={selectedAnswer || ''}
               onChange={(e) => setSelectedAnswer(e.target.value)}
               disabled={submitted}
-              placeholder="Type your answer..."
+              placeholder={t((d) => d.exercise.typeYourAnswer)}
               className="w-full p-4 rounded-sm border border-stone-300 dark:border-white/15 bg-white dark:bg-white/[0.02] text-stone-900 dark:text-amber-50 disabled:opacity-60 resize-none focus:outline-none focus:border-amber-500"
               rows={3}
             />
@@ -188,11 +190,11 @@ export default function ExerciseCard({
       <div className="bg-stone-50 dark:bg-white/[0.03] px-6 py-4 border-b border-stone-200 dark:border-white/10">
         <div className="flex items-center justify-between">
           <h3 className="font-display text-lg text-stone-900 dark:text-amber-50">
-            Exercise {number}
+            {t((d) => d.exercise.exerciseLabel)} {number}
           </h3>
           <div className="flex items-center gap-2">
             <span className="text-xs font-semibold bg-amber-500 text-[#0b0a08] px-3 py-1 rounded-full">
-              {exercise.points} pts
+              {exercise.points} {t((d) => d.exercise.points)}
             </span>
             <span className="text-xs bg-stone-200 dark:bg-white/10 text-stone-700 dark:text-stone-300 px-3 py-1 rounded-full capitalize">
               {exercise.type.replace('-', ' ')}
@@ -218,7 +220,7 @@ export default function ExerciseCard({
             className="flex items-center gap-2 text-amber-600 dark:text-amber-400 font-medium text-sm"
           >
             <Lightbulb className="w-4 h-4" />
-            {showHint ? 'Hide Hint' : 'Show Hint'}
+            {showHint ? t((d) => d.exercise.hideHint) : t((d) => d.exercise.showHint)}
           </button>
         )}
         {showHint && exercise.hint && (
@@ -228,7 +230,7 @@ export default function ExerciseCard({
             className="p-3 bg-amber-50/60 dark:bg-amber-400/[0.06] border border-amber-500/30 dark:border-amber-400/20 rounded-sm"
           >
             <p className="text-sm text-stone-700 dark:text-amber-100">
-              <strong className="text-amber-700 dark:text-amber-400">Hint:</strong> {exercise.hint}
+              <strong className="text-amber-700 dark:text-amber-400">{t((d) => d.exercise.hintLabel)}</strong> {exercise.hint}
             </p>
           </motion.div>
         )}
@@ -243,7 +245,7 @@ export default function ExerciseCard({
               disabled={!selectedAnswer}
               className="w-full py-3 bg-amber-500 hover:bg-amber-600 disabled:bg-stone-200 dark:disabled:bg-white/10 disabled:text-stone-400 text-[#0b0a08] font-bold rounded-sm transition-colors"
             >
-              Submit Answer
+              {t((d) => d.exercise.submitAnswer)}
             </motion.button>
           ) : (
             <motion.div
@@ -277,7 +279,7 @@ export default function ExerciseCard({
                     onClick={handleRetry}
                     className="text-sm font-semibold text-red-700 dark:text-red-300 underline"
                   >
-                    Try Again
+                    {t((d) => d.exercise.tryAgain)}
                   </button>
                 )}
               </div>
@@ -290,7 +292,7 @@ export default function ExerciseCard({
               className="flex items-center gap-2 text-amber-700 dark:text-amber-400 font-medium"
             >
               <HelpCircle className="w-4 h-4" />
-              {showExplanation ? 'Hide Explanation' : 'Show Explanation'}
+              {showExplanation ? t((d) => d.exercise.hideExplanation) : t((d) => d.exercise.showExplanation)}
             </motion.button>
           )}
 
@@ -301,7 +303,7 @@ export default function ExerciseCard({
               className="p-4 bg-stone-50 dark:bg-white/[0.03] border border-stone-200 dark:border-white/10 rounded-sm"
             >
               <p className="text-sm text-stone-700 dark:text-stone-300">
-                <strong className="text-amber-700 dark:text-amber-400">Explanation:</strong> {exercise.explanation}
+                <strong className="text-amber-700 dark:text-amber-400">{t((d) => d.exercise.explanationLabel)}</strong> {exercise.explanation}
               </p>
             </motion.div>
           )}

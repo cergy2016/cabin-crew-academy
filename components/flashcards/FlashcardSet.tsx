@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Volume2, RotateCw } from 'lucide-react';
 import { useAudio } from '@/lib/services/audioService';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 interface Flashcard {
   id: string;
@@ -20,6 +21,8 @@ interface FlashcardSetProps {
 }
 
 export default function FlashcardSet({ cards, title, onComplete }: FlashcardSetProps) {
+  const { t, language } = useTranslation();
+  const isRtl = language === 'ar';
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [masteredCards, setMasteredCards] = useState<Set<string>>(new Set());
@@ -83,15 +86,15 @@ export default function FlashcardSet({ cards, title, onComplete }: FlashcardSetP
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <span className="text-sm font-medium text-slate-600 dark:text-slate-400">
-            Progress
+            {t((d) => d.flashcards.progress)}
           </span>
           <span className="text-sm font-bold text-indigo-600 dark:text-indigo-400">
-            {masteredCards.size} / {cards.length} Mastered
+            {masteredCards.size} / {cards.length} {t((d) => d.flashcards.mastered)}
           </span>
         </div>
         <div className="relative h-3 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
           <motion.div
-            className="absolute inset-y-0 left-0 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-full"
+            className="absolute inset-y-0 start-0 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-full rtl:bg-gradient-to-l"
             animate={{ width: `${progress}%` }}
             transition={{ duration: 0.3 }}
           />
@@ -102,9 +105,9 @@ export default function FlashcardSet({ cards, title, onComplete }: FlashcardSetP
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
-          initial={{ opacity: 0, x: 100 }}
+          initial={{ opacity: 0, x: isRtl ? -100 : 100 }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
+          exit={{ opacity: 0, x: isRtl ? 100 : -100 }}
           transition={{ duration: 0.3 }}
           onClick={handleFlip}
           className="relative h-64 cursor-pointer mb-8"
@@ -137,7 +140,7 @@ export default function FlashcardSet({ cards, title, onComplete }: FlashcardSetP
                 </motion.button>
               )}
               <p className="absolute bottom-4 text-sm text-white/70">
-                Click to reveal answer
+                {t((d) => d.flashcards.clickToReveal)}
               </p>
             </motion.div>
 
@@ -175,8 +178,8 @@ export default function FlashcardSet({ cards, title, onComplete }: FlashcardSetP
           disabled={currentIndex === 0}
           className="flex items-center gap-2 px-4 py-2 rounded-lg border-2 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
-          <ChevronLeft className="w-5 h-5" />
-          Previous
+          <ChevronLeft className="w-5 h-5 rtl:rotate-180" />
+          {t((d) => d.common.previous)}
         </motion.button>
 
         <span className="text-sm font-semibold text-slate-600 dark:text-slate-400">
@@ -190,8 +193,8 @@ export default function FlashcardSet({ cards, title, onComplete }: FlashcardSetP
           disabled={currentIndex === cards.length - 1 && masteredCards.has(currentCard.id)}
           className="flex items-center gap-2 px-4 py-2 rounded-lg border-2 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
         >
-          Next
-          <ChevronRight className="w-5 h-5" />
+          {t((d) => d.common.next)}
+          <ChevronRight className="w-5 h-5 rtl:rotate-180" />
         </motion.button>
       </div>
 
@@ -204,7 +207,7 @@ export default function FlashcardSet({ cards, title, onComplete }: FlashcardSetP
           disabled={masteredCards.has(currentCard.id)}
           className="py-3 bg-emerald-600 hover:bg-emerald-700 disabled:bg-slate-300 dark:disabled:bg-slate-700 text-white font-bold rounded-lg transition-colors disabled:cursor-not-allowed"
         >
-          {masteredCards.has(currentCard.id) ? '✓ Mastered' : 'Got It! ✓'}
+          {masteredCards.has(currentCard.id) ? t((d) => d.flashcards.masteredBadge) : t((d) => d.flashcards.gotIt)}
         </motion.button>
 
         <motion.button
@@ -214,7 +217,7 @@ export default function FlashcardSet({ cards, title, onComplete }: FlashcardSetP
           className="py-3 bg-slate-600 hover:bg-slate-700 text-white font-bold rounded-lg transition-colors flex items-center justify-center gap-2"
         >
           <RotateCw className="w-4 h-4" />
-          Reset
+          {t((d) => d.flashcards.reset)}
         </motion.button>
       </div>
 
@@ -226,10 +229,10 @@ export default function FlashcardSet({ cards, title, onComplete }: FlashcardSetP
           className="mt-8 p-6 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 border-2 border-emerald-300 dark:border-emerald-700 rounded-xl text-center"
         >
           <p className="text-2xl font-bold text-emerald-900 dark:text-emerald-100 mb-2">
-            🎉 You Mastered All Cards!
+            {t((d) => d.flashcards.allMasteredTitle)}
           </p>
           <p className="text-emerald-800 dark:text-emerald-200">
-            Excellent work! Review them again tomorrow to reinforce your memory.
+            {t((d) => d.flashcards.allMasteredSubtitle)}
           </p>
         </motion.div>
       )}

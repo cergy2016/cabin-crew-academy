@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import type { UserProfile, UserStats, LessonProgress, Achievement, Badge, DailyChallenge, Lesson } from './types';
 import { achievements as achievementDefs, badges as badgeDefs } from './data/achievements';
+import type { Language } from './i18n';
 
 interface AppState {
   // User
@@ -48,6 +49,10 @@ interface AppState {
   toggleSound: () => void;
   playbackSpeed: number;
   setPlaybackSpeed: (speed: number) => void;
+
+  // UI language (interface only — lesson content always stays in English)
+  language: Language;
+  setLanguage: (language: Language) => void;
 }
 
 const defaultStats: UserStats = {
@@ -217,6 +222,9 @@ export const useAppStore = create<AppState>()(
 
       playbackSpeed: 1,
       setPlaybackSpeed: (speed) => set({ playbackSpeed: speed }),
+
+      language: 'en',
+      setLanguage: (language) => set({ language }),
     }),
     {
       name: 'cabin-crew-store',

@@ -1,14 +1,15 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowLeft, BookMarked, Search } from 'lucide-react';
-import ThemeToggle from '@/components/ThemeToggle';
+import { BookMarked, Search } from 'lucide-react';
+import PageHeader from '@/components/PageHeader';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import { glossaryUnits } from '@/lib/data/glossary';
 
 export default function GlossaryPage() {
   const [query, setQuery] = useState('');
+  const { t } = useTranslation();
 
   const filteredUnits = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -33,16 +34,7 @@ export default function GlossaryPage() {
   return (
     <main className="min-h-screen bg-[#faf6ee] dark:bg-[#0b0a08] p-4 md:p-8">
       <div className="max-w-5xl mx-auto">
-        <div className="flex items-center justify-between mb-6">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-stone-500 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 font-medium transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Dashboard
-          </Link>
-          <ThemeToggle />
-        </div>
+        <PageHeader />
 
         <motion.header
           initial={{ opacity: 0, y: -20 }}
@@ -52,28 +44,28 @@ export default function GlossaryPage() {
           <div className="flex items-center gap-3 mb-3">
             <BookMarked className="w-7 h-7 text-amber-600 dark:text-amber-400" />
             <h1 className="font-display text-4xl text-stone-900 dark:text-amber-50">
-              Glossary of Key Expressions
+              {t((d) => d.nav.glossaryFull)}
             </h1>
           </div>
           <p className="text-stone-500 dark:text-stone-400 text-lg">
-            Every essential phrase from Units 1-9, organized by topic for quick review.
+            {t((d) => d.referencePages.glossarySubtitle)}
           </p>
         </motion.header>
 
         <div className="relative mb-10">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
+          <Search className="absolute start-4 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search expressions or topics..."
-            className="w-full pl-12 pr-4 py-3 rounded-sm border border-stone-200 dark:border-white/10 bg-white dark:bg-white/[0.02] text-stone-900 dark:text-amber-50 placeholder:text-stone-400 focus:outline-none focus:border-amber-500 dark:focus:border-amber-400"
+            placeholder={t((d) => d.referencePages.glossarySearchPlaceholder)}
+            className="w-full ps-12 pe-4 py-3 rounded-sm border border-stone-200 dark:border-white/10 bg-white dark:bg-white/[0.02] text-stone-900 dark:text-amber-50 placeholder:text-stone-400 focus:outline-none focus:border-amber-500 dark:focus:border-amber-400"
           />
         </div>
 
         {filteredUnits.length === 0 && (
           <p className="text-center text-stone-400 dark:text-stone-500 py-16">
-            No expressions match &ldquo;{query}&rdquo;.
+            {t((d) => d.referencePages.glossaryNoResults).replace('{query}', query)}
           </p>
         )}
 

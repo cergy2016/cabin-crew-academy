@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Play, Pause, RotateCcw, Volume2, Volume1, VolumeX } from 'lucide-react';
 import { useAppStore } from '@/lib/store';
 import { getAudioUrl } from '@/lib/config/audioUrls';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 interface AudioPlayerProps {
   audioUrl: string;
@@ -28,6 +29,7 @@ export default function AudioPlayer({
   const [volume, setVolume] = useState(1);
   const [playbackRate, setPlaybackRate] = useState(1);
   const { soundEnabled, playbackSpeed } = useAppStore();
+  const { t } = useTranslation();
 
   // Animated bars for waveform
   const barCount = 40;
@@ -73,7 +75,7 @@ export default function AudioPlayer({
     if (!audioRef.current) return;
 
     if (!soundEnabled) {
-      alert('Sound is disabled. Enable it in settings.');
+      alert(t((d) => d.audioPlayer.soundDisabled));
       return;
     }
 
@@ -176,12 +178,12 @@ export default function AudioPlayer({
             whileTap={{ scale: 0.95 }}
             onClick={handlePlayPause}
             className="p-2 rounded-sm bg-amber-500 text-[#0b0a08] hover:bg-amber-600 transition-colors"
-            title={isPlaying ? 'Pause' : 'Play'}
+            title={isPlaying ? t((d) => d.audioPlayer.pause) : t((d) => d.audioPlayer.play)}
           >
             {isPlaying ? (
               <Pause className="w-5 h-5" />
             ) : (
-              <Play className="w-5 h-5 ml-0.5" />
+              <Play className="w-5 h-5 ms-0.5" />
             )}
           </motion.button>
 
@@ -190,7 +192,7 @@ export default function AudioPlayer({
             whileTap={{ scale: 0.95 }}
             onClick={handleReplay}
             className="p-2 rounded-sm bg-stone-100 dark:bg-white/10 text-stone-600 dark:text-stone-300 hover:bg-stone-200 dark:hover:bg-white/15 transition-colors"
-            title="Replay"
+            title={t((d) => d.audioPlayer.replay)}
           >
             <RotateCcw className="w-4 h-4" />
           </motion.button>
@@ -228,7 +230,7 @@ export default function AudioPlayer({
             value={volume}
             onChange={handleVolumeChange}
             className="w-16 h-1 bg-stone-200 dark:bg-white/10 rounded-full cursor-pointer accent-amber-500"
-            title="Volume"
+            title={t((d) => d.audioPlayer.volume)}
           />
         </div>
 
@@ -237,7 +239,7 @@ export default function AudioPlayer({
           value={playbackRate}
           onChange={handlePlaybackRateChange}
           className="px-2 py-1 rounded-sm bg-stone-50 dark:bg-white/[0.03] text-stone-600 dark:text-stone-300 text-sm font-medium border border-stone-200 dark:border-white/10"
-          title="Playback Speed"
+          title={t((d) => d.audioPlayer.playbackSpeed)}
         >
           <option value={0.75}>0.75x</option>
           <option value={1}>1x</option>
@@ -251,7 +253,7 @@ export default function AudioPlayer({
       {showTranscription && transcription && (
         <div className="p-4 bg-stone-50 dark:bg-white/[0.03] rounded-sm border border-stone-200 dark:border-white/10">
           <p className="text-sm font-medium text-stone-500 dark:text-stone-400 mb-2">
-            Transcription
+            {t((d) => d.voiceRecorder.transcription)}
           </p>
           <p className="text-stone-900 dark:text-amber-50 leading-relaxed">
             {transcription}

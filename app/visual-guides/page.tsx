@@ -1,14 +1,15 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowLeft, ChevronLeft, ChevronRight, Expand, ImageIcon, X } from 'lucide-react';
-import ThemeToggle from '@/components/ThemeToggle';
+import { ChevronLeft, ChevronRight, Expand, ImageIcon, X } from 'lucide-react';
+import PageHeader from '@/components/PageHeader';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import { visualGuides } from '@/lib/data/visualGuides';
 
 export default function VisualGuidesPage() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const { t } = useTranslation();
   const active = activeIndex !== null ? visualGuides[activeIndex] : null;
 
   const showPrev = () =>
@@ -30,16 +31,7 @@ export default function VisualGuidesPage() {
   return (
     <main className="min-h-screen bg-[#faf6ee] dark:bg-[#0b0a08] p-4 md:p-8">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center justify-between mb-6">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-stone-500 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 font-medium transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Dashboard
-          </Link>
-          <ThemeToggle />
-        </div>
+        <PageHeader />
 
         <motion.header
           initial={{ opacity: 0, y: -20 }}
@@ -49,12 +41,11 @@ export default function VisualGuidesPage() {
           <div className="flex items-center gap-3 mb-3">
             <ImageIcon className="w-7 h-7 text-amber-600 dark:text-amber-400" />
             <h1 className="font-display text-4xl text-stone-900 dark:text-amber-50">
-              Visual Guides
+              {t((d) => d.visualGuides.title)}
             </h1>
           </div>
           <p className="text-stone-500 dark:text-stone-400 text-lg">
-            {visualGuides.length} labeled reference posters covering aircraft, cabin, and airport
-            vocabulary. Tap any poster to view it full-screen.
+            {t((d) => d.visualGuides.subtitle).replace('{count}', String(visualGuides.length))}
           </p>
         </motion.header>
 
@@ -95,7 +86,7 @@ export default function VisualGuidesPage() {
                   {guide.description}
                 </p>
                 <span className="text-[11px] font-semibold tracking-[0.15em] uppercase text-amber-600 dark:text-amber-400">
-                  {guide.termCount} terms
+                  {guide.termCount} {t((d) => d.visualGuides.terms)}
                 </span>
               </div>
             </motion.button>
@@ -117,20 +108,20 @@ export default function VisualGuidesPage() {
                 e.stopPropagation();
                 showPrev();
               }}
-              className="hidden sm:flex absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2.5 rounded-full bg-black/60 hover:bg-black/80 text-white transition-colors"
-              aria-label="Previous poster"
+              className="hidden sm:flex absolute start-4 top-1/2 -translate-y-1/2 z-10 p-2.5 rounded-full bg-black/60 hover:bg-black/80 text-white transition-colors"
+              aria-label={t((d) => d.common.previous)}
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-6 h-6 rtl:rotate-180" />
             </button>
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 showNext();
               }}
-              className="hidden sm:flex absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2.5 rounded-full bg-black/60 hover:bg-black/80 text-white transition-colors"
-              aria-label="Next poster"
+              className="hidden sm:flex absolute end-4 top-1/2 -translate-y-1/2 z-10 p-2.5 rounded-full bg-black/60 hover:bg-black/80 text-white transition-colors"
+              aria-label={t((d) => d.common.next)}
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-6 h-6 rtl:rotate-180" />
             </button>
 
             <motion.div
@@ -143,14 +134,14 @@ export default function VisualGuidesPage() {
             >
               <button
                 onClick={() => setActiveIndex(null)}
-                className="absolute top-3 right-3 z-10 p-2 rounded-sm bg-black/60 hover:bg-black/80 text-white transition-colors"
-                aria-label="Close"
+                className="absolute top-3 end-3 z-10 p-2 rounded-sm bg-black/60 hover:bg-black/80 text-white transition-colors"
+                aria-label={t((d) => d.common.close)}
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="absolute top-3 left-3 z-10 px-3 py-1.5 rounded-sm bg-black/60 text-white text-xs font-medium tracking-wide">
-                {active.title} — {activeIndex + 1} of {visualGuides.length}
+              <div className="absolute top-3 start-3 z-10 px-3 py-1.5 rounded-sm bg-black/60 text-white text-xs font-medium tracking-wide">
+                {active.title} — {activeIndex + 1} {t((d) => d.common.of)} {visualGuides.length}
               </div>
 
               {active.type === 'image' ? (
@@ -169,15 +160,15 @@ export default function VisualGuidesPage() {
                   onClick={showPrev}
                   className="inline-flex items-center gap-1.5 text-sm font-medium text-stone-600 dark:text-stone-300"
                 >
-                  <ChevronLeft className="w-4 h-4" />
-                  Previous
+                  <ChevronLeft className="w-4 h-4 rtl:rotate-180" />
+                  {t((d) => d.common.previous)}
                 </button>
                 <button
                   onClick={showNext}
                   className="inline-flex items-center gap-1.5 text-sm font-medium text-stone-600 dark:text-stone-300"
                 >
-                  Next
-                  <ChevronRight className="w-4 h-4" />
+                  {t((d) => d.common.next)}
+                  <ChevronRight className="w-4 h-4 rtl:rotate-180" />
                 </button>
               </div>
             </motion.div>

@@ -15,6 +15,14 @@
   --font-display: var(--font-display);
 }
 
+/* Arabic UI: swap both body and display fonts for a typeface with real
+   Arabic glyphs. English lesson content inside an RTL page still renders
+   fine since Cairo ships matching Latin glyphs too. */
+:where([dir="rtl"]) {
+  --font-sans: var(--font-arabic), var(--font-geist-sans);
+  --font-display: var(--font-arabic), var(--font-geist-sans);
+}
+
 @media (prefers-color-scheme: dark) {
   :root:not(.light) {
     --background: #0a0a0a;

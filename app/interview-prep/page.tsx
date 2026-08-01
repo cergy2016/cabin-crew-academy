@@ -8,6 +8,8 @@ import type { InterviewQuestion } from '@/lib/types';
 import { interviewBanks, generalHRQuestions, interviewTopics } from '@/lib/data/interviews';
 import InterviewPractice from '@/components/interview/InterviewPractice';
 import ThemeToggle from '@/components/ThemeToggle';
+import LanguageToggle from '@/components/LanguageToggle';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 type ViewMode = 'select' | 'practice' | 'topics' | 'airlines';
 
@@ -18,6 +20,7 @@ const topicQueue = interviewTopics
   .filter((q): q is InterviewQuestion => Boolean(q));
 
 export default function InterviewPrepPage() {
+  const { t } = useTranslation();
   const [viewMode, setViewMode] = useState<ViewMode>('select');
   const [queue, setQueue] = useState<InterviewQuestion[]>([]);
   const [queueIndex, setQueueIndex] = useState(0);
@@ -45,10 +48,13 @@ export default function InterviewPrepPage() {
             href="/"
             className="inline-flex items-center gap-2 text-stone-500 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 font-medium transition-colors"
           >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Dashboard
+            <ArrowLeft className="w-4 h-4 rtl:rotate-180" />
+            {t((d) => d.common.backToDashboard)}
           </Link>
-          <ThemeToggle />
+          <div className="flex items-center gap-3">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
         </div>
 
         {/* Header */}
@@ -60,11 +66,11 @@ export default function InterviewPrepPage() {
           <div className="flex items-center gap-3 mb-3">
             <Briefcase className="w-7 h-7 text-amber-600 dark:text-amber-400" />
             <h1 className="font-display text-4xl text-stone-900 dark:text-amber-50">
-              Interview Preparation
+              {t((d) => d.interviewPrep.title)}
             </h1>
           </div>
           <p className="text-stone-500 dark:text-stone-400 text-lg">
-            Master cabin crew interviews with {totalQuestions}+ practice questions and expert feedback
+            {t((d) => d.interviewPrep.subtitle).replace('{count}', String(totalQuestions))}
           </p>
         </motion.header>
 
@@ -77,7 +83,7 @@ export default function InterviewPrepPage() {
                 onClick={() => setViewMode('select')}
                 className="px-6 py-2 rounded-sm border border-stone-300 dark:border-white/15 text-stone-600 dark:text-stone-300 font-semibold hover:border-amber-500 dark:hover:border-amber-400 transition-colors"
               >
-                ← Back to Selection
+                {t((d) => d.interviewPrep.backToSelection)}
               </motion.button>
 
               {queue.length > 1 && (
@@ -86,22 +92,25 @@ export default function InterviewPrepPage() {
                     type="button"
                     onClick={() => setQueueIndex((i) => Math.max(0, i - 1))}
                     disabled={queueIndex === 0}
-                    aria-label="Previous question"
+                    aria-label={t((d) => d.common.previous)}
                     className="w-9 h-9 rounded-full border border-stone-300 dark:border-white/15 flex items-center justify-center text-stone-600 dark:text-stone-300 hover:border-amber-500 dark:hover:border-amber-400 disabled:opacity-30 disabled:hover:border-stone-300 dark:disabled:hover:border-white/15 transition-colors"
                   >
-                    <ChevronLeft className="w-4 h-4" />
+                    <ChevronLeft className="w-4 h-4 rtl:rotate-180" />
                   </button>
                   <span className="text-sm font-semibold text-stone-600 dark:text-stone-300 tabular-nums">
-                    {queueLabel} &middot; Question {queueIndex + 1} of {queue.length}
+                    {t((d) => d.interviewPrep.questionCounter)
+                      .replace('{label}', queueLabel)
+                      .replace('{current}', String(queueIndex + 1))
+                      .replace('{total}', String(queue.length))}
                   </span>
                   <button
                     type="button"
                     onClick={() => setQueueIndex((i) => Math.min(queue.length - 1, i + 1))}
                     disabled={queueIndex === queue.length - 1}
-                    aria-label="Next question"
+                    aria-label={t((d) => d.common.next)}
                     className="w-9 h-9 rounded-full border border-stone-300 dark:border-white/15 flex items-center justify-center text-stone-600 dark:text-stone-300 hover:border-amber-500 dark:hover:border-amber-400 disabled:opacity-30 disabled:hover:border-stone-300 dark:disabled:hover:border-white/15 transition-colors"
                   >
-                    <ChevronRight className="w-4 h-4" />
+                    <ChevronRight className="w-4 h-4 rtl:rotate-180" />
                   </button>
                 </div>
               )}
@@ -123,10 +132,10 @@ export default function InterviewPrepPage() {
             {/* Quick Stats */}
             <div className="grid md:grid-cols-4 gap-4">
               {[
-                { icon: Trophy, label: 'Airlines', value: interviewBanks.length.toString() },
-                { icon: Target, label: 'Questions', value: `${totalQuestions}+` },
-                { icon: Zap, label: 'Practice Modes', value: '3' },
-                { icon: BookOpen, label: 'Topics', value: interviewTopics.length.toString() },
+                { icon: Trophy, label: t((d) => d.interviewPrep.statAirlines), value: interviewBanks.length.toString() },
+                { icon: Target, label: t((d) => d.interviewPrep.statQuestions), value: `${totalQuestions}+` },
+                { icon: Zap, label: t((d) => d.interviewPrep.statPracticeModes), value: '3' },
+                { icon: BookOpen, label: t((d) => d.interviewPrep.statTopics), value: interviewTopics.length.toString() },
               ].map((stat) => {
                 const Icon = stat.icon;
                 return (
@@ -152,7 +161,7 @@ export default function InterviewPrepPage() {
             {/* Practice Modes */}
             <div>
               <h2 className="font-display text-2xl text-stone-900 dark:text-amber-50 mb-6">
-                Choose Your Practice Mode
+                {t((d) => d.interviewPrep.choosePracticeMode)}
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 {/* Airlines */}
@@ -163,10 +172,13 @@ export default function InterviewPrepPage() {
                 >
                   <div className="text-4xl mb-3">✈️</div>
                   <h3 className="font-display text-xl text-stone-900 dark:text-amber-50 mb-2">
-                    Airline-Specific
+                    {t((d) => d.interviewPrep.airlineSpecificTitle)}
                   </h3>
                   <p className="text-sm text-stone-500 dark:text-stone-400">
-                    Practice questions from {interviewBanks.map((b) => b.airline).join(', ')}
+                    {t((d) => d.interviewPrep.airlineSpecificDescription).replace(
+                      '{airlines}',
+                      interviewBanks.map((b) => b.airline).join(', ')
+                    )}
                   </p>
                 </motion.button>
 
@@ -178,25 +190,25 @@ export default function InterviewPrepPage() {
                 >
                   <div className="text-4xl mb-3">📚</div>
                   <h3 className="font-display text-xl text-stone-900 dark:text-amber-50 mb-2">
-                    By Topic
+                    {t((d) => d.interviewPrep.byTopicTitle)}
                   </h3>
                   <p className="text-sm text-stone-500 dark:text-stone-400">
-                    Learn about specific topics: HR questions, behavioral, technical, situational
+                    {t((d) => d.interviewPrep.byTopicDescription)}
                   </p>
                 </motion.button>
 
                 {/* General HR */}
                 <motion.button
                   whileHover={{ y: -3 }}
-                  onClick={() => startQueue(generalHRQuestions, 'General HR')}
+                  onClick={() => startQueue(generalHRQuestions, t((d) => d.interviewPrep.generalHRTitle))}
                   className="text-left p-8 rounded-sm bg-white dark:bg-white/[0.02] border border-stone-200 dark:border-white/10 hover:border-amber-500/60 dark:hover:border-amber-400/50 transition-all"
                 >
                   <div className="text-4xl mb-3">🎯</div>
                   <h3 className="font-display text-xl text-stone-900 dark:text-amber-50 mb-2">
-                    General HR
+                    {t((d) => d.interviewPrep.generalHRTitle)}
                   </h3>
                   <p className="text-sm text-stone-500 dark:text-stone-400">
-                    Common interview questions used by most airlines
+                    {t((d) => d.interviewPrep.generalHRDescription)}
                   </p>
                 </motion.button>
               </div>
@@ -209,7 +221,7 @@ export default function InterviewPrepPage() {
                 animate={{ opacity: 1, y: 0 }}
               >
                 <h2 className="font-display text-2xl text-stone-900 dark:text-amber-50 mb-6">
-                  Select an Airline
+                  {t((d) => d.interviewPrep.selectAirline)}
                 </h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {interviewBanks.map((bank) => (
@@ -228,7 +240,10 @@ export default function InterviewPrepPage() {
                         </p>
                       )}
                       <p className="text-sm font-semibold text-amber-600 dark:text-amber-400">
-                        {bank.questions.length} questions available
+                        {t((d) => d.interviewPrep.questionsAvailable).replace(
+                          '{count}',
+                          String(bank.questions.length)
+                        )}
                       </p>
                     </motion.button>
                   ))}
@@ -243,7 +258,7 @@ export default function InterviewPrepPage() {
                 animate={{ opacity: 1, y: 0 }}
               >
                 <h2 className="font-display text-2xl text-stone-900 dark:text-amber-50 mb-6">
-                  Select a Topic
+                  {t((d) => d.interviewPrep.selectTopic)}
                 </h2>
                 <div className="grid md:grid-cols-2 gap-4">
                   {interviewTopics.map((topic, idx) => (
