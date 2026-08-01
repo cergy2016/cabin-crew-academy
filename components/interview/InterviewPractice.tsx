@@ -1,12 +1,10 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mic, Play, ArrowRight, Star, Volume2 } from 'lucide-react';
 import type { InterviewQuestion } from '@/lib/types';
-import { useVoiceRecording } from '@/lib/services/voiceRecordingService';
 import { useAudio } from '@/lib/services/audioService';
-import AudioPlayer from '../lesson/AudioPlayer';
 import VoiceRecorder from '../lesson/VoiceRecorder';
 
 interface InterviewPracticeProps {
@@ -21,7 +19,6 @@ export default function InterviewPractice({
   onComplete,
 }: InterviewPracticeProps) {
   const [mode, setMode] = useState<PracticeMode>('select');
-  const [selectedAnswer, setSelectedAnswer] = useState<number>(0);
   const [recordingScore, setRecordingScore] = useState<number>(0);
   const { textToSpeech } = useAudio();
   const [isPlayingQuestion, setIsPlayingQuestion] = useState(false);
@@ -69,21 +66,18 @@ export default function InterviewPractice({
             className="space-y-6"
           >
             {/* Question Display */}
-            <div className="bg-white dark:bg-slate-900 rounded-2xl border-2 border-indigo-200 dark:border-indigo-800 p-8">
+            <div className="bg-white dark:bg-white/[0.02] rounded-sm border border-amber-500/30 dark:border-amber-400/25 p-8">
               <div className="flex items-center justify-between mb-4">
-                <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase">
-                  Interview Question
+                <span className="text-[11px] font-semibold tracking-widest uppercase text-amber-700 dark:text-amber-400">
+                  {question.airline ?? 'General'} &middot; Interview Question
                 </span>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1">
                   {Array.from({ length: question.difficulty }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-4 h-4 fill-yellow-400 text-yellow-400"
-                    />
+                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
               </div>
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+              <h2 className="font-display text-2xl text-stone-900 dark:text-amber-50 mb-6">
                 {question.question}
               </h2>
               <motion.button
@@ -91,7 +85,7 @@ export default function InterviewPractice({
                 whileTap={{ scale: 0.95 }}
                 onClick={handlePlayQuestion}
                 disabled={isPlayingQuestion}
-                className="flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 disabled:bg-slate-400 text-white font-semibold rounded-lg transition-colors"
+                className="flex items-center gap-2 px-6 py-3 bg-amber-500 hover:bg-amber-600 disabled:bg-stone-300 dark:disabled:bg-white/10 text-[#0b0a08] disabled:text-stone-500 font-semibold rounded-sm transition-colors"
               >
                 <Volume2 className="w-5 h-5" />
                 {isPlayingQuestion ? 'Playing...' : 'Hear Question'}
@@ -102,36 +96,34 @@ export default function InterviewPractice({
             <div className="grid md:grid-cols-2 gap-4">
               {/* Listen to Model Answers */}
               <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ y: -3 }}
                 onClick={() => setMode('listening')}
-                className="p-6 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 border-2 border-blue-300 dark:border-blue-700 hover:shadow-md transition-all text-left"
+                className="p-6 rounded-sm bg-white dark:bg-white/[0.02] border border-stone-200 dark:border-white/10 hover:border-amber-500/60 dark:hover:border-amber-400/50 transition-all text-left"
               >
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-bold text-blue-900 dark:text-blue-100">
+                  <h3 className="font-display text-lg text-stone-900 dark:text-amber-50">
                     Listen to Answers
                   </h3>
-                  <Play className="w-5 h-5 text-blue-600" />
+                  <Play className="w-5 h-5 text-amber-600 dark:text-amber-400" />
                 </div>
-                <p className="text-sm text-blue-800 dark:text-blue-200">
+                <p className="text-sm text-stone-500 dark:text-stone-400">
                   Learn from model answers and expert responses
                 </p>
               </motion.button>
 
               {/* Record Your Answer */}
               <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ y: -3 }}
                 onClick={() => setMode('recording')}
-                className="p-6 rounded-xl bg-gradient-to-br from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20 border-2 border-red-300 dark:border-red-700 hover:shadow-md transition-all text-left"
+                className="p-6 rounded-sm bg-white dark:bg-white/[0.02] border border-stone-200 dark:border-white/10 hover:border-amber-500/60 dark:hover:border-amber-400/50 transition-all text-left"
               >
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-bold text-red-900 dark:text-red-100">
+                  <h3 className="font-display text-lg text-stone-900 dark:text-amber-50">
                     Record Answer
                   </h3>
-                  <Mic className="w-5 h-5 text-red-600" />
+                  <Mic className="w-5 h-5 text-amber-600 dark:text-amber-400" />
                 </div>
-                <p className="text-sm text-red-800 dark:text-red-200">
+                <p className="text-sm text-stone-500 dark:text-stone-400">
                   Practice speaking and get AI feedback
                 </p>
               </motion.button>
@@ -148,7 +140,7 @@ export default function InterviewPractice({
             exit={{ opacity: 0, y: -20 }}
             className="space-y-6"
           >
-            <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
+            <h2 className="font-display text-2xl text-stone-900 dark:text-amber-50">
               Model Answers
             </h2>
 
@@ -158,28 +150,28 @@ export default function InterviewPractice({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden"
+                className="bg-white dark:bg-white/[0.02] rounded-sm border border-stone-200 dark:border-white/10 overflow-hidden"
               >
                 {/* Scores */}
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 p-6 border-b border-slate-200 dark:border-slate-800">
-                  <p className="font-semibold text-slate-900 dark:text-white mb-4">
+                <div className="bg-stone-50 dark:bg-white/[0.03] p-6 border-b border-stone-200 dark:border-white/10">
+                  <p className="text-[11px] font-semibold tracking-widest uppercase text-stone-500 dark:text-stone-400 mb-4">
                     Score Breakdown
                   </p>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                     {Object.entries(answer.scoreBreakdown).map(([key, score]) => (
                       <div key={key}>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 capitalize mb-1">
+                        <p className="text-xs text-stone-500 dark:text-stone-400 capitalize mb-1">
                           {key.replace(/([A-Z])/g, ' $1').trim()}
                         </p>
-                        <div className="relative h-2 bg-slate-300 dark:bg-slate-700 rounded-full overflow-hidden">
+                        <div className="relative h-1.5 bg-stone-200 dark:bg-white/10 rounded-full overflow-hidden">
                           <motion.div
-                            className="absolute inset-y-0 left-0 bg-gradient-to-r from-emerald-500 to-teal-500"
+                            className="absolute inset-y-0 left-0 bg-amber-500"
                             initial={{ width: 0 }}
                             animate={{ width: `${score}%` }}
                             transition={{ duration: 1, delay: idx * 0.1 }}
                           />
                         </div>
-                        <p className="text-sm font-bold text-slate-900 dark:text-white mt-1">
+                        <p className="text-sm font-bold text-stone-900 dark:text-amber-50 mt-1">
                           {score}%
                         </p>
                       </div>
@@ -189,14 +181,14 @@ export default function InterviewPractice({
 
                 {/* Answer Text */}
                 <div className="p-6">
-                  <p className="text-slate-800 dark:text-slate-200 leading-relaxed mb-4">
+                  <p className="text-stone-700 dark:text-stone-300 leading-relaxed mb-4">
                     {answer.text || answer.answer || 'Answer not available'}
                   </p>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => handleListenToAnswer(answer.text || answer.answer || '')}
-                    className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-[#0b0a08] font-semibold rounded-sm transition-colors"
                   >
                     <Volume2 className="w-4 h-4" />
                     Listen to Answer
@@ -207,9 +199,9 @@ export default function InterviewPractice({
 
             {/* Tips to Avoid */}
             {question.mistakesToAvoid && question.mistakesToAvoid.length > 0 && (
-              <div className="bg-yellow-50 dark:bg-yellow-900/20 border-2 border-yellow-300 dark:border-yellow-700 rounded-xl p-6">
+              <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-300 dark:border-yellow-800 rounded-sm p-6">
                 <h3 className="font-bold text-yellow-900 dark:text-yellow-100 mb-3">
-                  ⚠️ Mistakes to Avoid
+                  Mistakes to Avoid
                 </h3>
                 <ul className="space-y-2">
                   {question.mistakesToAvoid?.map((mistake, idx) => (
@@ -227,10 +219,10 @@ export default function InterviewPractice({
 
             {/* Back Button */}
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               onClick={() => setMode('select')}
-              className="w-full py-3 border-2 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-bold rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              className="w-full py-3 border border-stone-300 dark:border-white/15 text-stone-600 dark:text-stone-300 font-bold rounded-sm hover:border-amber-500 dark:hover:border-amber-400 transition-colors"
             >
               Back to Options
             </motion.button>
@@ -246,10 +238,10 @@ export default function InterviewPractice({
             exit={{ opacity: 0, y: -20 }}
             className="space-y-6"
           >
-            <div className="bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-800 rounded-lg p-4">
-              <p className="text-sm text-indigo-900 dark:text-indigo-100">
-                <strong>Ready?</strong> Take a moment to think about your answer.
-                Click record when you're ready to speak.
+            <div className="bg-stone-50 dark:bg-white/[0.03] border border-stone-200 dark:border-white/10 rounded-sm p-4">
+              <p className="text-sm text-stone-700 dark:text-stone-300">
+                <strong className="text-amber-700 dark:text-amber-400">Ready?</strong> Take a moment to think about your answer.
+                Click record when you&apos;re ready to speak.
               </p>
             </div>
 
@@ -270,11 +262,11 @@ export default function InterviewPractice({
             exit={{ opacity: 0, y: -20 }}
             className="space-y-6"
           >
-            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-xl border-2 border-emerald-300 dark:border-emerald-700 p-8 text-center">
-              <p className="text-sm font-semibold text-emerald-600 dark:text-emerald-400 uppercase mb-2">
+            <div className="bg-emerald-50 dark:bg-emerald-900/20 rounded-sm border border-emerald-300 dark:border-emerald-700 p-8 text-center">
+              <p className="text-[11px] font-semibold tracking-widest uppercase text-emerald-600 dark:text-emerald-400 mb-2">
                 Interview Score
               </p>
-              <p className="text-5xl font-extrabold text-emerald-900 dark:text-emerald-100 mb-2">
+              <p className="font-display text-5xl text-emerald-900 dark:text-emerald-100 mb-2">
                 {recordingScore}%
               </p>
               <p className="text-emerald-800 dark:text-emerald-200">
@@ -287,7 +279,7 @@ export default function InterviewPractice({
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setMode('listening')}
-                className="flex items-center justify-center gap-2 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg transition-colors"
+                className="flex items-center justify-center gap-2 py-3 bg-amber-500 hover:bg-amber-600 text-[#0b0a08] font-bold rounded-sm transition-colors"
               >
                 <Play className="w-5 h-5" />
                 Listen to Model Answers
@@ -300,7 +292,7 @@ export default function InterviewPractice({
                   setMode('select');
                   onComplete?.(recordingScore);
                 }}
-                className="flex items-center justify-center gap-2 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg transition-colors"
+                className="flex items-center justify-center gap-2 py-3 bg-stone-800 hover:bg-stone-900 dark:bg-white/10 dark:hover:bg-white/15 text-white dark:text-amber-50 font-bold rounded-sm transition-colors"
               >
                 Try Another Question
                 <ArrowRight className="w-5 h-5" />

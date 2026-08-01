@@ -1,31 +1,27 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, Briefcase, Target, Zap, Trophy } from 'lucide-react';
+import { ArrowLeft, BookOpen, Briefcase, Target, Zap, Trophy } from 'lucide-react';
 import { interviewBanks, generalHRQuestions, interviewTopics } from '@/lib/data/interviews';
 import InterviewPractice from '@/components/interview/InterviewPractice';
+import ThemeToggle from '@/components/ThemeToggle';
 
 type ViewMode = 'select' | 'practice' | 'topics' | 'airlines';
 
+const allQuestions = [...interviewBanks.flatMap((b) => b.questions), ...generalHRQuestions];
+const totalQuestions = allQuestions.length;
+
 export default function InterviewPrepPage() {
   const [viewMode, setViewMode] = useState<ViewMode>('select');
-  const [selectedBankId, setSelectedBankId] = useState<string | null>(null);
   const [selectedQuestionId, setSelectedQuestionId] = useState<string | null>(null);
   const [practiceScore, setPracticeScore] = useState(0);
 
-  const selectedBank = interviewBanks.find((b) => b.id === selectedBankId);
-  const selectedQuestion =
-    selectedBank?.questions.find((q) => q.id === selectedQuestionId) ||
-    generalHRQuestions.find((q) => q.id === selectedQuestionId);
+  const selectedQuestion = allQuestions.find((q) => q.id === selectedQuestionId);
 
-  const handleQuestionSelect = (questionId: string, bankId?: string) => {
+  const handleQuestionSelect = (questionId: string) => {
     setSelectedQuestionId(questionId);
-    if (bankId) {
-      setSelectedBankId(bankId);
-    } else {
-      setSelectedBankId(null);
-    }
     setViewMode('practice');
   };
 
@@ -34,8 +30,19 @@ export default function InterviewPrepPage() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 p-4 md:p-8">
+    <main className="min-h-screen bg-[#faf6ee] dark:bg-[#0b0a08] p-4 md:p-8">
       <div className="max-w-6xl mx-auto">
+        <div className="flex items-center justify-between mb-6">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-stone-500 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 font-medium transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Dashboard
+          </Link>
+          <ThemeToggle />
+        </div>
+
         {/* Header */}
         <motion.header
           initial={{ opacity: 0, y: -20 }}
@@ -43,13 +50,13 @@ export default function InterviewPrepPage() {
           className="mb-12"
         >
           <div className="flex items-center gap-3 mb-3">
-            <Briefcase className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
-            <h1 className="text-4xl font-extrabold text-slate-900 dark:text-white">
+            <Briefcase className="w-7 h-7 text-amber-600 dark:text-amber-400" />
+            <h1 className="font-display text-4xl text-stone-900 dark:text-amber-50">
               Interview Preparation
             </h1>
           </div>
-          <p className="text-slate-600 dark:text-slate-400 text-lg">
-            Master cabin crew interviews with 100+ practice questions and expert feedback
+          <p className="text-stone-500 dark:text-stone-400 text-lg">
+            Master cabin crew interviews with {totalQuestions}+ practice questions and expert feedback
           </p>
         </motion.header>
 
@@ -62,7 +69,7 @@ export default function InterviewPrepPage() {
                 setViewMode('select');
                 setSelectedQuestionId(null);
               }}
-              className="px-6 py-2 rounded-lg border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors mb-6"
+              className="px-6 py-2 rounded-sm border border-stone-300 dark:border-white/15 text-stone-600 dark:text-stone-300 font-semibold hover:border-amber-500 dark:hover:border-amber-400 transition-colors mb-6"
             >
               ← Back to Selection
             </motion.button>
@@ -83,7 +90,7 @@ export default function InterviewPrepPage() {
             <div className="grid md:grid-cols-4 gap-4">
               {[
                 { icon: Trophy, label: 'Airlines', value: interviewBanks.length.toString() },
-                { icon: Target, label: 'Questions', value: '100+' },
+                { icon: Target, label: 'Questions', value: `${totalQuestions}+` },
                 { icon: Zap, label: 'Practice Modes', value: '3' },
                 { icon: BookOpen, label: 'Topics', value: interviewTopics.length.toString() },
               ].map((stat) => {
@@ -91,16 +98,16 @@ export default function InterviewPrepPage() {
                 return (
                   <motion.div
                     key={stat.label}
-                    whileHover={{ scale: 1.05 }}
-                    className="bg-white dark:bg-slate-900 rounded-xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow"
+                    whileHover={{ y: -3 }}
+                    className="bg-white dark:bg-white/[0.02] rounded-sm p-6 border border-stone-200 dark:border-white/10"
                   >
                     <div className="flex items-center gap-3 mb-2">
-                      <Icon className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
-                      <p className="text-sm text-slate-600 dark:text-slate-400 font-medium">
+                      <Icon className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+                      <p className="text-[11px] font-semibold tracking-widest uppercase text-stone-500 dark:text-stone-400">
                         {stat.label}
                       </p>
                     </div>
-                    <p className="text-2xl font-extrabold text-slate-900 dark:text-white">
+                    <p className="font-display text-2xl text-stone-900 dark:text-amber-50">
                       {stat.value}
                     </p>
                   </motion.div>
@@ -110,56 +117,55 @@ export default function InterviewPrepPage() {
 
             {/* Practice Modes */}
             <div>
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+              <h2 className="font-display text-2xl text-stone-900 dark:text-amber-50 mb-6">
                 Choose Your Practice Mode
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 {/* Airlines */}
                 <motion.button
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ y: -3 }}
                   onClick={() => setViewMode('airlines')}
-                  className="text-left p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 border-2 border-blue-300 dark:border-blue-700 hover:shadow-lg transition-all"
+                  className="text-left p-8 rounded-sm bg-white dark:bg-white/[0.02] border border-stone-200 dark:border-white/10 hover:border-amber-500/60 dark:hover:border-amber-400/50 transition-all"
                 >
                   <div className="text-4xl mb-3">✈️</div>
-                  <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100 mb-2">
+                  <h3 className="font-display text-xl text-stone-900 dark:text-amber-50 mb-2">
                     Airline-Specific
                   </h3>
-                  <p className="text-sm text-blue-800 dark:text-blue-200">
-                    Practice questions from Emirates, Qatar Airways, British Airways, and more
+                  <p className="text-sm text-stone-500 dark:text-stone-400">
+                    Practice questions from {interviewBanks.map((b) => b.airline).join(', ')}
                   </p>
                 </motion.button>
 
                 {/* Topics */}
                 <motion.button
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ y: -3 }}
                   onClick={() => setViewMode('topics')}
-                  className="text-left p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 border-2 border-purple-300 dark:border-purple-700 hover:shadow-lg transition-all"
+                  className="text-left p-8 rounded-sm bg-white dark:bg-white/[0.02] border border-stone-200 dark:border-white/10 hover:border-amber-500/60 dark:hover:border-amber-400/50 transition-all"
                 >
                   <div className="text-4xl mb-3">📚</div>
-                  <h3 className="text-xl font-bold text-purple-900 dark:text-purple-100 mb-2">
+                  <h3 className="font-display text-xl text-stone-900 dark:text-amber-50 mb-2">
                     By Topic
                   </h3>
-                  <p className="text-sm text-purple-800 dark:text-purple-200">
+                  <p className="text-sm text-stone-500 dark:text-stone-400">
                     Learn about specific topics: HR questions, behavioral, technical, situational
                   </p>
                 </motion.button>
 
                 {/* General HR */}
                 <motion.button
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ y: -3 }}
                   onClick={() => {
-                    setSelectedBankId(null);
                     if (generalHRQuestions.length > 0) {
                       handleQuestionSelect(generalHRQuestions[0].id);
                     }
                   }}
-                  className="text-left p-8 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 border-2 border-emerald-300 dark:border-emerald-700 hover:shadow-lg transition-all"
+                  className="text-left p-8 rounded-sm bg-white dark:bg-white/[0.02] border border-stone-200 dark:border-white/10 hover:border-amber-500/60 dark:hover:border-amber-400/50 transition-all"
                 >
                   <div className="text-4xl mb-3">🎯</div>
-                  <h3 className="text-xl font-bold text-emerald-900 dark:text-emerald-100 mb-2">
+                  <h3 className="font-display text-xl text-stone-900 dark:text-amber-50 mb-2">
                     General HR
                   </h3>
-                  <p className="text-sm text-emerald-800 dark:text-emerald-200">
+                  <p className="text-sm text-stone-500 dark:text-stone-400">
                     Common interview questions used by most airlines
                   </p>
                 </motion.button>
@@ -172,26 +178,30 @@ export default function InterviewPrepPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
               >
-                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+                <h2 className="font-display text-2xl text-stone-900 dark:text-amber-50 mb-6">
                   Select an Airline
                 </h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {interviewBanks.map((bank) => (
                     <motion.button
                       key={bank.id}
-                      whileHover={{ scale: 1.02 }}
+                      whileHover={{ y: -3 }}
                       onClick={() => {
-                        setSelectedBankId(bank.id);
                         if (bank.questions.length > 0) {
-                          handleQuestionSelect(bank.questions[0].id, bank.id);
+                          handleQuestionSelect(bank.questions[0].id);
                         }
                       }}
-                      className="p-6 rounded-xl bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800 hover:border-indigo-500 dark:hover:border-indigo-500 hover:shadow-md transition-all text-left"
+                      className="p-6 rounded-sm bg-white dark:bg-white/[0.02] border border-stone-200 dark:border-white/10 hover:border-amber-500/60 dark:hover:border-amber-400/50 transition-all text-left"
                     >
-                      <p className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                      <p className="font-display text-xl text-stone-900 dark:text-amber-50 mb-1">
                         {bank.airline}
                       </p>
-                      <p className="text-sm text-slate-600 dark:text-slate-400">
+                      {bank.description && (
+                        <p className="text-xs text-stone-500 dark:text-stone-400 mb-2">
+                          {bank.description}
+                        </p>
+                      )}
+                      <p className="text-sm font-semibold text-amber-600 dark:text-amber-400">
                         {bank.questions.length} questions available
                       </p>
                     </motion.button>
@@ -206,18 +216,19 @@ export default function InterviewPrepPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
               >
-                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+                <h2 className="font-display text-2xl text-stone-900 dark:text-amber-50 mb-6">
                   Select a Topic
                 </h2>
                 <div className="grid md:grid-cols-2 gap-4">
                   {interviewTopics.map((topic) => (
                     <motion.button
-                      key={topic}
-                      whileHover={{ scale: 1.02 }}
-                      className="p-4 rounded-lg bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-indigo-900/20 dark:to-blue-900/20 border-2 border-indigo-200 dark:border-indigo-700 hover:shadow-md transition-all text-left"
+                      key={topic.label}
+                      whileHover={{ y: -3 }}
+                      onClick={() => handleQuestionSelect(topic.questionId)}
+                      className="p-4 rounded-sm bg-white dark:bg-white/[0.02] border border-stone-200 dark:border-white/10 hover:border-amber-500/60 dark:hover:border-amber-400/50 transition-all text-left"
                     >
-                      <p className="font-semibold text-indigo-900 dark:text-indigo-100">
-                        {topic}
+                      <p className="font-semibold text-stone-800 dark:text-amber-100">
+                        {topic.label}
                       </p>
                     </motion.button>
                   ))}
