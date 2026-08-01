@@ -6,6 +6,7 @@ import { Zap, Flame, Trophy, TrendingUp, BookMarked, CheckSquare, ArrowRight, Pl
 import { useAppStore } from '@/lib/store';
 import ProgressRing from '@/components/ProgressRing';
 import AchievementsPanel from '@/components/AchievementsPanel';
+import UnitIllustration from '@/components/UnitIllustration';
 import { iCAOUnits } from '@/lib/data/icao-curriculum';
 
 export default function DashboardPage() {
@@ -27,6 +28,7 @@ export default function DashboardPage() {
     unit: iCAOUnits[0],
     lesson: iCAOUnits[0]?.lessons[0],
   };
+  const nextUnitNumber = parseInt(nextLesson.unit?.id?.split('-')[1] ?? '1', 10);
 
   return (
     <main className="min-h-screen bg-[#faf6ee] dark:bg-[#0b0a08] p-4 md:p-8">
@@ -145,6 +147,9 @@ export default function DashboardPage() {
               <div className="group relative overflow-hidden rounded-sm bg-[#14120e] border border-amber-400/25 p-8 md:p-10 cursor-pointer">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(217,180,90,0.16),transparent_55%)]" />
                 <div className="absolute inset-x-8 bottom-0 h-px bg-gradient-to-r from-transparent via-amber-400/50 to-transparent" />
+                <div className="absolute -right-4 -bottom-4 w-40 h-40 text-amber-400/10 pointer-events-none">
+                  <UnitIllustration unit={nextUnitNumber} />
+                </div>
                 <div className="relative flex items-center justify-between gap-6">
                   <div>
                     <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.25em] uppercase text-amber-400 mb-3">
@@ -223,8 +228,10 @@ export default function DashboardPage() {
 
                   <div className="mb-4">
                     <div className="flex items-center justify-between mb-2.5">
-                      <h3 className="font-display text-xl text-stone-900 dark:text-amber-50 flex items-center gap-2">
-                        <span className="text-lg">{unit.icon}</span>
+                      <h3 className="font-display text-xl text-stone-900 dark:text-amber-50 flex items-center gap-3">
+                        <span className="w-7 h-7 shrink-0 text-amber-600 dark:text-amber-400">
+                          <UnitIllustration unit={unitIdx + 1} />
+                        </span>
                         {unit.title}
                       </h3>
                       <p className="text-sm font-medium text-stone-400 dark:text-stone-500 tabular-nums">
