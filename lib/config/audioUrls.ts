@@ -7,9 +7,9 @@ export function getAudioUrl(path: string): string {
   // If the audio file is in Supabase Storage, use Supabase URL
   const supabaseAudioUrl = 'https://muqkevgspfbocjftvszt.supabase.co/storage/v1/object/public/cabin-crew-audio';
 
-  if (path.startsWith('/audio/unit-')) {
-    // New ICAO curriculum audio - use Supabase Storage
-    // Files are stored at bucket root: unit-1/lesson-1/example-1.wav
+  if (path.startsWith('/audio/unit-') || path.startsWith('/audio/interview/')) {
+    // ICAO curriculum and interview prep audio - use Supabase Storage
+    // Files are stored at bucket root: unit-1/lesson-1/example-1.wav or interview/emirates-q-1/question.wav
     const cleanPath = path.replace(/^\/audio\//, '');
     return `${supabaseAudioUrl}/${cleanPath}`;
   }

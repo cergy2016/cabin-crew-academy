@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mic, Play, ArrowRight, Star, Volume2 } from 'lucide-react';
+import { Mic, Play, ArrowRight, Star } from 'lucide-react';
 import type { InterviewQuestion } from '@/lib/types';
-import { useAudio } from '@/lib/services/audioService';
+import AudioPlayer from '../lesson/AudioPlayer';
 import VoiceRecorder from '../lesson/VoiceRecorder';
 
 interface InterviewPracticeProps {
@@ -20,33 +20,8 @@ export default function InterviewPractice({
 }: InterviewPracticeProps) {
   const [mode, setMode] = useState<PracticeMode>('select');
   const [recordingScore, setRecordingScore] = useState<number>(0);
-  const { textToSpeech } = useAudio();
-  const [isPlayingQuestion, setIsPlayingQuestion] = useState(false);
 
-  const handlePlayQuestion = async () => {
-    setIsPlayingQuestion(true);
-    try {
-      await textToSpeech(question.question, {
-        voice: 'native-female',
-        rate: 1,
-      });
-    } catch (error) {
-      console.error('Error playing question:', error);
-    } finally {
-      setIsPlayingQuestion(false);
-    }
-  };
-
-  const handleListenToAnswer = async (answerText: string) => {
-    try {
-      await textToSpeech(answerText, {
-        voice: 'native-female',
-        rate: 1,
-      });
-    } catch (error) {
-      console.error('Error playing answer:', error);
-    }
-  };
+  const questionAudioUrl = `/audio/interview/${question.id}/question.wav`;
 
   const handleRecordingComplete = (score: number) => {
     setRecordingScore(score);
@@ -80,16 +55,7 @@ export default function InterviewPractice({
               <h2 className="font-display text-2xl text-stone-900 dark:text-amber-50 mb-6">
                 {question.question}
               </h2>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={handlePlayQuestion}
-                disabled={isPlayingQuestion}
-                className="flex items-center gap-2 px-6 py-3 bg-amber-500 hover:bg-amber-600 disabled:bg-stone-300 dark:disabled:bg-white/10 text-[#0b0a08] disabled:text-stone-500 font-semibold rounded-sm transition-colors"
-              >
-                <Volume2 className="w-5 h-5" />
-                {isPlayingQuestion ? 'Playing...' : 'Hear Question'}
-              </motion.button>
+              <AudioPlayer audioUrl={questionAudioUrl} />
             </div>
 
             {/* Mode Selection */}
@@ -180,19 +146,11 @@ export default function InterviewPractice({
                 </div>
 
                 {/* Answer Text */}
-                <div className="p-6">
-                  <p className="text-stone-700 dark:text-stone-300 leading-relaxed mb-4">
+                <div className="p-6 space-y-4">
+                  <p className="text-stone-700 dark:text-stone-300 leading-relaxed">
                     {answer.text || answer.answer || 'Answer not available'}
                   </p>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => handleListenToAnswer(answer.text || answer.answer || '')}
-                    className="flex items-center gap-2 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-[#0b0a08] font-semibold rounded-sm transition-colors"
-                  >
-                    <Volume2 className="w-4 h-4" />
-                    Listen to Answer
-                  </motion.button>
+                  <AudioPlayer audioUrl={`/audio/interview/${question.id}/answer-${idx}.wav`} />
                 </div>
               </motion.div>
             ))}
