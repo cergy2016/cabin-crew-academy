@@ -9,6 +9,7 @@ import { useAppStore } from '@/lib/store';
 import { getAudioUrl } from '@/lib/config/audioUrls';
 import AudioPlayer from './AudioPlayer';
 import ExerciseCard from './ExerciseCard';
+import ThemeToggle from '@/components/ThemeToggle';
 
 interface LessonViewerProps {
   lesson: Lesson;
@@ -139,6 +140,7 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                   {lesson.estimatedDurationMinutes} min
                 </div>
               </div>
+              <ThemeToggle />
             </div>
           </div>
 

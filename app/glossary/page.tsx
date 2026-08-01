@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft, BookMarked, Search } from 'lucide-react';
+import ThemeToggle from '@/components/ThemeToggle';
 import { glossaryUnits } from '@/lib/data/glossary';
 
 export default function GlossaryPage() {
@@ -32,13 +33,16 @@ export default function GlossaryPage() {
   return (
     <main className="min-h-screen bg-[#faf6ee] dark:bg-[#0b0a08] p-4 md:p-8">
       <div className="max-w-5xl mx-auto">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-stone-500 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 mb-6 font-medium transition-colors"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to Dashboard
-        </Link>
+        <div className="flex items-center justify-between mb-6">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-stone-500 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 font-medium transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Dashboard
+          </Link>
+          <ThemeToggle />
+        </div>
 
         <motion.header
           initial={{ opacity: 0, y: -20 }}
