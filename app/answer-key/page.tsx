@@ -32,11 +32,11 @@ export default function AnswerKeyPage() {
   }, [query]);
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 p-4 md:p-8">
+    <main className="min-h-screen bg-[#faf6ee] dark:bg-[#0b0a08] p-4 md:p-8">
       <div className="max-w-5xl mx-auto">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 mb-6 font-medium transition-colors"
+          className="inline-flex items-center gap-2 text-stone-500 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 mb-6 font-medium transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Dashboard
@@ -48,29 +48,29 @@ export default function AnswerKeyPage() {
           className="mb-10"
         >
           <div className="flex items-center gap-3 mb-3">
-            <CheckSquare className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
-            <h1 className="text-4xl font-extrabold text-slate-900 dark:text-white">
+            <CheckSquare className="w-7 h-7 text-amber-600 dark:text-amber-400" />
+            <h1 className="font-display text-4xl text-stone-900 dark:text-amber-50">
               Answer Key
             </h1>
           </div>
-          <p className="text-slate-600 dark:text-slate-400 text-lg">
+          <p className="text-stone-500 dark:text-stone-400 text-lg">
             Full answers for every main-lesson exercise and Self Study section, Units 1-10.
           </p>
         </motion.header>
 
         <div className="relative mb-10">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search answers or topics..."
-            className="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full pl-12 pr-4 py-3 rounded-sm border border-stone-200 dark:border-white/10 bg-white dark:bg-white/[0.02] text-stone-900 dark:text-amber-50 placeholder:text-stone-400 focus:outline-none focus:border-amber-500 dark:focus:border-amber-400"
           />
         </div>
 
         {filteredUnits.length === 0 && (
-          <p className="text-center text-slate-500 dark:text-slate-400 py-16">
+          <p className="text-center text-stone-400 dark:text-stone-500 py-16">
             No answers match &ldquo;{query}&rdquo;.
           </p>
         )}
@@ -82,11 +82,11 @@ export default function AnswerKeyPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: unitIdx * 0.05 }}
-              className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden"
+              className="bg-white dark:bg-white/[0.02] rounded-sm border border-stone-200 dark:border-white/10 overflow-hidden"
             >
-              <div className="px-6 py-4 bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-950/40 dark:to-blue-950/40 border-b border-slate-100 dark:border-slate-800 flex items-center gap-3">
+              <div className="px-6 py-4 bg-stone-50 dark:bg-white/[0.03] border-b border-stone-200 dark:border-white/10 flex items-center gap-3">
                 <span className="text-2xl">{unit.icon}</span>
-                <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+                <h2 className="font-display text-xl text-stone-900 dark:text-amber-50">
                   Unit {unit.unitNumber}: {unit.unitTitle}
                 </h2>
               </div>
@@ -94,19 +94,19 @@ export default function AnswerKeyPage() {
               <div className="p-6 space-y-6">
                 {unit.sections.map((section) => (
                   <div key={section.title}>
-                    <h3 className="font-semibold text-indigo-600 dark:text-indigo-400 mb-3">
+                    <h3 className="text-[11px] font-semibold tracking-[0.15em] uppercase text-amber-600 dark:text-amber-400 mb-3">
                       {section.title}
                     </h3>
                     <div className="space-y-3">
                       {section.groups.map((group, groupIdx) => (
                         <ul
                           key={groupIdx}
-                          className="space-y-1 pl-4 border-l-2 border-slate-100 dark:border-slate-800"
+                          className="space-y-1 pl-4 border-l-2 border-stone-200 dark:border-white/10"
                         >
                           {group.map((line, lineIdx) => (
                             <li
                               key={lineIdx}
-                              className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed"
+                              className="text-sm text-stone-600 dark:text-stone-300 leading-relaxed"
                             >
                               {line}
                             </li>

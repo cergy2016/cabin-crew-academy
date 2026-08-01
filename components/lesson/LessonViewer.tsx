@@ -3,13 +3,12 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Zap, Clock, CheckCircle2, Lock, Trophy, ArrowLeft, PlayCircle, StopCircle } from 'lucide-react';
+import { Zap, Clock, CheckCircle2, Trophy, ArrowLeft, PlayCircle, StopCircle } from 'lucide-react';
 import type { Lesson } from '@/lib/types';
 import { useAppStore } from '@/lib/store';
 import { getAudioUrl } from '@/lib/config/audioUrls';
 import AudioPlayer from './AudioPlayer';
 import ExerciseCard from './ExerciseCard';
-import VoiceRecorder from './VoiceRecorder';
 
 interface LessonViewerProps {
   lesson: Lesson;
@@ -89,27 +88,30 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
     }
   }, [lessonFullyComplete, lesson, quizFirstTry, completeLesson, onComplete]);
 
-  const sectionTabs: { id: LessonSection; label: string; icon: string }[] = [
-    { id: 'objectives', label: 'Objectives', icon: '🎯' },
-    { id: 'scenario', label: 'Scenario', icon: '🎬' },
-    { id: 'theory', label: 'Theory', icon: '📚' },
-    { id: 'phraseology', label: 'Phraseology', icon: '✈️' },
-    { id: 'vocabulary', label: 'Vocabulary', icon: '📖' },
-    { id: 'exercises', label: 'Exercises', icon: '💪' },
-    { id: 'quiz', label: 'Quiz', icon: '✅' },
+  const sectionTabs: { id: LessonSection; label: string }[] = [
+    { id: 'objectives', label: 'Objectives' },
+    { id: 'scenario', label: 'Scenario' },
+    { id: 'theory', label: 'Theory' },
+    { id: 'phraseology', label: 'Phraseology' },
+    { id: 'vocabulary', label: 'Vocabulary' },
+    { id: 'exercises', label: 'Exercises' },
+    { id: 'quiz', label: 'Quiz' },
     ...(lesson.logBookPrompts && lesson.logBookPrompts.length > 0
-      ? [{ id: 'logbook' as LessonSection, label: 'Log Book', icon: '📓' }]
+      ? [{ id: 'logbook' as LessonSection, label: 'Log Book' }]
       : []),
   ];
 
+  const cardClass = 'bg-white dark:bg-white/[0.02] rounded-sm border border-stone-200 dark:border-white/10 p-8';
+  const infoBoxClass = 'p-4 rounded-sm bg-stone-50 dark:bg-white/[0.03] border border-stone-200 dark:border-white/10';
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900">
+    <div className="min-h-screen bg-[#faf6ee] dark:bg-[#0b0a08]">
       {/* Header */}
-      <div className="sticky top-0 z-40 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md">
+      <div className="sticky top-0 z-40 border-b border-amber-900/10 dark:border-amber-400/15 bg-[#faf6ee]/90 dark:bg-[#0b0a08]/90 backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-6 py-6">
           <Link
             href="/"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors mb-4"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-stone-500 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors mb-4"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Dashboard
@@ -118,21 +120,21 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
             <div className="flex items-center gap-3">
               <span className="text-4xl">{lesson.icon}</span>
               <div>
-                <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
+                <h1 className="font-display text-3xl text-stone-900 dark:text-amber-50">
                   {lesson.title}
                 </h1>
-                <p className="text-slate-600 dark:text-slate-400 text-sm">
-                  ICAO Level {lesson.icaoLevel} • {lesson.difficulty}
+                <p className="text-stone-500 dark:text-stone-400 text-sm">
+                  ICAO Level {lesson.icaoLevel} &middot; {lesson.difficulty}
                 </p>
               </div>
             </div>
             <div className="flex items-center gap-4">
               <div className="text-right">
-                <div className="flex items-center gap-1 text-orange-600 font-bold">
+                <div className="flex items-center gap-1 text-amber-600 dark:text-amber-400 font-bold">
                   <Zap className="w-4 h-4" />
                   {lesson.xpReward} XP
                 </div>
-                <div className="flex items-center gap-1 text-slate-600 dark:text-slate-400 text-sm">
+                <div className="flex items-center gap-1 text-stone-500 dark:text-stone-400 text-sm">
                   <Clock className="w-4 h-4" />
                   {lesson.estimatedDurationMinutes} min
                 </div>
@@ -141,18 +143,21 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
           </div>
 
           {/* Section Tabs */}
-          <div className="flex gap-2 overflow-x-auto pb-2">
+          <div className="flex gap-6 overflow-x-auto border-b border-stone-200 dark:border-white/10">
             {sectionTabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveSection(tab.id)}
-                className={`px-4 py-2 rounded-lg font-medium whitespace-nowrap transition-colors ${
+                className={`relative pb-3 text-xs font-semibold tracking-[0.15em] uppercase whitespace-nowrap transition-colors ${
                   activeSection === tab.id
-                    ? 'bg-indigo-600 text-white'
-                    : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                    ? 'text-amber-700 dark:text-amber-400'
+                    : 'text-stone-400 dark:text-stone-500 hover:text-stone-700 dark:hover:text-stone-300'
                 }`}
               >
-                {tab.icon} {tab.label}
+                {tab.label}
+                {activeSection === tab.id && (
+                  <motion.div layoutId="lesson-tab-underline" className="absolute left-0 right-0 -bottom-px h-0.5 bg-amber-500" />
+                )}
               </button>
             ))}
           </div>
@@ -171,9 +176,9 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
               exit={{ opacity: 0, y: -20 }}
               className="space-y-6"
             >
-              <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-8">
-                <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white flex items-center gap-2">
-                  🎯 Learning Objectives
+              <div className={cardClass}>
+                <h2 className="font-display text-2xl mb-6 text-stone-900 dark:text-amber-50">
+                  Learning Objectives
                 </h2>
                 <div className="grid gap-4">
                   {lesson.objectives.map((objective) => (
@@ -181,14 +186,14 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                       key={objective.id}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
-                      className="flex items-start gap-4 p-4 rounded-lg bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-800"
+                      className="flex items-start gap-4 p-4 rounded-sm bg-amber-50/60 dark:bg-amber-400/[0.06] border border-amber-500/30 dark:border-amber-400/20"
                     >
-                      <CheckCircle2 className="w-6 h-6 text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-1" />
+                      <CheckCircle2 className="w-6 h-6 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-1" />
                       <div>
-                        <p className="font-semibold text-slate-900 dark:text-white">
+                        <p className="font-semibold text-stone-900 dark:text-amber-50">
                           {objective.description}
                         </p>
-                        <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                        <p className="text-sm text-stone-500 dark:text-stone-400 mt-1">
                           Type: <span className="font-medium capitalize">{objective.type}</span>
                         </p>
                       </div>
@@ -208,28 +213,28 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
               exit={{ opacity: 0, y: -20 }}
               className="space-y-6"
             >
-              <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-8">
-                <h2 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">
+              <div className={cardClass}>
+                <h2 className="font-display text-2xl mb-4 text-stone-900 dark:text-amber-50">
                   {lesson.scenario.title}
                 </h2>
-                <p className="text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">
+                <p className="text-stone-600 dark:text-stone-300 mb-6 leading-relaxed">
                   {lesson.scenario.description}
                 </p>
-                <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-6">
-                  <p className="text-sm font-medium text-blue-900 dark:text-blue-100">
-                    <strong>Context:</strong> {lesson.scenario.context}
+                <div className={`${infoBoxClass} mb-6`}>
+                  <p className="text-sm text-stone-700 dark:text-stone-300">
+                    <strong className="text-amber-700 dark:text-amber-400">Context:</strong> {lesson.scenario.context}
                   </p>
                 </div>
 
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-display text-lg text-stone-900 dark:text-amber-50">
                     Dialogue Audio
                   </h3>
                   <motion.button
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
                     onClick={playAllIndex === null ? handlePlayAll : handleStopAll}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold transition-colors"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-amber-500 hover:bg-amber-600 text-[#0b0a08] text-sm font-semibold transition-colors"
                   >
                     {playAllIndex === null ? (
                       <>
@@ -247,16 +252,16 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                   {lesson.scenario.audioSegments.map((segment, segIdx) => (
                     <div
                       key={segment.id}
-                      className={`p-4 rounded-lg transition-colors ${
+                      className={`p-4 rounded-sm transition-colors border ${
                         playAllIndex === segIdx
-                          ? 'bg-indigo-50 dark:bg-indigo-900/30 ring-2 ring-indigo-500'
-                          : 'bg-slate-50 dark:bg-slate-800'
+                          ? 'bg-amber-50/60 dark:bg-amber-400/[0.08] border-amber-500/50 dark:border-amber-400/40'
+                          : 'bg-stone-50 dark:bg-white/[0.03] border-stone-200 dark:border-white/10'
                       }`}
                     >
-                      <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">
+                      <p className="text-sm text-stone-500 dark:text-stone-400 mb-2">
                         <span className="font-semibold capitalize">{segment.speaker}</span>:
                       </p>
-                      <p className="text-slate-900 dark:text-white mb-3">{segment.text}</p>
+                      <p className="text-stone-900 dark:text-amber-50 mb-3">{segment.text}</p>
                       <AudioPlayer audioUrl={segment.audioUrl} />
                     </div>
                   ))}
@@ -264,24 +269,21 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
 
                 {lesson.scenario.vocabulary.length > 0 && (
                   <>
-                    <h3 className="text-lg font-bold mt-8 mb-4 text-slate-900 dark:text-white">
+                    <h3 className="font-display text-lg mt-8 mb-4 text-stone-900 dark:text-amber-50">
                       Key Vocabulary
                     </h3>
                     <div className="grid md:grid-cols-2 gap-4">
                       {lesson.scenario.vocabulary.map((item, idx) => (
-                        <div
-                          key={idx}
-                          className="p-4 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 rounded-lg"
-                        >
-                          <p className="font-bold text-emerald-900 dark:text-emerald-100">
+                        <div key={idx} className={infoBoxClass}>
+                          <p className="font-bold text-stone-900 dark:text-amber-50">
                             {item.word}
                           </p>
                           {item.pronunciation && (
-                            <p className="text-sm text-emerald-700 dark:text-emerald-300 italic">
+                            <p className="text-sm text-amber-700 dark:text-amber-400 italic">
                               /{item.pronunciation}/
                             </p>
                           )}
-                          <p className="text-sm text-emerald-800 dark:text-emerald-200 mt-1">
+                          <p className="text-sm text-stone-600 dark:text-stone-300 mt-1">
                             {item.definition}
                           </p>
                         </div>
@@ -302,19 +304,19 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
               exit={{ opacity: 0, y: -20 }}
               className="space-y-6"
             >
-              <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-8">
-                <h2 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">
+              <div className={cardClass}>
+                <h2 className="font-display text-2xl mb-4 text-stone-900 dark:text-amber-50">
                   {lesson.theory.title}
                 </h2>
                 <div className="prose dark:prose-invert max-w-none mb-6">
-                  <p className="text-slate-700 dark:text-slate-300 whitespace-pre-wrap leading-relaxed">
+                  <p className="text-stone-600 dark:text-stone-300 whitespace-pre-wrap leading-relaxed">
                     {lesson.theory.content}
                   </p>
                 </div>
                 {lesson.theory.audioExplanation && (
-                  <div className="mt-6 p-4 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg border border-indigo-200 dark:border-indigo-800">
-                    <p className="text-sm font-medium text-indigo-900 dark:text-indigo-100 mb-3">
-                      📖 Audio Explanation
+                  <div className={`mt-6 ${infoBoxClass}`}>
+                    <p className="text-sm font-medium text-amber-700 dark:text-amber-400 mb-3">
+                      Audio Explanation
                     </p>
                     <AudioPlayer audioUrl={lesson.theory.audioExplanation.audioUrl} />
                   </div>
@@ -332,36 +334,33 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
               exit={{ opacity: 0, y: -20 }}
               className="space-y-6"
             >
-              <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-8">
-                <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">
-                  💬 {lesson.cabinCrewPhraseoology.category}
+              <div className={cardClass}>
+                <h2 className="font-display text-2xl mb-6 text-stone-900 dark:text-amber-50">
+                  {lesson.cabinCrewPhraseoology.category}
                 </h2>
                 <div className="space-y-4">
                   {lesson.cabinCrewPhraseoology.phrases.map((phrase, idx) => (
-                    <div
-                      key={idx}
-                      className="p-4 bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-800 rounded-lg"
-                    >
+                    <div key={idx} className={infoBoxClass}>
                       <div className="flex justify-between items-start mb-2">
                         <div>
-                          <p className="font-bold text-indigo-900 dark:text-indigo-100">
+                          <p className="font-bold text-stone-900 dark:text-amber-50">
                             {phrase.phrase}
                           </p>
                           {phrase.pronunciation && (
-                            <p className="text-sm text-indigo-700 dark:text-indigo-300 italic">
+                            <p className="text-sm text-amber-700 dark:text-amber-400 italic">
                               /{phrase.pronunciation}/
                             </p>
                           )}
                         </div>
-                        <span className="text-xs bg-indigo-200 dark:bg-indigo-800 text-indigo-900 dark:text-indigo-100 px-2 py-1 rounded">
+                        <span className="text-[10px] font-semibold tracking-wide uppercase bg-amber-100 dark:bg-amber-400/10 text-amber-700 dark:text-amber-400 px-2 py-1 rounded-sm">
                           {phrase.situation}
                         </span>
                       </div>
-                      <p className="text-sm text-indigo-800 dark:text-indigo-200 mb-2">
+                      <p className="text-sm text-stone-600 dark:text-stone-300 mb-2">
                         <strong>Meaning:</strong> {phrase.meaning}
                       </p>
                       {phrase.example && (
-                        <p className="text-sm text-indigo-800 dark:text-indigo-200 italic">
+                        <p className="text-sm text-stone-500 dark:text-stone-400 italic">
                           Example: {phrase.example}
                         </p>
                       )}
@@ -370,36 +369,33 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-8">
-                <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">
-                  ✈️ {lesson.icaoPhraseoology.category}
+              <div className={cardClass}>
+                <h2 className="font-display text-2xl mb-6 text-stone-900 dark:text-amber-50">
+                  {lesson.icaoPhraseoology.category}
                 </h2>
                 <div className="space-y-4">
                   {lesson.icaoPhraseoology.phrases.map((phrase, idx) => (
-                    <div
-                      key={idx}
-                      className="p-4 bg-sky-50 dark:bg-sky-900/20 border border-sky-200 dark:border-sky-800 rounded-lg"
-                    >
+                    <div key={idx} className={infoBoxClass}>
                       <div className="flex justify-between items-start mb-2">
                         <div>
-                          <p className="font-bold text-sky-900 dark:text-sky-100">
+                          <p className="font-bold text-stone-900 dark:text-amber-50">
                             {phrase.phrase}
                           </p>
                           {phrase.pronunciation && (
-                            <p className="text-sm text-sky-700 dark:text-sky-300 italic">
+                            <p className="text-sm text-amber-700 dark:text-amber-400 italic">
                               /{phrase.pronunciation}/
                             </p>
                           )}
                         </div>
-                        <span className="text-xs bg-sky-200 dark:bg-sky-800 text-sky-900 dark:text-sky-100 px-2 py-1 rounded">
+                        <span className="text-[10px] font-semibold tracking-wide uppercase bg-amber-100 dark:bg-amber-400/10 text-amber-700 dark:text-amber-400 px-2 py-1 rounded-sm">
                           {phrase.situation}
                         </span>
                       </div>
-                      <p className="text-sm text-sky-800 dark:text-sky-200 mb-2">
+                      <p className="text-sm text-stone-600 dark:text-stone-300 mb-2">
                         <strong>Meaning:</strong> {phrase.meaning}
                       </p>
                       {phrase.example && (
-                        <p className="text-sm text-sky-800 dark:text-sky-200 italic">
+                        <p className="text-sm text-stone-500 dark:text-stone-400 italic">
                           Example: {phrase.example}
                         </p>
                       )}
@@ -419,35 +415,32 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
               exit={{ opacity: 0, y: -20 }}
               className="space-y-6"
             >
-              <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-8">
-                <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">
-                  📖 Vocabulary
+              <div className={cardClass}>
+                <h2 className="font-display text-2xl mb-6 text-stone-900 dark:text-amber-50">
+                  Vocabulary
                 </h2>
                 <div className="space-y-6">
                   {lesson.airlineVocabulary.map((vocab, vIdx) => (
                     <div key={vIdx}>
-                      <h3 className="text-lg font-bold mb-3 text-slate-900 dark:text-white">
+                      <h3 className="font-display text-lg mb-3 text-stone-900 dark:text-amber-50">
                         {vocab.category}
                       </h3>
                       <div className="grid md:grid-cols-2 gap-4">
                         {vocab.terms.map((term, idx) => (
-                          <div
-                            key={idx}
-                            className="p-4 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 rounded-lg"
-                          >
-                            <p className="font-bold text-emerald-900 dark:text-emerald-100">
+                          <div key={idx} className={infoBoxClass}>
+                            <p className="font-bold text-stone-900 dark:text-amber-50">
                               {term.term}
                             </p>
                             {term.pronunciation && (
-                              <p className="text-sm text-emerald-700 dark:text-emerald-300 italic">
+                              <p className="text-sm text-amber-700 dark:text-amber-400 italic">
                                 /{term.pronunciation}/
                               </p>
                             )}
-                            <p className="text-sm text-emerald-800 dark:text-emerald-200 mt-1">
+                            <p className="text-sm text-stone-600 dark:text-stone-300 mt-1">
                               {term.definition}
                             </p>
                             {term.example && (
-                              <p className="text-xs text-emerald-700 dark:text-emerald-300 mt-2">
+                              <p className="text-xs text-stone-500 dark:text-stone-400 mt-2">
                                 Example: {term.example}
                               </p>
                             )}
@@ -470,14 +463,14 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
               exit={{ opacity: 0, y: -20 }}
               className="space-y-6"
             >
-              <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-8">
-                <h2 className="text-2xl font-bold mb-2 text-slate-900 dark:text-white flex items-center gap-2">
-                  📓 Log Book
+              <div className={cardClass}>
+                <h2 className="font-display text-2xl mb-2 text-stone-900 dark:text-amber-50">
+                  Log Book
                 </h2>
-                <p className="text-slate-600 dark:text-slate-400 mb-6">
+                <p className="text-stone-500 dark:text-stone-400 mb-6">
                   Personal reflection - not graded. Use these questions for ideas, then write your own notes below.
                 </p>
-                <ul className="space-y-2 mb-6 list-disc list-inside text-slate-700 dark:text-slate-300">
+                <ul className="space-y-2 mb-6 list-disc list-inside text-stone-600 dark:text-stone-300">
                   {lesson.logBookPrompts.map((prompt, idx) => (
                     <li key={idx}>{prompt}</li>
                   ))}
@@ -490,7 +483,7 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                   }}
                   placeholder="Write your thoughts here..."
                   rows={8}
-                  className="w-full p-4 rounded-lg border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white resize-none"
+                  className="w-full p-4 rounded-sm border border-stone-300 dark:border-white/15 bg-white dark:bg-white/[0.02] text-stone-900 dark:text-amber-50 resize-none focus:outline-none focus:border-amber-500 dark:focus:border-amber-400"
                 />
                 <div className="flex items-center gap-4 mt-4">
                   <motion.button
@@ -500,13 +493,13 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                       setLogBookEntry(lesson.id, logBookDraft);
                       setLogBookSaved(true);
                     }}
-                    className="px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg transition-colors"
+                    className="px-6 py-2 bg-amber-500 hover:bg-amber-600 text-[#0b0a08] font-bold rounded-sm transition-colors"
                   >
                     Save Notes
                   </motion.button>
                   {logBookSaved && (
-                    <span className="text-emerald-600 dark:text-emerald-400 text-sm font-medium">
-                      Saved ✓
+                    <span className="text-amber-600 dark:text-amber-400 text-sm font-medium">
+                      Saved &#10003;
                     </span>
                   )}
                 </div>
@@ -523,12 +516,12 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
               exit={{ opacity: 0, y: -20 }}
               className="space-y-6"
             >
-              <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-8">
-                <h2 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">
-                  ✅ {lesson.quiz.title}
+              <div className={cardClass}>
+                <h2 className="font-display text-2xl mb-4 text-stone-900 dark:text-amber-50">
+                  {lesson.quiz.title}
                 </h2>
-                <p className="text-slate-600 dark:text-slate-400 mb-6">
-                  Passing Score: <span className="font-bold">{lesson.quiz.passingScore}%</span>
+                <p className="text-stone-500 dark:text-stone-400 mb-6">
+                  Passing Score: <span className="font-bold text-amber-700 dark:text-amber-400">{lesson.quiz.passingScore}%</span>
                 </p>
                 <div className="space-y-6">
                   {lesson.quiz.exercises.map((exercise, idx) => (
@@ -555,8 +548,8 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
               exit={{ opacity: 0, y: -20 }}
               className="space-y-6"
             >
-              <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-8">
-                <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">
+              <div className={cardClass}>
+                <h2 className="font-display text-2xl mb-6 text-stone-900 dark:text-amber-50">
                   Practice Exercises
                 </h2>
                 <div className="space-y-6">
@@ -581,11 +574,12 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mt-8 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl shadow-lg p-8 text-white"
+            className="mt-8 relative overflow-hidden rounded-sm bg-[#14120e] border border-amber-400/25 p-8"
           >
-            <div className="flex items-center gap-3 mb-3">
-              <Trophy className="w-8 h-8" />
-              <h3 className="text-2xl font-bold">Lesson Complete!</h3>
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(217,180,90,0.16),transparent_55%)]" />
+            <div className="relative flex items-center gap-3 mb-3">
+              <Trophy className="w-8 h-8 text-amber-400" />
+              <h3 className="font-display text-2xl text-amber-50">Lesson Complete!</h3>
             </div>
             {(() => {
               const correctFirstTry = lesson.quiz.exercises.filter((e) => quizFirstTry.get(e.id)).length;
@@ -597,13 +591,13 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
                   ? 'Good progress! A quick review of the trickier exercises will help it stick.'
                   : 'You made it through - consider revisiting the Theory and Vocabulary tabs before moving on.';
               return (
-                <>
-                  <p className="opacity-90 mb-1">
-                    Quiz score (first attempt): <span className="font-bold">{quizScorePercent}%</span>
+                <div className="relative">
+                  <p className="text-stone-300 mb-1">
+                    Quiz score (first attempt): <span className="font-bold text-amber-400">{quizScorePercent}%</span>
                   </p>
-                  <p className="opacity-90 mb-4">+{lesson.xpReward} XP earned</p>
-                  <p className="opacity-90">{message}</p>
-                </>
+                  <p className="text-stone-300 mb-4">+{lesson.xpReward} XP earned</p>
+                  <p className="text-stone-400">{message}</p>
+                </div>
               );
             })()}
           </motion.div>
@@ -614,24 +608,24 @@ export default function LessonViewer({ lesson, onComplete }: LessonViewerProps) 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="fixed bottom-6 right-6 z-50 bg-white dark:bg-slate-900 border-2 border-amber-400 rounded-xl shadow-xl p-4 max-w-sm"
+            className="fixed bottom-6 right-6 z-50 bg-[#14120e] border border-amber-400/40 rounded-sm shadow-xl p-4 max-w-sm"
           >
             <div className="flex items-start justify-between gap-3">
               <div>
-                <p className="font-bold text-amber-600 dark:text-amber-400 mb-1">
-                  🏆 Achievement Unlocked!
+                <p className="font-bold text-amber-400 mb-1">
+                  Achievement Unlocked!
                 </p>
                 {newlyUnlocked.map((a) => (
-                  <p key={a.id} className="text-sm text-slate-700 dark:text-slate-300">
-                    {a.icon} <span className="font-semibold">{a.name}</span> (+{a.xpReward} XP)
+                  <p key={a.id} className="text-sm text-stone-300">
+                    {a.icon} <span className="font-semibold text-amber-50">{a.name}</span> (+{a.xpReward} XP)
                   </p>
                 ))}
               </div>
               <button
                 onClick={clearNewlyUnlocked}
-                className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+                className="text-stone-500 hover:text-stone-300"
               >
-                ✕
+                &#10005;
               </button>
             </div>
           </motion.div>

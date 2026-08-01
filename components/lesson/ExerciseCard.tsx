@@ -69,14 +69,14 @@ export default function ExerciseCard({
                 onClick={() => !submitted && setSelectedAnswer(option.id)}
                 disabled={submitted}
                 whileHover={{ scale: 1.02 }}
-                className={`w-full p-4 rounded-lg border-2 text-left transition-all ${
+                className={`w-full p-4 rounded-sm border text-left transition-all ${
                   selectedAnswer === option.id
                     ? submitted
                       ? option.isCorrect
                         ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20'
                         : 'border-red-500 bg-red-50 dark:bg-red-900/20'
-                      : 'border-indigo-600 bg-indigo-50 dark:bg-indigo-900/20'
-                    : 'border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 hover:border-slate-400'
+                      : 'border-amber-500 bg-amber-50/60 dark:bg-amber-400/[0.08]'
+                    : 'border-stone-300 dark:border-white/15 bg-white dark:bg-white/[0.02] hover:border-amber-400/60'
                 }`}
               >
                 <div className="flex items-center gap-3">
@@ -87,8 +87,8 @@ export default function ExerciseCard({
                           ? option.isCorrect
                             ? 'border-emerald-500 bg-emerald-500'
                             : 'border-red-500 bg-red-500'
-                          : 'border-indigo-600 bg-indigo-600'
-                        : 'border-slate-400 dark:border-slate-600'
+                          : 'border-amber-500 bg-amber-500'
+                        : 'border-stone-400 dark:border-white/20'
                     }`}
                   >
                     {selectedAnswer === option.id && submitted && (
@@ -97,7 +97,7 @@ export default function ExerciseCard({
                       </span>
                     )}
                   </div>
-                  <span className="font-medium">{option.text}</span>
+                  <span className="font-medium text-stone-900 dark:text-amber-50">{option.text}</span>
                   {submitted && selectedAnswer === option.id && (
                     option.isCorrect ? (
                       <CheckCircle2 className="w-5 h-5 text-emerald-600 ml-auto" />
@@ -114,7 +114,7 @@ export default function ExerciseCard({
       case 'fill-blank':
         return (
           <div className="space-y-4">
-            <div className="text-lg text-slate-700 dark:text-slate-300">
+            <div className="text-lg text-stone-700 dark:text-stone-300">
               {exercise.question
                 .split('_________')
                 .map((part, idx, arr) => (
@@ -127,7 +127,7 @@ export default function ExerciseCard({
                         onChange={(e) => setSelectedAnswer(e.target.value)}
                         disabled={submitted}
                         placeholder="____"
-                        className="mx-2 px-3 py-1 border-b-2 border-indigo-600 dark:border-indigo-400 bg-transparent text-indigo-600 dark:text-indigo-400 font-bold w-32 text-center disabled:opacity-60"
+                        className="mx-2 px-3 py-1 border-b-2 border-amber-500 dark:border-amber-400 bg-transparent text-amber-700 dark:text-amber-400 font-bold w-32 text-center disabled:opacity-60"
                       />
                     )}
                   </span>
@@ -144,7 +144,7 @@ export default function ExerciseCard({
               onChange={(e) => setSelectedAnswer(e.target.value)}
               disabled={submitted}
               placeholder="Type your answer..."
-              className="w-full p-4 rounded-lg border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white disabled:opacity-60 resize-none"
+              className="w-full p-4 rounded-sm border border-stone-300 dark:border-white/15 bg-white dark:bg-white/[0.02] text-stone-900 dark:text-amber-50 disabled:opacity-60 resize-none focus:outline-none focus:border-amber-500"
               rows={3}
             />
           </div>
@@ -153,7 +153,7 @@ export default function ExerciseCard({
       case 'speaking':
         return (
           <div className="space-y-4">
-            <p className="text-slate-700 dark:text-slate-300 font-medium">
+            <p className="text-stone-700 dark:text-stone-300 font-medium">
               {exercise.question}
             </p>
             <VoiceRecorder
@@ -169,8 +169,8 @@ export default function ExerciseCard({
 
       default:
         return (
-          <div className="p-4 bg-slate-100 dark:bg-slate-800 rounded-lg">
-            <p className="text-slate-700 dark:text-slate-300">
+          <div className="p-4 bg-stone-50 dark:bg-white/[0.03] rounded-sm border border-stone-200 dark:border-white/10">
+            <p className="text-stone-700 dark:text-stone-300">
               {exercise.question}
             </p>
           </div>
@@ -182,19 +182,19 @@ export default function ExerciseCard({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-white dark:bg-slate-900 rounded-xl border-2 border-slate-200 dark:border-slate-800 overflow-hidden"
+      className="bg-white dark:bg-white/[0.02] rounded-sm border border-stone-200 dark:border-white/10 overflow-hidden"
     >
       {/* Header */}
-      <div className="bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-900/20 dark:to-blue-900/20 px-6 py-4 border-b border-slate-200 dark:border-slate-800">
+      <div className="bg-stone-50 dark:bg-white/[0.03] px-6 py-4 border-b border-stone-200 dark:border-white/10">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+          <h3 className="font-display text-lg text-stone-900 dark:text-amber-50">
             Exercise {number}
           </h3>
           <div className="flex items-center gap-2">
-            <span className="text-sm font-semibold bg-indigo-600 text-white px-3 py-1 rounded-full">
+            <span className="text-xs font-semibold bg-amber-500 text-[#0b0a08] px-3 py-1 rounded-full">
               {exercise.points} pts
             </span>
-            <span className="text-xs bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-3 py-1 rounded-full capitalize">
+            <span className="text-xs bg-stone-200 dark:bg-white/10 text-stone-700 dark:text-stone-300 px-3 py-1 rounded-full capitalize">
               {exercise.type.replace('-', ' ')}
             </span>
           </div>
@@ -203,7 +203,7 @@ export default function ExerciseCard({
 
       {/* Content */}
       <div className="p-6 space-y-6">
-        <p className="text-slate-700 dark:text-slate-300 text-lg font-medium">
+        <p className="text-stone-800 dark:text-amber-50 text-lg font-medium">
           {exercise.question}
         </p>
 
@@ -225,10 +225,10 @@ export default function ExerciseCard({
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
-            className="p-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg"
+            className="p-3 bg-amber-50/60 dark:bg-amber-400/[0.06] border border-amber-500/30 dark:border-amber-400/20 rounded-sm"
           >
-            <p className="text-sm text-amber-900 dark:text-amber-100">
-              <strong>Hint:</strong> {exercise.hint}
+            <p className="text-sm text-stone-700 dark:text-amber-100">
+              <strong className="text-amber-700 dark:text-amber-400">Hint:</strong> {exercise.hint}
             </p>
           </motion.div>
         )}
@@ -241,7 +241,7 @@ export default function ExerciseCard({
               whileTap={{ scale: 0.98 }}
               onClick={handleSubmit}
               disabled={!selectedAnswer}
-              className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 disabled:bg-slate-300 dark:disabled:bg-slate-700 text-white font-bold rounded-lg transition-colors"
+              className="w-full py-3 bg-amber-500 hover:bg-amber-600 disabled:bg-stone-200 dark:disabled:bg-white/10 disabled:text-stone-400 text-[#0b0a08] font-bold rounded-sm transition-colors"
             >
               Submit Answer
             </motion.button>
@@ -249,7 +249,7 @@ export default function ExerciseCard({
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className={`p-4 rounded-lg border-2 ${
+              className={`p-4 rounded-sm border ${
                 isCorrect
                   ? 'bg-emerald-50 dark:bg-emerald-900/20 border-emerald-500'
                   : 'bg-red-50 dark:bg-red-900/20 border-red-500'
@@ -287,7 +287,7 @@ export default function ExerciseCard({
           {submitted && exercise.explanation && (
             <motion.button
               onClick={() => setShowExplanation(!showExplanation)}
-              className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-medium"
+              className="flex items-center gap-2 text-amber-700 dark:text-amber-400 font-medium"
             >
               <HelpCircle className="w-4 h-4" />
               {showExplanation ? 'Hide Explanation' : 'Show Explanation'}
@@ -298,10 +298,10 @@ export default function ExerciseCard({
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
-              className="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg"
+              className="p-4 bg-stone-50 dark:bg-white/[0.03] border border-stone-200 dark:border-white/10 rounded-sm"
             >
-              <p className="text-sm text-blue-900 dark:text-blue-100">
-                <strong>Explanation:</strong> {exercise.explanation}
+              <p className="text-sm text-stone-700 dark:text-stone-300">
+                <strong className="text-amber-700 dark:text-amber-400">Explanation:</strong> {exercise.explanation}
               </p>
             </motion.div>
           )}
