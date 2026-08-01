@@ -1,8 +1,9 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Zap, Flame, Trophy, TrendingUp, BookMarked, CheckSquare, ArrowRight, PlayCircle, Sun, Moon } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Zap, Flame, Trophy, TrendingUp, BookMarked, CheckSquare, ArrowRight, PlayCircle, Sun, Moon, Menu, X } from 'lucide-react';
 import { useAppStore } from '@/lib/store';
 import ProgressRing from '@/components/ProgressRing';
 import AchievementsPanel from '@/components/AchievementsPanel';
@@ -11,6 +12,7 @@ import { iCAOUnits } from '@/lib/data/icao-curriculum';
 
 export default function DashboardPage() {
   const { stats, user, lessonProgress, darkMode, toggleDarkMode } = useAppStore();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -73,8 +75,47 @@ export default function DashboardPage() {
             <div className="w-9 h-9 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-[#0b0a08] text-sm font-bold shadow-[0_0_0_1px_rgba(217,180,90,0.4)]">
               {user?.name?.charAt(0) || 'C'}
             </div>
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen((v) => !v)}
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              className="sm:hidden w-9 h-9 rounded-full border border-amber-600/30 dark:border-amber-400/30 flex items-center justify-center text-stone-600 dark:text-amber-300"
+            >
+              {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+            </button>
           </div>
         </motion.div>
+
+        {/* Mobile menu */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="sm:hidden -mt-6 mb-8 overflow-hidden"
+            >
+              <div className="border border-amber-900/15 dark:border-amber-400/20 rounded-sm divide-y divide-amber-900/10 dark:divide-amber-400/10 bg-white dark:bg-white/[0.02]">
+                <Link
+                  href="/glossary"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-2.5 px-4 py-3 text-sm font-medium text-stone-600 dark:text-stone-300 hover:text-amber-700 dark:hover:text-amber-300"
+                >
+                  <BookMarked className="w-4 h-4" />
+                  Glossary of Key Expressions
+                </Link>
+                <Link
+                  href="/answer-key"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-2.5 px-4 py-3 text-sm font-medium text-stone-600 dark:text-stone-300 hover:text-amber-700 dark:hover:text-amber-300"
+                >
+                  <CheckSquare className="w-4 h-4" />
+                  Answer Key
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Hero title */}
         <motion.div
