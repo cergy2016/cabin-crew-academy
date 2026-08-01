@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Zap, Flame, Trophy, TrendingUp, BookMarked, CheckSquare, ArrowRight, PlayCircle } from 'lucide-react';
+import { Zap, Flame, Trophy, TrendingUp, BookMarked, CheckSquare, ArrowRight, PlayCircle, Sun, Moon } from 'lucide-react';
 import { useAppStore } from '@/lib/store';
 import ProgressRing from '@/components/ProgressRing';
 import AchievementsPanel from '@/components/AchievementsPanel';
@@ -10,7 +10,7 @@ import UnitIllustration from '@/components/UnitIllustration';
 import { iCAOUnits } from '@/lib/data/icao-curriculum';
 
 export default function DashboardPage() {
-  const { stats, user, lessonProgress } = useAppStore();
+  const { stats, user, lessonProgress, darkMode, toggleDarkMode } = useAppStore();
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -62,6 +62,14 @@ export default function DashboardPage() {
               <CheckSquare className="w-3.5 h-3.5" />
               Answer Key
             </Link>
+            <button
+              type="button"
+              onClick={toggleDarkMode}
+              aria-label={darkMode ? 'Switch to day mode' : 'Switch to night mode'}
+              className="w-9 h-9 rounded-full border border-amber-600/30 dark:border-amber-400/30 flex items-center justify-center text-stone-500 dark:text-amber-300 hover:border-amber-500 dark:hover:border-amber-400 hover:text-amber-600 dark:hover:text-amber-200 transition-colors"
+            >
+              {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </button>
             <div className="w-9 h-9 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-[#0b0a08] text-sm font-bold shadow-[0_0_0_1px_rgba(217,180,90,0.4)]">
               {user?.name?.charAt(0) || 'C'}
             </div>
