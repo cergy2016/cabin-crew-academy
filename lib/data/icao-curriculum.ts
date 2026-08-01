@@ -41,11 +41,38 @@ const STANDARD_VOCABULARY = [
 ];
 
 const STANDARD_PHRASEOLOGY = {
-  category: 'Aviation Phraseology',
+  category: 'ICAO Standard Radiotelephony Phraseology',
   phrases: [
-    { situation: 'Acknowledgment', phrase: 'Roger', pronunciation: 'RAH-jer', meaning: 'Message received', example: 'Roger, turning left' },
-    { situation: 'Affirmation', phrase: 'Affirmative', pronunciation: 'AFF-firm', meaning: 'Yes/confirmed', example: 'Affirmative' },
-    { situation: 'Negation', phrase: 'Negative', pronunciation: 'NEG-uh-tiv', meaning: 'No/denied', example: 'Negative go-around' },
+    { situation: 'Requesting confirmation of receipt', phrase: 'Acknowledge', meaning: 'Let me know that you have received and understood this message.', example: 'Acknowledge my last transmission.' },
+    { situation: 'Confirming yes', phrase: 'Affirm', meaning: 'Yes.', example: 'Affirm, we are ready for descent.' },
+    { situation: 'Granting permission', phrase: 'Approved', meaning: 'Permission for proposed action granted.', example: 'Request approved, proceed as planned.' },
+    { situation: 'Separating parts of one message', phrase: 'Break', meaning: 'I hereby indicate the separation between portions of the message, where there is no clear distinction between the text and other portions of the message.', example: 'Cabin crew, doors to manual, break, cross-check and report.' },
+    { situation: 'Separating messages to different aircraft', phrase: 'Break Break', meaning: 'I hereby indicate the separation between messages transmitted to different aircraft in a very busy environment.', example: '...report ready, break break, Speedbird 22 hold short.' },
+    { situation: 'Annulling a clearance', phrase: 'Cancel', meaning: 'Annul the previously transmitted clearance.', example: 'Cancel takeoff clearance, hold position.' },
+    { situation: 'Requesting verification of a system', phrase: 'Check', meaning: 'Examine a system or procedure. Not to be used in any other context - no answer is normally expected.', example: 'Check gear down.' },
+    { situation: 'Authorizing an action', phrase: 'Cleared', meaning: 'Authorized to proceed under the conditions specified.', example: 'Cleared for takeoff, runway 27.' },
+    { situation: 'Requesting verification', phrase: 'Confirm', meaning: 'I request verification of: clearance, instruction, action, information.', example: 'Confirm you are ready for pushback.' },
+    { situation: 'Instructing a frequency change', phrase: 'Contact', meaning: 'Establish communications with...', example: 'Contact ground on 121.9.' },
+    { situation: 'Confirming accuracy', phrase: 'Correct', meaning: 'True or accurate.', example: 'That is correct.' },
+    { situation: 'Fixing a transmission error', phrase: 'Correction', meaning: 'An error has been made in this transmission. The correct version is...', example: 'Correction, cleared to flight level 350, not 250.' },
+    { situation: 'Ignoring a previous instruction', phrase: 'Disregard', meaning: 'Ignore.', example: 'Disregard my last transmission.' },
+    { situation: 'Checking transmission quality', phrase: 'How Do You Read', meaning: 'What is the readability of my transmission?', example: 'Tower, how do you read?' },
+    { situation: 'Repeating for clarity or emphasis', phrase: 'I Say Again', meaning: 'I repeat for clarity or emphasis.', example: 'Hold short of runway two-seven, I say again, hold short.' },
+    { situation: 'Continuing a specified condition', phrase: 'Maintain', meaning: 'Continue in accordance with the condition(s) specified, or in its literal sense, e.g. maintain VFR.', example: 'Maintain flight level 350.' },
+    { situation: 'Instructing to listen on a frequency', phrase: 'Monitor', meaning: 'Listen out on (frequency).', example: 'Monitor tower on 118.3.' },
+    { situation: 'Denying or saying no', phrase: 'Negative', pronunciation: 'NEG-uh-tiv', meaning: 'No, or permission not granted, or that is not correct, or not capable.', example: 'Negative, unable to comply.' },
+    { situation: 'Ending a transmission, expecting reply', phrase: 'Over', meaning: 'My transmission has ended, and I expect a response from you. Not normally used in VHF or satellite voice communications.', example: 'Requesting descent clearance, over.' },
+    { situation: 'Ending an exchange, no reply expected', phrase: 'Out', meaning: 'This exchange of transmissions is ended and no response is expected. Not normally used in VHF or satellite voice communications.', example: 'Understood, out.' },
+    { situation: 'Requesting repetition of a message', phrase: 'Read Back', meaning: 'Repeat all, or the specified part, of this message back to me exactly as received.', example: 'Read back the taxi instructions.' },
+    { situation: 'Issuing a superseding clearance', phrase: 'Recleared', meaning: 'A change has been made to your last clearance and this new clearance supersedes your previous clearance or part thereof.', example: 'Recleared direct to destination.' },
+    { situation: 'Requesting specific information', phrase: 'Report', meaning: 'Pass me the following information...', example: 'Report reaching flight level 100.' },
+    { situation: 'Asking for something', phrase: 'Request', meaning: 'I should like to know... or I wish to obtain...', example: 'Request higher, flight level 370.' },
+    { situation: 'Confirming receipt only', phrase: 'Roger', pronunciation: 'RAH-jer', meaning: 'I have received all of your last transmission. Under no circumstances used to reply to a question requiring a read back or a direct yes/no answer.', example: 'Roger, standing by.' },
+    { situation: 'Requesting repetition', phrase: 'Say Again', meaning: 'Repeat all, or the following part, of your last transmission.', example: 'Say again the frequency.' },
+    { situation: 'Requesting slower speech', phrase: 'Speak Slower', meaning: 'Reduce your rate of speech.', example: 'Speak slower, please.' },
+    { situation: 'Asking to wait', phrase: 'Standby', meaning: 'Wait and I will call you. Standby is not an approval or denial; the caller would normally re-establish contact if the delay is lengthy.', example: 'Standby for further instructions.' },
+    { situation: 'Declining a request', phrase: 'Unable', meaning: 'I cannot comply with your request, instruction, or clearance. Normally followed by a reason.', example: 'Unable, traffic in the area.' },
+    { situation: 'Confirming compliance', phrase: 'Wilco', meaning: 'Abbreviation for "will comply". I understand your message and will comply with it.', example: 'Wilco, descending now.' },
   ]
 };
 
