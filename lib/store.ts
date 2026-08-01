@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { persist, createJSONStorage } from 'zustand/middleware';
 import type { UserProfile, UserStats, LessonProgress, Achievement, Badge, DailyChallenge, Lesson } from './types';
 import { achievements as achievementDefs, badges as badgeDefs } from './data/achievements';
 
@@ -221,6 +221,22 @@ export const useAppStore = create<AppState>()(
     {
       name: 'cabin-crew-store',
       version: 1,
+      storage: createJSONStorage(() => localStorage, {
+        replacer: (_key, value) =>
+          value instanceof Map ? { __type: 'Map', entries: Array.from(value.entries()) } : value,
+        reviver: (_key, value) =>
+          value && typeof value === 'object' && (value as { __type?: string }).__type === 'Map'
+            ? new Map((value as { entries: [string, unknown][] }).entries)
+            : value,
+      }),
+      merge: (persistedState, currentState) => {
+        const persisted = persistedState as Partial<AppState> | undefined;
+        const lessonProgress =
+          persisted?.lessonProgress instanceof Map
+            ? persisted.lessonProgress
+            : new Map(Object.entries(persisted?.lessonProgress ?? {}) as [string, LessonProgress][]);
+        return { ...currentState, ...persisted, lessonProgress };
+      },
     }
   )
 );
