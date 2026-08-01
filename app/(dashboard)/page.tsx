@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Zap, Flame, Trophy, TrendingUp, BookMarked, CheckSquare, Briefcase, ArrowRight, PlayCircle, Menu, X } from 'lucide-react';
+import { Zap, Flame, Trophy, TrendingUp, BookMarked, CheckSquare, Briefcase, Plane, ArrowRight, PlayCircle, Menu, X } from 'lucide-react';
 import { useAppStore } from '@/lib/store';
 import ProgressRing from '@/components/ProgressRing';
 import AchievementsPanel from '@/components/AchievementsPanel';
@@ -72,6 +72,13 @@ export default function DashboardPage() {
               <Briefcase className="w-3.5 h-3.5" />
               Interview Prep
             </Link>
+            <Link
+              href="/aviation-glossary"
+              className="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium tracking-wide uppercase text-stone-500 dark:text-stone-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors"
+            >
+              <Plane className="w-3.5 h-3.5" />
+              Aviation Glossary
+            </Link>
             <ThemeToggle />
             <div className="w-9 h-9 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-[#0b0a08] text-sm font-bold shadow-[0_0_0_1px_rgba(217,180,90,0.4)]">
               {user?.name?.charAt(0) || 'C'}
@@ -120,6 +127,14 @@ export default function DashboardPage() {
                 >
                   <Briefcase className="w-4 h-4" />
                   Interview Prep
+                </Link>
+                <Link
+                  href="/aviation-glossary"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-2.5 px-4 py-3 text-sm font-medium text-stone-600 dark:text-stone-300 hover:text-amber-700 dark:hover:text-amber-300"
+                >
+                  <Plane className="w-4 h-4" />
+                  Aviation Glossary
                 </Link>
               </div>
             </motion.div>
