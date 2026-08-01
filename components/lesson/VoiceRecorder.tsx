@@ -136,19 +136,19 @@ export default function VoiceRecorder({
             exit={{ opacity: 0 }}
             className="space-y-4"
           >
-            <div className="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-              <p className="text-sm text-blue-900 dark:text-blue-100">
-                <strong>Instructions:</strong> Click the microphone button to start
+            <div className="p-4 bg-stone-50 dark:bg-white/[0.03] border border-stone-200 dark:border-white/10 rounded-sm">
+              <p className="text-sm text-stone-700 dark:text-stone-300">
+                <strong className="text-amber-700 dark:text-amber-400">Instructions:</strong> Click the microphone button to start
                 recording. Read the sentence below out loud, then click stop when
                 done.
               </p>
             </div>
 
-            <div className="p-4 bg-slate-100 dark:bg-slate-800 rounded-lg border-2 border-slate-300 dark:border-slate-700">
-              <p className="text-slate-900 dark:text-white font-medium">
+            <div className="p-4 bg-stone-50 dark:bg-white/[0.03] rounded-sm border border-stone-200 dark:border-white/10">
+              <p className="text-stone-900 dark:text-amber-50 font-medium">
                 Say this:
               </p>
-              <p className="text-lg text-slate-700 dark:text-slate-300 mt-2 italic">
+              <p className="text-lg text-stone-600 dark:text-stone-300 mt-2 italic">
                 {expectedText}
               </p>
             </div>
@@ -207,7 +207,7 @@ export default function VoiceRecorder({
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={handleCancel}
-                className="py-3 flex items-center justify-center gap-2 rounded-lg bg-slate-500 hover:bg-slate-600 text-white font-bold transition-colors"
+                className="py-3 flex items-center justify-center gap-2 rounded-sm bg-stone-500 hover:bg-stone-600 text-white font-bold transition-colors"
               >
                 Cancel
               </motion.button>
@@ -225,9 +225,9 @@ export default function VoiceRecorder({
             className="p-6 text-center space-y-4"
           >
             <motion.div animate={{ rotate: 360 }} transition={{ duration: 2, repeat: Infinity }}>
-              <Loader2 className="w-8 h-8 text-indigo-600 dark:text-indigo-400 mx-auto" />
+              <Loader2 className="w-8 h-8 text-amber-600 dark:text-amber-400 mx-auto" />
             </motion.div>
-            <p className="font-semibold text-slate-900 dark:text-white">
+            <p className="font-semibold text-stone-900 dark:text-amber-50">
               Analyzing your pronunciation...
             </p>
           </motion.div>
@@ -245,7 +245,7 @@ export default function VoiceRecorder({
             {/* Audio Playback */}
             {recordedAudio && (
               <div className="space-y-2">
-                <p className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <p className="text-sm font-medium text-stone-600 dark:text-stone-300">
                   Your Recording
                 </p>
                 <AudioPlayer audioUrl={recordedAudio} />
@@ -256,11 +256,11 @@ export default function VoiceRecorder({
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="p-6 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-xl border-2 border-emerald-300 dark:border-emerald-700"
+              className="p-6 bg-emerald-50 dark:bg-emerald-900/20 rounded-sm border border-emerald-300 dark:border-emerald-700"
             >
               <div className="flex items-center gap-3 mb-4">
                 <CheckCircle2 className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
-                <h3 className="text-lg font-bold text-emerald-900 dark:text-emerald-100">
+                <h3 className="font-display text-lg text-emerald-900 dark:text-emerald-100">
                   Analysis Complete
                 </h3>
               </div>
@@ -270,9 +270,9 @@ export default function VoiceRecorder({
                 {Object.entries(analysis.scores).map(([key, score]) => (
                   <div
                     key={key}
-                    className="bg-white dark:bg-slate-900 p-3 rounded-lg border border-emerald-200 dark:border-emerald-800"
+                    className="bg-white dark:bg-white/[0.03] p-3 rounded-sm border border-emerald-200 dark:border-emerald-800"
                   >
-                    <p className="text-xs font-medium text-slate-600 dark:text-slate-400 capitalize">
+                    <p className="text-xs font-medium text-stone-500 dark:text-stone-400 capitalize">
                       {key.replace(/([A-Z])/g, ' $1').trim()}
                     </p>
                     <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400 mt-1">
@@ -284,11 +284,11 @@ export default function VoiceRecorder({
             </motion.div>
 
             {/* Transcription */}
-            <div className="p-4 bg-slate-100 dark:bg-slate-800 rounded-lg">
-              <p className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+            <div className="p-4 bg-stone-50 dark:bg-white/[0.03] rounded-sm border border-stone-200 dark:border-white/10">
+              <p className="text-sm font-medium text-stone-600 dark:text-stone-300 mb-2">
                 Transcription
               </p>
-              <p className="text-slate-900 dark:text-white">
+              <p className="text-stone-900 dark:text-amber-50">
                 {analysis.transcription}
               </p>
             </div>
@@ -296,7 +296,7 @@ export default function VoiceRecorder({
             {/* Corrections */}
             {analysis.corrections.length > 0 && (
               <div className="space-y-3">
-                <p className="font-medium text-slate-900 dark:text-white">
+                <p className="font-medium text-stone-900 dark:text-amber-50">
                   Corrections
                 </p>
                 {analysis.corrections.map((correction, idx) => (
@@ -304,7 +304,7 @@ export default function VoiceRecorder({
                     key={idx}
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="p-3 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg"
+                    className="p-3 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-sm"
                   >
                     <p className="text-sm">
                       <strong className="text-yellow-900 dark:text-yellow-100">
@@ -326,12 +326,12 @@ export default function VoiceRecorder({
             {/* Suggestions */}
             {analysis.suggestions.length > 0 && (
               <div className="space-y-2">
-                <p className="font-medium text-slate-900 dark:text-white">
-                  💡 Tips for Improvement
+                <p className="font-medium text-stone-900 dark:text-amber-50">
+                  Tips for Improvement
                 </p>
                 <ul className="space-y-1">
                   {analysis.suggestions.map((suggestion, idx) => (
-                    <li key={idx} className="text-sm text-slate-700 dark:text-slate-300">
+                    <li key={idx} className="text-sm text-stone-600 dark:text-stone-300">
                       • {suggestion}
                     </li>
                   ))}
@@ -344,7 +344,7 @@ export default function VoiceRecorder({
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={handleRetry}
-              className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg transition-colors"
+              className="w-full py-3 bg-amber-500 hover:bg-amber-600 text-[#0b0a08] font-bold rounded-sm transition-colors"
             >
               Try Again
             </motion.button>

@@ -148,7 +148,7 @@ export default function AudioPlayer({
       {/* Waveform Visualization */}
       {showWaveform && (
         <motion.div
-          className="flex items-center justify-center gap-1 h-12 px-4 bg-gradient-to-r from-slate-100 to-slate-50 dark:from-slate-800 dark:to-slate-900 rounded-lg cursor-pointer group"
+          className="flex items-center justify-center gap-1 h-12 px-4 bg-stone-50 dark:bg-white/[0.03] rounded-sm cursor-pointer group"
           onClick={handleProgressClick}
         >
           {bars.map((bar) => (
@@ -156,8 +156,8 @@ export default function AudioPlayer({
               key={bar.id}
               className={`flex-1 rounded-full transition-colors ${
                 bar.isActive
-                  ? 'bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-300'
-                  : 'bg-slate-300 dark:bg-slate-600 group-hover:bg-slate-400 dark:group-hover:bg-slate-500'
+                  ? 'bg-gradient-to-t from-amber-600 to-amber-400'
+                  : 'bg-stone-300 dark:bg-white/15 group-hover:bg-stone-400 dark:group-hover:bg-white/25'
               }`}
               initial={{ height: '50%' }}
               animate={{ height: `${bar.height * 100}%` }}
@@ -168,14 +168,14 @@ export default function AudioPlayer({
       )}
 
       {/* Controls */}
-      <div className="flex items-center justify-between gap-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800 p-4">
+      <div className="flex items-center justify-between gap-4 bg-white dark:bg-white/[0.02] rounded-sm border border-stone-200 dark:border-white/10 p-4">
         {/* Play/Pause Buttons */}
         <div className="flex items-center gap-2">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={handlePlayPause}
-            className="p-2 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition-colors"
+            className="p-2 rounded-sm bg-amber-500 text-[#0b0a08] hover:bg-amber-600 transition-colors"
             title={isPlaying ? 'Pause' : 'Play'}
           >
             {isPlaying ? (
@@ -189,7 +189,7 @@ export default function AudioPlayer({
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleReplay}
-            className="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors"
+            className="p-2 rounded-sm bg-stone-100 dark:bg-white/10 text-stone-600 dark:text-stone-300 hover:bg-stone-200 dark:hover:bg-white/15 transition-colors"
             title="Replay"
           >
             <RotateCcw className="w-4 h-4" />
@@ -197,20 +197,20 @@ export default function AudioPlayer({
         </div>
 
         {/* Time Display */}
-        <div className="text-sm font-medium text-slate-600 dark:text-slate-400 whitespace-nowrap">
+        <div className="text-sm font-medium text-stone-500 dark:text-stone-400 whitespace-nowrap">
           {formatTime(currentTime)} / {formatTime(duration)}
         </div>
 
         {/* Progress Bar */}
         <div className="flex-1 group cursor-pointer" onClick={handleProgressClick}>
-          <div className="relative h-1.5 bg-slate-300 dark:bg-slate-600 rounded-full overflow-hidden">
+          <div className="relative h-1.5 bg-stone-200 dark:bg-white/10 rounded-full overflow-hidden">
             <motion.div
-              className="h-full bg-gradient-to-r from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-300 rounded-full"
+              className="h-full bg-amber-500 rounded-full"
               animate={{ width: `${(currentTime / duration) * 100}%` }}
               transition={{ type: 'tween', duration: 0.1 }}
             />
             <motion.div
-              className="absolute top-1/2 w-3 h-3 bg-white dark:bg-slate-200 rounded-full shadow-md transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute top-1/2 w-3 h-3 bg-white dark:bg-amber-50 rounded-full shadow-md transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity"
               animate={{ left: `${(currentTime / duration) * 100}%` }}
               transition={{ type: 'tween', duration: 0.1 }}
             />
@@ -218,7 +218,7 @@ export default function AudioPlayer({
         </div>
 
         {/* Volume Control */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-stone-500 dark:text-stone-400">
           {getVolumeIcon()}
           <input
             type="range"
@@ -227,7 +227,7 @@ export default function AudioPlayer({
             step="0.1"
             value={volume}
             onChange={handleVolumeChange}
-            className="w-16 h-1 bg-slate-300 dark:bg-slate-600 rounded-full cursor-pointer"
+            className="w-16 h-1 bg-stone-200 dark:bg-white/10 rounded-full cursor-pointer accent-amber-500"
             title="Volume"
           />
         </div>
@@ -236,7 +236,7 @@ export default function AudioPlayer({
         <select
           value={playbackRate}
           onChange={handlePlaybackRateChange}
-          className="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-medium border border-slate-300 dark:border-slate-700"
+          className="px-2 py-1 rounded-sm bg-stone-50 dark:bg-white/[0.03] text-stone-600 dark:text-stone-300 text-sm font-medium border border-stone-200 dark:border-white/10"
           title="Playback Speed"
         >
           <option value={0.75}>0.75x</option>
@@ -249,11 +249,11 @@ export default function AudioPlayer({
 
       {/* Transcription Display */}
       {showTranscription && transcription && (
-        <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
-          <p className="text-sm font-medium text-slate-600 dark:text-slate-400 mb-2">
+        <div className="p-4 bg-stone-50 dark:bg-white/[0.03] rounded-sm border border-stone-200 dark:border-white/10">
+          <p className="text-sm font-medium text-stone-500 dark:text-stone-400 mb-2">
             Transcription
           </p>
-          <p className="text-slate-900 dark:text-slate-100 leading-relaxed">
+          <p className="text-stone-900 dark:text-amber-50 leading-relaxed">
             {transcription}
           </p>
         </div>
