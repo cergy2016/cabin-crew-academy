@@ -1,14 +1,31 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowLeft, Expand, ImageIcon, X } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight, Expand, ImageIcon, X } from 'lucide-react';
 import ThemeToggle from '@/components/ThemeToggle';
-import { visualGuides, type VisualGuide } from '@/lib/data/visualGuides';
+import { visualGuides } from '@/lib/data/visualGuides';
 
 export default function VisualGuidesPage() {
-  const [active, setActive] = useState<VisualGuide | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const active = activeIndex !== null ? visualGuides[activeIndex] : null;
+
+  const showPrev = () =>
+    setActiveIndex((i) => (i === null ? null : (i - 1 + visualGuides.length) % visualGuides.length));
+  const showNext = () =>
+    setActiveIndex((i) => (i === null ? null : (i + 1) % visualGuides.length));
+
+  useEffect(() => {
+    if (activeIndex === null) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setActiveIndex(null);
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'ArrowRight') showNext();
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [activeIndex]);
 
   return (
     <main className="min-h-screen bg-[#faf6ee] dark:bg-[#0b0a08] p-4 md:p-8">
@@ -48,7 +65,7 @@ export default function VisualGuidesPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: Math.min(idx * 0.04, 0.3) }}
-              onClick={() => setActive(guide)}
+              onClick={() => setActiveIndex(idx)}
               className="group text-left rounded-sm border border-stone-200 dark:border-white/10 bg-white dark:bg-white/[0.02] overflow-hidden hover:border-amber-400 dark:hover:border-amber-500/50 transition-colors"
             >
               <div className="relative aspect-[3/2] overflow-hidden bg-stone-100 dark:bg-white/[0.03]">
@@ -87,15 +104,37 @@ export default function VisualGuidesPage() {
       </div>
 
       <AnimatePresence>
-        {active && (
+        {active && activeIndex !== null && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
-            onClick={() => setActive(null)}
+            onClick={() => setActiveIndex(null)}
           >
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                showPrev();
+              }}
+              className="hidden sm:flex absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2.5 rounded-full bg-black/60 hover:bg-black/80 text-white transition-colors"
+              aria-label="Previous poster"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                showNext();
+              }}
+              className="hidden sm:flex absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2.5 rounded-full bg-black/60 hover:bg-black/80 text-white transition-colors"
+              aria-label="Next poster"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+
             <motion.div
+              key={active.id}
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.96 }}
@@ -103,12 +142,17 @@ export default function VisualGuidesPage() {
               onClick={(e) => e.stopPropagation()}
             >
               <button
-                onClick={() => setActive(null)}
+                onClick={() => setActiveIndex(null)}
                 className="absolute top-3 right-3 z-10 p-2 rounded-sm bg-black/60 hover:bg-black/80 text-white transition-colors"
                 aria-label="Close"
               >
                 <X className="w-5 h-5" />
               </button>
+
+              <div className="absolute top-3 left-3 z-10 px-3 py-1.5 rounded-sm bg-black/60 text-white text-xs font-medium tracking-wide">
+                {active.title} — {activeIndex + 1} of {visualGuides.length}
+              </div>
+
               {active.type === 'image' ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
@@ -119,6 +163,23 @@ export default function VisualGuidesPage() {
               ) : (
                 <iframe src={active.src} title={active.title} className="w-full h-[90vh]" />
               )}
+
+              <div className="sm:hidden flex items-center justify-between px-4 py-3 border-t border-white/10 bg-white dark:bg-[#0b0a08]">
+                <button
+                  onClick={showPrev}
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-stone-600 dark:text-stone-300"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                  Previous
+                </button>
+                <button
+                  onClick={showNext}
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-stone-600 dark:text-stone-300"
+                >
+                  Next
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
             </motion.div>
           </motion.div>
         )}
