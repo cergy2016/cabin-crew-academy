@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowLeft, BookOpen, Briefcase, Target, Zap, Trophy } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight, BookOpen, Briefcase, Target, Zap, Trophy } from 'lucide-react';
+import type { InterviewQuestion } from '@/lib/types';
 import { interviewBanks, generalHRQuestions, interviewTopics } from '@/lib/data/interviews';
 import InterviewPractice from '@/components/interview/InterviewPractice';
 import ThemeToggle from '@/components/ThemeToggle';
@@ -12,16 +13,23 @@ type ViewMode = 'select' | 'practice' | 'topics' | 'airlines';
 
 const allQuestions = [...interviewBanks.flatMap((b) => b.questions), ...generalHRQuestions];
 const totalQuestions = allQuestions.length;
+const topicQueue = interviewTopics
+  .map((t) => allQuestions.find((q) => q.id === t.questionId))
+  .filter((q): q is InterviewQuestion => Boolean(q));
 
 export default function InterviewPrepPage() {
   const [viewMode, setViewMode] = useState<ViewMode>('select');
-  const [selectedQuestionId, setSelectedQuestionId] = useState<string | null>(null);
+  const [queue, setQueue] = useState<InterviewQuestion[]>([]);
+  const [queueIndex, setQueueIndex] = useState(0);
+  const [queueLabel, setQueueLabel] = useState('');
   const [practiceScore, setPracticeScore] = useState(0);
 
-  const selectedQuestion = allQuestions.find((q) => q.id === selectedQuestionId);
+  const selectedQuestion = queue[queueIndex];
 
-  const handleQuestionSelect = (questionId: string) => {
-    setSelectedQuestionId(questionId);
+  const startQueue = (questions: InterviewQuestion[], label: string, startIndex = 0) => {
+    setQueue(questions);
+    setQueueIndex(startIndex);
+    setQueueLabel(label);
     setViewMode('practice');
   };
 
@@ -63,17 +71,43 @@ export default function InterviewPrepPage() {
         {/* Main Content */}
         {viewMode === 'practice' && selectedQuestion && (
           <div className="mb-8">
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              onClick={() => {
-                setViewMode('select');
-                setSelectedQuestionId(null);
-              }}
-              className="px-6 py-2 rounded-sm border border-stone-300 dark:border-white/15 text-stone-600 dark:text-stone-300 font-semibold hover:border-amber-500 dark:hover:border-amber-400 transition-colors mb-6"
-            >
-              ← Back to Selection
-            </motion.button>
+            <div className="flex items-center justify-between flex-wrap gap-3 mb-6">
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                onClick={() => setViewMode('select')}
+                className="px-6 py-2 rounded-sm border border-stone-300 dark:border-white/15 text-stone-600 dark:text-stone-300 font-semibold hover:border-amber-500 dark:hover:border-amber-400 transition-colors"
+              >
+                ← Back to Selection
+              </motion.button>
+
+              {queue.length > 1 && (
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setQueueIndex((i) => Math.max(0, i - 1))}
+                    disabled={queueIndex === 0}
+                    aria-label="Previous question"
+                    className="w-9 h-9 rounded-full border border-stone-300 dark:border-white/15 flex items-center justify-center text-stone-600 dark:text-stone-300 hover:border-amber-500 dark:hover:border-amber-400 disabled:opacity-30 disabled:hover:border-stone-300 dark:disabled:hover:border-white/15 transition-colors"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                  </button>
+                  <span className="text-sm font-semibold text-stone-600 dark:text-stone-300 tabular-nums">
+                    {queueLabel} &middot; Question {queueIndex + 1} of {queue.length}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setQueueIndex((i) => Math.min(queue.length - 1, i + 1))}
+                    disabled={queueIndex === queue.length - 1}
+                    aria-label="Next question"
+                    className="w-9 h-9 rounded-full border border-stone-300 dark:border-white/15 flex items-center justify-center text-stone-600 dark:text-stone-300 hover:border-amber-500 dark:hover:border-amber-400 disabled:opacity-30 disabled:hover:border-stone-300 dark:disabled:hover:border-white/15 transition-colors"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
+              )}
+            </div>
             <InterviewPractice
+              key={selectedQuestion.id}
               question={selectedQuestion}
               onComplete={handlePracticeComplete}
             />
@@ -154,11 +188,7 @@ export default function InterviewPrepPage() {
                 {/* General HR */}
                 <motion.button
                   whileHover={{ y: -3 }}
-                  onClick={() => {
-                    if (generalHRQuestions.length > 0) {
-                      handleQuestionSelect(generalHRQuestions[0].id);
-                    }
-                  }}
+                  onClick={() => startQueue(generalHRQuestions, 'General HR')}
                   className="text-left p-8 rounded-sm bg-white dark:bg-white/[0.02] border border-stone-200 dark:border-white/10 hover:border-amber-500/60 dark:hover:border-amber-400/50 transition-all"
                 >
                   <div className="text-4xl mb-3">🎯</div>
@@ -186,11 +216,7 @@ export default function InterviewPrepPage() {
                     <motion.button
                       key={bank.id}
                       whileHover={{ y: -3 }}
-                      onClick={() => {
-                        if (bank.questions.length > 0) {
-                          handleQuestionSelect(bank.questions[0].id);
-                        }
-                      }}
+                      onClick={() => startQueue(bank.questions, bank.airline)}
                       className="p-6 rounded-sm bg-white dark:bg-white/[0.02] border border-stone-200 dark:border-white/10 hover:border-amber-500/60 dark:hover:border-amber-400/50 transition-all text-left"
                     >
                       <p className="font-display text-xl text-stone-900 dark:text-amber-50 mb-1">
@@ -220,11 +246,11 @@ export default function InterviewPrepPage() {
                   Select a Topic
                 </h2>
                 <div className="grid md:grid-cols-2 gap-4">
-                  {interviewTopics.map((topic) => (
+                  {interviewTopics.map((topic, idx) => (
                     <motion.button
                       key={topic.label}
                       whileHover={{ y: -3 }}
-                      onClick={() => handleQuestionSelect(topic.questionId)}
+                      onClick={() => startQueue(topicQueue, 'Topics', idx)}
                       className="p-4 rounded-sm bg-white dark:bg-white/[0.02] border border-stone-200 dark:border-white/10 hover:border-amber-500/60 dark:hover:border-amber-400/50 transition-all text-left"
                     >
                       <p className="font-semibold text-stone-800 dark:text-amber-100">
